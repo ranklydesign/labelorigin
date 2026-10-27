@@ -14,7 +14,7 @@
 
 /* Dedicated Top Navigation Header */
 .renaud-header {
-    background: rgba(8, 8, 10, 0.75);
+    background: var(--bg-glass);
     border-bottom: 1px solid var(--line-subtle);
     position: sticky;
     top: 0;
@@ -43,7 +43,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--line-light);
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.08));
+    filter: drop-shadow(var(--logo-shadow));
     flex-shrink: 0;
 }
 .renaud-brand-text {
@@ -108,7 +108,7 @@
 .social-btn:hover {
     color: var(--ivory-white);
     border-color: var(--line-focus);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--tint-1);
 }
 .social-btn svg {
     width: 14px;
@@ -128,7 +128,7 @@
     padding: 7px 14px;
     border: 1px solid var(--line-light);
     border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--tint-1);
     transition: all 0.25s ease;
 }
 .renaud-nav-phone:hover {
@@ -139,7 +139,7 @@
 
 /* Facility Micro-Strip */
 .facility-strip {
-    background: rgba(8, 8, 10, 0.4);
+    background: var(--tint-1);
     border-bottom: 1px solid var(--line-subtle);
     font-size: 0.7rem;
     padding: 8px 0;
@@ -187,7 +187,7 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    color: #ffffff;
+    color: var(--ivory-white);
 }
 .funnel-hero .subtitle {
     color: var(--text-secondary);
@@ -205,7 +205,7 @@
     border-top: 1px solid var(--line-subtle);
     border-bottom: 1px solid var(--line-subtle);
     margin: 44px 0 48px;
-    background: rgba(255, 255, 255, 0.005);
+    background: var(--tint-1);
 }
 .metric-cell {
     padding: 24px 20px;
@@ -235,7 +235,7 @@
 /* Editorial Sample Alert Ribbon */
 .sample-banner {
     border: 1px solid var(--line-light);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(201, 185, 154, 0.04) 100%);
+    background: linear-gradient(90deg, var(--tint-1) 0%, var(--accent-amber-glow) 100%);
     border-radius: var(--radius-sm);
     padding: 20px 24px;
     margin-bottom: 40px;
@@ -270,7 +270,7 @@
     padding: 8px 16px;
     border-radius: var(--radius-sm);
     white-space: nowrap;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--tint-1);
 }
 
 /* Two Ways to Launch (Asymmetric Split) */
@@ -427,7 +427,7 @@
     justify-content: space-between;
     width: 100%;
     text-align: left;
-    background: rgba(255, 255, 255, 0.012);
+    background: var(--tint-1);
     color: var(--text-primary);
     border: 1px solid var(--line-subtle);
     padding: 20px 24px;
@@ -442,7 +442,7 @@
 .option-btn:hover {
     border-color: var(--line-focus);
     color: var(--ivory-white);
-    background: rgba(255, 255, 255, 0.035);
+    background: var(--tint-2);
     transform: translateX(6px);
 }
 .option-btn .arrow-icon {
@@ -478,7 +478,7 @@
 .input-group input, .input-group textarea, .input-group select {
     width: 100%;
     padding: 14px 18px;
-    background: rgba(7, 8, 11, 0.7);
+    background: var(--field-bg);
     border: 1px solid var(--line-light);
     color: var(--ivory-white);
     border-radius: var(--radius-sm);
@@ -490,7 +490,7 @@
 .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
     outline: none;
     border-color: var(--line-focus);
-    background: rgba(14, 15, 19, 0.9);
+    background: var(--field-bg-focus);
 }
 .input-group .hint {
     font-size: 0.72rem;
@@ -528,8 +528,8 @@
     margin-top: 10px;
 }
 .submit-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    background: var(--btn-hover);
+    box-shadow: var(--btn-glow);
     transform: translateY(-1px);
 }
 .submit-btn:disabled {
@@ -554,7 +554,7 @@
     justify-content: center;
     font-size: 1.5rem;
     margin: 0 auto 20px;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--tint-1);
 }
 .lead-id-badge {
     display: inline-block;
@@ -565,10 +565,10 @@
     font-size: 0.85rem;
     letter-spacing: 0.12em;
     margin: 14px 0 24px;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--tint-1);
 }
 .lead-summary-box {
-    background: rgba(7, 8, 11, 0.5);
+    background: var(--field-bg);
     border: 1px solid var(--line-subtle);
     padding: 20px 24px;
     text-align: left;

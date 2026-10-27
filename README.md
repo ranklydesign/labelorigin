@@ -1,6 +1,6 @@
-# LabelOrigin — Verified B2B White-Label & Manufacturing Platform
+# LabelOrigin: B2B Lead-Generation Agency
 
-**LabelOrigin** is a high-performance B2B directory and commercial lead-routing engine built purely with standalone HTML5, CSS3, and Vanilla JavaScript. It delivers sub-second load times, zero framework bloat, and a deep charcoal/void black theme accented with high-contrast neon cyan (`#00f3ff`) and neon green (`#39ff14`).
+**LabelOrigin** is a B2B lead-generation agency for manufacturers and white-label brands. This repo is the agency site plus the client funnels (Renaud Naturals is the flagship client), built with plain HTML5, CSS3, and Vanilla JavaScript. Pages load fast with no framework bloat. The default theme is light, with a dark theme available through the toggle in the bottom-right corner (`assets/js/theme.js`; all colors are tokens at the top of `style.css`).
 
 ---
 
