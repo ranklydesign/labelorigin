@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-brand="renaud">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Label Natural Perfume & Botanical Fragrance Manufacturing | Renaud Naturals</title>
-    <meta name="description" content="Private label natural perfume oil and botanical roll-on contract manufacturing. Alcohol-free, phthalate-free, 100% pure essential oil scents in Loveland, Colorado.">
+    <title>Botanical Perfume Formulation Guide: Natural Fragrance Chemistry | Renaud Naturals</title>
+    <meta name="description" content="A technical formulation guide for private label botanical perfumes. Learn about olfactory volatility evaporation curves, anhydrous lipid fixation, phthalate elimination, and IFRA compliance.">
 
     <!-- Open Graph & Canonical -->
-    <meta property="og:title" content="Private Label Natural Perfume & Botanical Fragrance Manufacturing | Renaud Naturals">
-    <meta property="og:description" content="Private label natural perfume oil and botanical roll-on contract manufacturing. Alcohol-free, phthalate-free, 100% pure essential oil scents in Loveland, Colorado.">
+    <meta property="og:title" content="Botanical Perfume Formulation Guide: Natural Fragrance Chemistry | Renaud Naturals">
+    <meta property="og:description" content="A technical formulation guide for private label botanical perfumes. Learn about olfactory volatility evaporation curves, anhydrous lipid fixation, phthalate elimination, and IFRA compliance.">
     <meta property="og:url" content="https://labelorigin.com/renaud/perfume/">
     <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LabelOrigin">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="LabelOrigin &bull; Verified B2B Lab Network">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://labelorigin.com/renaud/perfume/">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../renaud.css">
 
-    <!-- Subpage Styles for Topical Breadcrumbs & Chips -->
+    <!-- High-Depth Educational Dossier Styles -->
     <style>
         .topic-hero-badge {
             display: inline-block;
@@ -35,6 +35,238 @@
             padding-bottom: 6px;
             margin-bottom: 16px;
         }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--accent-platinum);
+        }
+
+        /* Science Overview Callout */
+        .science-overview-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--accent-platinum);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-overview-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-overview-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Educational Chapter Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--line-focus);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--line-subtle);
+            color: var(--accent-platinum);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--line-focus);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* Quality Assurance Grid */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Related Topics Chips */
         .related-disciplines-section {
             margin: 60px 0 40px;
             border-top: 1px solid var(--line-subtle);
@@ -80,27 +312,6 @@
             color: var(--ivory-white);
             transform: translateX(3px);
         }
-        .breadcrumb-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-        }
-        .breadcrumb-bar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb-bar a:hover {
-            color: var(--ivory-white);
-        }
-        .breadcrumb-bar span.active {
-            color: var(--accent-platinum);
-        }
     </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -109,13 +320,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "MedicalBusiness",
       "@id": "https://labelorigin.com/renaud/perfume/#facility",
       "name": "Renaud Naturals • Perfume Formulation Laboratory",
       "url": "https://labelorigin.com/renaud/perfume/",
       "logo": "https://labelorigin.com/renaud/renaud-logo.png",
       "image": "https://labelorigin.com/renaud/renaud-logo.png",
-      "description": "Private label natural perfume oil and botanical roll-on contract manufacturing. Alcohol-free, phthalate-free, 100% pure essential oil scents in Loveland, Colorado.",
+      "description": "A technical formulation guide for private label botanical perfumes. Learn about olfactory volatility evaporation curves, anhydrous lipid fixation, phthalate elimination, and IFRA compliance.",
       "telephone": "+1-970-667-1433",
       "email": "Arch@RenaudNaturals.com",
       "address": {
@@ -128,38 +339,30 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Perfume Private Label Capabilities",
+        "name": "Perfume Technical Formulation Catalog",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Alcohol-Free Perfume Roll-On Oils",
-              "description": "Fractionated coconut oil and organic jojoba bases delivering concentrated botanical scent notes in portable 10ml glass rollerball vials."
+              "name": "The Evaporation Pyramid: Top, Heart, and Base Notes",
+              "description": "Formulating natural perfume requires balancing three distinct evaporation tiers without synthetic fixatives. High-volatility top notes (monoterpenes like bergapten-free bergamot, pink pepper, and swee..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Signature Essential Oil Accords",
-              "description": "Harmonious blends spanning crisp citrus top notes, lush botanical florals, grounding woody bases, and exotic resinous balsamic accords."
+              "name": "Anhydrous Lipid Carriers vs Denatured Ethanol",
+              "description": "Denatured perfumer’s alcohol evaporates instantly, causing a harsh alcohol spike that dries out the skin and alters top-note perception. Renaud’s anhydrous lipid system utilizes cold-pressed organic j..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Aromatherapeutic Pulse Point Elixirs",
-              "description": "Functional fragrances pairing mood-enhancing benefits with exquisite scents: Calming Lavender, Uplifting Sweet Orange, Grounding Cedar."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Botanical Body & Hair Fragrance Mists",
-              "description": "Hydrosol-based light fragrance mists distilled from organic roses, neroli, and lavender for an all-over sensory refresh."
+              "name": "Natural Allergens, Phototoxicity & IFRA Compliance",
+              "description": "Pure essential oils contain natural chemical allergens (limonene, linalool, geraniol, eugenol, citral) regulated by the International Fragrance Association (IFRA). Furthermore, cold-pressed citrus oil..."
             }
           }
         ]
@@ -171,34 +374,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Are your perfumes free of synthetic musks and phthalates?",
+          "name": "Are your botanical perfumes free of synthetic musks and phthalates?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We use only 100% pure essential oils, absolutes, and natural plant extracts. We never use synthetic nitro-musks, phthalates, parabens, or artificial aroma chemicals."
+            "text": "Yes, 100%. We use only authentic essential oils, natural resin extracts, and CO2 botanical distillates. We never use nitro-musks, polycyclic musks, diethyl phthalate (DEP), or synthetic petrochemical fixatives."
           }
         },
         {
           "@type": "Question",
-          "name": "Can Renaud Naturals create custom signature fragrances for our brand?",
+          "name": "What is the wholesale MOQ for private label natural perfumes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Our Loveland formulation lab can compound bespoke botanical fragrance accords tailored to your brand identity at a custom R&D minimum of 250+ units."
+            "text": "Wholesale starter orders for our turnkey stock botanical fragrance profiles start at just 12+ units per SKU. Bespoke custom fragrance compounding and brand signature scent design starts at 250+ units."
           }
         },
         {
           "@type": "Question",
-          "name": "What packaging sizes do you provide for natural perfumes?",
+          "name": "Can I order sample fragrance vials before ordering inventory?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer standard 10ml glass rollerball bottles (amber, clear, or frosted with stainless steel roller balls) as well as 1 oz and 2 oz dropper bottles and spray mists."
+            "text": "Yes. We provide sample evaluation vials at $3 to $5 each so you can test sillage, skin evaporation curves, and aromatic character."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I order sample fragrance vials before ordering a production run?",
+          "name": "Why do you recommend rollerball oils over alcohol-based sprays?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Sample evaluation vials are available at $3 to $5 each so you can evaluate scent throw, dry-down, and longevity."
+            "text": "Rollerball oils utilize organic jojoba as a carrier, which does not dry the skin, avoids the chemical alcohol blast, and locks volatile botanicals into the skin lipids for longer-lasting, intimate fragrance wear."
           }
         }
       ]
@@ -209,7 +412,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "LabelOrigin",
+          "name": "LabelOrigin Directory",
           "item": "https://labelorigin.com/"
         },
         {
@@ -221,7 +424,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Perfume",
+          "name": "Perfume Formulation Guide",
           "item": "https://labelorigin.com/renaud/perfume/"
         }
       ]
@@ -246,9 +449,11 @@
             </a>
 
             <nav class="renaud-nav-links">
-                <a href="#specifications" class="renaud-nav-link">Specifications</a>
-                <a href="#lead-flow" class="renaud-nav-link">Get Samples ($3–$5)</a>
-                <a href="#standards" class="renaud-nav-link">Purity Standards</a>
+                <a href="#science" class="renaud-nav-link">Chemistry</a>
+                <a href="#subtopics" class="renaud-nav-link">Subtopic Chapters</a>
+                <a href="#lead-flow" class="renaud-nav-link">Order Samples ($3–$5)</a>
+                <a href="#specs" class="renaud-nav-link">Technical Matrix</a>
+                <a href="#compliance" class="renaud-nav-link">MoCRA &amp; QA</a>
                 <a href="#faq" class="renaud-nav-link">Specification FAQ</a>
                 <a href="../" class="renaud-nav-link" style="color: var(--accent-platinum);">&larr; Main Lab Hub</a>
             </nav>
@@ -273,14 +478,14 @@
                 <span>&bull;</span>
                 <a href="../">Renaud Naturals</a>
                 <span>&bull;</span>
-                <span class="active">Perfume</span>
+                <span class="active">Perfume Formulation Dossier</span>
             </div>
 
             <!-- Hero Section -->
             <div class="renaud-hero">
-                <span class="topic-hero-badge">Pure Botanical Scents • Phthalate-Free • Loveland Lab Est. 1997</span>
-                <h1>Custom Botanical Perfume & Natural Fragrance Manufacturing</h1>
-                <p class="hero-desc">Artisanal, 100% botanical fragrance formulation. Handcrafted without synthetic musks, petrochemical fixatives, phthalates, or denatured alcohol for intimate, clean aromatics that evolve beautifully on the skin.</p>
+                <span class="topic-hero-badge">Artisanal Botanical Perfumery • Est. 1997 • Loveland, Colorado</span>
+                <h1>The Art & Science of Botanical Perfumery: Volatility Curves & Anhydrous Carriers</h1>
+                <p class="hero-desc">Traditional perfumes rely on 80% denatured alcohol and synthetic phthalate fixatives. Explore the chemistry of pure botanical perfumery—leveraging natural olfactory volatility curves, supercritical CO2 extracts, and skin-nourishing lipid carriers in Loveland, Colorado.</p>
 
                 <!-- Minimalist Tabular Metrics -->
                 <div class="metrics-row">
@@ -307,39 +512,11 @@
                 </div>
             </div>
 
-            <!-- In-Page Formulation Specs Dossier -->
-            <section id="specifications" style="margin-bottom: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">05 / PERFUME &bull; Formulation Dossier</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Capabilities &amp; Product Disciplines</h3>
-                </div>
-                <div class="founder-pillars-grid">
-                    
-        <div class="pillar-box">
-            <span class="num">SPEC 01 / FORMULATION</span>
-            <h5>Alcohol-Free Perfume Roll-On Oils</h5>
-            <p>Fractionated coconut oil and organic jojoba bases delivering concentrated botanical scent notes in portable 10ml glass rollerball vials.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 02 / FORMULATION</span>
-            <h5>Signature Essential Oil Accords</h5>
-            <p>Harmonious blends spanning crisp citrus top notes, lush botanical florals, grounding woody bases, and exotic resinous balsamic accords.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 03 / FORMULATION</span>
-            <h5>Aromatherapeutic Pulse Point Elixirs</h5>
-            <p>Functional fragrances pairing mood-enhancing benefits with exquisite scents: Calming Lavender, Uplifting Sweet Orange, Grounding Cedar.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 04 / FORMULATION</span>
-            <h5>Botanical Body & Hair Fragrance Mists</h5>
-            <p>Hydrosol-based light fragrance mists distilled from organic roses, neroli, and lavender for an all-over sensory refresh.</p>
-        </div>
-    
-                </div>
+            <!-- Science Overview Callout -->
+            <section class="science-overview-box" id="science">
+                <span class="editorial-eyebrow">Formulation Science &bull; Theoretical Foundation</span>
+                <h4>Olfactory Volatility Physics & Anhydrous Lipid Fixation</h4>
+                <p>Perfume vaporization is governed by vapor pressure and molecular weight. Synthetic commercial fragrances mask quick degradation by utilizing chemical phthalates (DEP) and polycyclic synthetic musks (galaxolide) that persist in adipose tissue and aquatic ecosystems. Renaud Naturals formulates 100% botanical perfumes utilizing an anhydrous lipid base of organic Simmondsia chinensis (jojoba wax esters) and medium-chain triglycerides (MCT). Jojoba integrates directly with skin sebum, slowing the evaporation of volatile terpenes and creating an intimate, nuanced sillage.</p>
             </section>
 
             <!-- Interactive Formulation Lead Funnel -->
@@ -358,7 +535,7 @@
                     <h2>Which best describes your business or practice?</h2>
                     
                     <button class="option-btn" data-select-type="Medical Spa / Wellness Clinic">
-                        <span>Medical Spa, Dermatology Practice, or Wellness Center</span>
+                        <span>Medical Spa, Dermatology Practice, or Wellness Clinic</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Day Spa / Salon / Studio">
@@ -366,7 +543,7 @@
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Retail Storefront">
-                        <span>Retail Storefront, Clean Beauty Apothecary, or Gift Shop</span>
+                        <span>Retail Storefront, Clean Beauty Apothecary, or Holistic Boutique</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Brand Founder">
@@ -579,51 +756,231 @@
 
             </div>
 
-            <!-- The Renaud Standard Since 1997 -->
-            <section class="founder-story-card" id="standards" style="margin-top: 50px;">
-                <span class="editorial-eyebrow">The Renaud Naturals Standard &bull; Since 1997</span>
-                <div class="founder-quote-banner">
-                    "Because I wanted products available that were natural, organic, and free of petrochemicals, I founded Renaud Naturals in 1997. Every formula is built with health in mind. Clean, natural, vitamin-enriched, US made, potent products."
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="subtopics" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">05 / PERFUME &bull; Chapter Dossiers</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">In-Depth Formulation Subtopics</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
+                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for private-label brand founders, dermatologists, and clinical operators.
+                    </p>
                 </div>
-                <div class="founder-pillars-grid">
-                    <div class="pillar-box">
-                        <h5>100% Fresh Daily</h5>
-                        <p>We formulate and manufacture in-house; therefore, we have complete control over purity and integrity. Manufactured daily in Loveland to ensure peak botanical freshness when shipped.</p>
+                
+                <div class="subtopics-container">
+                    
+        <article class="subtopic-card" id="subtopic-1">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 01 • ACCORD ARCHITECTURE</span>
+                <span class="subtopic-num">CHAPTER 01</span>
+            </div>
+            <h3 class="subtopic-title">The Evaporation Pyramid: Top, Heart, and Base Notes</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Formulating natural perfume requires balancing three distinct evaporation tiers without synthetic fixatives. High-volatility top notes (monoterpenes like bergapten-free bergamot, pink pepper, and sweet orange; vaporizing within 15–30 minutes) transition into complex heart notes (oxygenated monoterpenes like French lavender, Bulgarian damask rose, and neroli; lasting 2–4 hours). The dry-down is anchored by dense base notes (sesquiterpenes and resins like Haitian vetiver, Himalayan cedarwood, and frankincense; lasting 6–12+ hours).</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Bergapten-Free Bergamot</span><span class="active-pill">French Lavandula Angustifolia</span><span class="active-pill">Bulgarian Rosa Damascena</span><span class="active-pill">Himalayan Cedarwood</span><span class="active-pill">Haitian Vetiver</span>
+                        </div>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Pure &amp; Non-Toxic</h5>
-                        <p>Every formula is built with health in mind. Free of mineral oils, lanolin, parabens, PABA, alcohol, petrochemicals, sodium lauryl sulfate (SLS), and formaldehyde. Completely non-comedogenic.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">Anhydrous</strong>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Cruelty-Free Ethics</h5>
-                        <p>We never purchase ingredients from suspect suppliers and never ingredients tested on animals. Formulated with wildcrafted herbs, certified organic botanicals, and sustainable eco-packaging.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">20 – 40 cps (Liquid Oil Carrier)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">10ml Amber or Frosted Glass Rollerball Vials with Stainless Steel Roller Balls</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-2">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 02 • SOLVENT SELECTION</span>
+                <span class="subtopic-num">CHAPTER 02</span>
+            </div>
+            <h3 class="subtopic-title">Anhydrous Lipid Carriers vs Denatured Ethanol</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Denatured perfumer’s alcohol evaporates instantly, causing a harsh alcohol spike that dries out the skin and alters top-note perception. Renaud’s anhydrous lipid system utilizes cold-pressed organic jojoba—a non-polar liquid wax ester that resists oxidation and rancidity for up to 3 years. The carrier forms a microscopic barrier that holds delicate botanical volatiles close to the skin, allowing body heat to gently diffuse the fragrance over hours.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Cold-Pressed Organic Jojoba Oil</span><span class="active-pill">Caprylic/Capric Triglycerides</span><span class="active-pill">Natural Tocopherol (Vitamin E Buffer)</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">Anhydrous</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">30 cps</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">10ml Roll-On Vials, 1 oz Dropper Bottles, 2 oz Spray Atomizers</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-3">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 03 • IFRA & SAFETY</span>
+                <span class="subtopic-num">CHAPTER 03</span>
+            </div>
+            <h3 class="subtopic-title">Natural Allergens, Phototoxicity & IFRA Compliance</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Pure essential oils contain natural chemical allergens (limonene, linalool, geraniol, eugenol, citral) regulated by the International Fragrance Association (IFRA). Furthermore, cold-pressed citrus oils contain furanocoumarins (bergapten) that induce severe phototoxic blistering under UV light. Renaud formulates strictly within IFRA Class 5A (body lotion) and Class 4 (fine fragrance) safety limits, utilizing furanocoumarin-free (FCF) citrus distillates to guarantee photostability.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Furanocoumarin-Free Citrus Oils</span><span class="active-pill">Steam-Distilled Absolutes</span><span class="active-pill">Organic Essential Oils</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">Anhydrous</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">System Dependent</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">UV-Protective Amber or Miron Violet Glass</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Chemistry &amp; Packaging Parameters</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
+                        Direct laboratory benchmarking across pH, viscosity, shelf life, and packaging requirements.
+                    </p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation Class</th>
+                                <th>Target pH</th>
+                                <th>Viscosity Range</th>
+                                <th>Stability Shelf Life</th>
+                                <th>Standard Packaging</th>
+                                <th>Minimum Order (MOQ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td><strong>Botanical Roll-On Perfume Oil (10ml)</strong></td>
+            <td><code>Anhydrous</code></td>
+            <td>30 cps</td>
+            <td>36 Months</td>
+            <td>10ml Rollerball Bottle</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Signature Botanical Cologne Mist</strong></td>
+            <td><code>5.5</code></td>
+            <td>10 cps</td>
+            <td>24 Months</td>
+            <td>1.7 oz Glass Atomizer</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Aromatherapeutic Pulse Point Elixir</strong></td>
+            <td><code>Anhydrous</code></td>
+            <td>35 cps</td>
+            <td>36 Months</td>
+            <td>10ml Rollerball Bottle</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">MoCRA, cGMP &amp; Laboratory Testing Protocols</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
+                        Every commercial batch formulated at Renaud Naturals undergoes three tiers of analytical quality control before release.
+                    </p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 01</span>
+                        <h5>USP &lt;51&gt; Antimicrobial Challenge</h5>
+                        <p>28-day efficacy testing verifying that clean preservative matrices actively inhibit Gram-positive (S. aureus), Gram-negative (P. aeruginosa, E. coli), and fungal pathogens (C. albicans, A. brasiliensis) without synthetic biocides.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 02</span>
+                        <h5>Accelerated Thermal Stability</h5>
+                        <p>All formulas undergo 12-week accelerated thermal aging at 40°C and 75% relative humidity (the thermodynamic equivalent of 24 months at ambient room temperature) to guarantee zero phase separation, syneresis, or color degradation.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
+                        <h5>FDA MoCRA Safety Substantiation</h5>
+                        <p>Renaud Naturals maintains an active FDA cosmetic facility registration. We supply brand owners with comprehensive Batch Lot COAs, ingredient toxicological profiles, and allergen declarations required under federal MoCRA law.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Topic Specification FAQ Accordion -->
+            <!-- Topic Specification FAQ Accordion (AI Search & Featured Snippet Engine) -->
             <section class="funnel-faq" id="faq" style="margin-top: 50px;">
-                <h3 class="faq-title">Perfume Specification FAQ</h3>
+                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
+                <h3 class="faq-title">Perfume Formulation &amp; Manufacturing FAQ</h3>
                 <div class="faq-accordion">
                     
         <details>
-            <summary>Are your perfumes free of synthetic musks and phthalates?</summary>
-            <p>Yes. We use only 100% pure essential oils, absolutes, and natural plant extracts. We never use synthetic nitro-musks, phthalates, parabens, or artificial aroma chemicals.</p>
+            <summary>Are your botanical perfumes free of synthetic musks and phthalates?</summary>
+            <p>Yes, 100%. We use only authentic essential oils, natural resin extracts, and CO2 botanical distillates. We never use nitro-musks, polycyclic musks, diethyl phthalate (DEP), or synthetic petrochemical fixatives.</p>
         </details>
     
         <details>
-            <summary>Can Renaud Naturals create custom signature fragrances for our brand?</summary>
-            <p>Yes. Our Loveland formulation lab can compound bespoke botanical fragrance accords tailored to your brand identity at a custom R&D minimum of 250+ units.</p>
+            <summary>What is the wholesale MOQ for private label natural perfumes?</summary>
+            <p>Wholesale starter orders for our turnkey stock botanical fragrance profiles start at just 12+ units per SKU. Bespoke custom fragrance compounding and brand signature scent design starts at 250+ units.</p>
         </details>
     
         <details>
-            <summary>What packaging sizes do you provide for natural perfumes?</summary>
-            <p>We offer standard 10ml glass rollerball bottles (amber, clear, or frosted with stainless steel roller balls) as well as 1 oz and 2 oz dropper bottles and spray mists.</p>
+            <summary>Can I order sample fragrance vials before ordering inventory?</summary>
+            <p>Yes. We provide sample evaluation vials at $3 to $5 each so you can test sillage, skin evaporation curves, and aromatic character.</p>
         </details>
     
         <details>
-            <summary>Can I order sample fragrance vials before ordering a production run?</summary>
-            <p>Yes. Sample evaluation vials are available at $3 to $5 each so you can evaluate scent throw, dry-down, and longevity.</p>
+            <summary>Why do you recommend rollerball oils over alcohol-based sprays?</summary>
+            <p>Rollerball oils utilize organic jojoba as a carrier, which does not dry the skin, avoids the chemical alcohol blast, and locks volatile botanicals into the skin lipids for longer-lasting, intimate fragrance wear.</p>
         </details>
     
                 </div>
@@ -641,9 +998,15 @@
             <span class="chip-arrow">&rarr;</span>
         </a>
     
-        <a href="../body-care/" class="related-chip">
-            <span class="chip-num">02</span>
-            <span>Body Care</span>
+        <a href="../natural-baby/" class="related-chip">
+            <span class="chip-num">08</span>
+            <span>Natural Baby</span>
+            <span class="chip-arrow">&rarr;</span>
+        </a>
+    
+        <a href="../massage/" class="related-chip">
+            <span class="chip-num">09</span>
+            <span>Massage</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -671,15 +1034,9 @@
             <span class="chip-arrow">&rarr;</span>
         </a>
     
-        <a href="../natural-baby/" class="related-chip">
-            <span class="chip-num">08</span>
-            <span>Natural Baby</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../massage/" class="related-chip">
-            <span class="chip-num">09</span>
-            <span>Massage</span>
+        <a href="../body-care/" class="related-chip">
+            <span class="chip-num">02</span>
+            <span>Body Care</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -754,12 +1111,12 @@
         facilityAddress: '101 East 5th Street, Loveland, CO 80537',
         facilityPhone: '970-667-1433',
         facilityEmail: 'Arch@RenaudNaturals.com',
+        ccEmail: 'robertserranomailbox@gmail.com',
         storageKey: 'labelorigin_renaud_perfume_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
     };
 </script>
 <script src="../../assets/js/funnel.js"></script>
 
-<script src="../../assets/js/contact.js"></script>
 </body>
 </html>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-brand="renaud">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Label Body Care Formulations & Wholesale Manufacturing | Renaud Naturals</title>
-    <meta name="description" content="Wholesale private label body care manufacturing. Whipped body butters, botanical lotions, sugar & salt scrubs, and hydrating body washes. Low 12+ unit MOQ, Loveland CO.">
+    <title>Body Care Formulation Guide: Whipped Butters & Lotions | Renaud Naturals</title>
+    <meta name="description" content="A technical formulation guide for private label body care. Learn about unrefined shea lipid kinetics, non-greasy lotion emulsions, mechanical exfoliant suspension, and clean body washes.">
 
     <!-- Open Graph & Canonical -->
-    <meta property="og:title" content="Private Label Body Care Formulations & Wholesale Manufacturing | Renaud Naturals">
-    <meta property="og:description" content="Wholesale private label body care manufacturing. Whipped body butters, botanical lotions, sugar & salt scrubs, and hydrating body washes. Low 12+ unit MOQ, Loveland CO.">
+    <meta property="og:title" content="Body Care Formulation Guide: Whipped Butters & Lotions | Renaud Naturals">
+    <meta property="og:description" content="A technical formulation guide for private label body care. Learn about unrefined shea lipid kinetics, non-greasy lotion emulsions, mechanical exfoliant suspension, and clean body washes.">
     <meta property="og:url" content="https://labelorigin.com/renaud/body-care/">
     <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LabelOrigin">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="LabelOrigin &bull; Verified B2B Lab Network">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://labelorigin.com/renaud/body-care/">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../renaud.css">
 
-    <!-- Subpage Styles for Topical Breadcrumbs & Chips -->
+    <!-- High-Depth Educational Dossier Styles -->
     <style>
         .topic-hero-badge {
             display: inline-block;
@@ -35,6 +35,238 @@
             padding-bottom: 6px;
             margin-bottom: 16px;
         }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--accent-platinum);
+        }
+
+        /* Science Overview Callout */
+        .science-overview-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--accent-platinum);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-overview-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-overview-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Educational Chapter Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--line-focus);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--line-subtle);
+            color: var(--accent-platinum);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--line-focus);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* Quality Assurance Grid */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Related Topics Chips */
         .related-disciplines-section {
             margin: 60px 0 40px;
             border-top: 1px solid var(--line-subtle);
@@ -80,27 +312,6 @@
             color: var(--ivory-white);
             transform: translateX(3px);
         }
-        .breadcrumb-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-        }
-        .breadcrumb-bar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb-bar a:hover {
-            color: var(--ivory-white);
-        }
-        .breadcrumb-bar span.active {
-            color: var(--accent-platinum);
-        }
     </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -109,13 +320,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "MedicalBusiness",
       "@id": "https://labelorigin.com/renaud/body-care/#facility",
       "name": "Renaud Naturals • Body Care Formulation Laboratory",
       "url": "https://labelorigin.com/renaud/body-care/",
       "logo": "https://labelorigin.com/renaud/renaud-logo.png",
       "image": "https://labelorigin.com/renaud/renaud-logo.png",
-      "description": "Wholesale private label body care manufacturing. Whipped body butters, botanical lotions, sugar & salt scrubs, and hydrating body washes. Low 12+ unit MOQ, Loveland CO.",
+      "description": "A technical formulation guide for private label body care. Learn about unrefined shea lipid kinetics, non-greasy lotion emulsions, mechanical exfoliant suspension, and clean body washes.",
       "telephone": "+1-970-667-1433",
       "email": "Arch@RenaudNaturals.com",
       "address": {
@@ -128,38 +339,30 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Body Care Private Label Capabilities",
+        "name": "Body Care Technical Formulation Catalog",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Whipped Botanical Body Butters",
-              "description": "Handcrafted blends of fair-trade shea, mango, and cocoa butters whipped with organic jojoba and sweet almond oil for rich, non-greasy barrier protection."
+              "name": "Whipped Body Butters & Thermal Polymorphism",
+              "description": "Shea butter contains stearic, oleic, and linoleic triglycerides that crystallize into multiple polymorphic states. If cooled improperly, shea forms coarse, grainy crystals (beta form) that feel sandy ..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Hydrating Botanical Lotions",
-              "description": "Fast-absorbing daily moisture emulsions infused with organic aloe vera, calendula, and vitamin E, ideal for retail lines and clinical spa backbar."
+              "name": "High-Absorption Body Lotions & Oil-in-Water Chemistry",
+              "description": "Body lotions require rapid absorption so clients can dress immediately after application without fabric staining. Renaud formulates oil-in-water (O/W) emulsions utilizing cetearyl olivate and sorbitan..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Exfoliating Sugar & Salt Polishes",
-              "description": "Organic cane sugar and mineral-rich Pacific sea salt suspended in nourishing plant oils to smooth and revitalize dull skin."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Clean Botanical Body Washes",
-              "description": "Gentle, sulfate-free foaming cleansers formulated with coconut-derived glucosides and pure essential oils for sensitive skin."
+              "name": "Rheological Suspension in Sugar & Salt Polishes",
+              "description": "Exfoliating polishes present a unique chemical challenge: crystalline sucrose (cane sugar) or sodium chloride (sea salt) will dissolve if excess water is present, or settle to the bottom of the jar if..."
             }
           }
         ]
@@ -171,34 +374,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What sizes are available for body lotions and scrubs?",
+          "name": "What is the wholesale MOQ for private label body care at Renaud Naturals?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We fill containers ranging from 2 oz and 8 oz retail bottles and jars all the way up to 1-gallon jugs and 5-gallon pails for high-volume backbar use."
+            "text": "Wholesale starter orders for stock body butters, lotions, and scrubs start at just 12+ units per SKU. Custom formula R&D and bespoke scent blending begins at 250+ units."
           }
         },
         {
           "@type": "Question",
-          "name": "Are your body butters stable at room temperature without synthetic waxes?",
+          "name": "Why do Renaud body butters remain smooth without synthetic stabilizers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Through proprietary lipid blending perfected since 1997, our body butters maintain a decadent whipped texture without petroleum waxes, parabens, or chemical emulsifiers."
+            "text": "We use proprietary temperature-controlled crystallization and mechanical whipping that locks shea and mango butters into stable beta-prime crystals, preventing the graininess common in amateur body butters."
           }
         },
         {
           "@type": "Question",
-          "name": "Can body care products be formulated with custom natural scents?",
+          "name": "Can body lotions and butters be ordered in bulk salon backbar pails?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We offer stock botanical scent profiles (French Lavender, Citrus Blossom, Vanilla Bean, Eucalyptus Mint) as well as custom pure essential oil blending for runs of 250+ units."
+            "text": "Yes. In addition to 8 oz and 16 oz retail packaging, we supply 1-gallon jugs and 5-gallon pails for spa treatment rooms and refill dispensaries."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the production turnaround time for body care orders?",
+          "name": "Are your body care formulas free of artificial colors and mineral oil?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stock wholesale formulations dispatch in 2 to 3 weeks upon artwork approval. Custom R&D formulation takes approximately 2 weeks for initial lab batches."
+            "text": "Yes, 100%. We never use petrolatum, mineral oil, parabens, or synthetic dye lakes. Every product is colored and scented exclusively with pure botanicals and essential oils."
           }
         }
       ]
@@ -209,7 +412,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "LabelOrigin",
+          "name": "LabelOrigin Directory",
           "item": "https://labelorigin.com/"
         },
         {
@@ -221,7 +424,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Body Care",
+          "name": "Body Care Formulation Guide",
           "item": "https://labelorigin.com/renaud/body-care/"
         }
       ]
@@ -246,9 +449,11 @@
             </a>
 
             <nav class="renaud-nav-links">
-                <a href="#specifications" class="renaud-nav-link">Specifications</a>
-                <a href="#lead-flow" class="renaud-nav-link">Get Samples ($3–$5)</a>
-                <a href="#standards" class="renaud-nav-link">Purity Standards</a>
+                <a href="#science" class="renaud-nav-link">Chemistry</a>
+                <a href="#subtopics" class="renaud-nav-link">Subtopic Chapters</a>
+                <a href="#lead-flow" class="renaud-nav-link">Order Samples ($3–$5)</a>
+                <a href="#specs" class="renaud-nav-link">Technical Matrix</a>
+                <a href="#compliance" class="renaud-nav-link">MoCRA &amp; QA</a>
                 <a href="#faq" class="renaud-nav-link">Specification FAQ</a>
                 <a href="../" class="renaud-nav-link" style="color: var(--accent-platinum);">&larr; Main Lab Hub</a>
             </nav>
@@ -273,14 +478,14 @@
                 <span>&bull;</span>
                 <a href="../">Renaud Naturals</a>
                 <span>&bull;</span>
-                <span class="active">Body Care</span>
+                <span class="active">Body Care Formulation Dossier</span>
             </div>
 
             <!-- Hero Section -->
             <div class="renaud-hero">
-                <span class="topic-hero-badge">Verified Formulation Laboratory • Est. 1997 • Loveland, Colorado</span>
-                <h1>Private Label Organic Body Care & Exfoliant Manufacturing</h1>
-                <p class="hero-desc">Nourishing, deeply hydrating body emulsions formulated with unrefined shea, cold-pressed plant oils, and wildcrafted botanical extracts. Engineered for luxurious skin feel, fast absorption, and 100% clean non-toxic purity.</p>
+                <span class="topic-hero-badge">Lipid Emulsion Science • Est. 1997 • Loveland, Colorado</span>
+                <h1>The Chemical Guide to Body Care Formulation: Whipped Lipids, Lotions & Scrubs</h1>
+                <p class="hero-desc">Explore the lipid chemistry of body care formulation. Discover how to create shelf-stable whipped body butters without synthetic stabilizers, formulate high-spreadability lotions that absorb in seconds, and suspend natural exfoliants in Loveland, Colorado.</p>
 
                 <!-- Minimalist Tabular Metrics -->
                 <div class="metrics-row">
@@ -307,39 +512,11 @@
                 </div>
             </div>
 
-            <!-- In-Page Formulation Specs Dossier -->
-            <section id="specifications" style="margin-bottom: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">02 / BODY CARE &bull; Formulation Dossier</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Capabilities &amp; Product Disciplines</h3>
-                </div>
-                <div class="founder-pillars-grid">
-                    
-        <div class="pillar-box">
-            <span class="num">SPEC 01 / FORMULATION</span>
-            <h5>Whipped Botanical Body Butters</h5>
-            <p>Handcrafted blends of fair-trade shea, mango, and cocoa butters whipped with organic jojoba and sweet almond oil for rich, non-greasy barrier protection.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 02 / FORMULATION</span>
-            <h5>Hydrating Botanical Lotions</h5>
-            <p>Fast-absorbing daily moisture emulsions infused with organic aloe vera, calendula, and vitamin E, ideal for retail lines and clinical spa backbar.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 03 / FORMULATION</span>
-            <h5>Exfoliating Sugar & Salt Polishes</h5>
-            <p>Organic cane sugar and mineral-rich Pacific sea salt suspended in nourishing plant oils to smooth and revitalize dull skin.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 04 / FORMULATION</span>
-            <h5>Clean Botanical Body Washes</h5>
-            <p>Gentle, sulfate-free foaming cleansers formulated with coconut-derived glucosides and pure essential oils for sensitive skin.</p>
-        </div>
-    
-                </div>
+            <!-- Science Overview Callout -->
+            <section class="science-overview-box" id="science">
+                <span class="editorial-eyebrow">Formulation Science &bull; Theoretical Foundation</span>
+                <h4>Transepidermal Surface Area & High-Spreadability Emulsion Kinetics</h4>
+                <p>Body skin has fewer sebaceous glands per square centimeter than facial skin and covers an extensive surface area (~1.8 square meters in adults). Body formulations must deliver exceptional spreadability (low yield stress under shear) while depositing a long-lasting, occlusive lipid barrier to prevent xerosis (extreme dryness). Renaud formulates without cheap liquid petrolatum (mineral oil) or volatile silicones, utilizing unrefined Butyrospermum parkii (shea butter), Mangifera indica (mango seed butter), and cold-pressed plant triglycerides.</p>
             </section>
 
             <!-- Interactive Formulation Lead Funnel -->
@@ -358,7 +535,7 @@
                     <h2>Which best describes your business or practice?</h2>
                     
                     <button class="option-btn" data-select-type="Medical Spa / Wellness Clinic">
-                        <span>Medical Spa, Dermatology Practice, or Wellness Center</span>
+                        <span>Medical Spa, Dermatology Practice, or Wellness Clinic</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Day Spa / Salon / Studio">
@@ -366,7 +543,7 @@
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Retail Storefront">
-                        <span>Retail Storefront, Clean Beauty Apothecary, or Gift Shop</span>
+                        <span>Retail Storefront, Clean Beauty Apothecary, or Holistic Boutique</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Brand Founder">
@@ -579,51 +756,240 @@
 
             </div>
 
-            <!-- The Renaud Standard Since 1997 -->
-            <section class="founder-story-card" id="standards" style="margin-top: 50px;">
-                <span class="editorial-eyebrow">The Renaud Naturals Standard &bull; Since 1997</span>
-                <div class="founder-quote-banner">
-                    "Because I wanted products available that were natural, organic, and free of petrochemicals, I founded Renaud Naturals in 1997. Every formula is built with health in mind. Clean, natural, vitamin-enriched, US made, potent products."
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="subtopics" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">02 / BODY CARE &bull; Chapter Dossiers</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">In-Depth Formulation Subtopics</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
+                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for private-label brand founders, dermatologists, and clinical operators.
+                    </p>
                 </div>
-                <div class="founder-pillars-grid">
-                    <div class="pillar-box">
-                        <h5>100% Fresh Daily</h5>
-                        <p>We formulate and manufacture in-house; therefore, we have complete control over purity and integrity. Manufactured daily in Loveland to ensure peak botanical freshness when shipped.</p>
+                
+                <div class="subtopics-container">
+                    
+        <article class="subtopic-card" id="subtopic-1">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 01 • SOLID LIPID CRYSTALLIZATION</span>
+                <span class="subtopic-num">CHAPTER 01</span>
+            </div>
+            <h3 class="subtopic-title">Whipped Body Butters & Thermal Polymorphism</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Shea butter contains stearic, oleic, and linoleic triglycerides that crystallize into multiple polymorphic states. If cooled improperly, shea forms coarse, grainy crystals (beta form) that feel sandy on the skin. Renaud utilizes a proprietary dual-stage cooling and mechanical aeration protocol: holding the lipid matrix at precise temperature plateaus while whipping to lock the butter into the silky, stable beta-prime crystal form, guaranteeing a melt-on-contact cloud texture that remains smooth at room temperature.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Unrefined Fair-Trade Shea Butter</span><span class="active-pill">Cold-Pressed Mango Butter</span><span class="active-pill">Organic Cocoa Seed Butter</span><span class="active-pill">Organic Jojoba Oil</span><span class="active-pill">Arrowroot Powder (Starch Modifier for Non-Greasy Finish)</span>
+                        </div>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Pure &amp; Non-Toxic</h5>
-                        <p>Every formula is built with health in mind. Free of mineral oils, lanolin, parabens, PABA, alcohol, petrochemicals, sodium lauryl sulfate (SLS), and formaldehyde. Completely non-comedogenic.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">Anhydrous</strong>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Cruelty-Free Ethics</h5>
-                        <p>We never purchase ingredients from suspect suppliers and never ingredients tested on animals. Formulated with wildcrafted herbs, certified organic botanicals, and sustainable eco-packaging.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">60,000 – 100,000 cps (Whipped Aerated Butter)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">4 oz & 8 oz Wide-Mouth Amber Glass or Recyclable PET Jars</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-2">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 02 • LOW-VISCOSITY EMULSIONS</span>
+                <span class="subtopic-num">CHAPTER 02</span>
+            </div>
+            <h3 class="subtopic-title">High-Absorption Body Lotions & Oil-in-Water Chemistry</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Body lotions require rapid absorption so clients can dress immediately after application without fabric staining. Renaud formulates oil-in-water (O/W) emulsions utilizing cetearyl olivate and sorbitan olivate (derived from olive oil) paired with organic aloe vera leaf juice and vegetable glycerin. This delivers immediate cutaneous hydration while depositing a microscopic, non-greasy lipid shield.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Organic Aloe Vera Juice</span><span class="active-pill">Cetearyl Olivate / Sorbitan Olivate</span><span class="active-pill">Organic Sweet Almond Oil</span><span class="active-pill">Organic Calendula Extract</span><span class="active-pill">Vegetable Glycerin</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.4 – 5.8</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">12,000 – 22,000 cps (Smooth Pumpable Lotion)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">8 oz & 16 oz Recyclable Bottles with High-Output Dispensing Pump</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-3">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 03 • MECHANICAL EXFOLIATION</span>
+                <span class="subtopic-num">CHAPTER 03</span>
+            </div>
+            <h3 class="subtopic-title">Rheological Suspension in Sugar & Salt Polishes</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Exfoliating polishes present a unique chemical challenge: crystalline sucrose (cane sugar) or sodium chloride (sea salt) will dissolve if excess water is present, or settle to the bottom of the jar if the oil matrix lacks yield stress. Renaud creates an anhydrous suspension using cold-pressed botanical oils gelled with plant waxes and unrefined beeswax. The crystals remain uniformly suspended from the top to the bottom of the jar without oil separation.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Organic Turbinado Cane Sugar</span><span class="active-pill">Dead Sea Mineral Salt</span><span class="active-pill">Organic Jojoba Oil</span><span class="active-pill">Sweet Almond Oil</span><span class="active-pill">Pure Essential Oil Blends</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">Anhydrous</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">50,000 – 80,000 cps (Thick Exfoliating Paste)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">8 oz & 16 oz PET or Glass Jars with Water-Resistant Inner Seals</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Chemistry &amp; Packaging Parameters</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
+                        Direct laboratory benchmarking across pH, viscosity, shelf life, and packaging requirements.
+                    </p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation Class</th>
+                                <th>Target pH</th>
+                                <th>Viscosity Range</th>
+                                <th>Stability Shelf Life</th>
+                                <th>Standard Packaging</th>
+                                <th>Minimum Order (MOQ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td><strong>Whipped Botanical Body Butter</strong></td>
+            <td><code>Anhydrous</code></td>
+            <td>75,000 cps</td>
+            <td>24 Months</td>
+            <td>4 oz / 8 oz Jar</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Fast-Absorbing Botanical Body Lotion</strong></td>
+            <td><code>5.5</code></td>
+            <td>18,000 cps</td>
+            <td>24 Months</td>
+            <td>8 oz / 16 oz Pump</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Sugar & Salt Exfoliating Body Polish</strong></td>
+            <td><code>Anhydrous</code></td>
+            <td>65,000 cps</td>
+            <td>24 Months</td>
+            <td>8 oz / 16 oz Jar</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Hydrating Botanical Shower Gel</strong></td>
+            <td><code>5.2</code></td>
+            <td>4,000 cps</td>
+            <td>24 Months</td>
+            <td>8 oz / 16 oz Disc Cap</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">MoCRA, cGMP &amp; Laboratory Testing Protocols</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
+                        Every commercial batch formulated at Renaud Naturals undergoes three tiers of analytical quality control before release.
+                    </p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 01</span>
+                        <h5>USP &lt;51&gt; Antimicrobial Challenge</h5>
+                        <p>28-day efficacy testing verifying that clean preservative matrices actively inhibit Gram-positive (S. aureus), Gram-negative (P. aeruginosa, E. coli), and fungal pathogens (C. albicans, A. brasiliensis) without synthetic biocides.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 02</span>
+                        <h5>Accelerated Thermal Stability</h5>
+                        <p>All formulas undergo 12-week accelerated thermal aging at 40°C and 75% relative humidity (the thermodynamic equivalent of 24 months at ambient room temperature) to guarantee zero phase separation, syneresis, or color degradation.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
+                        <h5>FDA MoCRA Safety Substantiation</h5>
+                        <p>Renaud Naturals maintains an active FDA cosmetic facility registration. We supply brand owners with comprehensive Batch Lot COAs, ingredient toxicological profiles, and allergen declarations required under federal MoCRA law.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Topic Specification FAQ Accordion -->
+            <!-- Topic Specification FAQ Accordion (AI Search & Featured Snippet Engine) -->
             <section class="funnel-faq" id="faq" style="margin-top: 50px;">
-                <h3 class="faq-title">Body Care Specification FAQ</h3>
+                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
+                <h3 class="faq-title">Body Care Formulation &amp; Manufacturing FAQ</h3>
                 <div class="faq-accordion">
                     
         <details>
-            <summary>What sizes are available for body lotions and scrubs?</summary>
-            <p>We fill containers ranging from 2 oz and 8 oz retail bottles and jars all the way up to 1-gallon jugs and 5-gallon pails for high-volume backbar use.</p>
+            <summary>What is the wholesale MOQ for private label body care at Renaud Naturals?</summary>
+            <p>Wholesale starter orders for stock body butters, lotions, and scrubs start at just 12+ units per SKU. Custom formula R&D and bespoke scent blending begins at 250+ units.</p>
         </details>
     
         <details>
-            <summary>Are your body butters stable at room temperature without synthetic waxes?</summary>
-            <p>Yes. Through proprietary lipid blending perfected since 1997, our body butters maintain a decadent whipped texture without petroleum waxes, parabens, or chemical emulsifiers.</p>
+            <summary>Why do Renaud body butters remain smooth without synthetic stabilizers?</summary>
+            <p>We use proprietary temperature-controlled crystallization and mechanical whipping that locks shea and mango butters into stable beta-prime crystals, preventing the graininess common in amateur body butters.</p>
         </details>
     
         <details>
-            <summary>Can body care products be formulated with custom natural scents?</summary>
-            <p>Yes. We offer stock botanical scent profiles (French Lavender, Citrus Blossom, Vanilla Bean, Eucalyptus Mint) as well as custom pure essential oil blending for runs of 250+ units.</p>
+            <summary>Can body lotions and butters be ordered in bulk salon backbar pails?</summary>
+            <p>Yes. In addition to 8 oz and 16 oz retail packaging, we supply 1-gallon jugs and 5-gallon pails for spa treatment rooms and refill dispensaries.</p>
         </details>
     
         <details>
-            <summary>What is the production turnaround time for body care orders?</summary>
-            <p>Stock wholesale formulations dispatch in 2 to 3 weeks upon artwork approval. Custom R&D formulation takes approximately 2 weeks for initial lab batches.</p>
+            <summary>Are your body care formulas free of artificial colors and mineral oil?</summary>
+            <p>Yes, 100%. We never use petrolatum, mineral oil, parabens, or synthetic dye lakes. Every product is colored and scented exclusively with pure botanicals and essential oils.</p>
         </details>
     
                 </div>
@@ -638,6 +1004,18 @@
         <a href="../facial-care/" class="related-chip">
             <span class="chip-num">01</span>
             <span>Facial Care</span>
+            <span class="chip-arrow">&rarr;</span>
+        </a>
+    
+        <a href="../natural-baby/" class="related-chip">
+            <span class="chip-num">08</span>
+            <span>Natural Baby</span>
+            <span class="chip-arrow">&rarr;</span>
+        </a>
+    
+        <a href="../massage/" class="related-chip">
+            <span class="chip-num">09</span>
+            <span>Massage</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -668,18 +1046,6 @@
         <a href="../candles/" class="related-chip">
             <span class="chip-num">07</span>
             <span>Candles</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../natural-baby/" class="related-chip">
-            <span class="chip-num">08</span>
-            <span>Natural Baby</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../massage/" class="related-chip">
-            <span class="chip-num">09</span>
-            <span>Massage</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -754,12 +1120,12 @@
         facilityAddress: '101 East 5th Street, Loveland, CO 80537',
         facilityPhone: '970-667-1433',
         facilityEmail: 'Arch@RenaudNaturals.com',
+        ccEmail: 'robertserranomailbox@gmail.com',
         storageKey: 'labelorigin_renaud_body_care_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
     };
 </script>
 <script src="../../assets/js/funnel.js"></script>
 
-<script src="../../assets/js/contact.js"></script>
 </body>
 </html>

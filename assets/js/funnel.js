@@ -228,8 +228,9 @@
             "Submission Timestamp": state.leadData.submittedAt
         };
 
-        if (config.facilityEmail) {
-            emailPayload._cc = config.facilityEmail;
+        // Qualified leads only: copy the agency owner, who forwards them to the client.
+        if (config.ccEmail) {
+            emailPayload._cc = config.ccEmail;
         }
 
         const delivered = await dispatchLead(emailPayload, state.leadData);

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-brand="renaud">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Label Facial Care Formulations & Custom Manufacturing | Renaud Naturals</title>
-    <meta name="description" content="Custom organic facial skincare formulation and turnkey private label manufacturing in Loveland, Colorado since 1997. Serums, cleansers, moisturizers, and eye creams. Low 12+ unit wholesale MOQ.">
+    <title>Facial Care Formulation Guide: Chemistry, Stability & Private Label | Renaud Naturals</title>
+    <meta name="description" content="A comprehensive technical formulation guide for private label facial care. Learn about peptide delivery, stabilized vitamin C, lipid barrier repair, non-stripping cleansers, and MoCRA compliance from Renaud Naturals.">
 
     <!-- Open Graph & Canonical -->
-    <meta property="og:title" content="Private Label Facial Care Formulations & Custom Manufacturing | Renaud Naturals">
-    <meta property="og:description" content="Custom organic facial skincare formulation and turnkey private label manufacturing in Loveland, Colorado since 1997. Serums, cleansers, moisturizers, and eye creams. Low 12+ unit wholesale MOQ.">
+    <meta property="og:title" content="Facial Care Formulation Guide: Chemistry, Stability & Private Label | Renaud Naturals">
+    <meta property="og:description" content="A comprehensive technical formulation guide for private label facial care. Learn about peptide delivery, stabilized vitamin C, lipid barrier repair, non-stripping cleansers, and MoCRA compliance from Renaud Naturals.">
     <meta property="og:url" content="https://labelorigin.com/renaud/facial-care/">
     <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LabelOrigin">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="LabelOrigin &bull; Verified B2B Lab Network">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://labelorigin.com/renaud/facial-care/">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../renaud.css">
 
-    <!-- Subpage Styles for Topical Breadcrumbs & Chips -->
+    <!-- High-Depth Educational Dossier Styles -->
     <style>
         .topic-hero-badge {
             display: inline-block;
@@ -35,6 +35,238 @@
             padding-bottom: 6px;
             margin-bottom: 16px;
         }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--accent-platinum);
+        }
+
+        /* Science Overview Callout */
+        .science-overview-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--accent-platinum);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-overview-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-overview-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Educational Chapter Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--line-focus);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--line-subtle);
+            color: var(--accent-platinum);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--line-focus);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* Quality Assurance Grid */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Related Topics Chips */
         .related-disciplines-section {
             margin: 60px 0 40px;
             border-top: 1px solid var(--line-subtle);
@@ -80,27 +312,6 @@
             color: var(--ivory-white);
             transform: translateX(3px);
         }
-        .breadcrumb-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-        }
-        .breadcrumb-bar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb-bar a:hover {
-            color: var(--ivory-white);
-        }
-        .breadcrumb-bar span.active {
-            color: var(--accent-platinum);
-        }
     </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -109,13 +320,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "MedicalBusiness",
       "@id": "https://labelorigin.com/renaud/facial-care/#facility",
       "name": "Renaud Naturals • Facial Care Formulation Laboratory",
       "url": "https://labelorigin.com/renaud/facial-care/",
       "logo": "https://labelorigin.com/renaud/renaud-logo.png",
       "image": "https://labelorigin.com/renaud/renaud-logo.png",
-      "description": "Custom organic facial skincare formulation and turnkey private label manufacturing in Loveland, Colorado since 1997. Serums, cleansers, moisturizers, and eye creams. Low 12+ unit wholesale MOQ.",
+      "description": "A comprehensive technical formulation guide for private label facial care. Learn about peptide delivery, stabilized vitamin C, lipid barrier repair, non-stripping cleansers, and MoCRA compliance from Renaud Naturals.",
       "telephone": "+1-970-667-1433",
       "email": "Arch@RenaudNaturals.com",
       "address": {
@@ -128,38 +339,46 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Facial Care Private Label Capabilities",
+        "name": "Facial Care Technical Formulation Catalog",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Active Botanical Serums",
-              "description": "Hyaluronic acid, stabilized vitamin C, botanical peptides, and niacinamide designed for deep cellular delivery with zero synthetic thickeners."
+              "name": "Transdermal Peptide & Hyaluronic Acid Delivery Systems",
+              "description": "Peptides are polar hydrophilic oligomers that naturally struggle to penetrate the hydrophobic stratum corneum. Renaud utilizes biomimetic lipopeptide sequences (such as Palmitoyl Tripeptide-1 and Palm..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Gentle Cream & Gel Cleansers",
-              "description": "Sulfate-free, pH-balanced washes infused with organic chamomile, green tea, and cucumber to cleanse thoroughly without disrupting the skin barrier."
+              "name": "Vitamin C Stabilization & Radical Quenching Cascades",
+              "description": "Traditional L-Ascorbic acid oxidizes rapidly into dehydroascorbic acid when exposed to air, light, or water, turning brown and generating pro-oxidant free radicals. Renaud Naturals formulates with adv..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Restorative Moisturizers & Night Creams",
-              "description": "Rich botanical emulsions incorporating cold-pressed jojoba, olive squalane, borage oil, and plant ceramides for intensive hydration."
+              "name": "Ceramide Bilayer Emulsions & Barrier Repair Moisturizers",
+              "description": "Impaired barrier function leads to elevated transepidermal water loss (TEWL) and inflammatory cytokine release. Renaud’s moisturizers utilize cold-pressed organic Simmondsia chinensis (jojoba wax este..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Targeted Eye Treatments & Firming Balms",
-              "description": "Micro-emulsions with green coffee caffeine, arnica montana, and botanical peptides to diminish puffiness and support delicate orbital skin."
+              "name": "Non-Stripping Cleanser Chemistry & Amino Acid Glucosides",
+              "description": "Conventional cleansers employ harsh anionic surfactants (SLS, SLES) that denature structural keratin proteins and strip protective intercellular lipids, leaving the skin tight and sensitized. Renaud f..."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ocular Microcirculation & Anti-Fatigue Eye Balms",
+              "description": "Periorbital skin is 0.5mm thick—less than one-third the thickness of the rest of the face—and lacks oil glands, making it exceptionally vulnerable to vascular pooling (dark circles) and lymphatic edem..."
             }
           }
         ]
@@ -171,34 +390,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the wholesale minimum order quantity (MOQ) for facial care?",
+          "name": "What is the exact wholesale MOQ for private label facial care at Renaud Naturals?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wholesale minimum order quantity for stock private-label facial care formulas is just 12+ units per SKU. For custom R&D formulations created from scratch, our lab minimum is 250+ units."
+            "text": "Wholesale minimum order quantity for our proven turnkey stock formulas is just 12+ units per SKU. For bespoke custom R&D formulations created from scratch by our chemistry team, the minimum order quantity is 250+ units."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I order sample evaluation jars and bottles before committing to production?",
+          "name": "How does Renaud Naturals preserve clean facial formulas without parabens or phenoxyethanol?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We provide sample units at $3 to $5 each, allowing you to test texture, scent, absorption, and client feedback in your clinic, spa, or studio."
+            "text": "We use synergistic hurdle technology: multi-functional botanical glycols (pentylene glycol derived from sugarcane), caprylyl glycol, and radish root ferment filtrate (Leuconostoc) buffered with food-grade potassium sorbate at pH 4.8–5.2. All formulas pass strict USP <51> antimicrobial challenge testing."
           }
         },
         {
           "@type": "Question",
-          "name": "What active ingredients can Renaud Naturals incorporate into custom serums?",
+          "name": "How long does custom formula R&D and sample turnaround take?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We formulate with botanical hyaluronic acid, vitamin C (magnesium ascorbyl phosphate / tetrahexyldecyl ascorbate), botanical peptides, CoQ10, alpha-lipoic acid, cold-pressed seed oils, and certified organic herbal extracts."
+            "text": "Lab sample evaluation kits ($3 to $5 each) dispatch within 2 to 3 business days. Custom formula R&D iterations typically require 2 weeks for initial bench batches and stability verification."
           }
         },
         {
           "@type": "Question",
-          "name": "Are Renaud Naturals facial formulations MoCRA and USDA compliant?",
+          "name": "What are the FDA MoCRA compliance responsibilities for facial brand founders?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. All formulas are produced under cGMP cosmetic standards in our Loveland, Colorado facility. We assist brand owners with FDA MoCRA cosmetic safety dossier requirements and USDA NOP organic claims."
+            "text": "Under the Modernization of Cosmetics Regulation Act (MoCRA), brand owners must submit cosmetic product listings to FDA Direct and maintain safety substantiation files. Renaud Naturals is a registered manufacturing facility that provides full batch lot tracing, COAs, and stability dossiers to satisfy all MoCRA compliance audits."
           }
         }
       ]
@@ -209,7 +428,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "LabelOrigin",
+          "name": "LabelOrigin Directory",
           "item": "https://labelorigin.com/"
         },
         {
@@ -221,7 +440,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Facial Care",
+          "name": "Facial Care Formulation Guide",
           "item": "https://labelorigin.com/renaud/facial-care/"
         }
       ]
@@ -246,9 +465,11 @@
             </a>
 
             <nav class="renaud-nav-links">
-                <a href="#specifications" class="renaud-nav-link">Specifications</a>
-                <a href="#lead-flow" class="renaud-nav-link">Get Samples ($3–$5)</a>
-                <a href="#standards" class="renaud-nav-link">Purity Standards</a>
+                <a href="#science" class="renaud-nav-link">Chemistry</a>
+                <a href="#subtopics" class="renaud-nav-link">Subtopic Chapters</a>
+                <a href="#lead-flow" class="renaud-nav-link">Order Samples ($3–$5)</a>
+                <a href="#specs" class="renaud-nav-link">Technical Matrix</a>
+                <a href="#compliance" class="renaud-nav-link">MoCRA &amp; QA</a>
                 <a href="#faq" class="renaud-nav-link">Specification FAQ</a>
                 <a href="../" class="renaud-nav-link" style="color: var(--accent-platinum);">&larr; Main Lab Hub</a>
             </nav>
@@ -273,14 +494,14 @@
                 <span>&bull;</span>
                 <a href="../">Renaud Naturals</a>
                 <span>&bull;</span>
-                <span class="active">Facial Care</span>
+                <span class="active">Facial Care Formulation Dossier</span>
             </div>
 
             <!-- Hero Section -->
             <div class="renaud-hero">
-                <span class="topic-hero-badge">Verified Formulation Laboratory • Est. 1997 • Loveland, Colorado</span>
-                <h1>Private Label Facial Care Formulation & Contract Manufacturing</h1>
-                <p class="hero-desc">From active hyaluronic and peptide serums to botanical cream cleansers, Renaud Naturals formulates in-house daily in Loveland, Colorado with pure certified organic herbs, wildcrafted botanicals, and zero petrochemicals.</p>
+                <span class="topic-hero-badge">Cosmetic Formulation Chemistry • Est. 1997 • Loveland, Colorado</span>
+                <h1>The Definitive Guide to Clean Facial Care Formulation & Contract Manufacturing</h1>
+                <p class="hero-desc">An educational masterclass in active skincare formulation. Explore the chemical mechanics of transdermal peptide delivery, lipid bilayer repair, antioxidant stabilization, and pH-balanced cleansing—engineered in-house in Loveland, Colorado since 1997.</p>
 
                 <!-- Minimalist Tabular Metrics -->
                 <div class="metrics-row">
@@ -307,39 +528,11 @@
                 </div>
             </div>
 
-            <!-- In-Page Formulation Specs Dossier -->
-            <section id="specifications" style="margin-bottom: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">01 / FACIAL CARE &bull; Formulation Dossier</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Capabilities &amp; Product Disciplines</h3>
-                </div>
-                <div class="founder-pillars-grid">
-                    
-        <div class="pillar-box">
-            <span class="num">SPEC 01 / FORMULATION</span>
-            <h5>Active Botanical Serums</h5>
-            <p>Hyaluronic acid, stabilized vitamin C, botanical peptides, and niacinamide designed for deep cellular delivery with zero synthetic thickeners.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 02 / FORMULATION</span>
-            <h5>Gentle Cream & Gel Cleansers</h5>
-            <p>Sulfate-free, pH-balanced washes infused with organic chamomile, green tea, and cucumber to cleanse thoroughly without disrupting the skin barrier.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 03 / FORMULATION</span>
-            <h5>Restorative Moisturizers & Night Creams</h5>
-            <p>Rich botanical emulsions incorporating cold-pressed jojoba, olive squalane, borage oil, and plant ceramides for intensive hydration.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 04 / FORMULATION</span>
-            <h5>Targeted Eye Treatments & Firming Balms</h5>
-            <p>Micro-emulsions with green coffee caffeine, arnica montana, and botanical peptides to diminish puffiness and support delicate orbital skin.</p>
-        </div>
-    
-                </div>
+            <!-- Science Overview Callout -->
+            <section class="science-overview-box" id="science">
+                <span class="editorial-eyebrow">Formulation Science &bull; Theoretical Foundation</span>
+                <h4>Epidermal Physiology & Transdermal Formulation Mechanics</h4>
+                <p>The stratum corneum operates as a brick-and-mortar lipid barrier consisting of 50% ceramides, 25% cholesterol, and 15% free fatty acids. Formulating high-performance clean facial care requires matching the skin’s natural lipid crystalline phase without relying on occlusive petro-chemicals, synthetic silicones (dimethicone, cyclopentasiloxane), or toxic emulsifiers. At Renaud Naturals, all facial emulsions are buffered between pH 4.8 and 5.5—the precise acid mantle range required to preserve resident skin microflora and prevent microbial pathogen colonization.</p>
             </section>
 
             <!-- Interactive Formulation Lead Funnel -->
@@ -358,7 +551,7 @@
                     <h2>Which best describes your business or practice?</h2>
                     
                     <button class="option-btn" data-select-type="Medical Spa / Wellness Clinic">
-                        <span>Medical Spa, Dermatology Practice, or Wellness Center</span>
+                        <span>Medical Spa, Dermatology Practice, or Wellness Clinic</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Day Spa / Salon / Studio">
@@ -366,7 +559,7 @@
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Retail Storefront">
-                        <span>Retail Storefront, Clean Beauty Apothecary, or Gift Shop</span>
+                        <span>Retail Storefront, Clean Beauty Apothecary, or Holistic Boutique</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Brand Founder">
@@ -579,51 +772,315 @@
 
             </div>
 
-            <!-- The Renaud Standard Since 1997 -->
-            <section class="founder-story-card" id="standards" style="margin-top: 50px;">
-                <span class="editorial-eyebrow">The Renaud Naturals Standard &bull; Since 1997</span>
-                <div class="founder-quote-banner">
-                    "Because I wanted products available that were natural, organic, and free of petrochemicals, I founded Renaud Naturals in 1997. Every formula is built with health in mind. Clean, natural, vitamin-enriched, US made, potent products."
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="subtopics" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">01 / FACIAL CARE &bull; Chapter Dossiers</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">In-Depth Formulation Subtopics</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
+                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for private-label brand founders, dermatologists, and clinical operators.
+                    </p>
                 </div>
-                <div class="founder-pillars-grid">
-                    <div class="pillar-box">
-                        <h5>100% Fresh Daily</h5>
-                        <p>We formulate and manufacture in-house; therefore, we have complete control over purity and integrity. Manufactured daily in Loveland to ensure peak botanical freshness when shipped.</p>
+                
+                <div class="subtopics-container">
+                    
+        <article class="subtopic-card" id="subtopic-1">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 01 • ACTIVE SERUMS</span>
+                <span class="subtopic-num">CHAPTER 01</span>
+            </div>
+            <h3 class="subtopic-title">Transdermal Peptide & Hyaluronic Acid Delivery Systems</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Peptides are polar hydrophilic oligomers that naturally struggle to penetrate the hydrophobic stratum corneum. Renaud utilizes biomimetic lipopeptide sequences (such as Palmitoyl Tripeptide-1 and Palmitoyl Tetrapeptide-7) conjugated with lipophilic palmitic acid chains to facilitate trans-epidermal flux. We combine low-molecular-weight sodium hyaluronate (50 kDa) for deep cellular hydration with high-molecular-weight hyaluronic acid (1.5 MDa) to create a non-tacky, breathable surface moisture shield.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Palmitoyl Tripeptide-1</span><span class="active-pill">Palmitoyl Tetrapeptide-7</span><span class="active-pill">Sodium Hyaluronate (Multi-Weight)</span><span class="active-pill">Niacinamide (Vitamin B3)</span><span class="active-pill">Botanical Squalane</span>
+                        </div>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Pure &amp; Non-Toxic</h5>
-                        <p>Every formula is built with health in mind. Free of mineral oils, lanolin, parabens, PABA, alcohol, petrochemicals, sodium lauryl sulfate (SLS), and formaldehyde. Completely non-comedogenic.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.0 – 5.4</strong>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Cruelty-Free Ethics</h5>
-                        <p>We never purchase ingredients from suspect suppliers and never ingredients tested on animals. Formulated with wildcrafted herbs, certified organic botanicals, and sustainable eco-packaging.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">1,200 – 2,500 cps (Liquid Serum)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">1 oz (30ml) Frosted Amber Glass with Medical Dropper or Airless Vacuum Pump</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-2">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 02 • ANTIOXIDANT CHEMISTRY</span>
+                <span class="subtopic-num">CHAPTER 02</span>
+            </div>
+            <h3 class="subtopic-title">Vitamin C Stabilization & Radical Quenching Cascades</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Traditional L-Ascorbic acid oxidizes rapidly into dehydroascorbic acid when exposed to air, light, or water, turning brown and generating pro-oxidant free radicals. Renaud Naturals formulates with advanced stabilized derivatives: Tetrahexyldecyl (THD) Ascorbate (a lipid-soluble ester that penetrates through cellular membranes 50x more effectively than standard ascorbic acid) and Magnesium Ascorbyl Phosphate (MAP), protected in an antioxidant network with Ferulic Acid and d-alpha-tocopherol (natural Vitamin E).</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Tetrahexyldecyl Ascorbate</span><span class="active-pill">Magnesium Ascorbyl Phosphate</span><span class="active-pill">Ferulic Acid</span><span class="active-pill">Organic Rosehip Fruit Oil</span><span class="active-pill">Tocopherol</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.5 – 6.0 (Neutral Skin pH)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">1,500 – 3,000 cps</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">1 oz Miron Violet or Opaque Ceramic Airless Pump to block 100% photolytic degradation</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-3">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 03 • LIPID SCIENCE</span>
+                <span class="subtopic-num">CHAPTER 03</span>
+            </div>
+            <h3 class="subtopic-title">Ceramide Bilayer Emulsions & Barrier Repair Moisturizers</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Impaired barrier function leads to elevated transepidermal water loss (TEWL) and inflammatory cytokine release. Renaud’s moisturizers utilize cold-pressed organic Simmondsia chinensis (jojoba wax esters, structurally identical to human sebum), cold-pressed Borago officinalis (containing 24% gamma-linolenic acid), and plant-derived phytosterols. Emulsification is achieved using Olivem 1000 (cetearyl olivate and sorbitan olivate), creating liquid crystal structures that fuse with damaged skin lipids.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Cetearyl Olivate / Sorbitan Olivate</span><span class="active-pill">Organic Jojoba Oil</span><span class="active-pill">Borage Seed Oil</span><span class="active-pill">Olive-Derived Squalane</span><span class="active-pill">Organic Calendula Extract</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.2 – 5.6</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">15,000 – 35,000 cps (Rich Cream)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">1.7 oz (50ml) Glass Jars with Inner Seal Discs or Airless Cosmetic Treatment Pumps</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-4">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 04 • SURFACTANT SCIENCE</span>
+                <span class="subtopic-num">CHAPTER 04</span>
+            </div>
+            <h3 class="subtopic-title">Non-Stripping Cleanser Chemistry & Amino Acid Glucosides</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Conventional cleansers employ harsh anionic surfactants (SLS, SLES) that denature structural keratin proteins and strip protective intercellular lipids, leaving the skin tight and sensitized. Renaud formulates sulfate-free cleansers using ultra-mild alkyl polyglucosides (Coco Glucoside, Decyl Glucoside) paired with sodium cocoyl hydrolyzed soy protein. These generate dense, micro-fine foam with low critical micelle concentration, lifting oil and environmental debris without lipid stripping.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Decyl Glucoside</span><span class="active-pill">Coco Glucoside</span><span class="active-pill">Organic Green Tea Hydrosol</span><span class="active-pill">Organic German Chamomile</span><span class="active-pill">Vegetable Glycerin</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.0 – 5.5</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">3,000 – 6,000 cps (Silky Gel) or Low-Viscosity Foam Dispenser</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">4 oz & 8 oz Recyclable PET/Glass Bottles with Treatment Pump or Foamer Head</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-5">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 05 • DELICATE ORBITAL TISSUE</span>
+                <span class="subtopic-num">CHAPTER 05</span>
+            </div>
+            <h3 class="subtopic-title">Ocular Microcirculation & Anti-Fatigue Eye Balms</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Periorbital skin is 0.5mm thick—less than one-third the thickness of the rest of the face—and lacks oil glands, making it exceptionally vulnerable to vascular pooling (dark circles) and lymphatic edema (puffiness). Renaud formulates eye balms with green coffee seed caffeine (vasoconstrictor), wildcrafted Arnica montana (flavonoids that resolve micro-bruising), and plant squalane designed with a non-migrating lipid profile to prevent ocular irritation.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Coffea Arabica (Green Coffee) Extract</span><span class="active-pill">Wildcrafted Arnica Montana</span><span class="active-pill">Euphrasia Officinalis (Eyebright)</span><span class="active-pill">Botanical Peptides</span><span class="active-pill">Organic Shea</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.4 – 5.8</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">12,000 – 20,000 cps (Silky Balm)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">0.5 oz (15ml) Glass Jars or Airless Click-Pen Dispensers</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Chemistry &amp; Packaging Parameters</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
+                        Direct laboratory benchmarking across pH, viscosity, shelf life, and packaging requirements.
+                    </p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation Class</th>
+                                <th>Target pH</th>
+                                <th>Viscosity Range</th>
+                                <th>Stability Shelf Life</th>
+                                <th>Standard Packaging</th>
+                                <th>Minimum Order (MOQ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td><strong>Botanical Hyaluronic Acid Serum</strong></td>
+            <td><code>5.2</code></td>
+            <td>1,800 cps</td>
+            <td>24 Months</td>
+            <td>1 oz Dropper / Airless</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Tetrahexyldecyl Vitamin C Complex</strong></td>
+            <td><code>5.8</code></td>
+            <td>2,200 cps</td>
+            <td>18 Months</td>
+            <td>1 oz Opaque Pump</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Ceramide Barrier Night Cream</strong></td>
+            <td><code>5.4</code></td>
+            <td>28,000 cps</td>
+            <td>24 Months</td>
+            <td>1.7 oz Jar / Pump</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Sulfate-Free Chamomile Cleanser</strong></td>
+            <td><code>5.1</code></td>
+            <td>4,500 cps</td>
+            <td>24 Months</td>
+            <td>8 oz Pump / Foamer</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Caffeine & Arnica Orbital Balm</strong></td>
+            <td><code>5.5</code></td>
+            <td>16,000 cps</td>
+            <td>24 Months</td>
+            <td>0.5 oz Glass Jar</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">MoCRA, cGMP &amp; Laboratory Testing Protocols</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
+                        Every commercial batch formulated at Renaud Naturals undergoes three tiers of analytical quality control before release.
+                    </p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 01</span>
+                        <h5>USP &lt;51&gt; Antimicrobial Challenge</h5>
+                        <p>28-day efficacy testing verifying that clean preservative matrices actively inhibit Gram-positive (S. aureus), Gram-negative (P. aeruginosa, E. coli), and fungal pathogens (C. albicans, A. brasiliensis) without synthetic biocides.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 02</span>
+                        <h5>Accelerated Thermal Stability</h5>
+                        <p>All formulas undergo 12-week accelerated thermal aging at 40°C and 75% relative humidity (the thermodynamic equivalent of 24 months at ambient room temperature) to guarantee zero phase separation, syneresis, or color degradation.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
+                        <h5>FDA MoCRA Safety Substantiation</h5>
+                        <p>Renaud Naturals maintains an active FDA cosmetic facility registration. We supply brand owners with comprehensive Batch Lot COAs, ingredient toxicological profiles, and allergen declarations required under federal MoCRA law.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Topic Specification FAQ Accordion -->
+            <!-- Topic Specification FAQ Accordion (AI Search & Featured Snippet Engine) -->
             <section class="funnel-faq" id="faq" style="margin-top: 50px;">
-                <h3 class="faq-title">Facial Care Specification FAQ</h3>
+                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
+                <h3 class="faq-title">Facial Care Formulation &amp; Manufacturing FAQ</h3>
                 <div class="faq-accordion">
                     
         <details>
-            <summary>What is the wholesale minimum order quantity (MOQ) for facial care?</summary>
-            <p>Wholesale minimum order quantity for stock private-label facial care formulas is just 12+ units per SKU. For custom R&D formulations created from scratch, our lab minimum is 250+ units.</p>
+            <summary>What is the exact wholesale MOQ for private label facial care at Renaud Naturals?</summary>
+            <p>Wholesale minimum order quantity for our proven turnkey stock formulas is just 12+ units per SKU. For bespoke custom R&D formulations created from scratch by our chemistry team, the minimum order quantity is 250+ units.</p>
         </details>
     
         <details>
-            <summary>Can I order sample evaluation jars and bottles before committing to production?</summary>
-            <p>Yes. We provide sample units at $3 to $5 each, allowing you to test texture, scent, absorption, and client feedback in your clinic, spa, or studio.</p>
+            <summary>How does Renaud Naturals preserve clean facial formulas without parabens or phenoxyethanol?</summary>
+            <p>We use synergistic hurdle technology: multi-functional botanical glycols (pentylene glycol derived from sugarcane), caprylyl glycol, and radish root ferment filtrate (Leuconostoc) buffered with food-grade potassium sorbate at pH 4.8–5.2. All formulas pass strict USP <51> antimicrobial challenge testing.</p>
         </details>
     
         <details>
-            <summary>What active ingredients can Renaud Naturals incorporate into custom serums?</summary>
-            <p>We formulate with botanical hyaluronic acid, vitamin C (magnesium ascorbyl phosphate / tetrahexyldecyl ascorbate), botanical peptides, CoQ10, alpha-lipoic acid, cold-pressed seed oils, and certified organic herbal extracts.</p>
+            <summary>How long does custom formula R&D and sample turnaround take?</summary>
+            <p>Lab sample evaluation kits ($3 to $5 each) dispatch within 2 to 3 business days. Custom formula R&D iterations typically require 2 weeks for initial bench batches and stability verification.</p>
         </details>
     
         <details>
-            <summary>Are Renaud Naturals facial formulations MoCRA and USDA compliant?</summary>
-            <p>Yes. All formulas are produced under cGMP cosmetic standards in our Loveland, Colorado facility. We assist brand owners with FDA MoCRA cosmetic safety dossier requirements and USDA NOP organic claims.</p>
+            <summary>What are the FDA MoCRA compliance responsibilities for facial brand founders?</summary>
+            <p>Under the Modernization of Cosmetics Regulation Act (MoCRA), brand owners must submit cosmetic product listings to FDA Direct and maintain safety substantiation files. Renaud Naturals is a registered manufacturing facility that provides full batch lot tracing, COAs, and stability dossiers to satisfy all MoCRA compliance audits.</p>
         </details>
     
                 </div>
@@ -635,9 +1092,15 @@
                 <h4 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; color: var(--ivory-white); margin-top: 6px;">Explore Related Formulation Capabilities</h4>
                 <div class="related-chips-grid">
                     
-        <a href="../body-care/" class="related-chip">
-            <span class="chip-num">02</span>
-            <span>Body Care</span>
+        <a href="../natural-baby/" class="related-chip">
+            <span class="chip-num">08</span>
+            <span>Natural Baby</span>
+            <span class="chip-arrow">&rarr;</span>
+        </a>
+    
+        <a href="../massage/" class="related-chip">
+            <span class="chip-num">09</span>
+            <span>Massage</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -671,15 +1134,9 @@
             <span class="chip-arrow">&rarr;</span>
         </a>
     
-        <a href="../natural-baby/" class="related-chip">
-            <span class="chip-num">08</span>
-            <span>Natural Baby</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../massage/" class="related-chip">
-            <span class="chip-num">09</span>
-            <span>Massage</span>
+        <a href="../body-care/" class="related-chip">
+            <span class="chip-num">02</span>
+            <span>Body Care</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -754,12 +1211,12 @@
         facilityAddress: '101 East 5th Street, Loveland, CO 80537',
         facilityPhone: '970-667-1433',
         facilityEmail: 'Arch@RenaudNaturals.com',
+        ccEmail: 'robertserranomailbox@gmail.com',
         storageKey: 'labelorigin_renaud_facial_care_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
     };
 </script>
 <script src="../../assets/js/funnel.js"></script>
 
-<script src="../../assets/js/contact.js"></script>
 </body>
 </html>

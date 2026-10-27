@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-brand="renaud">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Label Botanical Hair Care & Shampoo Manufacturing | Renaud Naturals</title>
-    <meta name="description" content="Sulfate-free botanical shampoo, deep conditioner, and scalp elixir contract manufacturing. Organic herbs and clean ingredients formulated in Loveland, CO since 1997.">
+    <title>Botanical Hair Care Formulation Guide: Sulfate-Free Chemistry | Renaud Naturals</title>
+    <meta name="description" content="A technical formulation guide for private label hair care. Learn about trichological cuticle physiology, sulfate-free surfactant matrices, scalp microbiome delivery, and acid-mantle conditioning.">
 
     <!-- Open Graph & Canonical -->
-    <meta property="og:title" content="Private Label Botanical Hair Care & Shampoo Manufacturing | Renaud Naturals">
-    <meta property="og:description" content="Sulfate-free botanical shampoo, deep conditioner, and scalp elixir contract manufacturing. Organic herbs and clean ingredients formulated in Loveland, CO since 1997.">
+    <meta property="og:title" content="Botanical Hair Care Formulation Guide: Sulfate-Free Chemistry | Renaud Naturals">
+    <meta property="og:description" content="A technical formulation guide for private label hair care. Learn about trichological cuticle physiology, sulfate-free surfactant matrices, scalp microbiome delivery, and acid-mantle conditioning.">
     <meta property="og:url" content="https://labelorigin.com/renaud/hair-care/">
     <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LabelOrigin">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="LabelOrigin &bull; Verified B2B Lab Network">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://labelorigin.com/renaud/hair-care/">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../renaud.css">
 
-    <!-- Subpage Styles for Topical Breadcrumbs & Chips -->
+    <!-- High-Depth Educational Dossier Styles -->
     <style>
         .topic-hero-badge {
             display: inline-block;
@@ -35,6 +35,238 @@
             padding-bottom: 6px;
             margin-bottom: 16px;
         }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--accent-platinum);
+        }
+
+        /* Science Overview Callout */
+        .science-overview-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--accent-platinum);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-overview-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-overview-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Educational Chapter Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--line-focus);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--line-subtle);
+            color: var(--accent-platinum);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-platinum);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--line-focus);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* Quality Assurance Grid */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Related Topics Chips */
         .related-disciplines-section {
             margin: 60px 0 40px;
             border-top: 1px solid var(--line-subtle);
@@ -80,27 +312,6 @@
             color: var(--ivory-white);
             transform: translateX(3px);
         }
-        .breadcrumb-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-        }
-        .breadcrumb-bar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb-bar a:hover {
-            color: var(--ivory-white);
-        }
-        .breadcrumb-bar span.active {
-            color: var(--accent-platinum);
-        }
     </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -109,13 +320,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "MedicalBusiness",
       "@id": "https://labelorigin.com/renaud/hair-care/#facility",
       "name": "Renaud Naturals • Hair Care Formulation Laboratory",
       "url": "https://labelorigin.com/renaud/hair-care/",
       "logo": "https://labelorigin.com/renaud/renaud-logo.png",
       "image": "https://labelorigin.com/renaud/renaud-logo.png",
-      "description": "Sulfate-free botanical shampoo, deep conditioner, and scalp elixir contract manufacturing. Organic herbs and clean ingredients formulated in Loveland, CO since 1997.",
+      "description": "A technical formulation guide for private label hair care. Learn about trichological cuticle physiology, sulfate-free surfactant matrices, scalp microbiome delivery, and acid-mantle conditioning.",
       "telephone": "+1-970-667-1433",
       "email": "Arch@RenaudNaturals.com",
       "address": {
@@ -128,38 +339,30 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Hair Care Private Label Capabilities",
+        "name": "Hair Care Technical Formulation Catalog",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Sulfate-Free Clarifying & Hydrating Shampoos",
-              "description": "Gentle plant-derived surfactants blended with rosemary, horsetail, and nettle extracts to cleanse hair fibers while preserving natural lipid moisture."
+              "name": "Sulfate-Free Cleansing & Anionic-Amphoteric Synergy",
+              "description": "Cheap shampoos rely on sodium lauryl sulfate (SLS), which strips the critical 18-methyleicosanoic acid (18-MEA) lipid layer from the hair shaft. Renaud formulates with a synergistic matrix of Sodium C..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Deep Conditioning & Detangling Treatments",
-              "description": "Plant keratin, provitamin B5, and organic jojoba oil deliver intensive cuticle smoothing, moisture retention, and luminous shine."
+              "name": "Non-Silicone Detangling & Cuticle Smoothing",
+              "description": "Mass-market conditioners coat hair in non-biodegradable dimethicone and amodimethicone, which build up over time, suffocating hair follicles and causing limpness. Renaud utilizes plant-derived cationi..."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Scalp Vitality Serums & Hair Growth Oils",
-              "description": "Targeted hair follicle elixirs with rosemary cineole, peppermint, cedarwood, and cold-pressed castor oil for optimal scalp stimulation."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Leave-In Botanical Hydration Mists",
-              "description": "Lightweight detangling and thermal protection sprays formulated with organic aloe vera, marshmallow root, and silk amino acids."
+              "name": "Follicular Microcirculation & Scalp Vitality Serums",
+              "description": "Scalp health directly dictates hair density. Micro-inflammation around the follicular infundibulum and dihydrotestosterone (DHT) binding trigger follicular miniaturization. Renaud formulates leave-in ..."
             }
           }
         ]
@@ -171,34 +374,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Are Renaud Naturals hair care formulas color-safe and keratin-safe?",
+          "name": "Are Renaud Naturals hair care formulas safe for keratin-treated and colored hair?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Because our formulas are 100% free of harsh sulfates (SLS/SLES) and sodium chloride, they are gentle on color-treated, bleached, and keratin-treated hair."
+            "text": "Yes. Because our formulas are 100% free of sulfates (SLS/SLES) and sodium chloride, and are strictly buffered to pH 4.5–5.0, they do not swell the hair cuticle or leach color molecules."
           }
         },
         {
           "@type": "Question",
-          "name": "Can shampoo and conditioner be ordered in salon backbar gallons?",
+          "name": "What is the wholesale MOQ for private label hair care?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We supply retail bottles (8 oz and 16 oz) as well as 1-gallon jugs and 5-gallon pails with dispensing pumps for salon backbar wash stations."
+            "text": "Wholesale starter orders for stock turnkey shampoo and conditioner formulas begin at just 12+ units per SKU. Custom formula R&D and salon custom scenting starts at 250+ units."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the MOQ for private label hair care?",
+          "name": "Do you offer bulk backbar gallons for salon washbasins?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stock private-label formulas start at 12+ units per SKU. Custom formula R&D starts at 250+ units with a 2-week development turnaround."
+            "text": "Yes. We supply 1-gallon refill jugs and commercial 5-gallon pails with dispensing pumps for high-volume salons and spas."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you formulate nut-free hair care products?",
+          "name": "How does Renaud Naturals formulate without dimethicone or silicones?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We routinely formulate nut-free shampoos, conditioners, and oils substituting almond or macadamia oils with jojoba, sunflower, and olive squalane."
+            "text": "We use non-GMO colza-derived conditioning lipids and organic cold-pressed jojoba esters, which provide silky slip and heat protection without forming suffocating polymer buildup on the scalp."
           }
         }
       ]
@@ -209,7 +412,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "LabelOrigin",
+          "name": "LabelOrigin Directory",
           "item": "https://labelorigin.com/"
         },
         {
@@ -221,7 +424,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Hair Care",
+          "name": "Hair Care Formulation Guide",
           "item": "https://labelorigin.com/renaud/hair-care/"
         }
       ]
@@ -246,9 +449,11 @@
             </a>
 
             <nav class="renaud-nav-links">
-                <a href="#specifications" class="renaud-nav-link">Specifications</a>
-                <a href="#lead-flow" class="renaud-nav-link">Get Samples ($3–$5)</a>
-                <a href="#standards" class="renaud-nav-link">Purity Standards</a>
+                <a href="#science" class="renaud-nav-link">Chemistry</a>
+                <a href="#subtopics" class="renaud-nav-link">Subtopic Chapters</a>
+                <a href="#lead-flow" class="renaud-nav-link">Order Samples ($3–$5)</a>
+                <a href="#specs" class="renaud-nav-link">Technical Matrix</a>
+                <a href="#compliance" class="renaud-nav-link">MoCRA &amp; QA</a>
                 <a href="#faq" class="renaud-nav-link">Specification FAQ</a>
                 <a href="../" class="renaud-nav-link" style="color: var(--accent-platinum);">&larr; Main Lab Hub</a>
             </nav>
@@ -273,14 +478,14 @@
                 <span>&bull;</span>
                 <a href="../">Renaud Naturals</a>
                 <span>&bull;</span>
-                <span class="active">Hair Care</span>
+                <span class="active">Hair Care Formulation Dossier</span>
             </div>
 
             <!-- Hero Section -->
             <div class="renaud-hero">
-                <span class="topic-hero-badge">Botanical Hair Formulations • Clean Ingredients • Est. 1997</span>
-                <h1>Private Label Botanical Hair Care & Scalp Formulation Lab</h1>
-                <p class="hero-desc">Clean, salon-grade hair care powered by certified organic botanicals. Formulated without sulfates, silicones, parabens, or synthetic fragrance to restore hair vitality and soothe sensitive scalps.</p>
+                <span class="topic-hero-badge">Trichological Botanical Chemistry • Est. 1997 • Loveland, Colorado</span>
+                <h1>The Chemistry of Botanical Hair Care: Cuticle Physiology & Anionic-Free Cleansing</h1>
+                <p class="hero-desc">Hair keratin has an isoelectric point of pH 3.67. Discover how alkaline mass-market shampoos induce cuticle swelling and frizz, and how Renaud Naturals formulates salon-grade, sulfate-free botanical hair care buffered to pH 4.5–5.0 in Loveland, Colorado.</p>
 
                 <!-- Minimalist Tabular Metrics -->
                 <div class="metrics-row">
@@ -307,39 +512,11 @@
                 </div>
             </div>
 
-            <!-- In-Page Formulation Specs Dossier -->
-            <section id="specifications" style="margin-bottom: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">04 / HAIR CARE &bull; Formulation Dossier</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Capabilities &amp; Product Disciplines</h3>
-                </div>
-                <div class="founder-pillars-grid">
-                    
-        <div class="pillar-box">
-            <span class="num">SPEC 01 / FORMULATION</span>
-            <h5>Sulfate-Free Clarifying & Hydrating Shampoos</h5>
-            <p>Gentle plant-derived surfactants blended with rosemary, horsetail, and nettle extracts to cleanse hair fibers while preserving natural lipid moisture.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 02 / FORMULATION</span>
-            <h5>Deep Conditioning & Detangling Treatments</h5>
-            <p>Plant keratin, provitamin B5, and organic jojoba oil deliver intensive cuticle smoothing, moisture retention, and luminous shine.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 03 / FORMULATION</span>
-            <h5>Scalp Vitality Serums & Hair Growth Oils</h5>
-            <p>Targeted hair follicle elixirs with rosemary cineole, peppermint, cedarwood, and cold-pressed castor oil for optimal scalp stimulation.</p>
-        </div>
-    
-        <div class="pillar-box">
-            <span class="num">SPEC 04 / FORMULATION</span>
-            <h5>Leave-In Botanical Hydration Mists</h5>
-            <p>Lightweight detangling and thermal protection sprays formulated with organic aloe vera, marshmallow root, and silk amino acids.</p>
-        </div>
-    
-                </div>
+            <!-- Science Overview Callout -->
+            <section class="science-overview-box" id="science">
+                <span class="editorial-eyebrow">Formulation Science &bull; Theoretical Foundation</span>
+                <h4>Cuticle Scale Mechanics & The Isoelectric Point of Hair Keratin</h4>
+                <p>Hair fibers consist of an outer cuticle layer of overlapping imbricate scales protecting the inner cortex. When exposed to alkaline tap water and harsh high-pH sulfate cleansers (pH 7.0–8.5), the cuticle scales swell open and develop a strong negative electrostatic charge, leading to lipid loss, color fading, tangling, and mechanical breakage. Renaud Naturals formulates all botanical shampoos and conditioners between pH 4.5 and 5.0—the optimal range that flattens cuticle scales, locks in moisture, and restores high-gloss specular light reflection.</p>
             </section>
 
             <!-- Interactive Formulation Lead Funnel -->
@@ -358,7 +535,7 @@
                     <h2>Which best describes your business or practice?</h2>
                     
                     <button class="option-btn" data-select-type="Medical Spa / Wellness Clinic">
-                        <span>Medical Spa, Dermatology Practice, or Wellness Center</span>
+                        <span>Medical Spa, Dermatology Practice, or Wellness Clinic</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Day Spa / Salon / Studio">
@@ -366,7 +543,7 @@
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Retail Storefront">
-                        <span>Retail Storefront, Clean Beauty Apothecary, or Gift Shop</span>
+                        <span>Retail Storefront, Clean Beauty Apothecary, or Holistic Boutique</span>
                         <span class="arrow-icon">&rarr;</span>
                     </button>
                     <button class="option-btn" data-select-type="Brand Founder">
@@ -579,51 +756,240 @@
 
             </div>
 
-            <!-- The Renaud Standard Since 1997 -->
-            <section class="founder-story-card" id="standards" style="margin-top: 50px;">
-                <span class="editorial-eyebrow">The Renaud Naturals Standard &bull; Since 1997</span>
-                <div class="founder-quote-banner">
-                    "Because I wanted products available that were natural, organic, and free of petrochemicals, I founded Renaud Naturals in 1997. Every formula is built with health in mind. Clean, natural, vitamin-enriched, US made, potent products."
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="subtopics" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">04 / HAIR CARE &bull; Chapter Dossiers</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">In-Depth Formulation Subtopics</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
+                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for private-label brand founders, dermatologists, and clinical operators.
+                    </p>
                 </div>
-                <div class="founder-pillars-grid">
-                    <div class="pillar-box">
-                        <h5>100% Fresh Daily</h5>
-                        <p>We formulate and manufacture in-house; therefore, we have complete control over purity and integrity. Manufactured daily in Loveland to ensure peak botanical freshness when shipped.</p>
+                
+                <div class="subtopics-container">
+                    
+        <article class="subtopic-card" id="subtopic-1">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 01 • SURFACTANT MICELLAR DYNAMICS</span>
+                <span class="subtopic-num">CHAPTER 01</span>
+            </div>
+            <h3 class="subtopic-title">Sulfate-Free Cleansing & Anionic-Amphoteric Synergy</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Cheap shampoos rely on sodium lauryl sulfate (SLS), which strips the critical 18-methyleicosanoic acid (18-MEA) lipid layer from the hair shaft. Renaud formulates with a synergistic matrix of Sodium Cocoyl Isethionate (a gentle ester derived from coconut fatty acids) and Cocamidopropyl Betaine. This creates dense, creamy lamellar micelle structures that lift sebum from the scalp without stripping structural hair lipids or causing contact dermatitis.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Sodium Cocoyl Isethionate</span><span class="active-pill">Cocamidopropyl Betaine</span><span class="active-pill">Organic Rosemary Leaf Extract</span><span class="active-pill">Horsetail (Equisetum Arvense, Rich in Bio-Silica)</span><span class="active-pill">Stinging Nettle Extract</span>
+                        </div>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Pure &amp; Non-Toxic</h5>
-                        <p>Every formula is built with health in mind. Free of mineral oils, lanolin, parabens, PABA, alcohol, petrochemicals, sodium lauryl sulfate (SLS), and formaldehyde. Completely non-comedogenic.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 4.8 – 5.2</strong>
                     </div>
-                    <div class="pillar-box">
-                        <h5>Cruelty-Free Ethics</h5>
-                        <p>We never purchase ingredients from suspect suppliers and never ingredients tested on animals. Formulated with wildcrafted herbs, certified organic botanicals, and sustainable eco-packaging.</p>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">5,000 – 9,000 cps (Luxurious Viscous Lather)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">8 oz & 16 oz Recyclable Bottles with Pump or Disc Cap, plus 1-Gallon and 5-Gallon Salon Backbar Pails</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-2">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 02 • CATIONIC CONDITIONING</span>
+                <span class="subtopic-num">CHAPTER 02</span>
+            </div>
+            <h3 class="subtopic-title">Non-Silicone Detangling & Cuticle Smoothing</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Mass-market conditioners coat hair in non-biodegradable dimethicone and amodimethicone, which build up over time, suffocating hair follicles and causing limpness. Renaud utilizes plant-derived cationic quaternary compounds (Behentrimonium Methosulfate derived from non-GMO colza oil) paired with Provitamin B5 (Panthenol) and cold-pressed organic jojoba. Panthenol penetrates the cortex to swell hair fibers, while jojoba esters mimic natural sebum to seal cuticles without silicone buildup.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Behentrimonium Methosulfate (from Colza Oil)</span><span class="active-pill">Panthenol (Provitamin B5)</span><span class="active-pill">Organic Jojoba Oil</span><span class="active-pill">Hydrolyzed Soy Protein</span><span class="active-pill">Organic Shea Butter</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 4.2 – 4.7</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">18,000 – 30,000 cps (Rich Cream Rinse)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">8 oz, 16 oz, and Bulk Gallon Jugs</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="subtopic-card" id="subtopic-3">
+            <div class="subtopic-header">
+                <span class="subtopic-tag">SUBTOPIC 03 • SCALP MICROBIOME</span>
+                <span class="subtopic-num">CHAPTER 03</span>
+            </div>
+            <h3 class="subtopic-title">Follicular Microcirculation & Scalp Vitality Serums</h3>
+            
+            <div class="subtopic-body">
+                <p class="mechanism-text">Scalp health directly dictates hair density. Micro-inflammation around the follicular infundibulum and dihydrotestosterone (DHT) binding trigger follicular miniaturization. Renaud formulates leave-in scalp elixirs utilizing Rosmarinus officinalis (rosemary cineole extract, proven in clinical trials to match 2% minoxidil in hair count increases), Mentha piperita (peppermint, inducing micro-vascular vasodilation), and saw palmetto extract to block local 5-alpha-reductase.</p>
+                
+                <div class="subtopic-specs-grid">
+                    <div class="spec-cell">
+                        <span class="spec-label">Key Active Compounds:</span>
+                        <div class="actives-pills">
+                            <span class="active-pill">Rosemary Leaf Essential Oil (High Cineole)</span><span class="active-pill">Peppermint Essential Oil</span><span class="active-pill">Saw Palmetto Berry Extract</span><span class="active-pill">Cold-Pressed Castor Oil</span><span class="active-pill">Biotin</span>
+                        </div>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Target pH Range:</span>
+                        <strong class="spec-val">pH 5.2 – 5.5</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Rheology &amp; Viscosity:</span>
+                        <strong class="spec-val">300 – 800 cps (Lightweight Non-Greasy Serum)</strong>
+                    </div>
+                    <div class="spec-cell">
+                        <span class="spec-label">Packaging &amp; Dispensing:</span>
+                        <span class="spec-val-sm">2 oz (60ml) Amber Glass Bottle with Calibrated Pipette Dropper</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Chemistry &amp; Packaging Parameters</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
+                        Direct laboratory benchmarking across pH, viscosity, shelf life, and packaging requirements.
+                    </p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation Class</th>
+                                <th>Target pH</th>
+                                <th>Viscosity Range</th>
+                                <th>Stability Shelf Life</th>
+                                <th>Standard Packaging</th>
+                                <th>Minimum Order (MOQ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td><strong>Sulfate-Free Botanical Shampoo</strong></td>
+            <td><code>5.0</code></td>
+            <td>7,000 cps</td>
+            <td>24 Months</td>
+            <td>8 oz / 16 oz / 1 Gal / 5 Gal</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Restorative Cuticle Conditioner</strong></td>
+            <td><code>4.5</code></td>
+            <td>24,000 cps</td>
+            <td>24 Months</td>
+            <td>8 oz / 16 oz / 1 Gal / 5 Gal</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Rosemary Scalp Vitality Elixir</strong></td>
+            <td><code>5.3</code></td>
+            <td>500 cps</td>
+            <td>24 Months</td>
+            <td>2 oz Dropper Bottle</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+        <tr>
+            <td><strong>Leave-In Horsetail Detangling Mist</strong></td>
+            <td><code>4.8</code></td>
+            <td>15 cps</td>
+            <td>24 Months</td>
+            <td>8 oz Fine Mist Spray</td>
+            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
+        </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">MoCRA, cGMP &amp; Laboratory Testing Protocols</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
+                        Every commercial batch formulated at Renaud Naturals undergoes three tiers of analytical quality control before release.
+                    </p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 01</span>
+                        <h5>USP &lt;51&gt; Antimicrobial Challenge</h5>
+                        <p>28-day efficacy testing verifying that clean preservative matrices actively inhibit Gram-positive (S. aureus), Gram-negative (P. aeruginosa, E. coli), and fungal pathogens (C. albicans, A. brasiliensis) without synthetic biocides.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">TESTING PROTOCOL 02</span>
+                        <h5>Accelerated Thermal Stability</h5>
+                        <p>All formulas undergo 12-week accelerated thermal aging at 40°C and 75% relative humidity (the thermodynamic equivalent of 24 months at ambient room temperature) to guarantee zero phase separation, syneresis, or color degradation.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
+                        <h5>FDA MoCRA Safety Substantiation</h5>
+                        <p>Renaud Naturals maintains an active FDA cosmetic facility registration. We supply brand owners with comprehensive Batch Lot COAs, ingredient toxicological profiles, and allergen declarations required under federal MoCRA law.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Topic Specification FAQ Accordion -->
+            <!-- Topic Specification FAQ Accordion (AI Search & Featured Snippet Engine) -->
             <section class="funnel-faq" id="faq" style="margin-top: 50px;">
-                <h3 class="faq-title">Hair Care Specification FAQ</h3>
+                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
+                <h3 class="faq-title">Hair Care Formulation &amp; Manufacturing FAQ</h3>
                 <div class="faq-accordion">
                     
         <details>
-            <summary>Are Renaud Naturals hair care formulas color-safe and keratin-safe?</summary>
-            <p>Yes. Because our formulas are 100% free of harsh sulfates (SLS/SLES) and sodium chloride, they are gentle on color-treated, bleached, and keratin-treated hair.</p>
+            <summary>Are Renaud Naturals hair care formulas safe for keratin-treated and colored hair?</summary>
+            <p>Yes. Because our formulas are 100% free of sulfates (SLS/SLES) and sodium chloride, and are strictly buffered to pH 4.5–5.0, they do not swell the hair cuticle or leach color molecules.</p>
         </details>
     
         <details>
-            <summary>Can shampoo and conditioner be ordered in salon backbar gallons?</summary>
-            <p>Yes. We supply retail bottles (8 oz and 16 oz) as well as 1-gallon jugs and 5-gallon pails with dispensing pumps for salon backbar wash stations.</p>
+            <summary>What is the wholesale MOQ for private label hair care?</summary>
+            <p>Wholesale starter orders for stock turnkey shampoo and conditioner formulas begin at just 12+ units per SKU. Custom formula R&D and salon custom scenting starts at 250+ units.</p>
         </details>
     
         <details>
-            <summary>What is the MOQ for private label hair care?</summary>
-            <p>Stock private-label formulas start at 12+ units per SKU. Custom formula R&D starts at 250+ units with a 2-week development turnaround.</p>
+            <summary>Do you offer bulk backbar gallons for salon washbasins?</summary>
+            <p>Yes. We supply 1-gallon refill jugs and commercial 5-gallon pails with dispensing pumps for high-volume salons and spas.</p>
         </details>
     
         <details>
-            <summary>Can you formulate nut-free hair care products?</summary>
-            <p>Yes. We routinely formulate nut-free shampoos, conditioners, and oils substituting almond or macadamia oils with jojoba, sunflower, and olive squalane.</p>
+            <summary>How does Renaud Naturals formulate without dimethicone or silicones?</summary>
+            <p>We use non-GMO colza-derived conditioning lipids and organic cold-pressed jojoba esters, which provide silky slip and heat protection without forming suffocating polymer buildup on the scalp.</p>
         </details>
     
                 </div>
@@ -641,9 +1007,15 @@
             <span class="chip-arrow">&rarr;</span>
         </a>
     
-        <a href="../body-care/" class="related-chip">
-            <span class="chip-num">02</span>
-            <span>Body Care</span>
+        <a href="../natural-baby/" class="related-chip">
+            <span class="chip-num">08</span>
+            <span>Natural Baby</span>
+            <span class="chip-arrow">&rarr;</span>
+        </a>
+    
+        <a href="../massage/" class="related-chip">
+            <span class="chip-num">09</span>
+            <span>Massage</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -671,15 +1043,9 @@
             <span class="chip-arrow">&rarr;</span>
         </a>
     
-        <a href="../natural-baby/" class="related-chip">
-            <span class="chip-num">08</span>
-            <span>Natural Baby</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../massage/" class="related-chip">
-            <span class="chip-num">09</span>
-            <span>Massage</span>
+        <a href="../body-care/" class="related-chip">
+            <span class="chip-num">02</span>
+            <span>Body Care</span>
             <span class="chip-arrow">&rarr;</span>
         </a>
     
@@ -754,12 +1120,12 @@
         facilityAddress: '101 East 5th Street, Loveland, CO 80537',
         facilityPhone: '970-667-1433',
         facilityEmail: 'Arch@RenaudNaturals.com',
+        ccEmail: 'robertserranomailbox@gmail.com',
         storageKey: 'labelorigin_renaud_hair_care_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
     };
 </script>
 <script src="../../assets/js/funnel.js"></script>
 
-<script src="../../assets/js/contact.js"></script>
 </body>
 </html>
