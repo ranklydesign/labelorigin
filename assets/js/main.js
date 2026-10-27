@@ -42,7 +42,7 @@ function initInquiryForm() {
 
         saveLeadLocally('labelorigin_agency_inquiries', inquiry);
 
-        await dispatchLead({
+        const delivered = await dispatchLead({
             _subject: `[LabelOrigin] New agency inquiry: ${inquiry.company || inquiry.email}`,
             "Inquiry Type": "Agency Inquiry",
             "Company": inquiry.company,
@@ -54,7 +54,9 @@ function initInquiryForm() {
 
         if (notification) {
             notification.className = 'notification success';
-            notification.innerHTML = `<strong>Thanks, ${escapeHtml(inquiry.company || 'we got it')}.</strong> We'll reply to <em>${escapeHtml(inquiry.email)}</em> shortly.`;
+            notification.innerHTML = delivered
+                ? `<strong>Thanks, ${escapeHtml(inquiry.company || 'we got it')}.</strong> We'll reply to <em>${escapeHtml(inquiry.email)}</em> shortly.`
+                : `<strong>We couldn't send that automatically.</strong> Please email us at <a href="mailto:${TARGET_EMAIL}">${TARGET_EMAIL}</a> and we'll reply right away.`;
         }
 
         form.reset();
@@ -100,8 +102,10 @@ async function dispatchLead(emailPayload, rawLead) {
         });
         const result = await response.json();
         console.info('[LabelOrigin Dispatch] FormSubmit Response:', result);
+        return response.ok && String(result.success) === 'true';
     } catch (err) {
         console.warn('[LabelOrigin Dispatch] Remote dispatch note:', err);
+        return false;
     }
 }
 

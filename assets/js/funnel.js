@@ -232,11 +232,12 @@
             emailPayload._cc = config.facilityEmail;
         }
 
-        await dispatchLead(emailPayload, state.leadData);
+        const delivered = await dispatchLead(emailPayload, state.leadData);
 
         // Render Success Step
         renderQualifiedSuccess();
         showStep('step-success-qualified');
+        if (!delivered) showDeliveryNotice('step-success-qualified');
     }
 
     async function handleWaitlistSubmit(e) {
@@ -269,10 +270,11 @@
             "Submission Timestamp": state.leadData.submittedAt
         };
 
-        await dispatchLead(emailPayload, state.leadData);
+        const delivered = await dispatchLead(emailPayload, state.leadData);
 
         renderWaitlistSuccess();
         showStep('step-success-waitlist');
+        if (!delivered) showDeliveryNotice('step-success-waitlist');
     }
 
     async function dispatchLead(emailPayload, rawLead) {
@@ -316,9 +318,27 @@
             });
             const result = await res.json();
             console.info('[Funnel Dispatch] FormSubmit Response:', result);
+            return res.ok && String(result.success) === 'true';
         } catch (err) {
             console.warn('[Funnel Dispatch] Remote dispatch note:', err);
+            return false;
         }
+    }
+
+    // The lead is always kept in this browser; if the email could not be delivered, say so and give a direct route.
+    function showDeliveryNotice(stepId) {
+        const step = document.getElementById(stepId);
+        if (!step || step.querySelector('.delivery-warning')) return;
+        const phone = config.facilityPhone || '';
+        const email = config.facilityEmail || '';
+        const notice = document.createElement('div');
+        notice.className = 'notification success delivery-warning';
+        notice.setAttribute('role', 'alert');
+        notice.innerHTML = `<strong>We could not confirm email delivery.</strong> Please contact us directly and mention reference <strong>${escapeHtml(state.leadData.leadId)}</strong>: ` +
+            (email ? `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>` : '') +
+            (email && phone ? ' or ' : '') +
+            (phone ? `<a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" data-phone-display="${escapeHtml(phone)}">${escapeHtml(phone)}</a>` : '') + '.';
+        step.insertBefore(notice, step.firstChild);
     }
 
     function renderQualifiedSuccess() {

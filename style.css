@@ -987,3 +987,93 @@ footer {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
 }
+
+
+/* Copy toast + phone action sheet (assets/js/contact.js) */
+.copy-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 20px);
+    max-width: calc(100vw - 32px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: var(--ivory-white);
+    color: var(--bg-canvas);
+    font-size: 0.86rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-ambient);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 300;
+    text-align: center;
+    word-break: break-word;
+}
+.copy-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+.contact-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.contact-sheet-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 12, 14, 0.5);
+}
+.contact-sheet-panel {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 22px 20px calc(20px + env(safe-area-inset-bottom));
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-ambient);
+}
+.contact-sheet-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ivory-white);
+    margin-bottom: 4px;
+}
+.contact-sheet-panel .btn { padding: 16px 24px; font-size: 0.82rem; }
+.contact-sheet-cancel {
+    background: none;
+    border: none;
+    padding: 12px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+a[href^="mailto:"], a[href^="tel:"] { cursor: copy; }
+
+/* Mobile polish */
+@media (max-width: 640px) {
+    body { font-size: 15px; }
+    input, select, textarea { font-size: 16px !important; }   /* stops iOS zoom-on-focus */
+    .btn, .filter-btn { min-height: 46px; }
+    .hero-actions .btn { width: 100%; }
+    .theme-toggle { width: 40px; height: 40px; right: 12px; bottom: 12px; }
+    .system-ticker { font-size: 0.64rem; letter-spacing: 0.06em; padding: 8px 0; }
+    .system-ticker .ticker-group:last-child { display: none; }
+    .section-header { margin: 48px 0 24px; }
+    .case-main h3 { font-size: 1.7rem; }
+    .cta-band { padding: 32px 20px; margin-bottom: 64px; }
+    .verification-section { padding: 48px 0; margin: 40px 0 56px; }
+    .verification-header h3 { font-size: 1.9rem; }
+    .grid { grid-template-columns: 1fr; margin-bottom: 56px; }
+    .copy-toast { bottom: 64px; }
+}
+@media (hover: none) {
+    .card:hover, .btn-primary:hover, .theme-toggle:hover { transform: none; }
+}
