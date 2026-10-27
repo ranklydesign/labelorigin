@@ -1,0 +1,13 @@
+# Local dev data & lead logs
+leads.json
+transcript.txt
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node
+node_modules/

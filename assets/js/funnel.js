@@ -2,9 +2,15 @@
  * LabelOrigin High-Converting Funnel Engine
  * Handles multi-step progression, logic gating (high-volume vs low-volume waitlist),
  * back-step navigation, lead ID generation, webhook dispatch, and local persistence.
+ *
+ * Integrated with real email routing via FormSubmit (ranklydesign@gmail.com)
+ * + local preview server recording (/api/submit-lead -> leads.json).
  */
 
 (function () {
+    const TARGET_EMAIL = 'ranklydesign@gmail.com';
+    const FORM_ENDPOINT = `https://formsubmit.co/ajax/${TARGET_EMAIL}`;
+
     const state = {
         history: ['step-1'],
         leadData: {
@@ -21,14 +27,16 @@
     const config = window.FunnelConfig || {
         partnerName: 'Renaud Naturals',
         partnerPrefix: 'RN',
-        // Optional webhook URL (Formspree, Zapier, Make, Google Apps Script, etc.)
+        partnerSlug: 'renaud',
+        facilityAddress: '101 East 5th Street, Loveland, CO 80537',
+        facilityPhone: '970-667-1433',
+        facilityEmail: 'Arch@RenaudNaturals.com',
         webhookUrl: '',
         storageKey: 'labelorigin_renaud_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
     };
 
     function initFunnel() {
-        // Set partner slug from config
         if (config.partnerSlug) {
             state.leadData.partnerSlug = config.partnerSlug;
         }
@@ -87,7 +95,6 @@
                 state.history.push(stepId);
             }
             updateProgressBar(stepId);
-            // Smooth scroll up to form card on mobile
             const card = document.querySelector('.form-card');
             if (card && window.innerWidth < 768) {
                 card.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -97,7 +104,7 @@
 
     function goBack() {
         if (state.history.length > 1) {
-            state.history.pop(); // Remove current
+            state.history.pop();
             const previousStep = state.history[state.history.length - 1];
             showStep(previousStep, false);
         }
@@ -156,10 +163,8 @@
         state.leadData.volumeLabel = label;
 
         if (tier === 'low') {
-            // Logic Gate: Filter low volume into LabelOrigin small-batch incubator waitlist
             showStep('step-waitlist');
         } else {
-            // High volume commercial qualification
             showStep('step-3-interest');
         }
     }
@@ -179,17 +184,15 @@
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
-        const origBtnText = submitBtn.innerHTML;
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Routing to Lab Facility...';
+        submitBtn.innerHTML = 'Routing to Facility Desk...';
 
         const leadId = generateLeadId(config.partnerPrefix || 'RN');
         state.leadData.leadId = leadId;
         state.leadData.submittedAt = new Date().toISOString();
         state.leadData.leadCategory = 'commercial_qualified';
 
-        // Extract form values
         state.leadData.contactName = (document.getElementById('q-name') || {}).value || '';
         state.leadData.companyName = (document.getElementById('q-company') || {}).value || '';
         state.leadData.email = (document.getElementById('q-email') || {}).value || '';
@@ -203,24 +206,35 @@
             return;
         }
 
-        // Save locally
+        // 1. Save locally to browser
         saveLead(config.storageKey || 'labelorigin_leads', state.leadData);
 
-        // Attempt webhook dispatch if configured
-        if (config.webhookUrl) {
-            try {
-                await fetch(config.webhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(state.leadData),
-                    mode: 'no-cors'
-                });
-            } catch (err) {
-                console.warn('Webhook dispatch skipped or failed (lead is preserved locally):', err);
-            }
+        // 2. Dispatch to FormSubmit (email to ranklydesign@gmail.com, cc facility if available)
+        const emailPayload = {
+            _subject: `[LabelOrigin Lead] ${config.partnerName} Formulation Inquiry: ${state.leadData.companyName || state.leadData.contactName}`,
+            _template: 'table',
+            _captcha: 'false',
+            "Partner Facility": config.partnerName,
+            "Vertical Slug": config.partnerSlug || 'General',
+            "Lead ID": state.leadData.leadId,
+            "Contact Name": state.leadData.contactName,
+            "Company / Brand": state.leadData.companyName,
+            "Email Address": state.leadData.email,
+            "Phone Number": state.leadData.phone,
+            "Business Type": state.leadData.businessType,
+            "Order Volume Tier": state.leadData.volumeLabel,
+            "Target Formulation Focus": state.leadData.interestArea,
+            "Formulation Requirements": state.leadData.notes || 'None specified',
+            "Submission Timestamp": state.leadData.submittedAt
+        };
+
+        if (config.facilityEmail) {
+            emailPayload._cc = config.facilityEmail;
         }
 
-        // Show Success Step with Lead Summary
+        await dispatchLead(emailPayload, state.leadData);
+
+        // Render Success Step
         renderQualifiedSuccess();
         showStep('step-success-qualified');
     }
@@ -242,21 +256,69 @@
 
         saveLead(config.waitlistKey || 'labelorigin_small_batch_waitlist', state.leadData);
 
+        const emailPayload = {
+            _subject: `[LabelOrigin Waitlist] ${config.partnerName} Small-Batch Lead: ${state.leadData.email}`,
+            _template: 'table',
+            _captcha: 'false',
+            "Partner Facility": config.partnerName,
+            "Lead ID": state.leadData.leadId,
+            "Inquiry Type": "Small-Batch Incubator Waitlist",
+            "Contact Email": state.leadData.email,
+            "Brand Concept": state.leadData.brandConcept || 'None specified',
+            "Selected Volume": state.leadData.volumeLabel || 'Under MOQ',
+            "Submission Timestamp": state.leadData.submittedAt
+        };
+
+        await dispatchLead(emailPayload, state.leadData);
+
+        renderWaitlistSuccess();
+        showStep('step-success-waitlist');
+    }
+
+    async function dispatchLead(emailPayload, rawLead) {
+        // 1. Post to local server if running in dev mode
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        if (isLocalhost) {
+            try {
+                await fetch('/api/submit-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(rawLead)
+                });
+            } catch (e) {
+                // Local dev server only
+            }
+        }
+
+        // 2. Optional external webhook
         if (config.webhookUrl) {
             try {
                 await fetch(config.webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(state.leadData),
+                    body: JSON.stringify(rawLead),
                     mode: 'no-cors'
                 });
             } catch (err) {
-                console.warn('Waitlist webhook error:', err);
+                console.warn('[Funnel] Webhook note:', err);
             }
         }
 
-        renderWaitlistSuccess();
-        showStep('step-success-waitlist');
+        // 3. Dispatch to FormSubmit for live inbox delivery
+        try {
+            const res = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(emailPayload)
+            });
+            const result = await res.json();
+            console.info('[Funnel Dispatch] FormSubmit Response:', result);
+        } catch (err) {
+            console.warn('[Funnel Dispatch] Remote dispatch note:', err);
+        }
     }
 
     function renderQualifiedSuccess() {
