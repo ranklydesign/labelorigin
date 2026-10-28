@@ -29,12 +29,23 @@
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://labelorigin.com/#organization",
         "name": "LabelOrigin",
         "url": "https://labelorigin.com/",
         "description": "B2B lead-generation and performance marketing agency for manufacturers and white-label brands.",
         "serviceType": ["Paid media management", "Lead qualification funnels", "B2B lead generation"],
         "email": "ranklydesign@gmail.com",
         "areaServed": "US"
+    }    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://labelorigin.com/#website",
+        "url": "https://labelorigin.com/",
+        "name": "LabelOrigin",
+        "publisher": {"@id": "https://labelorigin.com/#organization"},
+        "inLanguage": "en"
     }
     </script>
     <script type="application/ld+json">
@@ -317,9 +328,9 @@
             </div>
             <div>
                 <form class="mini-form" id="agency-inquiry-form">
-                    <input type="text" name="company" placeholder="Company name" autocomplete="organization" required>
+                    <input type="text" name="company" aria-label="Company name" placeholder="Company name" autocomplete="organization" required>
                     <div class="mini-form-row">
-                        <input type="email" name="email" placeholder="Work email" autocomplete="email" required>
+                        <input type="email" name="email" aria-label="Work email" placeholder="Work email" autocomplete="email" required>
                         <select name="industry" aria-label="Industry">
                             <option value="Skincare &amp; Cosmetics">Skincare / Personal Care</option>
                             <option value="Supplements &amp; Nutraceuticals">Supplements / Nutraceuticals</option>
@@ -329,7 +340,7 @@
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <textarea name="message" rows="3" placeholder="What do you manufacture, and what's your minimum order? (optional)"></textarea>
+                    <textarea name="message" rows="3" aria-label="What do you manufacture, and what is your minimum order?" placeholder="What do you manufacture, and what's your minimum order? (optional)"></textarea>
                     <button type="submit" class="btn btn-primary btn-block">Request a Funnel Audit</button>
                 </form>
                 <div id="agency-inquiry-notif" class="notification" role="status"></div>
@@ -352,6 +363,14 @@
                     <a href="#faq">FAQ</a>
                     <a href="./renaud/">Renaud Naturals funnel</a>
                     <a href="#contact">Contact</a>
+                    <a href="./spas/">Spas</a>
+                    <a href="./med-spas/">Med Spas</a>
+                    <a href="./estheticians/">Estheticians</a>
+                    <a href="./salons/">Salons</a>
+                    <a href="./creators/">Creators</a>
+                    <a href="./indie-brands/">Indie brands</a>
+                    <a href="./hotels/">Hotels</a>
+                    <a href="./sunless/">Sunless</a>
                     <a href="./privacy/">Privacy Policy</a>
                     <a href="./terms/">Terms</a>
                     <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
