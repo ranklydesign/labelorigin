@@ -100,6 +100,26 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Guides -->
+  <url>
+    <loc>https://labelorigin.com/guides/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://labelorigin.com/guides/skincare-line-cost/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://labelorigin.com/guides/private-label-vs-custom-formulation/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://labelorigin.com/privacy/</loc>

@@ -1132,3 +1132,25 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .lo-faq summary::after { content: "+"; color: var(--accent-platinum); font-weight: 700; }
 .lo-faq details[open] summary::after { content: "\2013"; }
 .lo-faq details p { padding: 0 22px 18px; margin: 0; color: var(--text-secondary); }
+
+/* --- LabelOrigin Guides (/guides/) --- */
+.lo-guide { max-width: 780px; margin: 0 auto 8px; }
+.lo-guide h2 { font-size: 1.45rem; margin: 40px 0 12px; color: var(--text-primary); }
+.lo-guide h3 { font-size: 1.12rem; margin: 28px 0 8px; color: var(--text-primary); }
+.lo-guide p, .lo-guide li { color: var(--text-secondary); line-height: 1.7; }
+.lo-guide p { margin: 0 0 16px; }
+.lo-guide ul, .lo-guide ol { margin: 0 0 16px; padding-left: 24px; }
+.lo-guide li { margin-bottom: 8px; }
+.lo-guide strong { color: var(--text-primary); }
+.lo-guide .guide-meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; }
+.lo-guide .guide-callout { border-left: 3px solid var(--accent-platinum); background: var(--bg-surface); border-radius: var(--radius-md); padding: 18px 22px; margin: 24px 0; }
+.lo-guide .guide-callout p { margin: 0; }
+.lo-guide table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.92rem; }
+.lo-guide th, .lo-guide td { border: 1px solid var(--line-light); padding: 10px 12px; text-align: left; vertical-align: top; }
+.lo-guide th { background: var(--bg-surface); color: var(--text-primary); font-weight: 600; }
+.lo-guide td { color: var(--text-secondary); }
+.lo-guide .table-wrap { overflow-x: auto; }
+.lo-guide .guide-toc { background: var(--bg-surface); border: 1px solid var(--line-light); border-radius: var(--radius-md); padding: 18px 22px; margin: 24px 0; }
+.lo-guide .guide-toc strong { display: block; margin-bottom: 8px; }
+.lo-guide .guide-toc ul { margin: 0; }
+.lo-guide .guide-toc li { margin-bottom: 4px; }
