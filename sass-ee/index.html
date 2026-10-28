@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS-EE | Organic Sunless Tanning & Airbrush Formulation Laboratory</title>
+    <meta name="description" content="All-natural & organic airbrush tanning solutions and retail sunless tanning products founded in 1997 by Renaud Naturals Inc. in Loveland, Colorado. DHA, erythrulose, low wholesale MOQ from 12 units.">
+
+    <!-- Open Graph & Canonical -->
+    <meta property="og:title" content="SASS-EE &bull; Organic Airbrush & Sunless Tanning Formulation Lab">
+    <meta property="og:description" content="All-natural airbrush spray tan solutions, self-tanning mousses & aftercare. Founded in 1997 by Renaud Naturals Inc., Loveland, CO. DHA, natural-looking color, low 12+ MOQ.">
+    <meta property="og:url" content="https://labelorigin.com/sass-ee/">
+    <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LabelOrigin &bull; SASS-EE Sourcing Desk">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://labelorigin.com/sass-ee/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="icon" type="image/png" href="../renaud/renaud-logo.png">
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../renaud/renaud.css">
+
+    <!-- SASS-EE Custom Theme Overrides (Warm Sun-Kissed Bronze & Obsidian) -->
+    <style>
+        :root {
+            --sassee-bronze: #d4a373;
+            --sassee-gold: #e6c594;
+            --sassee-dark-gold: #b38752;
+            --sassee-glow: rgba(212, 163, 115, 0.12);
+        }
+        .sassee-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--sassee-gold);
+            border-bottom: 1px solid var(--sassee-bronze);
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+        }
+        .temp-status-notice {
+            background: rgba(212, 163, 115, 0.08);
+            border: 1px solid var(--sassee-bronze);
+            padding: 16px 22px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .temp-status-notice p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        .temp-status-notice strong {
+            color: var(--ivory-white);
+        }
+        .temp-domain-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--sassee-bronze);
+            color: var(--sassee-gold);
+            padding: 4px 10px;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--sassee-gold);
+        }
+
+        /* Science Callout */
+        .science-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--sassee-bronze);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--sassee-bronze);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--sassee-gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--sassee-bronze);
+            color: var(--sassee-gold);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--sassee-gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--sassee-bronze);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* QA Pillars */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://labelorigin.com/sass-ee/#brand",
+          "name": "SASS-EE • All-Natural & Organic Sunless Tanning",
+          "alternateName": "Sass-ee Tan",
+          "url": "https://labelorigin.com/sass-ee/",
+          "logo": "https://labelorigin.com/renaud/renaud-logo.png",
+          "image": "https://labelorigin.com/renaud/renaud-logo.png",
+          "description": "All-natural and organic airbrush and sunless tanning brand founded in 1997 by Renaud Naturals Inc. in Loveland, Colorado. Formulated with DHA, erythrulose, and clean botanical actives.",
+          "telephone": "+1-970-667-1433",
+          "email": "Arch@RenaudNaturals.com",
+          "foundingDate": "1997",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Renaud Naturals Inc.",
+            "url": "https://labelorigin.com/renaud/"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "101 East 5th Street",
+            "addressLocality": "Loveland",
+            "addressRegion": "CO",
+            "postalCode": "80537",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://sass-ee.com/",
+            "https://renaudnaturals.com/",
+            "https://www.facebook.com/Renaud.Naturals",
+            "https://x.com/RenaudNaturals"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "SASS-EE Professional Sunless Tanning Catalog",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Professional Airbrush Spray Tan Solutions (8% to 14% DHA)",
+                  "description": "Clean airbrush and HVLP spray tan solutions with violet, green, and warm golden base color guides."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Rapid 1-Hour to 4-Hour Express Bronzers",
+                  "description": "Fast-rinse sunless tanning solutions for clients wanting customizable shade depths in 1 to 4 hours."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Retail Self-Tanning Mousses & Bronzing Foams",
+                  "description": "Whipped aerated bronzing mousses with instant color guide and fast-drying zero-tack finish."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Daily Gradual Tan Extenders & Hydrating Lotions",
+                  "description": "Moisturizing post-tan extenders micro-dosed with 2-3% DHA for extended golden glow."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Commercial Backbar Gallons & Bulk Salon Supply",
+                  "description": "Quarts, half-gallons, 1-gallon jugs, and 5-gallon pails for high-volume salons and mobile artists."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://labelorigin.com/sass-ee/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the history and manufacturing origin of SASS-EE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SASS-EE is an all-natural and organic airbrush and sunless tanning brand founded in 1997 by Renaud Naturals Inc. All formulas are researched, compounded, and manufactured in-house in Loveland, Colorado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is the SASS-EE website currently forwarding here?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This page serves as the wholesale sourcing desk and commercial line sheet request hub."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the wholesale minimum order quantity (MOQ) for SASS-EE products?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wholesale starter orders for stock SASS-EE spray solutions and retail mousses begin at just 12+ units per SKU. Bulk backbar gallons are available starting at 1 gallon. Custom formulation R&D begins at 250+ units."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does SASS-EE help avoid the orange cast of conventional sunless tanners?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SASS-EE pairs DHA with Erythrulose and specialized botanical color guides (violet and olive base). Erythrulose reacts slowly and deeply, neutralizing orange tones for a more natural-looking fade."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can spray tan artists and salons order sample evaluation kits?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We provide sample evaluation bottles at $3 to $5 each so professional spray technicians can evaluate mist atomization, bronzer guide payoff, and skin dry-down."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "LabelOrigin Directory",
+              "item": "https://labelorigin.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Renaud Naturals Laboratory",
+              "item": "https://labelorigin.com/renaud/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SASS-EE Organic Sunless Tanning",
+              "item": "https://labelorigin.com/sass-ee/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* Darker bronze for text on the light theme */
+        :root:not([data-theme="dark"]) { --sassee-gold: #8a5a24; --sassee-dark-gold: #7a4e1d; --sassee-bronze: #b9773a; }
+    </style>
+</head>
+<body>
+
+<div class="renaud-page-wrap">
+    
+    <!-- Top Navigation Header -->
+    <header class="renaud-header">
+        <div class="container">
+            <a href="./" class="renaud-brand">
+                <img src="../renaud/renaud-logo.png" alt="SASS-EE by Renaud Naturals" class="renaud-logo-img">
+                <div class="renaud-brand-text">
+                    <span class="renaud-brand-title">SASS-EE</span>
+                    <span class="renaud-brand-sub">Organic Sunless Tanning &bull; Est. 1997</span>
+                </div>
+            </a>
+
+            <nav class="renaud-nav-links">
+                <a href="#dha-science" class="renaud-nav-link">DHA Chemistry</a>
+                <a href="#solutions" class="renaud-nav-link">Solutions &amp; Care</a>
+                <a href="#lead-flow" class="renaud-nav-link">Sample Kits ($3–$5)</a>
+                <a href="#specs" class="renaud-nav-link">Technical Specs</a>
+                <a href="#faq" class="renaud-nav-link">FAQ</a>
+                <a href="../renaud/" class="renaud-nav-link" style="color: var(--sassee-gold);">&larr; Renaud Naturals Lab Hub</a>
+            </nav>
+
+            <div class="header-social-group">
+                <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="funnel-container">
+            
+            <!-- Breadcrumbs -->
+            <div class="breadcrumb-bar">
+                <a href="../">LabelOrigin</a>
+                <span>&bull;</span>
+                <a href="../renaud/">Renaud Naturals</a>
+                <span>&bull;</span>
+                <span class="active">SASS-EE Organic Sunless Tanning</span>
+            </div>
+
+            <!-- Temporary Platform Notice Banner -->
+            <div class="temp-status-notice">
+                <div>
+                    <strong style="display: block; margin-bottom: 3px;">Wholesale Sourcing Desk for SASS-EE</strong>
+                    <p>
+                        Consumer purchases are at <a href="https://sass-ee.com/" target="_blank" rel="noopener" style="color: var(--sassee-gold); text-decoration: underline;">sass-ee.com</a>. Wholesale salon orders, commercial backbar line sheets, and sample kits are fulfilled directly by manufacturer <strong>Renaud Naturals Inc.</strong> in Loveland, Colorado.
+                    </p>
+                </div>
+                <span class="temp-domain-pill">Direct Lab Routing Active</span>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="renaud-hero">
+                <span class="sassee-badge">All-Natural &amp; Organic Sunless Tanning &bull; Founded 1997 &bull; Loveland, Colorado</span>
+                <h1>SASS-EE Organic Airbrush &amp; Sunless Tanning Formulation Laboratory</h1>
+                <p class="hero-desc">
+                    Pure botanical airbrush spray tan solutions, rapid express bronzers, and retail tan-extender care. Formulated in Loveland, Colorado with DHA, erythrulose, and zero petrochemicals or synthetic orange dyes.
+                </p>
+
+                <!-- Tabular Metrics Row -->
+                <div class="metrics-row">
+                    <div class="metric-cell">
+                        <span class="metric-val">12+ Units</span>
+                        <span class="metric-lbl">Starter Wholesale MOQ</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">250+ Units</span>
+                        <span class="metric-lbl">Custom Formulation R&amp;D</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">$3 to $5</span>
+                        <span class="metric-lbl">Evaluation Sample Kits</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">8% – 14%</span>
+                        <span class="metric-lbl">DHA Strengths</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">.5 oz – 5 Gal</span>
+                        <span class="metric-lbl">Retail to Commercial Backbar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science Overview Callout -->
+            <section class="science-box" id="dha-science">
+                <span class="editorial-eyebrow">Biochemistry of Sunless Tanning &bull; The Maillard Reaction</span>
+                <h4>DHA Keratin Cross-Linking &amp; Erythrulose Anti-Orange Synergy</h4>
+                <p>
+                    Sunless tanning is not a dye or pigment stain; it is a natural reaction called the <strong>Maillard Reaction</strong>. Dihydroxyacetone (DHA, a sugar-derived ingredient) reacts with free amino groups in keratin protein within the dead cells of the stratum corneum, synthesizing natural brownish pigments called melanoidins. Mass-market formulas turn brassy/orange because pure DHA reacts too quickly and unevenly. SASS-EE pairs DHA with <strong>Erythrulose</strong>—a slower-penetrating keto-sugar—and violet/green botanical color guides to guarantee a golden, true Mediterranean bronze with an even 10-to-12-day fade.
+                </p>
+            </section>
+
+            <!-- Interactive Formulation Lead Funnel -->
+            <div class="form-card" id="lead-flow">
+                
+                <div class="funnel-progress-wrap">
+                    <div class="funnel-progress-bar">
+                        <div id="funnel-progress-fill" class="funnel-progress-fill"></div>
+                    </div>
+                    <span class="funnel-step-count">SPECIFICATION STAGE <span id="step-current-number">1</span> OF 4</span>
+                </div>
+
+                <!-- STEP 1: Practice Type -->
+                <div id="step-1" class="step active">
+                    <span class="step-indicator">Phase 01 &bull; Entity Classification</span>
+                    <h2>Which best describes your sunless business or practice?</h2>
+                    
+                    <button class="option-btn" data-select-type="Spray Tanning Salon / Mobile Artist">
+                        <span>Dedicated Spray Tan Salon or Mobile Airbrush Artist</span>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Day Spa / Medical Spa / Esthetician">
+                        <span>Day Spa, Medical Spa, or Licensed Esthetics Practice</span>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Clean Beauty Retailer / Boutique">
+                        <span>Clean Beauty Retailer, Apothecary, or Resort Boutique</span>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Brand Founder">
+                        <span>Brand Founder Launching Private Label Sunless Tanning Line</span>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- STEP 2: Production Scale -->
+                <div id="step-2" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Phase 02 &bull; Order Volume Scale</span>
+                        <button class="funnel-back-btn">&larr; Previous</button>
+                    </div>
+                    <h2>What is your estimated initial order run size?</h2>
+                    
+                    <button class="option-btn" data-select-volume="low">
+                        <div>
+                            <strong>Under 12 units (Pre-Launch Testing / Single Vials)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Individual consumer testing or pre-launch exploration</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>12 – 48 units (Starter Wholesale / Turnkey Stock Formula)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-gold); margin-top: 3px;">Meets SASS-EE commercial wholesale minimum (12+ units per SKU)</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>50 – 249 units (Scaling Salon / Studio Volume)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Established studio retail shelves and backbar spray stations</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>250 – 1,000+ units (Custom Formulation R&amp;D)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-bronze); margin-top: 3px;">Qualifies for bespoke chemist R&amp;D formulation, custom DHA % &amp; branded scents</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>Bulk Gallons &amp; Commercial Backbar (Quarts to 5-Gallon Pails)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">HVLP spray station bulk refills and mobile artist jugs</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- STEP 3: Discipline Confirmation -->
+                <div id="step-3-interest" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Phase 03 &bull; Tanning Product Focus</span>
+                        <button class="funnel-back-btn">&larr; Previous</button>
+                    </div>
+                    <h2>Select your primary sunless manufacturing focus:</h2>
+                    
+                    <button class="option-btn" data-select-interest="Professional Airbrush Spray Tan Solutions (8%-14% DHA)">
+                        <div>
+                            <strong>Professional Airbrush Spray Solutions (HVLP &amp; Turbine)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-gold); margin-top: 3px;">8%, 10%, 12%, 14% DHA + violet &amp; olive base color guides</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Rapid 1-Hour to 4-Hour Express Bronzers">
+                        <div>
+                            <strong>Rapid 1-Hour Express Rinse Solutions</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Fast-acting bronzer allowing clients to rinse in 1 to 4 hours</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Retail Self-Tanning Mousses &amp; Bronzing Foams">
+                        <div>
+                            <strong>Retail Self-Tanning Mousses &amp; Bronzing Foams</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Whipped aerated self-tanner in foamer bottles for client home use</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Daily Gradual Tan Extenders &amp; Body Washes">
+                        <div>
+                            <strong>Gradual Tan Extenders &amp; Pre/Post Care</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Micro-dosed 2-3% DHA lotions, oil-free body scrubs &amp; barrier creams</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Full Custom Private Label Tanning Brand R&amp;D">
+                        <div>
+                            <strong>Full Custom Private Label Brand Formulation (250+ MOQ)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-bronze); margin-top: 3px;">Proprietary botanical active blends, custom scents, custom packaging</div>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- STEP 4: Qualified Submission Form -->
+                <div id="step-qualified" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Phase 04 &bull; Specification Routing</span>
+                        <button class="funnel-back-btn">&larr; Previous</button>
+                    </div>
+                    <h2>Where should Arch Jain route your SASS-EE Wholesale Line Sheets &amp; Sample Kits?</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 24px; font-weight: 300;">
+                        Your inquiry qualifies for direct facility access. Enter your details below to receive line sheets, price tiers, and sample evaluation links.
+                    </p>
+
+                    <form id="qualified-lead-form">
+                        <div style="display: none;">
+                            <input type="text" id="q-website-hp" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="q-name">Contact Full Name *</label>
+                                <input type="text" id="q-name" required placeholder="Sarah Jenkins">
+                            </div>
+                            <div class="input-group">
+                                <label for="q-company">Salon / Enterprise Legal Name *</label>
+                                <input type="text" id="q-company" required placeholder="Glow &amp; Bronze Airbrush Studio">
+                            </div>
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="q-email">Business Work Email *</label>
+                                <input type="email" id="q-email" required placeholder="sarah@glowandbronze.com">
+                                <span class="hint">Wholesale catalog, price matrix, and sample kit order links will be delivered here</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="q-phone">Direct Phone Number *</label>
+                                <input type="tel" id="q-phone" required placeholder="(970) 555-0199">
+                                <span class="hint">For shipping verification on sample evaluation orders</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="q-notes">Specific Tanning Requirements or Target Product Focus (Optional)</label>
+                            <input type="text" id="q-notes" placeholder="e.g. 10% and 12% violet base spray solutions, retail mousses, mobile kit">
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Transmit to SASS-EE Facility Desk &rarr;</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Small-Batch Waitlist Fallback -->
+                <div id="step-waitlist" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Inquiry Routing</span>
+                        <button class="funnel-back-btn">&larr; Previous</button>
+                    </div>
+                    <h2>Micro-Batch &amp; Individual Bottles</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 14px; font-size: 0.92rem; line-height: 1.6; font-weight: 300;">
+                        SASS-EE specializes in wholesale formulation production starting at <strong>12+ units per SKU</strong> and custom lab R&amp;D at <strong>250+ units</strong>.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.88rem; line-height: 1.6; font-weight: 300;">
+                        If you are looking for single-unit consumer bottles, please visit <a href="https://sass-ee.com" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">sass-ee.com</a>, or enter your email below to be notified about direct-to-consumer ordering.
+                    </p>
+
+                    <form id="waitlist-lead-form">
+                        <div class="input-group">
+                            <label for="w-email">Email Address *</label>
+                            <input type="email" id="w-email" required placeholder="artist@spraytan.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="w-concept">Brand or Studio Concept (Optional)</label>
+                            <input type="text" id="w-concept" placeholder="e.g. Mobile spray tan business in launch phase">
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Join SASS-EE Notification Queue &rarr;</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- SUCCESS STATE: Qualified Lead Confirmation -->
+                <div id="step-success-qualified" class="step">
+                    <div class="success-card">
+                        <div class="success-icon-wrap">&check;</div>
+                        <span class="editorial-eyebrow">Transmission Verified &bull; SASS-EE Facility Queue</span>
+                        <h2 style="margin: 12px 0 6px;">Tanning Specification Transmitted</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 580px; margin: 0 auto 24px; line-height: 1.6; font-weight: 300;">
+                            Your inquiry has been logged into the Renaud Naturals laboratory queue. Lead formulator Arch Jain will review your sunless tanning parameters.
+                        </p>
+
+                        <div>
+                            <span class="lead-id-badge">SPECIFICATION FILE REF: <span id="success-lead-id">SE-2026-7841</span></span>
+                        </div>
+
+                        <div id="success-summary" class="lead-summary-box"></div>
+
+                        <div style="border-left: 2px solid var(--sassee-bronze); padding-left: 18px; text-align: left; margin-bottom: 28px;">
+                            <strong style="color: var(--ivory-white); font-size: 0.88rem; display: block; margin-bottom: 6px; font-family: var(--font-mono); text-transform: uppercase;">Production Timeline &amp; Next Steps:</strong>
+                            <ul style="color: var(--text-secondary); font-size: 0.84rem; padding-left: 18px; line-height: 1.6; font-weight: 300;">
+                                <li>Arch Jain or our lead sunless chemist will review your submission within 1 business day.</li>
+                                <li>The complete SASS-EE wholesale price matrix and catalog will be delivered to your inbox.</li>
+                                <li>Direct links to order sample evaluation bottles ($3 to $5 each) will be issued.</li>
+                                <li>Standard wholesale solution turnaround is 2 to 3 weeks upon order confirmation.</li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                            <a href="tel:9706671433" class="btn btn-primary btn-sm">TEL: (970) 667-1433</a>
+                            <a href="mailto:Arch@RenaudNaturals.com?subject=SASS-EE%20Sunless%20Tanning%20Wholesale%20Inquiry" class="btn btn-secondary btn-sm">Direct Lab Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUCCESS STATE: Small-Batch Confirmation -->
+                <div id="step-success-waitlist" class="step">
+                    <div class="success-card">
+                        <div class="success-icon-wrap">&check;</div>
+                        <span class="editorial-eyebrow">Inquiry Logged</span>
+                        <h2 style="margin: 12px 0 6px;">Thank You for Your Interest</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 520px; margin: 0 auto 20px; font-weight: 300;">
+                            Confirmation sent to <strong id="waitlist-success-email" style="color: var(--ivory-white);">your email</strong>. We will let you know about direct retail purchasing at sass-ee.com.
+                        </p>
+                        <a href="../renaud/" class="btn btn-secondary btn-sm">Explore Renaud Naturals Full Formulation Lab &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="solutions" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">SASS-EE Product Architecture &bull; In-Depth Chapters</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Tanning Formulations</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
+                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for salon owners, mobile spray artists, and private-label brand founders.
+                    </p>
+                </div>
+                
+                <div class="subtopics-container">
+                    
+                    <!-- Chapter 01: Professional Spray Solutions -->
+                    <article class="subtopic-card" id="subtopic-1">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CHAPTER 01 &bull; AIRBRUSH &amp; HVLP</span>
+                            <span class="subtopic-num">PROFESSIONAL SPRAY</span>
+                        </div>
+                        <h3 class="subtopic-title">Professional Airbrush &amp; HVLP Spray Tan Solutions</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">
+                                Formulated specifically for fine droplet atomization through HVLP turbine guns. Available in graduated DHA tiers: <strong>8% DHA</strong> (Fair skin / subtle sun-kissed glow), <strong>10% DHA</strong> (Universal golden medium), <strong>12% DHA</strong> (Deep rich bronze), and <strong>14% DHA</strong> (Dark competition / ultra-deep bronze). Engineered with non-sticky aloe vera leaf juice and organic witch hazel to lock down immediately upon skin contact, drying in under 60 seconds with zero tackiness.
+                            </p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Key Active Ingredients:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">Professional DHA Formula</span>
+                                        <span class="active-pill">Erythrulose</span>
+                                        <span class="active-pill">Organic Aloe Vera</span>
+                                        <span class="active-pill">Witch Hazel Distillate</span>
+                                        <span class="active-pill">Caramel Guide Bronzer</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Target pH Range:</span>
+                                    <strong class="spec-val">pH 4.0 – 4.5 (Optimal DHA Stability)</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Rheology &amp; Viscosity:</span>
+                                    <strong class="spec-val">Water-thin atomizer flow</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Packaging Formats:</span>
+                                    <span class="spec-val-sm">32 oz Quarts, 64 oz Half-Gallons, 1-Gallon Jugs &amp; 5-Gallon Salon Pails</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 02: Rapid 1-Hour Express -->
+                    <article class="subtopic-card" id="subtopic-2">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CHAPTER 02 &bull; RAPID EXPRESS</span>
+                            <span class="subtopic-num">1 TO 4 HOUR RINSE</span>
+                        </div>
+                        <h3 class="subtopic-title">Rapid 1-Hour to 4-Hour Express Bronzing Solutions</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">
+                                Modern salon clients demand rapid turnaround without sleeping in bronzers overnight. SASS-EE Express is formulated as a faster-developing bronzer. The client rinses off the topical color guide with warm water after <strong>1 hour (light tan)</strong>, <strong>2 hours (medium bronze)</strong>, or <strong>3–4 hours (deep dark)</strong>, while melanoidin pigment continues developing internally over the subsequent 24 hours.
+                            </p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Key Active Ingredients:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">High-Flux DHA (14%)</span>
+                                        <span class="active-pill">Bio-Propanediol (Penetration Accelerator)</span>
+                                        <span class="active-pill">Beet Betaine</span>
+                                        <span class="active-pill">Violet-Base Botanical Color Guide</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Target pH Range:</span>
+                                    <strong class="spec-val">pH 4.2 – 4.6</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Rinse Window:</span>
+                                    <strong class="spec-val">Warm Rinse: 1 to 4 Hours</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Packaging Formats:</span>
+                                    <span class="spec-val-sm">32 oz Quarts and 1-Gallon Bulk Backbar Jugs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 03: Retail Whipped Mousses -->
+                    <article class="subtopic-card" id="subtopic-3">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CHAPTER 03 &bull; RETAIL SELF-TANNER</span>
+                            <span class="subtopic-num">FOAMING MOUSSES</span>
+                        </div>
+                        <h3 class="subtopic-title">Retail Self-Tanning Mousses &amp; Aerated Bronzing Foams</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">
+                                The essential retail impulse-buy for salon shelves and clean beauty e-commerce. Packaged in precision non-aerosol foamer pumps that aerate the botanical liquid into a cloud-like, velvet mousse. The instant caramel/beet guide color shows the user exactly where the product is applied, preventing missed spots or streaks. Enhanced with organic green tea extract and jojoba esters to nourish the skin barrier while delivering an odorless 7-to-10-day tan.
+                            </p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Key Active Ingredients:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">DHA (10% - 12%)</span>
+                                        <span class="active-pill">Organic Green Tea Hydrosol</span>
+                                        <span class="active-pill">Jojoba Esters</span>
+                                        <span class="active-pill">Coco Glucoside (Foaming Agent)</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Target pH Range:</span>
+                                    <strong class="spec-val">pH 4.3 – 4.7</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Dispenser Format:</span>
+                                    <strong class="spec-val">Aerated Foam (Non-Aerosol)</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Retail Packaging:</span>
+                                    <span class="spec-val-sm">6.7 oz (200ml) Amber/White Bottle with Foamer Pump &amp; Overcap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 04: Gradual Glow & Aftercare -->
+                    <article class="subtopic-card" id="subtopic-4">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CHAPTER 04 &bull; TAN EXTENDERS</span>
+                            <span class="subtopic-num">PRE &amp; POST CARE</span>
+                        </div>
+                        <h3 class="subtopic-title">Daily Gradual Tan Extenders, Body Polishes &amp; Barrier Creams</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">
+                                A successful sunless tan depends on pre-treatment and post-care:
+                                <br><br>
+                                &bull; <strong>Oil-Free Pre-Tan Exfoliating Polish:</strong> Conventional sugar scrubs contain oils that leave a hydrophobic film, blocking DHA reaction. SASS-EE formulates an oil-free bamboo and pumice exfoliant that sloughs dead keratinocytes without leaving residual oil.
+                                <br>
+                                &bull; <strong>Daily Gradual Tan Extender:</strong> A deeply moisturizing body lotion micro-dosed with 2.5% DHA and shea butter, replenishing lost melanoidins daily to extend spray tans beyond 14 days.
+                                <br>
+                                &bull; <strong>Barrier Cream:</strong> High-density dimethicone-free wax emulsion applied to fingernails, palms, elbows, and heels to prevent unnatural dark pooling.
+                            </p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Key Active Ingredients:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">Micro-Dosed DHA (2.5%)</span>
+                                        <span class="active-pill">Organic Shea Butter</span>
+                                        <span class="active-pill">Bamboo Stem Powder</span>
+                                        <span class="active-pill">Organic Calendula</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Target pH Range:</span>
+                                    <strong class="spec-val">pH 5.0 – 5.5</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Product Formats:</span>
+                                    <strong class="spec-val">Lotions, Scrubs, Creams</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Packaging Formats:</span>
+                                    <span class="spec-val-sm">8 oz Squeeze Tubes, 8 oz Pump Bottles &amp; 16 oz Jars</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">SASS-EE Technical Tanning Matrix</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
+                        Direct laboratory benchmarking across DHA concentrations, base undertones, viscosity, and commercial MOQ tiers.
+                    </p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>Formulation SKU</th>
+                                <th>DHA Concentration</th>
+                                <th>Base Undertone</th>
+                                <th>Rinse / Dev Time</th>
+                                <th>Standard Packaging</th>
+                                <th>Wholesale MOQ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SASS-EE 8% Light Mist</strong></td>
+                                <td><code>8% DHA</code></td>
+                                <td>Caramel / Golden Warm</td>
+                                <td>8 Hours (Overnight)</td>
+                                <td>32 oz / 1 Gal Jug</td>
+                                <td><span class="moq-pill">12+ Units / 1 Gal</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE 10% Medium Universal</strong></td>
+                                <td><code>10% DHA + Erythrulose</code></td>
+                                <td>Green / Olive Bronze</td>
+                                <td>8 Hours</td>
+                                <td>32 oz / 1 Gal Jug</td>
+                                <td><span class="moq-pill">12+ Units / 1 Gal</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE 12% Dark Mediterranean</strong></td>
+                                <td><code>12% DHA + Erythrulose</code></td>
+                                <td>Violet / Anti-Orange</td>
+                                <td>8 Hours</td>
+                                <td>32 oz / 1 Gal Jug</td>
+                                <td><span class="moq-pill">12+ Units / 1 Gal</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE 14% Rapid Express</strong></td>
+                                <td><code>14% Accelerated DHA</code></td>
+                                <td>Universal Neutral Bronze</td>
+                                <td>1 – 4 Hours Rapid</td>
+                                <td>32 oz / 1 Gal Jug</td>
+                                <td><span class="moq-pill">12+ Units / 1 Gal</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE Retail Self-Tan Mousse</strong></td>
+                                <td><code>10% - 12% DHA</code></td>
+                                <td>Instant Guide Color</td>
+                                <td>6 – 8 Hours</td>
+                                <td>6.7 oz Foamer Bottle</td>
+                                <td><span class="moq-pill">12+ Units (Stock)</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE Gradual Tan Extender</strong></td>
+                                <td><code>2.5% Micro-DHA</code></td>
+                                <td>Translucent Moisture</td>
+                                <td>Daily Progressive</td>
+                                <td>8 oz Pump Bottle</td>
+                                <td><span class="moq-pill">12+ Units (Stock)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Clean Ingredient Standards &amp; Compliance Support</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
+                        SASS-EE is made in-house by Renaud Naturals in Loveland, Colorado.
+                    </p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">DHA SOURCING</span>
+                        <h5>Dihydroxyacetone (DHA)</h5>
+                        <p>DHA is the active ingredient behind the tan. Ask the lab for current ingredient sourcing details and documentation for your order.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">ZERO HARSH CHEMICALS</span>
+                        <h5>Clean &amp; Cruelty-Free</h5>
+                        <p>Free of mineral oils, parabens, petrochemicals, SLS, and formaldehyde, consistent with the Renaud Naturals clean ingredient standard. Never tested on animals.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
+                        <h5>FDA MoCRA Guidance</h5>
+                        <p>Brand owners are legally responsible for their own labeling. The Loveland team walks private-label clients through FDA MoCRA obligations and cosmetic product listings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="funnel-faq" id="faq" style="margin-top: 50px;">
+                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
+                <h3 class="faq-title">SASS-EE Sunless Tanning Specification FAQ</h3>
+                <div class="faq-accordion">
+                    <details>
+                        <summary>What is the history and manufacturing origin of SASS-EE?</summary>
+                        <p>SASS-EE is an all-natural and organic airbrush and sunless tanning brand founded in 1997 by Renaud Naturals Inc. All formulas are researched, compounded, and manufactured in-house in Loveland, Colorado, USA.</p>
+                    </details>
+
+                    <details>
+                        <summary>Where do I order SASS-EE wholesale versus retail?</summary>
+                        <p>Consumer orders are handled at <strong>sass-ee.com</strong>. This LabelOrigin page serves as the wholesale sourcing desk, salon line sheet request hub, and private-label lab inquiry portal.</p>
+                    </details>
+
+                    <details>
+                        <summary>What is the wholesale minimum order quantity (MOQ) for SASS-EE products?</summary>
+                        <p>Wholesale starter orders for stock SASS-EE spray solutions and retail mousses begin at just <strong>12+ units per SKU</strong>. Bulk backbar gallons are available starting at <strong>1 gallon</strong>. Custom formulation R&amp;D for private-label brands begins at <strong>250+ units</strong>.</p>
+                    </details>
+
+                    <details>
+                        <summary>How does SASS-EE help avoid the orange cast of conventional sunless tanners?</summary>
+                        <p>SASS-EE pairs DHA with Erythrulose and specialized botanical color guides (violet and olive base). Erythrulose reacts slowly and deeply, neutralizing orange tones for a more natural-looking fade.</p>
+                    </details>
+
+                    <details>
+                        <summary>Can spray tan artists and salons order sample evaluation kits?</summary>
+                        <p>Yes. We provide sample evaluation bottles at <strong>$3 to $5 each</strong> so professional spray technicians can evaluate mist atomization, bronzer guide payoff, and skin dry-down in their own HVLP guns.</p>
+                    </details>
+
+                    <details>
+                        <summary>What equipment is SASS-EE spray solution compatible with?</summary>
+                        <p>Our solutions are formulated as thin, sprayable liquids for HVLP turbine systems. Ask the lab to confirm compatibility with your specific gun or booth.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Verified Facility Contact & Liaison Card -->
+            <div class="liaison-card" style="margin-top: 40px;">
+                <div class="liaison-details">
+                    <h4>SASS-EE by Renaud Naturals Inc.</h4>
+                    <p>101 East 5th Street, Loveland, CO 80537 &bull; In-House Laboratory &amp; Filling Facility</p>
+                    <p style="margin-top: 4px; font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">Manufacturing Facility &bull; Est. 1997 &bull; Direct Commercial Sourcing</p>
+                </div>
+                <div class="liaison-contacts">
+                    <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="tel:9706671433" class="btn btn-primary btn-sm">TEL: (970) 667-1433</a>
+                    <a href="mailto:Arch@RenaudNaturals.com?subject=SASS-EE%20Sunless%20Tanning%20Wholesale%20Inquiry" class="btn btn-secondary btn-sm">Arch@RenaudNaturals.com</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Official Renaud Naturals & SASS-EE Footer -->
+    <footer class="renaud-footer">
+        <div class="container">
+            <div class="renaud-footer-top">
+                <div class="renaud-footer-brand-wrap">
+                    <img src="../renaud/renaud-logo.png" alt="SASS-EE by Renaud Naturals" class="renaud-logo-img" style="width: 44px; height: 44px;">
+                    <div class="renaud-footer-brand">
+                        <h4>SASS-EE &bull; Renaud Naturals Inc.</h4>
+                        <p style="font-weight: 300;">All-Natural &amp; Organic Airbrush and Sunless Tanning &bull; In-House Loveland, CO Lab</p>
+                        <p style="margin-top: 4px; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">101 East 5th Street, Loveland, Colorado 80537 &bull; (970) 667-1433 &bull; Arch@RenaudNaturals.com</p>
+                    </div>
+                </div>
+
+                <nav class="renaud-footer-nav">
+                    <a href="../renaud/">&larr; Renaud Naturals Master Lab</a>
+                    <a href="../">LabelOrigin Directory</a>
+                    <a href="https://sass-ee.com/" target="_blank" rel="noopener">Sass-ee.com</a>
+                    <a href="https://renaudnaturals.com/" target="_blank" rel="noopener">RenaudNaturals.com</a>
+                    <a href="https://renaudnaturals.com/wholesale/" target="_blank" rel="noopener">Wholesale</a>
+                    <a href="https://renaudnaturals.com/contact/" target="_blank" rel="noopener">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="renaud-footer-bottom">
+                <p>&copy; 2026 SASS-EE &bull; Renaud Naturals Inc. &bull; All Rights Reserved &bull; All-Natural Airbrush &amp; Sunless Tanning Since 1997 &bull; Loveland, Colorado, USA.</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Funnel Configuration & Engine Script -->
+<script>
+    window.FunnelConfig = {
+        partnerName: 'SASS-EE Sunless Tanning',
+        partnerPrefix: 'SE',
+        partnerSlug: 'sassee',
+        facilityAddress: '101 East 5th Street, Loveland, CO 80537',
+        facilityPhone: '970-667-1433',
+        facilityEmail: 'Arch@RenaudNaturals.com',
+        ccEmail: 'robertserranomailbox@gmail.com',
+        storageKey: 'labelorigin_sassee_leads',
+        waitlistKey: 'labelorigin_small_batch_waitlist'
+    };
+</script>
+<script src="../assets/js/funnel.js"></script>
+<script src="../assets/js/contact.js"></script>
+
+</body>
+</html>
