@@ -1123,3 +1123,12 @@ body.lo-consent-visible { padding-bottom: 118px; }
     body.lo-consent-visible { padding-bottom: 190px; }
     #lo-consent-banner { padding: 12px 14px; }
 }
+
+/* --- LabelOrigin FAQ (home page, #faq) --- */
+.lo-faq { max-width: 860px; margin: 0 auto 8px; }
+.lo-faq details { border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); margin-bottom: 12px; }
+.lo-faq summary { cursor: pointer; padding: 18px 22px; font-weight: 600; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.lo-faq summary::-webkit-details-marker { display: none; }
+.lo-faq summary::after { content: "+"; color: var(--accent-platinum); font-weight: 700; }
+.lo-faq details[open] summary::after { content: "\2013"; }
+.lo-faq details p { padding: 0 22px 18px; margin: 0; color: var(--text-secondary); }

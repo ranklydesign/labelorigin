@@ -3,7 +3,7 @@
   <!-- Root Marketplace Directory -->
   <url>
     <loc>https://labelorigin.com/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,13 +89,13 @@
   <!-- Category Desks -->
   <url>
     <loc>https://labelorigin.com/supplements/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://labelorigin.com/apparel/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
