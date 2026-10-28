@@ -1077,3 +1077,49 @@ a[href^="mailto:"], a[href^="tel:"] { cursor: copy; }
 @media (hover: none) {
     .card:hover, .btn-primary:hover, .theme-toggle:hover { transform: none; }
 }
+
+/* Consent banner (LabelOrigin) — fixed to the bottom; body padding keeps
+   it from covering page content while it is visible. */
+#lo-consent-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    border-top: 1px solid var(--line-light);
+    box-shadow: var(--shadow-ambient);
+    padding: 14px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+#lo-consent-banner p { margin: 0; max-width: 640px; }
+#lo-consent-banner a { color: var(--accent-platinum); }
+#lo-consent-banner button {
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+}
+#lo-consent-banner [data-lo-consent="accept"] {
+    background: var(--text-primary);
+    color: var(--bg-canvas);
+    border: 1px solid var(--text-primary);
+}
+#lo-consent-banner [data-lo-consent="decline"] {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--line-light);
+}
+body.lo-consent-visible { padding-bottom: 118px; }
+@media (max-width: 640px) {
+    body.lo-consent-visible { padding-bottom: 190px; }
+    #lo-consent-banner { padding: 12px 14px; }
+}

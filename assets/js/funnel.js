@@ -24,6 +24,8 @@
         }
     };
 
+    const firedConversions = new Set(); // leadIds already reported; prevents double-counting
+
     const config = window.FunnelConfig || {
         partnerName: 'Renaud Naturals',
         partnerPrefix: 'RN',
@@ -235,6 +237,10 @@
 
         const delivered = await dispatchLead(emailPayload, state.leadData);
 
+        // Conversion: delivered submits only. The success step below is
+        // shown even when delivered is false, so this must stay gated here.
+        if (delivered) fireLeadConversion('qualified', state.leadData.leadId);
+
         // Render Success Step
         renderQualifiedSuccess();
         showStep('step-success-qualified');
@@ -273,9 +279,46 @@
 
         const delivered = await dispatchLead(emailPayload, state.leadData);
 
+        // Conversion: delivered submits only (see qualified handler above).
+        if (delivered) fireLeadConversion('waitlist', state.leadData.leadId);
+
         renderWaitlistSuccess();
         showStep('step-success-waitlist');
         if (!delivered) showDeliveryNotice('step-success-waitlist');
+    }
+
+    function fireLeadConversion(kind, leadId) {
+        // kind: 'qualified' | 'waitlist'. Only called when dispatch succeeded.
+        // No personal data is sent: leadId + category + UTM only.
+        if (!leadId || firedConversions.has(leadId)) return;
+        if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+        if (typeof window.gtag !== 'function' && typeof window.fbq !== 'function') return;
+        firedConversions.add(leadId);
+
+        var utm = (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {};
+        var isQualified = kind === 'qualified';
+        var category = isQualified ? 'commercial_qualified' : 'small_batch_waitlist';
+        var adsSendTo = isQualified
+            ? 'AW-PLACEHOLDER/QUALIFIED_LEAD_LABEL_PLACEHOLDER'
+            : 'AW-PLACEHOLDER/WAITLIST_LABEL_PLACEHOLDER';
+
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', Object.assign({
+                lead_id: leadId,
+                partner_slug: state.leadData.partnerSlug || '',
+                lead_category: category
+            }, utm));
+            // Only fire the Ads conversion once real IDs are configured.
+            if (adsSendTo.indexOf('PLACEHOLDER') === -1) {
+                window.gtag('event', 'conversion', { send_to: adsSendTo });
+            }
+        }
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', {
+                content_name: isQualified ? 'Qualified Lead' : 'Waitlist Lead',
+                lead_id: leadId
+            });
+        }
     }
 
     async function dispatchLead(emailPayload, rawLead) {
