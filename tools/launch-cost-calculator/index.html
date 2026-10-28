@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Cost Calculator | LabelOrigin</title>
+    <meta name="description" content="Estimate a first skincare launch — formula, fill, packaging, labels, testing, and samples as general industry ranges. Not a quote.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Launch Cost Calculator | LabelOrigin">
+    <meta property="og:description" content="Estimate a first skincare launch — formula, fill, packaging, labels, testing, and samples as general industry ranges. Not a quote.">
+    <meta property="og:url" content="https://labelorigin.com/tools/launch-cost-calculator/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Launch Cost Calculator | LabelOrigin">
+    <meta name="twitter:description" content="Estimate a first skincare launch — formula, fill, packaging, labels, testing, and samples as general industry ranges. Not a quote.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/launch-cost-calculator/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/launch-cost-calculator/#webpage",
+        "url": "https://labelorigin.com/tools/launch-cost-calculator/",
+        "name": "Launch Cost Calculator | LabelOrigin",
+        "description": "Estimate a first skincare launch — formula, fill, packaging, labels, testing, and samples as general industry ranges. Not a quote.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why is the estimated range so wide?", "acceptedAnswer": {"@type": "Answer", "text": "Because the published per-unit ranges are wide: product fill alone runs from $1.50 to $12.00 per unit across product types, and packaging from $0.50 to $5.00 per unit. The calculator shows the full published range so you can see the floor and the ceiling; real quotes narrow it to one number."}},
+            {"@type": "Question", "name": "Does the calculator include marketing costs?", "acceptedAnswer": {"@type": "Answer", "text": "No. Launch marketing is a separate budget and is deliberately kept out of the production math. Mixing the two is how founders discover they can afford to make a product but not to sell it."}},
+            {"@type": "Question", "name": "Is this a quote from a manufacturer?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every figure is a general industry pattern from our cost guide, not a price from any manufacturer. Use the estimate to judge quotes: get every quote itemized on the same basis — same products, units, and packaging — or the totals will mislead you."}},
+            {"@type": "Question", "name": "What changes the total most?", "acceptedAnswer": {"@type": "Answer", "text": "Units per product and the launch path. Nearly every cost is priced per run or per unit, and minimums decide your floor. Switching from a stock formula to custom formulation adds development fees of $2,000 to $15,000+ per formula before production starts."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .calc-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .calc-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>How much will your <em>first launch</em> cost?</h1>
+                <p>
+                    Pick a launch path, your units, and your packaging. The calculator prices each cost bucket from the general industry ranges published in our cost guide — so you get a floor and a ceiling, not a false single number.
+                </p>
+                <p class="guide-meta">Estimates only, based on general industry patterns — not a quote. Every manufacturer prices differently. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your launch</h2>
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="calc-path">Launch path</label>
+                        <select id="calc-path">
+                            <option value="stock" selected>Stock formula (private label)</option>
+                            <option value="semi">Semi-custom (stock base, modified)</option>
+                            <option value="custom">Custom formulation</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-packaging">Packaging tier</label>
+                        <select id="calc-packaging">
+                            <option value="standard" selected>Standard stock packaging</option>
+                            <option value="premium">Premium / custom packaging</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-units">Units per product (SKU)</label>
+                        <input id="calc-units" type="number" min="1" max="100000" step="1" value="250">
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-skus">Number of products (SKUs)</label>
+                        <input id="calc-skus" type="number" min="1" max="50" step="1" value="3">
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-extras">Samples + photography included?</label>
+                        <select id="calc-extras">
+                            <option value="yes" selected>Yes, include samples and brand setup</option>
+                            <option value="no">No, production costs only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This calculator needs JavaScript to run the math. The published cost bands it uses are in our <a href="../../guides/skincare-line-cost/">skincare line cost guide</a> — formula development $2,000–$15,000+ per formula (custom only), product fill $1.50–$12.00 per unit, packaging $0.50–$5.00 per unit, labels $0.10–$1.00 each, testing $500–$3,000 per formula, samples $50–$500 per round, freight $100–$1,000+ per shipment, and brand setup $300–$2,500. To talk through your launch with real numbers, start with the <a href="../../renaud/">Renaud Naturals funnel</a>.</p>
+                    </div>
+                </noscript>
+
+                <h2>Estimated first-run cost</h2>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Cost bucket</th><th>Low</th><th>High</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Formula / development</td><td id="calc-dev-low">—</td><td id="calc-dev-high">—</td></tr>
+                            <tr><td>Product fill</td><td id="calc-fill-low">—</td><td id="calc-fill-high">—</td></tr>
+                            <tr><td>Packaging</td><td id="calc-pack-low">—</td><td id="calc-pack-high">—</td></tr>
+                            <tr><td>Labels &amp; printing</td><td id="calc-label-low">—</td><td id="calc-label-high">—</td></tr>
+                            <tr><td>Testing package</td><td id="calc-test-low">—</td><td id="calc-test-high">—</td></tr>
+                            <tr><td>Samples</td><td id="calc-sample-low">—</td><td id="calc-sample-high">—</td></tr>
+                            <tr><td>Freight &amp; shipping</td><td id="calc-freight-low">—</td><td id="calc-freight-high">—</td></tr>
+                            <tr><td>Brand setup (photo, barcodes, filings)</td><td id="calc-brand-low">—</td><td id="calc-brand-high">—</td></tr>
+                            <tr class="calc-total"><td>Estimated first-run total</td><td id="calc-total-low">—</td><td id="calc-total-high">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="calc-note" class="guide-meta">Estimate based on general industry patterns — not a quote.</p>
+
+                <h2>How to read it</h2>
+                <p>The range is wide on purpose. Product fill alone runs from $1.50 to $12.00 per unit across product types, and packaging from $0.50 to $5.00 per unit — so the same launch can legitimately cost several times more or less depending on what you make and how you pack it. The low end assumes the cheapest published figures on every bucket at once; the high end assumes the most expensive. Most real quotes land somewhere inside, not at either edge.</p>
+                <p>Three things narrow the range fast. First, units per product: nearly every cost is priced per run or per unit, and minimums decide your floor. Second, the path: custom formulation adds development fees before a single unit is filled, and two sample rounds instead of one. Third, packaging: stock packaging in standard sizes is cheapest, while custom containers, metallic finishes, and airless pumps cost more and can pass the published band — that is why the premium tier shows an open-ended high end.</p>
+                <p>For context, the published first-run bands in our <a href="../../guides/skincare-line-cost/">cost guide</a> are roughly $1,500–$10,000 for a stock-formula launch and $5,000–$25,000+ for a custom-formulation launch. There is no separate published band for semi-custom work; treat it as sitting between the two. Compare quotes like-for-like — same products, same units, same buckets — and treat any quote that will not itemize these buckets as a warning sign.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote.</strong> Every figure above is a general industry pattern, not a price from any manufacturer. Use the estimate to judge real quotes, then get itemized quotes on the same basis before committing to a launch size.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>Why is the estimated range so wide?</summary>
+                        <p>Because the published per-unit ranges are wide: product fill alone runs from $1.50 to $12.00 per unit across product types, and packaging from $0.50 to $5.00 per unit. The calculator shows the full published range so you can see the floor and the ceiling; real quotes narrow it to one number.</p>
+                    </details>
+                    <details>
+                        <summary>Does the calculator include marketing costs?</summary>
+                        <p>No. Launch marketing is a separate budget and is deliberately kept out of the production math. Mixing the two is how founders discover they can afford to make a product but not to sell it.</p>
+                    </details>
+                    <details>
+                        <summary>Is this a quote from a manufacturer?</summary>
+                        <p>No. Every figure is a general industry pattern from our cost guide, not a price from any manufacturer. Use the estimate to judge quotes: get every quote itemized on the same basis — same products, units, and packaging — or the totals will mislead you.</p>
+                    </details>
+                    <details>
+                        <summary>What changes the total most?</summary>
+                        <p>Units per product and the launch path. Nearly every cost is priced per run or per unit, and minimums decide your floor. Switching from a stock formula to custom formulation adds development fees of $2,000 to $15,000+ per formula before production starts.</p>
+                    </details>
+                </div>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn the estimate into a real quote</h3>
+                        <p>Send your products, units, and packaging through the funnel — the conversation starts from real numbers, not ideas. Estimates above are general industry patterns, not a quote.</p>
+                    </div>
+                    <div>
+                        <a href="../../renaud/" class="btn btn-primary btn-block">Start with the Renaud funnel &rarr;</a>
+                        <a href="../../guides/skincare-line-cost/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Read the full cost guide &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* All bands are the general industry ranges published in the live cost
+           guide (/guides/skincare-line-cost/). Nothing here is a price from
+           any manufacturer. Open-ended highs are shown with a "+" suffix. */
+        var BANDS = {
+            devCustom: [2000, 15000],
+            fill: [1.50, 12.00],
+            packaging: [0.50, 5.00],
+            labels: [0.10, 1.00],
+            testing: [500, 3000],
+            samples: [50, 500],
+            freight: [100, 1000],
+            brand: [300, 2500]
+        };
+        function clampInt(value, min, max, fallback) {
+            var n = parseInt(value, 10);
+            if (isNaN(n)) { return fallback; }
+            if (n < min) { return min; }
+            if (n > max) { return max; }
+            return n;
+        }
+        function computeEstimate(p) {
+            var units = clampInt(p.units, 1, 100000, 250);
+            var skus = clampInt(p.skus, 1, 50, 3);
+            var totalUnits = units * skus;
+            var rows = [];
+            var openEnded = false;
+            var devLow, devHigh, devOpen = false;
+            if (p.path === 'stock') { devLow = 0; devHigh = 0; }
+            else if (p.path === 'custom') { devLow = BANDS.devCustom[0] * skus; devHigh = BANDS.devCustom[1] * skus; devOpen = true; }
+            else { devLow = 0; devHigh = BANDS.devCustom[1] * skus; devOpen = true; }
+            if (devOpen) { openEnded = true; }
+            rows.push({ key: 'dev', low: devLow, high: devHigh, open: devOpen });
+            rows.push({ key: 'fill', low: BANDS.fill[0] * totalUnits, high: BANDS.fill[1] * totalUnits, open: false });
+            var packHigh = BANDS.packaging[1] * totalUnits;
+            var packOpen = (p.packaging === 'premium');
+            if (packOpen) { openEnded = true; }
+            rows.push({ key: 'pack', low: BANDS.packaging[0] * totalUnits, high: packHigh, open: packOpen });
+            rows.push({ key: 'label', low: BANDS.labels[0] * totalUnits, high: BANDS.labels[1] * totalUnits, open: false });
+            var testLow = (p.path === 'custom') ? BANDS.testing[0] * skus : 0;
+            rows.push({ key: 'test', low: testLow, high: BANDS.testing[1] * skus, open: false });
+            var rounds = (p.path === 'custom') ? 2 : 1;
+            var sampleLow = 0, sampleHigh = 0;
+            if (p.extras === 'yes') { sampleLow = BANDS.samples[0] * rounds; sampleHigh = BANDS.samples[1] * rounds; }
+            rows.push({ key: 'sample', low: sampleLow, high: sampleHigh, open: false });
+            rows.push({ key: 'freight', low: BANDS.freight[0], high: BANDS.freight[1], open: true });
+            openEnded = true;
+            var brandLow = 0, brandHigh = 0;
+            if (p.extras === 'yes') { brandLow = BANDS.brand[0]; brandHigh = BANDS.brand[1]; }
+            rows.push({ key: 'brand', low: brandLow, high: brandHigh, open: false });
+            var totalLow = 0, totalHigh = 0;
+            rows.forEach(function (r) { totalLow += r.low; totalHigh += r.high; });
+            return { rows: rows, totalLow: totalLow, totalHigh: totalHigh, openEnded: openEnded };
+        }
+        function fmt(n) {
+            return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function render() {
+            var p = {
+                path: document.getElementById('calc-path').value,
+                packaging: document.getElementById('calc-packaging').value,
+                units: document.getElementById('calc-units').value,
+                skus: document.getElementById('calc-skus').value,
+                extras: document.getElementById('calc-extras').value
+            };
+            var result = computeEstimate(p);
+            var ids = { dev: 'dev', fill: 'fill', pack: 'pack', label: 'label', test: 'test', sample: 'sample', freight: 'freight', brand: 'brand' };
+            result.rows.forEach(function (r) {
+                var prefix = 'calc-' + ids[r.key] + '-';
+                document.getElementById(prefix + 'low').textContent = fmt(r.low);
+                document.getElementById(prefix + 'high').textContent = fmt(r.high) + (r.open ? '+' : '');
+            });
+            document.getElementById('calc-total-low').textContent = fmt(result.totalLow);
+            document.getElementById('calc-total-high').textContent = fmt(result.totalHigh) + (result.openEnded ? '+' : '');
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            ['calc-path', 'calc-packaging', 'calc-units', 'calc-skus', 'calc-extras'].forEach(function (id) {
+                var el = document.getElementById(id);
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+            render();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computeEstimate: computeEstimate, BANDS: BANDS };
+        }
+    })();
+    </script>
+</body>
+</html>
