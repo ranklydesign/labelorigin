@@ -9,7 +9,7 @@
 (function () {
     var CONSENT_KEY = 'labelorigin_consent';
     var UTM_KEY = 'labelorigin_utm';
-    var GA4_ID = 'G-PLACEHOLDER';              // <-- Robert to supply
+    var GA4_ID = 'G-NHH53SXWQM';              // <-- supplied by Robert, Oct 2026
     var ADS_ID = 'AW-PLACEHOLDER';             // <-- Robert to supply
     var META_PIXEL_ID = 'PLACEHOLDER';         // <-- Robert to supply
     var GA4_CONFIGURED = GA4_ID.indexOf('PLACEHOLDER') === -1;
