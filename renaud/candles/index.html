@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-brand="renaud">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Soy Candle Manufacturing Guide: Thermal Curves & Wicks | Renaud Naturals</title>
-    <meta name="description" content="A technical manufacturing guide for private label soy candles. Learn about wax crystallization, combustion thermodynamics, lead-free wick calibration, and pure essential oil fragrance loads.">
+    <title>Private Label Soy Candles | Renaud Naturals</title>
+    <meta name="description" content="Private label soy candles from Renaud Naturals in Loveland, Colorado. Scents include Deep in the Forest, Mango and Feel Good. Ask about your own label.">
 
-    <!-- Open Graph & Canonical -->
-    <meta property="og:title" content="Clean Soy Candle Manufacturing Guide: Thermal Curves & Wicks | Renaud Naturals">
-    <meta property="og:description" content="A technical manufacturing guide for private label soy candles. Learn about wax crystallization, combustion thermodynamics, lead-free wick calibration, and pure essential oil fragrance loads.">
+    <meta property="og:title" content="Private Label Soy Candles | Renaud Naturals">
+    <meta property="og:description" content="Private label soy candles from Renaud Naturals in Loveland, Colorado. Scents include Deep in the Forest, Mango and Feel Good. Ask about your own label.">
     <meta property="og:url" content="https://labelorigin.com/renaud/candles/">
     <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="LabelOrigin &bull; Verified B2B Lab Network">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LabelOrigin">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://labelorigin.com/renaud/candles/">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,422 +21,35 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../renaud.css">
 
-    <!-- High-Depth Educational Dossier Styles -->
-    <style>
-        .topic-hero-badge {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--accent-platinum);
-            border-bottom: 1px solid var(--line-subtle);
-            padding-bottom: 6px;
-            margin-bottom: 16px;
-        }
-        .breadcrumb-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-            flex-wrap: wrap;
-        }
-        .breadcrumb-bar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb-bar a:hover {
-            color: var(--ivory-white);
-        }
-        .breadcrumb-bar span.active {
-            color: var(--accent-platinum);
-        }
-
-        /* Science Overview Callout */
-        .science-overview-box {
-            background: var(--tint-1);
-            border: 1px solid var(--line-focus);
-            border-left: 3px solid var(--accent-platinum);
-            padding: 28px 32px;
-            margin: 40px 0 55px;
-            border-radius: var(--radius-sm);
-        }
-        .science-overview-box h4 {
-            font-family: var(--font-serif);
-            font-size: 1.45rem;
-            color: var(--ivory-white);
-            margin-bottom: 12px;
-            font-weight: 400;
-        }
-        .science-overview-box p {
-            color: var(--text-secondary);
-            font-size: 0.94rem;
-            line-height: 1.7;
-            font-weight: 300;
-            margin: 0;
-        }
-
-        /* Subtopics Educational Chapter Cards */
-        .subtopics-container {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            margin-bottom: 60px;
-        }
-        .subtopic-card {
-            background: var(--bg-canvas);
-            border: 1px solid var(--line-subtle);
-            padding: 36px 32px;
-            border-radius: var(--radius-sm);
-            transition: all 0.25s ease;
-        }
-        .subtopic-card:hover {
-            border-color: var(--line-focus);
-            background: var(--bg-surface);
-        }
-        .subtopic-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .subtopic-tag {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            color: var(--accent-platinum);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-        .subtopic-num {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            color: var(--text-dim);
-            letter-spacing: 0.12em;
-        }
-        .subtopic-title {
-            font-family: var(--font-serif);
-            font-size: 1.85rem;
-            font-weight: 300;
-            color: var(--ivory-white);
-            margin-bottom: 18px;
-            line-height: 1.3;
-        }
-        .mechanism-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.75;
-            font-weight: 300;
-            margin-bottom: 24px;
-        }
-        .subtopic-specs-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 16px;
-            background: var(--tint-1);
-            border: 1px solid var(--line-subtle);
-            padding: 20px;
-            border-radius: var(--radius-sm);
-        }
-        @media (max-width: 900px) {
-            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 600px) {
-            .subtopic-specs-grid { grid-template-columns: 1fr; }
-        }
-        .spec-cell {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .spec-label {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-        .spec-val {
-            font-family: var(--font-mono);
-            font-size: 0.84rem;
-            color: var(--ivory-white);
-        }
-        .spec-val-sm {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-        .actives-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .active-pill {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            background: var(--tint-2);
-            border: 1px solid var(--line-subtle);
-            color: var(--accent-platinum);
-            padding: 2px 8px;
-            border-radius: 2px;
-        }
-
-        /* Technical Specifications Table */
-        .specs-table-wrap {
-            margin: 40px 0 60px;
-            overflow-x: auto;
-            border: 1px solid var(--line-subtle);
-            border-radius: var(--radius-sm);
-        }
-        .technical-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.86rem;
-        }
-        .technical-table th {
-            background: var(--bg-surface);
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--accent-platinum);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--line-subtle);
-        }
-        .technical-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--line-subtle);
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-        .technical-table tr:last-child td {
-            border-bottom: none;
-        }
-        .technical-table tr:hover td {
-            background: var(--tint-1);
-            color: var(--ivory-white);
-        }
-        .moq-pill {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--ivory-white);
-            background: var(--tint-2);
-            padding: 3px 8px;
-            border: 1px solid var(--line-focus);
-            border-radius: 2px;
-            white-space: nowrap;
-        }
-
-        /* Quality Assurance Grid */
-        .qa-pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 24px 0 60px;
-        }
-        @media (max-width: 800px) {
-            .qa-pillars-grid { grid-template-columns: 1fr; }
-        }
-        .qa-pillar-card {
-            background: var(--bg-canvas);
-            border: 1px solid var(--line-subtle);
-            padding: 26px 22px;
-            border-radius: var(--radius-sm);
-        }
-        .qa-pillar-card h5 {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            color: var(--ivory-white);
-            margin: 8px 0 10px;
-            font-weight: 400;
-        }
-        .qa-pillar-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 300;
-        }
-
-        /* Related Topics Chips */
-        .related-disciplines-section {
-            margin: 60px 0 40px;
-            border-top: 1px solid var(--line-subtle);
-            padding-top: 36px;
-        }
-        .related-chips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .related-chip {
-            background: var(--bg-canvas);
-            border: 1px solid var(--line-subtle);
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.84rem;
-            border-radius: var(--radius-sm);
-            transition: all 0.2s ease;
-        }
-        .related-chip:hover {
-            border-color: var(--line-focus);
-            background: var(--bg-surface);
-            color: var(--ivory-white);
-            transform: translateY(-2px);
-        }
-        .chip-num {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-dim);
-        }
-        .chip-arrow {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            transition: transform 0.2s;
-        }
-        .related-chip:hover .chip-arrow {
-            color: var(--ivory-white);
-            transform: translateX(3px);
-        }
-    </style>
-
-    <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://labelorigin.com/renaud/candles/#facility",
-      "name": "Renaud Naturals • Candles Formulation Laboratory",
-      "url": "https://labelorigin.com/renaud/candles/",
-      "logo": "https://labelorigin.com/renaud/renaud-logo.png",
-      "image": "https://labelorigin.com/renaud/renaud-logo.png",
-      "description": "A technical manufacturing guide for private label soy candles. Learn about wax crystallization, combustion thermodynamics, lead-free wick calibration, and pure essential oil fragrance loads.",
-      "telephone": "+1-970-667-1433",
-      "email": "Arch@RenaudNaturals.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "101 East 5th Street",
-        "addressLocality": "Loveland",
-        "addressRegion": "CO",
-        "postalCode": "80537",
-        "addressCountry": "US"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Candles Technical Formulation Catalog",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Soy & Beeswax Melting Curves & Frosting Prevention",
-              "description": "Soy wax exhibits complex polymorphic crystallization (alpha, beta-prime, and stable beta crystals). Rapid temperature drops cause polymorphic phase shifts that manifest as surface \"frosting\" or cracki..."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Wick Sizing, Capillary Draw & Melt Pool Dynamics",
-              "description": "A candle operates as a micro-chemical refinery: liquid wax is drawn up the wick by capillary action, vaporized by the heat of the flame, and oxidized with atmospheric oxygen. If the wick is undersized..."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Essential Oil Flash Points & Hot Scent Throw",
-              "description": "Essential oils have distinct flash points (e.g. sweet orange at 115°F, lavender at 150°F, cedarwood at 200°F). Adding volatile oils into molten wax at excessive temperatures causes instant thermal fla..."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://labelorigin.com/renaud/candles/#faq",
-      "mainEntity": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What wax and wick materials do you use for private label candles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use 100% pure US-grown soy wax and Colorado beeswax. Our wicks are braided unbleached cotton with intertwined paper fibers, completely free of lead, zinc, and heavy metals."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "LabelOrigin", "item": "https://labelorigin.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Renaud Naturals", "item": "https://labelorigin.com/renaud/" },
+            { "@type": "ListItem", "position": 3, "name": "Candles", "item": "https://labelorigin.com/renaud/candles/" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "What is the wholesale MOQ for private label clean candles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wholesale starter orders for stock clean candle scents start at just 12+ units per SKU. Custom scent development and custom vessel pouring starts at 250+ units."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do your candles contain paraffin or synthetic fragrance oils?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Every candle poured at Renaud Naturals is 100% paraffin-free, phthalate-free, and scented with authentic pure essential oils and botanical distillates."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the burn time for an 8 oz Renaud soy candle?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our 8 oz soy candles burn cleanly for 45 to 50 hours when properly trimmed, maintaining an even edge-to-edge melt pool without tunneling."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "LabelOrigin Directory",
-          "item": "https://labelorigin.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Renaud Naturals Formulation Lab",
-          "item": "https://labelorigin.com/renaud/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Candles Formulation Guide",
-          "item": "https://labelorigin.com/renaud/candles/"
+          "@type": "FAQPage",
+          "mainEntity": [
+        { "@type": "Question", "name": "Can I sell Renaud Naturals products under my own brand?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Renaud Naturals says you can use its products as they are with your own labels, and that single products or full lines can be made to your specifications." } },
+        { "@type": "Question", "name": "Where are the products made?", "acceptedAnswer": { "@type": "Answer", "text": "Renaud Naturals formulates and manufactures in-house at its facility at 101 East 5th Street in Loveland, Colorado, and has done so since 1997." } },
+        { "@type": "Question", "name": "What are the minimum order quantities?", "acceptedAnswer": { "@type": "Answer", "text": "Minimums depend on the product, formula and packaging, and pricing is quoted per project. Contact Renaud Naturals for current terms." } },
+        { "@type": "Question", "name": "Does Renaud Naturals test on animals?", "acceptedAnswer": { "@type": "Answer", "text": "No. Renaud Naturals states that it never tests on animals." } }
+          ]
         }
       ]
     }
-  ]
-}
     </script>
 </head>
 <body>
 
 <div class="renaud-page-wrap">
-    
-    <!-- Top Navigation Header -->
+
     <header class="renaud-header">
         <div class="container">
             <a href="../" class="renaud-brand">
@@ -449,638 +61,122 @@
             </a>
 
             <nav class="renaud-nav-links">
-                <a href="#science" class="renaud-nav-link">Chemistry</a>
-                <a href="#subtopics" class="renaud-nav-link">Subtopic Chapters</a>
-                <a href="#lead-flow" class="renaud-nav-link">Order Samples ($3–$5)</a>
-                <a href="#specs" class="renaud-nav-link">Technical Matrix</a>
-                <a href="#compliance" class="renaud-nav-link">MoCRA &amp; QA</a>
-                <a href="#faq" class="renaud-nav-link">Specification FAQ</a>
-                <a href="../" class="renaud-nav-link" style="color: var(--accent-platinum);">&larr; Main Lab Hub</a>
+                <a href="../#formulations" class="renaud-nav-link">Capabilities</a>
+                <a href="../#about-us" class="renaud-nav-link">The 1997 Standard</a>
+                <a href="../#how-it-works" class="renaud-nav-link">Process</a>
+                <a href="../#samples" class="renaud-nav-link">Samples ($3–$5)</a>
+                <a href="../#faq" class="renaud-nav-link">Dossier FAQ</a>
             </nav>
 
             <div class="header-social-group">
-                <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on Facebook">
-                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on Facebook" title="Follow on Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
                 </a>
-                <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on X">
-                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <!-- X (Twitter) -->
+                <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals on X" title="Follow on X">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
                 </a>
+                <a href="tel:9706671433" class="renaud-nav-phone">TEL: (970) 667-1433</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="funnel-container">
-            
-            <!-- Breadcrumbs -->
-            <div class="breadcrumb-bar">
-                <a href="../../">LabelOrigin</a>
-                <span>&bull;</span>
-                <a href="../">Renaud Naturals</a>
-                <span>&bull;</span>
-                <span class="active">Candles Formulation Dossier</span>
-            </div>
 
-            <!-- Hero Section -->
-            <div class="renaud-hero">
-                <span class="topic-hero-badge">Combustion Thermodynamics • Est. 1997 • Loveland, Colorado</span>
-                <h1>The Chemistry of Clean Soy & Beeswax Candles: Combustion Physics & Thermal Curves</h1>
-                <p class="hero-desc">Discover the thermodynamics of non-toxic candle pouring. Explore wax polymorphism, the elimination of carcinogenic petroleum paraffin, lead-free braided cotton wick calibration, and optimal essential oil flash points in Loveland, Colorado.</p>
-
-                <!-- Minimalist Tabular Metrics -->
-                <div class="metrics-row">
-                    <div class="metric-cell">
-                        <span class="metric-val">12+ Units</span>
-                        <span class="metric-lbl">Turnkey Wholesale MOQ</span>
-                    </div>
-                    <div class="metric-cell">
-                        <span class="metric-val">250+ Units</span>
-                        <span class="metric-lbl">Custom Formulation R&amp;D</span>
-                    </div>
-                    <div class="metric-cell">
-                        <span class="metric-val">$3 to $5</span>
-                        <span class="metric-lbl">Evaluation Sample Kits</span>
-                    </div>
-                    <div class="metric-cell">
-                        <span class="metric-val">2 to 3 Weeks</span>
-                        <span class="metric-lbl">Production Lead Time</span>
-                    </div>
-                    <div class="metric-cell">
-                        <span class="metric-val">.5 oz – 5 Gal</span>
-                        <span class="metric-lbl">Flexible Package Formats</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Science Overview Callout -->
-            <section class="science-overview-box" id="science">
-                <span class="editorial-eyebrow">Formulation Science &bull; Theoretical Foundation</span>
-                <h4>Wax Polymorphism, Crystallization & Complete Combustion</h4>
-                <p>Mass-market commercial candles are made from petroleum paraffin wax—a byproduct of gasoline refining that releases benzene, toluene, and soot particles when burned. Furthermore, synthetic fragrance oils contain phthalates that aerosolize into indoor living spaces. Renaud Naturals pours exclusively with 100% renewable US-grown hydrogenated soybean oil (Golden Wax 464) and Colorado beeswax (Cera alba). We calibrate cooling curves and wick diameters to ensure clean, laminar combustion with zero toxic emissions.</p>
-            </section>
-
-            <!-- Interactive Formulation Lead Funnel -->
-            <div class="form-card" id="lead-flow">
-                
-                <div class="funnel-progress-wrap">
-                    <div class="funnel-progress-bar">
-                        <div id="funnel-progress-fill" class="funnel-progress-fill"></div>
-                    </div>
-                    <span class="funnel-step-count">SPECIFICATION STAGE <span id="step-current-number">1</span> OF 4</span>
-                </div>
-
-                <!-- STEP 1: Practice Type -->
-                <div id="step-1" class="step active">
-                    <span class="step-indicator">Phase 01 &bull; Entity Classification</span>
-                    <h2>Which best describes your business or practice?</h2>
-                    
-                    <button class="option-btn" data-select-type="Medical Spa / Wellness Clinic">
-                        <span>Medical Spa, Dermatology Practice, or Wellness Clinic</span>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-type="Day Spa / Salon / Studio">
-                        <span>Day Spa, Massage Therapy Practice, or Boutique Salon</span>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-type="Retail Storefront">
-                        <span>Retail Storefront, Clean Beauty Apothecary, or Holistic Boutique</span>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-type="Brand Founder">
-                        <span>Independent Brand Founder Launching Clean Label Line</span>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                </div>
-
-                <!-- STEP 2: Production Scale -->
-                <div id="step-2" class="step">
-                    <div class="step-header">
-                        <span class="step-indicator">Phase 02 &bull; Order Volume Scale</span>
-                        <button class="funnel-back-btn">&larr; Previous</button>
-                    </div>
-                    <h2>What is your estimated initial order run size?</h2>
-                    
-                    <button class="option-btn" data-select-volume="low">
-                        <div>
-                            <strong>Under 12 units (Consumer / Pilot Testing)</strong>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Pre-launch testing or individual personal consumer orders</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-volume="qualified">
-                        <div>
-                            <strong>12 – 48 units (Starter Wholesale / Turnkey Stock Formula)</strong>
-                            <div style="font-size: 0.78rem; color: var(--accent-platinum); margin-top: 3px;">Meets Renaud commercial wholesale minimum (12+ units per SKU)</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-volume="qualified">
-                        <div>
-                            <strong>50 – 249 units (Scaling Practice / Commercial Run)</strong>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Established clinic retail shelves and treatment backbar</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-volume="qualified">
-                        <div>
-                            <strong>250 – 1,000+ units (Custom Formulation R&amp;D)</strong>
-                            <div style="font-size: 0.78rem; color: var(--accent-champagne); margin-top: 3px;">Qualifies for bespoke chemist R&amp;D formulation and proprietary botanicals</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-volume="qualified">
-                        <div>
-                            <strong>Bulk Gallons &amp; Commercial Backbar (0.5 oz to 5 Gallons)</strong>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Bulk commercial pails and clinic refill dispensers</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                </div>
-
-                <!-- STEP 3: Discipline Confirmation -->
-                <div id="step-3-interest" class="step">
-                    <div class="step-header">
-                        <span class="step-indicator">Phase 03 &bull; Formulation Program</span>
-                        <button class="funnel-back-btn">&larr; Previous</button>
-                    </div>
-                    <h2>Confirm your primary manufacturing focus:</h2>
-                    
-                    <button class="option-btn" data-select-interest="Candles Formulations (Stock + Custom)">
-                        <div>
-                            <strong>Candles (Primary Program Focus)</strong>
-                            <div style="font-size: 0.78rem; color: var(--accent-platinum); margin-top: 3px;">Turnkey 12+ units stock line or 250+ units bespoke formulation R&amp;D</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-interest="Full Custom Formulation R&amp;D">
-                        <div>
-                            <strong>Full Custom Chemist R&amp;D (Bespoke Formula)</strong>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Bespoke botanicals, nut-free blends, custom scents &bull; 2 weeks lab R&amp;D</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                    <button class="option-btn" data-select-interest="Bulk Packaging &amp; Backbar Gallons">
-                        <div>
-                            <strong>Bulk Gallons &amp; Dispensary Supply</strong>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">0.5 oz up to 5-gallon pails for high-volume treatment rooms</div>
-                        </div>
-                        <span class="arrow-icon">&rarr;</span>
-                    </button>
-                </div>
-
-                <!-- STEP 4: Qualified Submission Form -->
-                <div id="step-qualified" class="step">
-                    <div class="step-header">
-                        <span class="step-indicator">Phase 04 &bull; Specification Routing</span>
-                        <button class="funnel-back-btn">&larr; Previous</button>
-                    </div>
-                    <h2>Where should Arch Jain route your Line Sheet &amp; Sample Kits?</h2>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 24px; font-weight: 300;">
-                        Your inquiry qualifies for direct facility access. Enter your details below to receive line sheets and sample order links.
-                    </p>
-
-                    <form id="qualified-lead-form">
-                        <div style="display: none;">
-                            <input type="text" id="q-website-hp" tabindex="-1" autocomplete="off">
-                        </div>
-
-                        <div class="input-grid">
-                            <div class="input-group">
-                                <label for="q-name">Contact Full Name *</label>
-                                <input type="text" id="q-name" required placeholder="Jane Doe">
-                            </div>
-                            <div class="input-group">
-                                <label for="q-company">Enterprise / Practice Legal Name *</label>
-                                <input type="text" id="q-company" required placeholder="Alpine Glow MedSpa &amp; Studio">
-                            </div>
-                        </div>
-
-                        <div class="input-grid">
-                            <div class="input-group">
-                                <label for="q-email">Business Work Email *</label>
-                                <input type="email" id="q-email" required placeholder="wholesale@alpineglow.com">
-                                <span class="hint">Line sheets and sample evaluation order links will be delivered here</span>
-                            </div>
-                            <div class="input-group">
-                                <label for="q-phone">Direct Phone Number *</label>
-                                <input type="tel" id="q-phone" required placeholder="(970) 555-0188">
-                                <span class="hint">For shipping verification on sample evaluation orders</span>
-                            </div>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="q-notes">Specific Formulation Requirements or Target Product Focus (Optional)</label>
-                            <input type="text" id="q-notes" placeholder="e.g. Target SKU types, organic botanicals, packaging preferences">
-                        </div>
-
-                        <button type="submit" class="submit-btn">
-                            <span>Transmit to Facility Desk &rarr;</span>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Small-Batch Waitlist Fallback -->
-                <div id="step-waitlist" class="step">
-                    <div class="step-header">
-                        <span class="step-indicator">Inquiry Routing</span>
-                        <button class="funnel-back-btn">&larr; Previous</button>
-                    </div>
-                    <h2>Micro-Batch &amp; Retail Catalog</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 14px; font-size: 0.92rem; line-height: 1.6; font-weight: 300;">
-                        Renaud Naturals specializes in wholesale formulation production starting at <strong>12+ units per SKU</strong> and custom lab R&amp;D at <strong>250+ units</strong>.
-                    </p>
-                    <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.88rem; line-height: 1.6; font-weight: 300;">
-                        If you are looking for single-unit consumer retail products, visit our direct shop at <a href="https://renaudnaturals.com" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">RenaudNaturals.com</a>. Or enter your email below to receive priority notifications when micro-batch pooled runs open.
-                    </p>
-
-                    <form id="waitlist-lead-form">
-                        <div class="input-group">
-                            <label for="w-email">Email Address *</label>
-                            <input type="email" id="w-email" required placeholder="founder@newbrand.com">
-                        </div>
-                        <div class="input-group">
-                            <label for="w-concept">Brand or Formulation Concept (Optional)</label>
-                            <input type="text" id="w-concept" placeholder="e.g. Clean candles line launching soon">
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span>Join Small-Batch Notification Queue &rarr;</span>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- SUCCESS STATE: Qualified Lead Confirmation -->
-                <div id="step-success-qualified" class="step">
-                    <div class="success-card">
-                        <div class="success-icon-wrap">&check;</div>
-                        <span class="editorial-eyebrow">Transmission Verified &bull; Direct Facility Queue</span>
-                        <h2 style="margin: 12px 0 6px;">Formulation Inquiry Transmitted</h2>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 580px; margin: 0 auto 24px; line-height: 1.6; font-weight: 300;">
-                            Your inquiry has been logged into the Renaud Naturals laboratory queue. Lead formulator Arch Jain will review your product parameters.
-                        </p>
-
-                        <div>
-                            <span class="lead-id-badge">SPECIFICATION FILE REF: <span id="success-lead-id">RN-2026-9812</span></span>
-                        </div>
-
-                        <div id="success-summary" class="lead-summary-box"></div>
-
-                        <div style="border-left: 2px solid var(--accent-platinum); padding-left: 18px; text-align: left; margin-bottom: 28px;">
-                            <strong style="color: var(--ivory-white); font-size: 0.88rem; display: block; margin-bottom: 6px; font-family: var(--font-mono); text-transform: uppercase;">Production Timeline &amp; Next Steps:</strong>
-                            <ul style="color: var(--text-secondary); font-size: 0.84rem; padding-left: 18px; line-height: 1.6; font-weight: 300;">
-                                <li>Arch Jain or our lead formulation chemist will review your submission within 1 business day.</li>
-                                <li>The complete wholesale price matrix and product catalog will be delivered to your inbox.</li>
-                                <li>Direct links to order sample evaluation jars/bottles ($3 to $5 each) will be issued.</li>
-                                <li>Standard production and labeling turnaround is 2 to 3 weeks upon artwork approval.</li>
-                            </ul>
-                        </div>
-
-                        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-                            <a href="tel:9706671433" class="btn btn-primary btn-sm">TEL: (970) 667-1433</a>
-                            <a href="mailto:Arch@RenaudNaturals.com?subject=Wholesale%20Formulation%20Inquiry%20-%20Candles" class="btn btn-secondary btn-sm">Direct Lab Email</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SUCCESS STATE: Small-Batch Confirmation -->
-                <div id="step-success-waitlist" class="step">
-                    <div class="success-card">
-                        <div class="success-icon-wrap">&check;</div>
-                        <span class="editorial-eyebrow">Inquiry Logged</span>
-                        <h2 style="margin: 12px 0 6px;">Thank You for Your Interest</h2>
-                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 520px; margin: 0 auto 20px; font-weight: 300;">
-                            Confirmation sent to <strong id="waitlist-success-email" style="color: var(--ivory-white);">your email</strong>. If you are looking for single-unit retail items for personal use, explore our consumer store below.
-                        </p>
-                        <a href="https://renaudnaturals.com/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Visit RenaudNaturals.com Retail Store &rarr;</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- In-Depth Subtopics Chapter Breakdown -->
-            <section id="subtopics" style="margin-top: 60px;">
-                <div style="margin-bottom: 24px;">
-                    <span class="editorial-eyebrow">07 / CANDLES &bull; Chapter Dossiers</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">In-Depth Formulation Subtopics</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">
-                        Detailed technical specifications, active biological mechanisms, and chemical formulation guidelines for private-label brand founders, dermatologists, and clinical operators.
-                    </p>
-                </div>
-                
-                <div class="subtopics-container">
-                    
-        <article class="subtopic-card" id="subtopic-1">
-            <div class="subtopic-header">
-                <span class="subtopic-tag">SUBTOPIC 01 • LIPID CRYSTALLIZATION</span>
-                <span class="subtopic-num">CHAPTER 01</span>
-            </div>
-            <h3 class="subtopic-title">Soy & Beeswax Melting Curves & Frosting Prevention</h3>
-            
-            <div class="subtopic-body">
-                <p class="mechanism-text">Soy wax exhibits complex polymorphic crystallization (alpha, beta-prime, and stable beta crystals). Rapid temperature drops cause polymorphic phase shifts that manifest as surface "frosting" or cracking. Renaud utilizes a dual-lipid system blending low-melt soy wax (115°F–120°F) with high-melt Colorado beeswax (144°F–147°F). Beeswax acts as a natural crystal modifier, raising the overall hardness, eliminating paraffin additives, and dramatically extending total burn duration.</p>
-                
-                <div class="subtopic-specs-grid">
-                    <div class="spec-cell">
-                        <span class="spec-label">Key Active Compounds:</span>
-                        <div class="actives-pills">
-                            <span class="active-pill">100% Pure US-Grown Soy Wax</span><span class="active-pill">Pure Colorado Beeswax (Cera Alba)</span><span class="active-pill">Pure Essential Oil Fragrance Blends</span>
-                        </div>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Target pH Range:</span>
-                        <strong class="spec-val">Anhydrous / Combustible</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Rheology &amp; Viscosity:</span>
-                        <strong class="spec-val">Solid Wax (Melt point: 118°F – 124°F)</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Packaging &amp; Dispensing:</span>
-                        <span class="spec-val-sm">8 oz & 11 oz Heavy-Base Tumblers, Apothecary Jars with Cork/Bamboo Lids, 4 oz Travel Tins</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-    
-        <article class="subtopic-card" id="subtopic-2">
-            <div class="subtopic-header">
-                <span class="subtopic-tag">SUBTOPIC 02 • COMBUSTION PHYSICS</span>
-                <span class="subtopic-num">CHAPTER 02</span>
-            </div>
-            <h3 class="subtopic-title">Wick Sizing, Capillary Draw & Melt Pool Dynamics</h3>
-            
-            <div class="subtopic-body">
-                <p class="mechanism-text">A candle operates as a micro-chemical refinery: liquid wax is drawn up the wick by capillary action, vaporized by the heat of the flame, and oxidized with atmospheric oxygen. If the wick is undersized, the candle "tunnels," leaving wasted wax on the container walls. If oversized, the flame consumes wax faster than it can vaporize, producing soot and high carbon monoxide. Renaud uses lead-free, unbleached braided cotton wicks with paper filament cores (ECO / CD series), precisely matched to container diameter for a full edge-to-edge melt pool within 2 hours.</p>
-                
-                <div class="subtopic-specs-grid">
-                    <div class="spec-cell">
-                        <span class="spec-label">Key Active Compounds:</span>
-                        <div class="actives-pills">
-                            <span class="active-pill">Braided Unbleached Cotton Wicks</span><span class="active-pill">Paper Filament Core (Lead-Free)</span><span class="active-pill">High-Density Wax Matrix</span>
-                        </div>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Target pH Range:</span>
-                        <strong class="spec-val">Solid Phase</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Rheology &amp; Viscosity:</span>
-                        <strong class="spec-val">Liquid in Melt Pool: ~10 cps</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Packaging &amp; Dispensing:</span>
-                        <span class="spec-val-sm">Calibrated to Jar Internal Diameters of 2.75" to 3.25"</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-    
-        <article class="subtopic-card" id="subtopic-3">
-            <div class="subtopic-header">
-                <span class="subtopic-tag">SUBTOPIC 03 • THERMAL VOLATILITY</span>
-                <span class="subtopic-num">CHAPTER 03</span>
-            </div>
-            <h3 class="subtopic-title">Essential Oil Flash Points & Hot Scent Throw</h3>
-            
-            <div class="subtopic-body">
-                <p class="mechanism-text">Essential oils have distinct flash points (e.g. sweet orange at 115°F, lavender at 150°F, cedarwood at 200°F). Adding volatile oils into molten wax at excessive temperatures causes instant thermal flash-off, destroying the aroma before the candle is poured. Renaud incorporates 8% to 10% pure essential oil fragrance loads at exact thermal windows (135°F–140°F), allowing the essential oil molecules to bond completely with the lipid matrix without curdling or burning.</p>
-                
-                <div class="subtopic-specs-grid">
-                    <div class="spec-cell">
-                        <span class="spec-label">Key Active Compounds:</span>
-                        <div class="actives-pills">
-                            <span class="active-pill">Pure Essential Oils (Lavender, Orange, Cedarwood, Eucalyptus, Fir Needle)</span><span class="active-pill">Plant-Based Aromatics</span>
-                        </div>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Target pH Range:</span>
-                        <strong class="spec-val">Anhydrous</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Rheology &amp; Viscosity:</span>
-                        <strong class="spec-val">Controlled Thermal Pour</strong>
-                    </div>
-                    <div class="spec-cell">
-                        <span class="spec-label">Packaging &amp; Dispensing:</span>
-                        <span class="spec-val-sm">Amber Glass to Prevent Photolytic Essential Oil Degradation</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-    
+            <section class="category-hero">
+                <div class="crumbs"><a href="../../">LabelOrigin</a> &rsaquo; <a href="../">Renaud Naturals</a> &rsaquo; Candles</div>
+                <span class="editorial-eyebrow">Private Label &bull; Candles &bull; Loveland, Colorado</span>
+                <h1>Private Label Soy Candles</h1>
+                <p class="subtitle">Renaud Naturals makes soy candles as part of its in-house line from Loveland, Colorado. Current scents include Deep in the Forest, Mango and Feel Good. Ask about carrying them under your own label.</p>
+                <div class="hero-actions">
+                    <a href="../#pre-qualify" class="btn btn-primary">Start your line &rarr;</a>
+                    <a href="mailto:Arch@RenaudNaturals.com?subject=Private%20Label%20Inquiry%20-%20Candles" class="btn btn-secondary">Email Arch@RenaudNaturals.com</a>
                 </div>
             </section>
 
-            <!-- Technical Specifications Matrix Table -->
-            <section id="specs" style="margin-top: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">Laboratory Specifications Matrix</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Technical Chemistry &amp; Packaging Parameters</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">
-                        Direct laboratory benchmarking across pH, viscosity, shelf life, and packaging requirements.
-                    </p>
-                </div>
-
-                <div class="specs-table-wrap">
-                    <table class="technical-table">
-                        <thead>
-                            <tr>
-                                <th>Formulation Class</th>
-                                <th>Target pH</th>
-                                <th>Viscosity Range</th>
-                                <th>Stability Shelf Life</th>
-                                <th>Standard Packaging</th>
-                                <th>Minimum Order (MOQ)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-        <tr>
-            <td><strong>100% Clean Soy Tumbler (8 oz)</strong></td>
-            <td><code>Solid</code></td>
-            <td>Wax</td>
-            <td>36 Months</td>
-            <td>8 oz Glass Tumbler</td>
-            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
-        </tr>
-    
-        <tr>
-            <td><strong>Aromatherapy Beeswax Blend (11 oz)</strong></td>
-            <td><code>Solid</code></td>
-            <td>Wax</td>
-            <td>36 Months</td>
-            <td>11 oz Apothecary Jar</td>
-            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
-        </tr>
-    
-        <tr>
-            <td><strong>Travel Tin Essential Oil Candle (4 oz)</strong></td>
-            <td><code>Solid</code></td>
-            <td>Wax</td>
-            <td>36 Months</td>
-            <td>4 oz Seamless Metal Tin</td>
-            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
-        </tr>
-    
-        <tr>
-            <td><strong>Warm Skin-Safe Massage Candle</strong></td>
-            <td><code>Solid (Low Melt)</code></td>
-            <td>Wax/Balm</td>
-            <td>24 Months</td>
-            <td>6 oz Ceramic Pour Spout</td>
-            <td><span class="moq-pill">12+ Units (Stock) / 250+ (Custom)</span></td>
-        </tr>
-    
-                        </tbody>
-                    </table>
-                </div>
+            <section class="category-section">
+                <h2>Candles products from Renaud Naturals</h2>
+                <ul class="category-list">
+                    <li><strong>Deep in the Forest soy candle</strong></li>
+                    <li><strong>Mango soy candle</strong></li>
+                    <li><strong>Feel Good soy candle</strong></li>
+                </ul>
+                <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">
+                    These come from Renaud Naturals' current retail range. You can see them at <a href="https://renaudnaturals.com/product-category/candles/" target="_blank" rel="noopener">renaudnaturals.com</a>. Private label versions and custom formulations are discussed during consultation.
+                </p>
             </section>
 
-            <!-- Quality Assurance, Testing & MoCRA Compliance -->
-            <section id="compliance" style="margin-top: 50px;">
-                <div style="margin-bottom: 16px;">
-                    <span class="editorial-eyebrow">Regulatory Compliance &bull; Quality Assurance</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">MoCRA, cGMP &amp; Laboratory Testing Protocols</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">
-                        Every commercial batch formulated at Renaud Naturals undergoes three tiers of analytical quality control before release.
-                    </p>
-                </div>
-
-                <div class="qa-pillars-grid">
-                    <div class="qa-pillar-card">
-                        <span class="subtopic-tag">TESTING PROTOCOL 01</span>
-                        <h5>USP &lt;51&gt; Antimicrobial Challenge</h5>
-                        <p>28-day efficacy testing verifying that clean preservative matrices actively inhibit Gram-positive (S. aureus), Gram-negative (P. aeruginosa, E. coli), and fungal pathogens (C. albicans, A. brasiliensis) without synthetic biocides.</p>
-                    </div>
-
-                    <div class="qa-pillar-card">
-                        <span class="subtopic-tag">TESTING PROTOCOL 02</span>
-                        <h5>Accelerated Thermal Stability</h5>
-                        <p>All formulas undergo 12-week accelerated thermal aging at 40°C and 75% relative humidity (the thermodynamic equivalent of 24 months at ambient room temperature) to guarantee zero phase separation, syneresis, or color degradation.</p>
-                    </div>
-
-                    <div class="qa-pillar-card">
-                        <span class="subtopic-tag">REGULATORY COMPLIANCE</span>
-                        <h5>FDA MoCRA Safety Substantiation</h5>
-                        <p>Renaud Naturals maintains an active FDA cosmetic facility registration. We supply brand owners with comprehensive Batch Lot COAs, ingredient toxicological profiles, and allergen declarations required under federal MoCRA law.</p>
-                    </div>
-                </div>
+            <section class="category-section">
+                <h2>Made in-house since 1997</h2>
+                <p style="color: var(--text-secondary);">Renaud Naturals formulates and manufactures in-house in Loveland, Colorado, and makes its products in small batches, fresh to order. It ships across the USA and abroad. Renaud Naturals states that it never tests on animals.</p>
             </section>
 
-            <!-- Topic Specification FAQ Accordion (AI Search & Featured Snippet Engine) -->
-            <section class="funnel-faq" id="faq" style="margin-top: 50px;">
-                <span class="editorial-eyebrow">AI Search &amp; Knowledge Engine</span>
-                <h3 class="faq-title">Candles Formulation &amp; Manufacturing FAQ</h3>
+            <section class="category-section">
+                <h2>How private label works</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 16px;">Two ways to launch: use Renaud's existing formulas with your own label, or have a single product or a full line made to your specifications.</p>
+                <ul class="category-list">
+                    <li><strong>1. Consultation</strong>Talk through your brand, customers and product goals.</li>
+                    <li><strong>2. Samples</strong>Try the formulas before committing.</li>
+                    <li><strong>3. Formula and packaging</strong>Choose the product and the packaging.</li>
+                    <li><strong>4. Labels and compliance review</strong>Brand owners are responsible for their own labeling and regulatory obligations (for example FDA MoCRA). Renaud will walk you through them.</li>
+                    <li><strong>5. Production and delivery</strong>Your order is made and shipped.</li>
+                </ul>
+                <p style="margin-top: 14px; color: var(--text-secondary); font-size: 0.9rem;">Pricing is quoted per project, based on formula, packaging and quantity.</p>
+            </section>
+
+            <section class="category-section category-cta">
+                <h2>Start your candles line</h2>
+                <p>Tell us about your business and what you want to launch. Qualified inquiries go straight to the lab.</p>
+                <a href="../#pre-qualify" class="btn btn-primary">Start your line &rarr;</a>
+                <p style="margin-top: 18px; font-size: 0.9rem;">Prefer to talk? <a href="tel:9706671433">(970) 667-1433</a> &bull; <a href="mailto:Arch@RenaudNaturals.com">Arch@RenaudNaturals.com</a></p>
+            </section>
+
+            <section class="category-section funnel-faq" id="faq">
+                <h2>Candles private label FAQ</h2>
                 <div class="faq-accordion">
-                    
-        <details>
-            <summary>What wax and wick materials do you use for private label candles?</summary>
-            <p>We use 100% pure US-grown soy wax and Colorado beeswax. Our wicks are braided unbleached cotton with intertwined paper fibers, completely free of lead, zinc, and heavy metals.</p>
-        </details>
-    
-        <details>
-            <summary>What is the wholesale MOQ for private label clean candles?</summary>
-            <p>Wholesale starter orders for stock clean candle scents start at just 12+ units per SKU. Custom scent development and custom vessel pouring starts at 250+ units.</p>
-        </details>
-    
-        <details>
-            <summary>Do your candles contain paraffin or synthetic fragrance oils?</summary>
-            <p>No. Every candle poured at Renaud Naturals is 100% paraffin-free, phthalate-free, and scented with authentic pure essential oils and botanical distillates.</p>
-        </details>
-    
-        <details>
-            <summary>What is the burn time for an 8 oz Renaud soy candle?</summary>
-            <p>Our 8 oz soy candles burn cleanly for 45 to 50 hours when properly trimmed, maintaining an even edge-to-edge melt pool without tunneling.</p>
-        </details>
-    
+                <details>
+                    <summary>Can I sell Renaud Naturals products under my own brand?</summary>
+                    <p>Yes. Renaud Naturals says you can use its products as they are with your own labels, and that single products or full lines can be made to your specifications.</p>
+                </details>
+                <details>
+                    <summary>Where are the products made?</summary>
+                    <p>Renaud Naturals formulates and manufactures in-house at its facility at 101 East 5th Street in Loveland, Colorado, and has done so since 1997.</p>
+                </details>
+                <details>
+                    <summary>What are the minimum order quantities?</summary>
+                    <p>Minimums depend on the product, formula and packaging, and pricing is quoted per project. Contact Renaud Naturals for current terms.</p>
+                </details>
+                <details>
+                    <summary>Does Renaud Naturals test on animals?</summary>
+                    <p>No. Renaud Naturals states that it never tests on animals.</p>
+                </details>
                 </div>
             </section>
 
-            <!-- Related Disciplines Navigation -->
-            <section class="related-disciplines-section">
-                <span class="editorial-eyebrow">Other Production Disciplines</span>
-                <h4 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; color: var(--ivory-white); margin-top: 6px;">Explore Related Formulation Capabilities</h4>
-                <div class="related-chips-grid">
-                    
-        <a href="../facial-care/" class="related-chip">
-            <span class="chip-num">01</span>
-            <span>Facial Care</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../natural-baby/" class="related-chip">
-            <span class="chip-num">08</span>
-            <span>Natural Baby</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../massage/" class="related-chip">
-            <span class="chip-num">09</span>
-            <span>Massage</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../makeup/" class="related-chip">
-            <span class="chip-num">03</span>
-            <span>Makeup</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../hair-care/" class="related-chip">
-            <span class="chip-num">04</span>
-            <span>Hair Care</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../perfume/" class="related-chip">
-            <span class="chip-num">05</span>
-            <span>Perfume</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../feel-good/" class="related-chip">
-            <span class="chip-num">06</span>
-            <span>Feel Good</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../body-care/" class="related-chip">
-            <span class="chip-num">02</span>
-            <span>Body Care</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
-        <a href="../housekeeping/" class="related-chip">
-            <span class="chip-num">10</span>
-            <span>Housekeeping</span>
-            <span class="chip-arrow">&rarr;</span>
-        </a>
-    
+            <section class="category-section">
+                <h2>Other Renaud Naturals categories</h2>
+                <div class="category-links">
+                    <a href="../facial-care/">Facial Care</a>
+                    <a href="../body-care/">Body Care</a>
+                    <a href="../makeup/">Makeup</a>
+                    <a href="../hair-care/">Hair Care</a>
+                    <a href="../perfume/">Perfume</a>
+                    <a href="../feel-good/">Feel Good</a>
+                    <a href="../natural-baby/">Natural Baby</a>
+                    <a href="../massage/">Massage</a>
+                    <a href="../housekeeping/">Housekeeping</a>
                 </div>
             </section>
-
-            <!-- Verified Facility Contact & Liaison Card -->
-            <div class="liaison-card" style="margin-top: 40px;">
-                <div class="liaison-details">
-                    <h4>Renaud Naturals Formulation Facility</h4>
-                    <p>101 East 5th Street, Loveland, CO 80537 &bull; In-House 6,000 Sq Ft Lab</p>
-                    <p style="margin-top: 4px; font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">Visits By Appointment: Mon&ndash;Fri 9 AM&ndash;5 PM MT</p>
-                </div>
-                <div class="liaison-contacts">
-                    <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)">
-                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <a href="tel:9706671433" class="btn btn-primary btn-sm">TEL: (970) 667-1433</a>
-                    <a href="mailto:Arch@RenaudNaturals.com?subject=Wholesale%20Formulation%20Inquiry%20-%20Candles" class="btn btn-secondary btn-sm">Arch@RenaudNaturals.com</a>
-                </div>
-            </div>
 
         </div>
     </div>
 
-    <!-- Official Renaud Naturals Footer -->
     <footer class="renaud-footer">
         <div class="container">
             <div class="renaud-footer-top">
@@ -1090,42 +186,36 @@
                         <h4>Renaud Naturals</h4>
                         <p style="font-weight: 300;">Manufacturer of All-Natural Skincare &bull; In-House Loveland, Colorado Lab</p>
                         <p style="margin-top: 4px; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">101 East 5th Street, Loveland, Colorado 80537 &bull; (970) 667-1433 &bull; Arch@RenaudNaturals.com</p>
+                        
+                        <div class="renaud-footer-socials">
+                            <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)">
+                                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <nav class="renaud-footer-nav">
-                    <a href="../">&larr; Renaud Naturals Lab Hub</a>
                     <a href="https://renaudnaturals.com/" target="_blank" rel="noopener">Home</a>
                     <a href="https://renaudnaturals.com/shop/" target="_blank" rel="noopener">Shop Retail</a>
                     <a href="https://renaudnaturals.com/about-us/" target="_blank" rel="noopener">About Us</a>
                     <a href="https://renaudnaturals.com/wholesale/" target="_blank" rel="noopener">Wholesale</a>
+                    <a href="https://sass-ee.com/" target="_blank" rel="noopener">Sass-ee Tan</a>
                     <a href="https://renaudnaturals.com/contact/" target="_blank" rel="noopener">Contact Us</a>
                 </nav>
             </div>
 
             <div class="renaud-footer-bottom">
-                <p>&copy; 2026 Renaud Naturals &bull; All Rights Reserved &bull; Safe for You &amp; Safe for the Planet Since 1997 &bull; Loveland, Colorado, USA.</p>
+                <p>&copy; 2026 Renaud Naturals &bull; All Rights Reserved &bull; Formulated and manufactured in Loveland, Colorado since 1997 &bull; Loveland, Colorado, USA.</p>
             </div>
         </div>
     </footer>
 
 </div>
 
-<!-- Funnel Configuration & Engine Script -->
-<script>
-    window.FunnelConfig = {
-        partnerName: 'Renaud Naturals (Candles)',
-        partnerPrefix: 'RN',
-        partnerSlug: 'renaud-candles',
-        facilityAddress: '101 East 5th Street, Loveland, CO 80537',
-        facilityPhone: '970-667-1433',
-        facilityEmail: 'Arch@RenaudNaturals.com',
-        ccEmail: 'robertserranomailbox@gmail.com',
-        storageKey: 'labelorigin_renaud_candles_leads',
-        waitlistKey: 'labelorigin_small_batch_waitlist'
-    };
-</script>
-<script src="../../assets/js/funnel.js"></script>
-
+<script src="../../assets/js/contact.js"></script>
 </body>
 </html>
