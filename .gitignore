@@ -11,3 +11,6 @@ Thumbs.db
 
 # Node
 node_modules/
+
+# Private handoff and strategy notes (never publish)
+private/
