@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Timeline Planner | LabelOrigin</title>
+    <meta name="description" content="Plan a skincare launch step by step — brief, samples, testing, labels, production, launch readiness. Timelines vary; confirm each one with your manufacturer.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Launch Timeline Planner | LabelOrigin">
+    <meta property="og:description" content="Plan a skincare launch step by step — brief, samples, testing, labels, production, launch readiness. Timelines vary; confirm each one with your manufacturer.">
+    <meta property="og:url" content="https://labelorigin.com/tools/launch-timeline/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Launch Timeline Planner | LabelOrigin">
+    <meta name="twitter:description" content="Plan a skincare launch step by step — brief, samples, testing, labels, production, launch readiness. Timelines vary; confirm each one with your manufacturer.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/launch-timeline/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/launch-timeline/#webpage",
+        "url": "https://labelorigin.com/tools/launch-timeline/",
+        "name": "Launch Timeline Planner | LabelOrigin",
+        "description": "Plan a skincare launch step by step — brief, samples, testing, labels, production, launch readiness. Timelines vary; confirm each one with your manufacturer.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why doesn't this planner show how long each step takes?", "acceptedAnswer": {"@type": "Answer", "text": "Because the guides publish no duration for any single step. The only published scale is for a whole path: a stock-formula launch is commonly measured in weeks from approved samples to shipped goods, and custom formulation is measured in months. Every step below therefore reads Duration not published — confirm with your manufacturer, unless you enter a duration your manufacturer gave you."}},
+            {"@type": "Question", "name": "How do I turn my manufacturer's durations into dates?", "acceptedAnswer": {"@type": "Answer", "text": "Ask your manufacturer for each step in writing, then enter each duration in calendar days in the Your duration column. Dates are computed from your start date plus only the durations you entered, and every computed date is labeled user-supplied. A step with no duration entered has no date — that gap is honest, not missing data."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .plan-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .plan-field select, .plan-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .plan-duration input { width: 96px; padding: 8px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .plan-duration label { font-weight: 600; color: var(--text-primary); margin-right: 6px; }
+        .plan-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .plan-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>Plan a launch timeline you can confirm</h1>
+                <p>
+                    Pick a launch path and a start date. The planner lists every step in order — brief, samples, testing, labels and packaging, production, shipment, and launch readiness — and shows a date only where you supply the duration for that step.
+                </p>
+                <p class="guide-meta">Timelines vary by manufacturer, product complexity, and how quickly you approve samples. No duration below comes from LabelOrigin: each step reads “Duration not published — confirm with your manufacturer” until your manufacturer gives you a number. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your launch</h2>
+                <div class="plan-grid">
+                    <div class="plan-field">
+                        <label for="plan-path">Launch path</label>
+                        <select id="plan-path">
+                            <option value="stock" selected>Stock formula (private label)</option>
+                            <option value="semi">Semi-custom (stock base, modified)</option>
+                            <option value="custom">Custom formulation</option>
+                        </select>
+                    </div>
+                    <div class="plan-field">
+                        <label for="plan-start">Start date</label>
+                        <input id="plan-start" type="date">
+                    </div>
+                </div>
+                <div class="guide-callout">
+                    <p id="plan-scale"><strong>Published scale for this path:</strong> commonly weeks from approved samples to shipped goods, because the formula already exists. That is the whole span, not a duration for any single step.</p>
+                </div>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This planner needs JavaScript to compute dates from durations you enter. Without JavaScript, here are the steps in order, with the honest framing the planner uses: no duration is published for any single step, so every step reads “Duration not published — confirm with your manufacturer.” Timelines vary by manufacturer, product complexity, and how quickly you approve samples. The only published scale is for a whole path: a stock-formula launch is commonly measured in weeks from approved samples to shipped goods, and custom formulation is measured in months.</p>
+                        <ol>
+                            <li>Write the brief — Duration not published — confirm with your manufacturer.</li>
+                            <li>Compare manufacturers and quotes — Duration not published — confirm with your manufacturer.</li>
+                            <li>Samples: evaluate and approve — Duration not published — confirm with your manufacturer.</li>
+                            <li>Formulation development and sampling rounds (custom and semi-custom paths only; a stock formula already exists) — Duration not published — confirm with your manufacturer.</li>
+                            <li>Testing: confirm what is included — Duration not published — confirm with your manufacturer.</li>
+                            <li>Labels and packaging: confirm availability — Duration not published — confirm with your manufacturer.</li>
+                            <li>Production: fill, checks, and packing — Duration not published — confirm with your manufacturer.</li>
+                            <li>Shipment and receipt — Duration not published — confirm with your manufacturer.</li>
+                            <li>Launch readiness — Duration not published — confirm with your manufacturer.</li>
+                        </ol>
+                        <p>Ask your manufacturer for each step in writing. Read <a href="../../guides/choose-skincare-manufacturer/">how to choose a skincare manufacturer</a> and the <a href="../../guides/skincare-line-cost/">skincare line cost guide</a> before you commit.</p>
+                    </div>
+                </noscript>
+
+                <h2>Milestone checklist</h2>
+                <p>Enter each duration in calendar days, counted from the previous step to this one. Dates are computed from your start date plus only the durations you entered, and are labeled user-supplied. A step with no duration entered has no date.</p>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Milestone</th><th>Published duration</th><th>Your duration</th><th>Planned date (user-supplied durations only)</th></tr>
+                        </thead>
+                        <tbody id="plan-rows">
+                        </tbody>
+                        <tfoot>
+                            <tr class="plan-total"><td>Total planned span (user-supplied durations only)</td><td>—</td><td id="plan-total-days">—</td><td id="plan-total-date">—</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p id="plan-note" class="guide-meta">Choose a start date and enter a duration for a step to see its planned date. Durations you enter are yours, not LabelOrigin figures.</p>
+
+                <h2>How to read it</h2>
+                <p>Each step depends on the one before it. Approved samples are the anchor the guides use for lead time: ask for the realistic lead time from approved samples to shipped goods, in writing, along with the testing list, development-fee position, reorder minimums, and payment terms. A vague timeline is a warning sign — “soon” and “about a month” are not lead times. Get the sequence stage by stage, with the assumptions behind it and the events that would extend it, such as a further sample revision or a packaging delay.</p>
+                <p>The path changes the shape, not the honesty. A stock formula already exists, so there is no development step; custom work adds development, sampling rounds, and testing before production, which is why it is measured in months rather than weeks. For semi-custom work, a stock base is modified to your brief and then sampled and revised. Start with the <a href="../../guides/choose-skincare-manufacturer/">guide to choosing a skincare manufacturer</a>, and use the <a href="../../guides/skincare-line-cost/">skincare line cost guide</a> for the cost bands behind each step — estimates based on general industry patterns, not a quote.</p>
+                <p>Use the checklist as a record, not a promise. Keep the brief you sent, every quote, and every duration your manufacturer gave you in writing, in the same file. If a date slips, the step whose duration changed is the step to re-confirm — the rest of the plan follows from it, in order.</p>
+                <div class="guide-callout">
+                    <p><strong>Confirm every duration.</strong> Timelines vary, and this planner invents none of them. If a step has no duration from your manufacturer, it has no date here — ask for it in writing before you commit to a launch date.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>Why doesn't this planner show how long each step takes?</summary>
+                        <p>Because the guides publish no duration for any single step. The only published scale is for a whole path: a stock-formula launch is commonly measured in weeks from approved samples to shipped goods, and custom formulation is measured in months. Every step below therefore reads Duration not published — confirm with your manufacturer, unless you enter a duration your manufacturer gave you.</p>
+                    </details>
+                    <details>
+                        <summary>How do I turn my manufacturer's durations into dates?</summary>
+                        <p>Ask your manufacturer for each step in writing, then enter each duration in calendar days in the Your duration column. Dates are computed from your start date plus only the durations you entered, and every computed date is labeled user-supplied. A step with no duration entered has no date — that gap is honest, not missing data.</p>
+                    </details>
+                </div>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Get the lead time in writing</h3>
+                        <p>Use the manufacturer checklist to ask for a stage-by-stage timeline, then bring those durations back here and turn them into dates. Timelines vary — confirm every duration with your manufacturer.</p>
+                    </div>
+                    <div>
+                        <a href="../../guides/choose-skincare-manufacturer/" class="btn btn-primary btn-block">Choose a skincare manufacturer &rarr;</a>
+                        <a href="../../guides/skincare-line-cost/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Read the full cost guide &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* No duration on this page comes from LabelOrigin. The guides publish
+           no duration for any single step, so every milestone carries the
+           literal "not published" label. Only the whole-path scale (weeks
+           for stock, months for custom) is published, and it is shown as a
+           span, never assigned to a step. Dates are computed solely from
+           the start date plus durations the user enters, in calendar days. */
+        var NOT_PUBLISHED = 'Duration not published — confirm with your manufacturer.';
+        var PATH_SCALE = {
+            stock: 'Published scale for this path: commonly weeks from approved samples to shipped goods, because the formula already exists. That is the whole span, not a duration for any single step.',
+            semi: 'No published scale for this path — confirm every duration with your manufacturer. Timelines vary by manufacturer, product complexity, and how quickly you approve samples.',
+            custom: 'Published scale for this path: measured in months, because development, sampling rounds, and testing happen before production. That is the whole span, not a duration for any single step.'
+        };
+        var MILESTONES = [
+            { id: 'brief', name: 'Write the brief', detail: 'Product type and format, units per product, packaging preferences, target retail price, and your timeline — sent the same way to every manufacturer.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'compare', name: 'Compare manufacturers and quotes', detail: 'Ask for the realistic lead time from approved samples to shipped goods, in writing, plus testing, fees, reorder minimums, and payment terms.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'samples', name: 'Samples: evaluate and approve', detail: 'Evaluate every formula in its actual packaging before committing. Revision rounds and the turnaround per round are agreed in writing.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'develop', name: 'Formulation development and sampling rounds', detail: 'Custom: development, sampling rounds, and testing happen before production. Semi-custom: a stock base is modified to your brief, then sampled and revised.', paths: ['semi', 'custom'] },
+            { id: 'testing', name: 'Testing: confirm what is included', detail: 'Confirm which tests are included, what is billed separately, and what happens if a batch fails specification.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'labels', name: 'Labels and packaging: confirm availability', detail: 'Confirm packaging availability. Choosing stock packaging removes a packaging minimum and a lead time.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'production', name: 'Production: fill, checks, and packing', detail: 'Production is scheduled, goods are filled, checked, and packed.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'shipment', name: 'Shipment and receipt', detail: 'Goods are shipped, received, and stored. Storage begins the day the shipment arrives.', paths: ['stock', 'semi', 'custom'] },
+            { id: 'readiness', name: 'Launch readiness', detail: 'Have a written process for receiving, recording, and reporting serious adverse events, with label contact information consumers can use, before you sell.', paths: ['stock', 'semi', 'custom'] }
+        ];
+        function milestonesFor(path) {
+            return MILESTONES.filter(function (m) { return m.paths.indexOf(path) !== -1; });
+        }
+        function parseStartDate(value) {
+            if (typeof value !== 'string') { return null; }
+            var match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+            if (!match) { return null; }
+            var ms = Date.UTC(parseInt(match[1], 10), parseInt(match[2], 10) - 1, parseInt(match[3], 10));
+            var d = new Date(ms);
+            if (d.getUTCFullYear() !== parseInt(match[1], 10) || d.getUTCMonth() !== parseInt(match[2], 10) - 1 || d.getUTCDate() !== parseInt(match[3], 10)) { return null; }
+            return ms;
+        }
+        function formatDate(ms) {
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var d = new Date(ms);
+            return d.getUTCDate() + ' ' + months[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+        }
+        function parseDuration(value) {
+            if (value === null || value === undefined || value === '') { return null; }
+            var n = Number(value);
+            if (!isFinite(n) || Math.floor(n) !== n || n < 0 || n > 365) { return null; }
+            return n;
+        }
+        function computePlan(startValue, durationsById, path) {
+            var rows = milestonesFor(path);
+            var startMs = parseStartDate(startValue);
+            var resultRows = [];
+            var running = startMs;
+            var reachable = (startMs !== null);
+            var totalDays = 0;
+            var complete = (startMs !== null);
+            rows.forEach(function (m, index) {
+                var dateLabel;
+                var days = null;
+                if (index === 0) {
+                    dateLabel = (startMs === null) ? 'Choose a start date' : formatDate(startMs);
+                } else {
+                    days = parseDuration(durationsById ? durationsById[m.id] : null);
+                    if (!reachable || days === null) {
+                        dateLabel = '—';
+                        reachable = false;
+                        complete = false;
+                    } else {
+                        running += days * 86400000;
+                        dateLabel = formatDate(running) + ' (user-supplied)';
+                        totalDays += days;
+                    }
+                }
+                resultRows.push({ id: m.id, name: m.name, detail: m.detail, published: NOT_PUBLISHED, days: days, date: dateLabel });
+            });
+            return { rows: resultRows, scale: PATH_SCALE[path] || PATH_SCALE.stock, totalDays: complete ? totalDays : null, totalDate: (complete && resultRows.length) ? resultRows[resultRows.length - 1].date : '—', startSet: startMs !== null };
+        }
+        function collectState() {
+            var state = {};
+            var inputs = document.querySelectorAll('#plan-rows input[data-milestone]');
+            inputs.forEach(function (input) { state[input.getAttribute('data-milestone')] = input.value; });
+            return state;
+        }
+        function updateDates() {
+            var path = document.getElementById('plan-path').value;
+            var startValue = document.getElementById('plan-start').value;
+            var plan = computePlan(startValue, collectState(), path);
+            var rows = document.querySelectorAll('#plan-rows tr');
+            plan.rows.forEach(function (row, index) {
+                if (rows[index]) { rows[index].lastChild.textContent = row.date; }
+            });
+            document.getElementById('plan-total-days').textContent = (plan.totalDays === null) ? '—' : plan.totalDays + ' days (user-supplied)';
+            document.getElementById('plan-total-date').textContent = plan.totalDate;
+            document.getElementById('plan-note').textContent = plan.startSet
+                ? 'Dates above use only the durations you entered, in calendar days from the previous step. A step with no duration entered has no date.'
+                : 'Choose a start date and enter a duration for a step to see its planned date. Durations you enter are yours, not LabelOrigin figures.';
+        }
+        function buildRows() {
+            var path = document.getElementById('plan-path').value;
+            var state = collectState();
+            var rows = milestonesFor(path);
+            document.getElementById('plan-scale').textContent = PATH_SCALE[path] || PATH_SCALE.stock;
+            var tbody = document.getElementById('plan-rows');
+            tbody.innerHTML = '';
+            rows.forEach(function (m, index) {
+                var tr = document.createElement('tr');
+                var nameTd = document.createElement('td');
+                var strong = document.createElement('strong');
+                strong.textContent = m.name;
+                nameTd.appendChild(strong);
+                var detail = document.createElement('div');
+                detail.textContent = m.detail;
+                nameTd.appendChild(detail);
+                tr.appendChild(nameTd);
+                var pubTd = document.createElement('td');
+                pubTd.textContent = NOT_PUBLISHED;
+                tr.appendChild(pubTd);
+                var durTd = document.createElement('td');
+                durTd.className = 'plan-duration';
+                if (index === 0) {
+                    durTd.textContent = '— (start date)';
+                } else {
+                    var label = document.createElement('label');
+                    var inputId = 'dur-' + m.id;
+                    label.setAttribute('for', inputId);
+                    label.textContent = 'Days';
+                    var input = document.createElement('input');
+                    input.id = inputId;
+                    input.type = 'number';
+                    input.min = '0';
+                    input.max = '365';
+                    input.step = '1';
+                    input.setAttribute('data-milestone', m.id);
+                    input.setAttribute('aria-label', 'Days from previous step to ' + m.name + ' (your duration)');
+                    if (state[m.id] !== undefined) { input.value = state[m.id]; }
+                    input.addEventListener('input', updateDates);
+                    input.addEventListener('change', updateDates);
+                    durTd.appendChild(label);
+                    durTd.appendChild(input);
+                }
+                tr.appendChild(durTd);
+                var dateTd = document.createElement('td');
+                dateTd.textContent = '—';
+                tr.appendChild(dateTd);
+                tbody.appendChild(tr);
+            });
+            updateDates();
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            document.getElementById('plan-path').addEventListener('change', buildRows);
+            document.getElementById('plan-start').addEventListener('input', updateDates);
+            document.getElementById('plan-start').addEventListener('change', updateDates);
+            buildRows();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computePlan: computePlan, milestonesFor: milestonesFor, parseStartDate: parseStartDate, formatDate: formatDate, parseDuration: parseDuration, NOT_PUBLISHED: NOT_PUBLISHED, PATH_SCALE: PATH_SCALE };
+        }
+    })();
+    </script>
+</body>
+</html>

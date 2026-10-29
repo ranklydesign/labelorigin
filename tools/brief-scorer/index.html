@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Scorer | LabelOrigin</title>
+    <meta name="description" content="Paste your manufacturer brief and check it against the fields a quote needs: products, volume, packaging, timeline, and budget. Nothing leaves your browser.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Brief Scorer | LabelOrigin">
+    <meta property="og:description" content="Paste your manufacturer brief and check it against the fields a quote needs: products, volume, packaging, timeline, and budget. Nothing leaves your browser.">
+    <meta property="og:url" content="https://labelorigin.com/tools/brief-scorer/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brief Scorer | LabelOrigin">
+    <meta name="twitter:description" content="Paste your manufacturer brief and check it against the fields a quote needs: products, volume, packaging, timeline, and budget. Nothing leaves your browser.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/brief-scorer/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/brief-scorer/#webpage",
+        "url": "https://labelorigin.com/tools/brief-scorer/",
+        "name": "Brief Scorer | LabelOrigin",
+        "description": "Paste your manufacturer brief and check it against the fields a quote needs: products, volume, packaging, timeline, and budget. Nothing leaves your browser.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Does this tool send my brief anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The scoring runs entirely in your browser, and nothing you paste is sent anywhere or stored. You can check a brief, close the page, and nothing about it leaves your device."}},
+            {"@type": "Question", "name": "Is a high score a quote?", "acceptedAnswer": {"@type": "Answer", "text": "No. A high score means your brief covers the fields a manufacturer needs to quote accurately. It is not a price, and every figure still comes from the manufacturer in an itemized quote. Use our cost guide to sense-check the ranges behind a quote; those ranges are estimates based on general industry patterns, not a quote."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .scorer-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .scorer-field textarea { width: 100%; min-height: 220px; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; resize: vertical; }
+        .scorer-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 24px; }
+        .score-box { border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); padding: 16px; margin: 24px 0; }
+        .score-box p { margin: 0 0 8px; }
+        .score-number { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+        .checklist { list-style: none; padding: 0; margin: 16px 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid var(--line-light); }
+        .checklist .field-status { font-weight: 700; }
+        .checklist .field-status.found { color: var(--text-primary); }
+        .checklist .field-status.missing { color: var(--text-primary); }
+        .rules-table td:first-child { font-weight: 600; }
+        @media (max-width: 640px) { .scorer-actions { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>Score your manufacturer brief before you send it</h1>
+                <p>
+                    Manufacturers quote from specifics, not ideas. Paste the brief you plan to send, and this tool checks it against every field a manufacturer needs to quote accurately — then tells you exactly which fields are missing.
+                </p>
+                <p class="guide-meta"><strong>Nothing you paste leaves your browser.</strong> The scoring runs entirely on your device. Nothing is sent anywhere, nothing is stored, and no part of your brief is kept after you close the page.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Score your brief</h2>
+                <div class="scorer-field">
+                    <label for="brief-text">Paste your manufacturer brief</label>
+                    <textarea id="brief-text" placeholder="Paste the full text of the brief you plan to send a manufacturer, including your products, volume, packaging, timeline, and budget band."></textarea>
+                </div>
+                <div class="scorer-actions">
+                    <button type="button" id="brief-score-btn" class="btn btn-primary">Score my brief</button>
+                    <button type="button" id="brief-clear-btn" class="btn btn-secondary">Clear</button>
+                </div>
+                <div class="guide-callout">
+                    <p><strong>Nothing you paste leaves your browser.</strong> This tool makes no network calls. Your brief is checked on your device only, and it is never shown back to you on this page or sent anywhere.</p>
+                </div>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p><strong>Scoring needs JavaScript.</strong> This tool checks your pasted brief in your browser, so it cannot run without JavaScript, and nothing is sent anywhere either way. The 26 fields it scores are listed below, with the guidance for each one. Add every field to your brief before you send it, and ask for every quote itemized, in writing. For the cost buckets behind a first launch, read our <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>.</p>
+                    </div>
+                    <h2>What the scorer checks (without JavaScript)</h2>
+                    <ul>
+                        <li><strong>Business name:</strong> Add your business name as it should appear on the quote. Without it, the manufacturer cannot tell who the quote is for or keep quotes for different buyers apart.</li>
+                        <li><strong>Contact details:</strong> Add a contact name and a way to reach you, such as an email address. Without it, the manufacturer cannot follow up with questions that change the quote.</li>
+                        <li><strong>Business type:</strong> State what kind of business you are, for example a spa, salon, or indie brand. It tells the manufacturer how you plan to sell and what kind of support you may need.</li>
+                        <li><strong>Sales channels:</strong> List where you will sell, such as online, in a store, or wholesale. Sales channels affect packaging, labelling, and volume, so a quote without them rests on guesses.</li>
+                        <li><strong>Product type and format:</strong> Name each product type and its format, such as a cream or a serum. A manufacturer cannot price fill or packaging until it knows what the product is.</li>
+                        <li><strong>Product size:</strong> Give the size of each product, such as millilitres or ounces. Size sets how much product is filled into each unit, so it changes the quote directly.</li>
+                        <li><strong>Ingredient preferences:</strong> List the ingredients you want, or the direction you want the formula to take, as preferences only. Without direction, the manufacturer must guess what to formulate.</li>
+                        <li><strong>Ingredients to avoid:</strong> List anything the product must not contain, such as fragrance or a named ingredient. Leaving this out risks samples that you cannot use.</li>
+                        <li><strong>Scent preferences:</strong> State the scent direction, including unscented if that is what you want. Scent changes the formula work, so an unstated preference often comes back as a surprise in samples.</li>
+                        <li><strong>Texture preferences:</strong> Describe how the product should feel on the skin, such as lightweight or rich. Texture is part of the formula work, and it is hard to fix after samples are made.</li>
+                        <li><strong>First-run units per product:</strong> Give the first-run units for each product. Volume decides much of the per-unit math, so a quote without units is a guess.</li>
+                        <li><strong>Reorder expectations:</strong> Say how often, or how much, you expect to reorder. Reorder expectations help the manufacturer judge whether a first run is a one-off or the start of repeat work.</li>
+                        <li><strong>Container type:</strong> Name the container for each product, such as a jar, bottle, or tube. The container is a packaging cost of its own, and different containers need different filling setups.</li>
+                        <li><strong>Cap or pump:</strong> State the cap, pump, dropper, or other closure for each container. Closures are priced and sourced separately, so a quote cannot be complete without them.</li>
+                        <li><strong>Outer carton:</strong> Say whether each product needs an outer carton or box, or none. An outer carton adds materials and packing work that a quote must include to be accurate.</li>
+                        <li><strong>Label direction:</strong> Give the label direction, such as minimal, bold, or a look you already use. Labels carry their own cost and production step, and the manufacturer needs to know who supplies the artwork.</li>
+                        <li><strong>Target launch date:</strong> Give a target launch date. The date decides whether the work can fit the manufacturer's schedule, and a quote without a date cannot promise timing.</li>
+                        <li><strong>Timeline flexibility:</strong> Say how flexible the date is, or that it is firm. Flexibility changes how the manufacturer schedules the work, so it belongs in the brief, not in a later message.</li>
+                        <li><strong>Budget band:</strong> State your own budget band as a range. A band lets the manufacturer say early whether the brief is feasible, instead of quoting work you cannot fund.</li>
+                        <li><strong>Target retail price:</strong> State the price you plan to sell each product for. The retail price is the check on whether the production cost leaves room for your business to work.</li>
+                        <li><strong>Minimum order quantities:</strong> Ask what the minimum order quantities are. Minimums decide your floor, so ask the question in the brief rather than discovering it after a quote.</li>
+                        <li><strong>Lead time:</strong> Ask how long production takes from approval to delivery. Lead time is part of the quote's timing, and it is not safe to assume it.</li>
+                        <li><strong>Samples:</strong> Ask how samples work, including how many rounds are included. Samples are where scent, texture, and packaging get checked before a full run.</li>
+                        <li><strong>Testing:</strong> Ask what testing is included or required for each formula. Testing is a separate cost bucket, so a quote that never mentions it may leave it out.</li>
+                        <li><strong>Labelling responsibilities:</strong> Ask who is responsible for labelling and what labelling rules apply, including MoCRA. Labelling responsibilities must be settled before production, not after labels are printed.</li>
+                        <li><strong>Reorder terms:</strong> Ask about reorder terms, including any reorder minimums and payment terms. Reorder terms decide what a second run costs and when it is settled.</li>
+                    </ul>
+                </noscript>
+
+                <div id="brief-result" aria-live="polite">
+                    <p class="guide-meta">Your score will appear here after you score your brief. Found and missing fields are listed below the score, with guidance for every missing field.</p>
+                </div>
+
+                <h2>How the scoring works</h2>
+                <p>The check is deliberately simple and transparent. Your pasted text is matched case-insensitively against the words listed for each field. A field counts as found if any of its words appears in your brief. A field can match on one word or several; the score is the number of fields found out of 26. No judgement is made about whether a field is filled in well — only whether it is mentioned at all — so use the missing-field guidance below the score to fill each gap properly.</p>
+                <div class="table-wrap">
+                    <table class="rules-table">
+                        <thead>
+                            <tr><th>Field</th><th>Words looked for (case-insensitive)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Business name</td><td>business name, company name, brand name</td></tr>
+                            <tr><td>Contact details</td><td>contact, email, phone, reach me, reach us</td></tr>
+                            <tr><td>Business type</td><td>business type, day spa, med spa, salon, esthetician, indie brand, retailer, distributor, brand owner</td></tr>
+                            <tr><td>Sales channels</td><td>sales channel, sell online, online store, retail store, in-store, wholesale, amazon, etsy, boutique, sell through</td></tr>
+                            <tr><td>Product type and format</td><td>product type, cream, serum, lotion, balm, oil, cleanser, moisturizer, moisturiser, toner, mask, scrub, soap, shampoo, conditioner, gel, format</td></tr>
+                            <tr><td>Product size</td><td>size, ml, fl oz, ounce, gram, fill size</td></tr>
+                            <tr><td>Ingredient preferences</td><td>ingredient, formula, formulation, key ingredient, hero ingredient</td></tr>
+                            <tr><td>Ingredients to avoid</td><td>avoid, free from, fragrance-free, fragrance free, without, exclude, must not contain, allergen, no parabens, no fragrance</td></tr>
+                            <tr><td>Scent preferences</td><td>scent, fragrance, unscented, aroma, smell</td></tr>
+                            <tr><td>Texture preferences</td><td>texture, consistency, lightweight, non-greasy, absorbs, feel on skin</td></tr>
+                            <tr><td>First-run units per product</td><td>units, quantity, first run, initial order, pieces, units per product</td></tr>
+                            <tr><td>Reorder expectations</td><td>reorder, re-order, repeat order, restock, ongoing order, future order</td></tr>
+                            <tr><td>Container type</td><td>container, jar, bottle, tube, airless, pot, vial</td></tr>
+                            <tr><td>Cap or pump</td><td>cap, pump, dropper, spray, closure, lid, flip-top, flip top</td></tr>
+                            <tr><td>Outer carton</td><td>outer carton, carton, outer box, secondary packaging, gift box, box</td></tr>
+                            <tr><td>Label direction</td><td>label, labelling, labeling, artwork, label design</td></tr>
+                            <tr><td>Target launch date</td><td>launch date, launch by, target date, deadline, launch in, need by, launch</td></tr>
+                            <tr><td>Timeline flexibility</td><td>flexible, flexibility, can move, can slip, firm date, not flexible, timeline, no rush</td></tr>
+                            <tr><td>Budget band</td><td>budget, price range, spend, band, afford</td></tr>
+                            <tr><td>Target retail price</td><td>retail price, retail, msrp, rrp, sell for, sell at, priced at, $</td></tr>
+                            <tr><td>Minimum order quantities</td><td>minimum order, moq, minimum quantity, minimums, order minimum</td></tr>
+                            <tr><td>Lead time</td><td>lead time, turnaround, production time, how long, delivery time</td></tr>
+                            <tr><td>Samples</td><td>sample, prototype, trial batch, test batch</td></tr>
+                            <tr><td>Testing</td><td>testing, stability, shelf life, microbial, challenge test, patch test, safety test</td></tr>
+                            <tr><td>Labelling responsibilities</td><td>mocra, compliance, regulatory, label responsibility, labelling responsibility, labeling responsibility, who handles, responsible for labeling, responsible for labelling, label compliance</td></tr>
+                            <tr><td>Reorder terms</td><td>reorder term, reorder minimum, reorder pricing, reorder price, payment terms, deposit, net 30, payment schedule</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="guide-meta">This tool gives no prices. It checks whether your brief mentions each field. A field that is mentioned only in passing still counts as found, so read the missing-field guidance and fill each field in properly before you send the brief.</p>
+
+                <h2>Before you send the brief</h2>
+                <p>Send the same completed brief to each manufacturer, and ask for every quote itemized, in writing, on the same basis — same products, same units, same packaging — or the totals will mislead you. For the cost buckets behind a first launch, read our <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>: the ranges there are estimates based on general industry patterns, not a quote. For how to judge the quote that comes back, read <a href="../../guides/reading-manufacturer-quote/">how to read a manufacturer quote line by line</a>.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote.</strong> This tool states no manufacturer prices, minimums, timelines, or terms. The score only measures whether your brief covers the fields a quote needs. Every figure comes from the manufacturer you contact.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>Does this tool send my brief anywhere?</summary>
+                        <p>No. The scoring runs entirely in your browser, and nothing you paste is sent anywhere or stored. You can check a brief, close the page, and nothing about it leaves your device.</p>
+                    </details>
+                    <details>
+                        <summary>Is a high score a quote?</summary>
+                        <p>No. A high score means your brief covers the fields a manufacturer needs to quote accurately. It is not a price, and every figure still comes from the manufacturer in an itemized quote. Use our cost guide to sense-check the ranges behind a quote; those ranges are estimates based on general industry patterns, not a quote.</p>
+                    </details>
+                </div>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn a complete brief into a real quote</h3>
+                        <p>Send your products, units, and packaging through the funnel — the conversation starts from real numbers, not ideas. This tool gives no prices; estimates in the cost guide are general industry patterns, not a quote.</p>
+                    </div>
+                    <div>
+                        <a href="../../renaud/" class="btn btn-primary btn-block">Start with the Renaud funnel &rarr;</a>
+                        <a href="../../guides/skincare-line-cost/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Read the full cost guide &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* Scoring is case-insensitive substring matching against the words
+           listed for each field in the "How the scoring works" table on
+           this page. Nothing is sent anywhere: the pasted text is read
+           only in this browser, is never inserted into the page, and is
+           never stored. A field counts as found if any of its words
+           appears; the guidance below is shown for every missing field. */
+        var FIELDS = [
+            { id: 'business-name', label: 'Business name', keywords: ['business name', 'company name', 'brand name'], guidance: 'Add your business name as it should appear on the quote. Without it, the manufacturer cannot tell who the quote is for or keep quotes for different buyers apart.' },
+            { id: 'contact-details', label: 'Contact details', keywords: ['contact', 'email', 'phone', 'reach me', 'reach us'], guidance: 'Add a contact name and a way to reach you, such as an email address. Without it, the manufacturer cannot follow up with questions that change the quote.' },
+            { id: 'business-type', label: 'Business type', keywords: ['business type', 'day spa', 'med spa', 'salon', 'esthetician', 'indie brand', 'retailer', 'distributor', 'brand owner'], guidance: 'State what kind of business you are, for example a spa, salon, or indie brand. It tells the manufacturer how you plan to sell and what kind of support you may need.' },
+            { id: 'sales-channels', label: 'Sales channels', keywords: ['sales channel', 'sell online', 'online store', 'retail store', 'in-store', 'wholesale', 'amazon', 'etsy', 'boutique', 'sell through'], guidance: 'List where you will sell, such as online, in a store, or wholesale. Sales channels affect packaging, labelling, and volume, so a quote without them rests on guesses.' },
+            { id: 'product-type', label: 'Product type and format', keywords: ['product type', 'cream', 'serum', 'lotion', 'balm', 'oil', 'cleanser', 'moisturizer', 'moisturiser', 'toner', 'mask', 'scrub', 'soap', 'shampoo', 'conditioner', 'gel', 'format'], guidance: 'Name each product type and its format, such as a cream or a serum. A manufacturer cannot price fill or packaging until it knows what the product is.' },
+            { id: 'size', label: 'Product size', keywords: ['size', 'ml', 'fl oz', 'ounce', 'gram', 'fill size'], guidance: 'Give the size of each product, such as millilitres or ounces. Size sets how much product is filled into each unit, so it changes the quote directly.' },
+            { id: 'ingredient-preferences', label: 'Ingredient preferences', keywords: ['ingredient', 'formula', 'formulation', 'key ingredient', 'hero ingredient'], guidance: 'List the ingredients you want, or the direction you want the formula to take, as preferences only. Without direction, the manufacturer must guess what to formulate.' },
+            { id: 'ingredients-to-avoid', label: 'Ingredients to avoid', keywords: ['avoid', 'free from', 'fragrance-free', 'fragrance free', 'without', 'exclude', 'must not contain', 'allergen', 'no parabens', 'no fragrance'], guidance: 'List anything the product must not contain, such as fragrance or a named ingredient. Leaving this out risks samples that you cannot use.' },
+            { id: 'scent', label: 'Scent preferences', keywords: ['scent', 'fragrance', 'unscented', 'aroma', 'smell'], guidance: 'State the scent direction, including unscented if that is what you want. Scent changes the formula work, so an unstated preference often comes back as a surprise in samples.' },
+            { id: 'texture', label: 'Texture preferences', keywords: ['texture', 'consistency', 'lightweight', 'non-greasy', 'absorbs', 'feel on skin'], guidance: 'Describe how the product should feel on the skin, such as lightweight or rich. Texture is part of the formula work, and it is hard to fix after samples are made.' },
+            { id: 'first-run-units', label: 'First-run units per product', keywords: ['units', 'quantity', 'first run', 'initial order', 'pieces', 'units per product'], guidance: 'Give the first-run units for each product. Volume decides much of the per-unit math, so a quote without units is a guess.' },
+            { id: 'reorder-expectations', label: 'Reorder expectations', keywords: ['reorder', 're-order', 'repeat order', 'restock', 'ongoing order', 'future order'], guidance: 'Say how often, or how much, you expect to reorder. Reorder expectations help the manufacturer judge whether a first run is a one-off or the start of repeat work.' },
+            { id: 'container-type', label: 'Container type', keywords: ['container', 'jar', 'bottle', 'tube', 'airless', 'pot', 'vial'], guidance: 'Name the container for each product, such as a jar, bottle, or tube. The container is a packaging cost of its own, and different containers need different filling setups.' },
+            { id: 'cap-pump', label: 'Cap or pump', keywords: ['cap', 'pump', 'dropper', 'spray', 'closure', 'lid', 'flip-top', 'flip top'], guidance: 'State the cap, pump, dropper, or other closure for each container. Closures are priced and sourced separately, so a quote cannot be complete without them.' },
+            { id: 'outer-carton', label: 'Outer carton', keywords: ['outer carton', 'carton', 'outer box', 'secondary packaging', 'gift box', 'box'], guidance: 'Say whether each product needs an outer carton or box, or none. An outer carton adds materials and packing work that a quote must include to be accurate.' },
+            { id: 'label-direction', label: 'Label direction', keywords: ['label', 'labelling', 'labeling', 'artwork', 'label design'], guidance: 'Give the label direction, such as minimal, bold, or a look you already use. Labels carry their own cost and production step, and the manufacturer needs to know who supplies the artwork.' },
+            { id: 'launch-date', label: 'Target launch date', keywords: ['launch date', 'launch by', 'target date', 'deadline', 'launch in', 'need by', 'launch'], guidance: 'Give a target launch date. The date decides whether the work can fit the manufacturer\u2019s schedule, and a quote without a date cannot promise timing.' },
+            { id: 'timeline-flexibility', label: 'Timeline flexibility', keywords: ['flexible', 'flexibility', 'can move', 'can slip', 'firm date', 'not flexible', 'timeline', 'no rush'], guidance: 'Say how flexible the date is, or that it is firm. Flexibility changes how the manufacturer schedules the work, so it belongs in the brief, not in a later message.' },
+            { id: 'budget-band', label: 'Budget band', keywords: ['budget', 'price range', 'spend', 'band', 'afford'], guidance: 'State your own budget band as a range. A band lets the manufacturer say early whether the brief is feasible, instead of quoting work you cannot fund.' },
+            { id: 'retail-price', label: 'Target retail price', keywords: ['retail price', 'retail', 'msrp', 'rrp', 'sell for', 'sell at', 'priced at', '$'], guidance: 'State the price you plan to sell each product for. The retail price is the check on whether the production cost leaves room for your business to work.' },
+            { id: 'moq', label: 'Minimum order quantities', keywords: ['minimum order', 'moq', 'minimum quantity', 'minimums', 'order minimum'], guidance: 'Ask what the minimum order quantities are. Minimums decide your floor, so ask the question in the brief rather than discovering it after a quote.' },
+            { id: 'lead-time', label: 'Lead time', keywords: ['lead time', 'turnaround', 'production time', 'how long', 'delivery time'], guidance: 'Ask how long production takes from approval to delivery. Lead time is part of the quote\u2019s timing, and it is not safe to assume it.' },
+            { id: 'samples', label: 'Samples', keywords: ['sample', 'prototype', 'trial batch', 'test batch'], guidance: 'Ask how samples work, including how many rounds are included. Samples are where scent, texture, and packaging get checked before a full run.' },
+            { id: 'testing', label: 'Testing', keywords: ['testing', 'stability', 'shelf life', 'microbial', 'challenge test', 'patch test', 'safety test'], guidance: 'Ask what testing is included or required for each formula. Testing is a separate cost bucket, so a quote that never mentions it may leave it out.' },
+            { id: 'labelling-responsibilities', label: 'Labelling responsibilities', keywords: ['mocra', 'compliance', 'regulatory', 'label responsibility', 'labelling responsibility', 'labeling responsibility', 'who handles', 'responsible for labeling', 'responsible for labelling', 'label compliance'], guidance: 'Ask who is responsible for labelling and what labelling rules apply, including MoCRA. Labelling responsibilities must be settled before production, not after labels are printed.' },
+            { id: 'reorder-terms', label: 'Reorder terms', keywords: ['reorder term', 'reorder minimum', 'reorder pricing', 'reorder price', 'payment terms', 'deposit', 'net 30', 'payment schedule'], guidance: 'Ask about reorder terms, including any reorder minimums and payment terms. Reorder terms decide what a second run costs and when it is settled.' }
+        ];
+        function scoreBrief(text) {
+            var lowered = String(text || '').toLowerCase();
+            var results = FIELDS.map(function (field) {
+                var matched = field.keywords.filter(function (word) {
+                    return lowered.indexOf(word) !== -1;
+                });
+                return { id: field.id, label: field.label, found: matched.length > 0, matched: matched, guidance: field.guidance };
+            });
+            var foundCount = results.filter(function (r) { return r.found; }).length;
+            return { score: foundCount, total: FIELDS.length, results: results };
+        }
+        function scoreMessage(score, total) {
+            if (score === total) { return 'Complete \u2014 every field was found. Send the same brief to each manufacturer and ask for every quote itemized, in writing.'; }
+            if (score >= 20) { return 'Strong \u2014 only a few fields are missing. Add the missing fields below before you send it.'; }
+            if (score >= 10) { return 'Partly complete \u2014 several fields are missing. Add the missing fields below; a manufacturer cannot quote accurately from a partial brief.'; }
+            if (score >= 1) { return 'Early draft \u2014 most fields are missing. Work through the missing fields below before asking for a quote.'; }
+            return 'No fields were found. Paste the full text of your brief, not just a product idea, and score it again.';
+        }
+        function render(result) {
+            var container = document.getElementById('brief-result');
+            container.textContent = '';
+            var box = document.createElement('div');
+            box.className = 'score-box';
+            var heading = document.createElement('p');
+            var scoreText = document.createElement('span');
+            scoreText.className = 'score-number';
+            scoreText.textContent = result.score + ' of ' + result.total + ' fields found';
+            heading.appendChild(scoreText);
+            box.appendChild(heading);
+            var message = document.createElement('p');
+            message.textContent = scoreMessage(result.score, result.total);
+            box.appendChild(message);
+            var note = document.createElement('p');
+            note.className = 'guide-meta';
+            note.textContent = 'Nothing you pasted leaves your browser. This score only checks whether each field is mentioned; read the guidance for every missing field.';
+            box.appendChild(note);
+            container.appendChild(box);
+            var list = document.createElement('ul');
+            list.className = 'checklist';
+            result.results.forEach(function (r) {
+                var item = document.createElement('li');
+                var status = document.createElement('span');
+                status.className = 'field-status ' + (r.found ? 'found' : 'missing');
+                status.textContent = (r.found ? 'Found: ' : 'Missing: ') + r.label;
+                item.appendChild(status);
+                if (r.found) {
+                    var matched = document.createElement('p');
+                    matched.textContent = 'Matched: ' + r.matched.join(', ');
+                    item.appendChild(matched);
+                } else {
+                    var guidance = document.createElement('p');
+                    guidance.textContent = r.guidance;
+                    item.appendChild(guidance);
+                }
+                list.appendChild(item);
+            });
+            container.appendChild(list);
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            document.getElementById('brief-score-btn').addEventListener('click', function () {
+                var text = document.getElementById('brief-text').value;
+                var container = document.getElementById('brief-result');
+                if (!text || !text.trim()) {
+                    container.textContent = '';
+                    var prompt = document.createElement('p');
+                    prompt.className = 'guide-meta';
+                    prompt.textContent = 'Paste your brief into the box above, then score it.';
+                    container.appendChild(prompt);
+                    return;
+                }
+                render(scoreBrief(text));
+            });
+            document.getElementById('brief-clear-btn').addEventListener('click', function () {
+                document.getElementById('brief-text').value = '';
+                var container = document.getElementById('brief-result');
+                container.textContent = '';
+                var prompt = document.createElement('p');
+                prompt.className = 'guide-meta';
+                prompt.textContent = 'Your score will appear here after you score your brief. Found and missing fields are listed below the score, with guidance for every missing field.';
+                container.appendChild(prompt);
+                document.getElementById('brief-text').focus();
+            });
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { scoreBrief: scoreBrief, FIELDS: FIELDS };
+        }
+    })();
+    </script>
+</body>
+</html>

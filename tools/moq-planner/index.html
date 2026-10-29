@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOQ Planner: First-Run Cost Range | LabelOrigin</title>
+    <meta name="description" content="Price a first skincare run from units, SKUs, and path, using only the published bands in the cost guide. Line-by-line arithmetic. Estimates only, not a quote.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOQ Planner: First-Run Cost Range | LabelOrigin">
+    <meta property="og:description" content="Price a first skincare run from units, SKUs, and path, using only the published bands in the cost guide. Line-by-line arithmetic. Estimates only, not a quote.">
+    <meta property="og:url" content="https://labelorigin.com/tools/moq-planner/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOQ Planner: First-Run Cost Range | LabelOrigin">
+    <meta name="twitter:description" content="Price a first skincare run from units, SKUs, and path, using only the published bands in the cost guide. Line-by-line arithmetic. Estimates only, not a quote.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/moq-planner/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/moq-planner/#webpage",
+        "url": "https://labelorigin.com/tools/moq-planner/",
+        "name": "MOQ Planner: First-Run Cost Range | LabelOrigin",
+        "description": "Price a first skincare run from units, SKUs, and path, using only the published bands in the cost guide. Line-by-line arithmetic. Estimates only, not a quote.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What does the planner include?", "acceptedAnswer": {"@type": "Answer", "text": "The planner prices development where a band is published, plus fill, packaging, labels, testing, samples, freight, and brand setup, using only the bands in the skincare line cost guide. Every figure is an estimate based on general industry patterns — not a quote. Ask a manufacturer for an itemized quote on the same basis before committing to a launch size."}},
+            {"@type": "Question", "name": "Why does semi-custom development show as not published?", "acceptedAnswer": {"@type": "Answer", "text": "The cost guide publishes a development band for custom formulation only, and no separate development band for semi-custom work. The planner shows not published rather than guessing a figure, and the semi-custom total excludes development. Get the development figure from a manufacturer before relying on that total."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .calc-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .calc-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>Estimate a <em>first run</em> from units, SKUs, and path</h1>
+                <p>
+                    Choose a path, units per SKU, and the number of SKUs. The planner multiplies each published band by your inputs and shows the arithmetic line by line, so the low end and the high end can each be checked. Change any input and the range updates.
+                </p>
+                <p class="guide-meta">Estimates only, based on general industry patterns — not a quote. Every manufacturer prices differently. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your plan</h2>
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="moq-units">Units per SKU</label>
+                        <input id="moq-units" type="number" min="1" max="100000" step="1" value="100">
+                    </div>
+                    <div class="calc-field">
+                        <label for="moq-skus">Number of SKUs</label>
+                        <input id="moq-skus" type="number" min="1" max="50" step="1" value="1">
+                    </div>
+                    <div class="calc-field">
+                        <label for="moq-path">Launch path</label>
+                        <select id="moq-path">
+                            <option value="stock" selected>Stock formula</option>
+                            <option value="semi">Semi-custom</option>
+                            <option value="custom">Custom formulation</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="guide-meta">The starting values are only a starting point. Change them to your own plan. The planner treats each SKU as one formula.</p>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This planner needs JavaScript to run the math. The published bands it uses are listed below, from our <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>. Every figure is an estimate based on general industry patterns — not a quote. To compare the same inputs in the other tool, see the <a href="../launch-cost-calculator/">launch cost calculator</a>.</p>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>Cost bucket</th><th>Published band</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Formula development (custom only)</td><td>$2,000–$15,000+ per formula</td></tr>
+                                <tr><td>Product fill</td><td>$1.50–$12.00 per unit</td></tr>
+                                <tr><td>Packaging</td><td>$0.50–$5.00 per unit</td></tr>
+                                <tr><td>Labels and printing</td><td>$0.10–$1.00 per label</td></tr>
+                                <tr><td>Testing package</td><td>$500–$3,000 per formula</td></tr>
+                                <tr><td>Samples</td><td>$50–$500 per round</td></tr>
+                                <tr><td>Freight and shipping</td><td>$100–$1,000+ per shipment</td></tr>
+                                <tr><td>Brand setup</td><td>$300–$2,500 one-off</td></tr>
+                                <tr><td>First-run band, stock</td><td>$1,500–$10,000</td></tr>
+                                <tr><td>First-run band, custom</td><td>$5,000–$25,000+</td></tr>
+                                <tr><td>First-run band, semi-custom</td><td>Not published</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </noscript>
+
+                <h2>Estimated first-run cost</h2>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Cost bucket</th><th>Arithmetic</th><th>Low</th><th>High</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Formula / development</td><td id="moq-dev-arith">—</td><td id="moq-dev-low">—</td><td id="moq-dev-high">—</td></tr>
+                            <tr><td>Product fill</td><td id="moq-fill-arith">—</td><td id="moq-fill-low">—</td><td id="moq-fill-high">—</td></tr>
+                            <tr><td>Packaging</td><td id="moq-pack-arith">—</td><td id="moq-pack-low">—</td><td id="moq-pack-high">—</td></tr>
+                            <tr><td>Labels &amp; printing</td><td id="moq-label-arith">—</td><td id="moq-label-low">—</td><td id="moq-label-high">—</td></tr>
+                            <tr><td>Testing package</td><td id="moq-test-arith">—</td><td id="moq-test-low">—</td><td id="moq-test-high">—</td></tr>
+                            <tr><td>Samples</td><td id="moq-sample-arith">—</td><td id="moq-sample-low">—</td><td id="moq-sample-high">—</td></tr>
+                            <tr><td>Freight &amp; shipping</td><td id="moq-freight-arith">—</td><td id="moq-freight-low">—</td><td id="moq-freight-high">—</td></tr>
+                            <tr><td>Brand setup</td><td id="moq-brand-arith">—</td><td id="moq-brand-low">—</td><td id="moq-brand-high">—</td></tr>
+                            <tr class="calc-total"><td>Estimated first-run total</td><td id="moq-total-arith">—</td><td id="moq-total-low">—</td><td id="moq-total-high">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="moq-note" class="guide-meta">Estimate based on general industry patterns — not a quote.</p>
+                <p id="moq-band-note" class="guide-meta">Published first-run band for this path: $1,500–$10,000.</p>
+
+                <h2>How the math works</h2>
+                <p>Total units come from units per SKU multiplied by the number of SKUs. Fill, packaging, and labels are priced per unit, so each of those rows multiplies its band by total units. Development and testing are priced per formula, so each of those rows multiplies its band by the number of SKUs, treating each SKU as one formula.</p>
+                <p>Samples are priced per round. The planner uses one round, except for custom formulation, which uses two rounds, following the cost guide advice to budget for two rounds on custom formulas. Freight uses one shipment at the published per-shipment band. Brand setup is a one-off figure at the published band.</p>
+                <p>A plus sign on a high end means the published band itself is open-ended, so the true high end can pass the figure shown. Development for stock work is shown at zero because the cost guide lists development as custom only and the formula already exists. Development for semi-custom work is shown as not published because the cost guide publishes no separate band for it, and the semi-custom total excludes that row.</p>
+                <p>The computed range and the published first-run band answer different questions. The computed range follows your inputs through each bucket. The published first-run band describes first runs in general for that path. Either one can sit outside the other without either being wrong. Use both only as a starting point for itemized quotes. Read the full bands and the worked reasoning in the <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>, and compare the same inputs in the <a href="../launch-cost-calculator/">launch cost calculator</a>.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote.</strong> Every figure above is a general industry pattern, not a price from any manufacturer. Use the estimate to judge real quotes, then get itemized quotes on the same basis before committing to a launch size.</p>
+                </div>
+
+                <h2>Bands used</h2>
+                <p>Every band below comes from the <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>. Each figure reuse is an estimate based on general industry patterns — not a quote.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Cost bucket</th><th>Published band</th><th>Basis</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Formula development (custom only)</td><td>$2,000–$15,000+ per formula</td><td>Per formula</td></tr>
+                            <tr><td>Product fill</td><td>$1.50–$12.00 per unit</td><td>Per unit</td></tr>
+                            <tr><td>Packaging</td><td>$0.50–$5.00 per unit</td><td>Per unit</td></tr>
+                            <tr><td>Labels and printing</td><td>$0.10–$1.00 per label</td><td>Per label</td></tr>
+                            <tr><td>Testing package</td><td>$500–$3,000 per formula</td><td>Per formula</td></tr>
+                            <tr><td>Samples</td><td>$50–$500 per round</td><td>Per round</td></tr>
+                            <tr><td>Freight and shipping</td><td>$100–$1,000+ per shipment</td><td>Per shipment</td></tr>
+                            <tr><td>Brand setup</td><td>$300–$2,500 one-off</td><td>One-off</td></tr>
+                            <tr><td>First-run band, stock</td><td>$1,500–$10,000</td><td>First run</td></tr>
+                            <tr><td>First-run band, custom</td><td>$5,000–$25,000+</td><td>First run</td></tr>
+                            <tr><td>First-run band, semi-custom</td><td>Not published</td><td>First run</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>What does the planner include?</summary>
+                        <p>The planner prices development where a band is published, plus fill, packaging, labels, testing, samples, freight, and brand setup, using only the bands in the skincare line cost guide. Every figure is an estimate based on general industry patterns — not a quote. Ask a manufacturer for an itemized quote on the same basis before committing to a launch size.</p>
+                    </details>
+                    <details>
+                        <summary>Why does semi-custom development show as not published?</summary>
+                        <p>The cost guide publishes a development band for custom formulation only, and no separate development band for semi-custom work. The planner shows not published rather than guessing a figure, and the semi-custom total excludes development. Get the development figure from a manufacturer before relying on that total.</p>
+                    </details>
+                </div>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn the range into a real quote</h3>
+                        <p>Work through the cost guide worksheet with your units, SKUs, and path, then compare the same inputs in the calculator. Estimates above are general industry patterns, not a quote.</p>
+                    </div>
+                    <div>
+                        <a href="../../guides/skincare-line-cost/" class="btn btn-primary btn-block">Read the skincare line cost guide &rarr;</a>
+                        <a href="../launch-cost-calculator/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Try the launch cost calculator &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* All bands are the general industry ranges published in the cost
+           guide (/guides/skincare-line-cost/). Nothing here is a price from
+           any manufacturer. Open-ended highs are shown with a "+" suffix.
+           Semi-custom development has no published band, so it is shown
+           as not published and excluded from the semi-custom total. */
+        var BANDS = {
+            devCustom: [2000, 15000],
+            fill: [1.50, 12.00],
+            packaging: [0.50, 5.00],
+            labels: [0.10, 1.00],
+            testing: [500, 3000],
+            samples: [50, 500],
+            freight: [100, 1000],
+            brand: [300, 2500]
+        };
+        var FIRST_RUN_BANDS = {
+            stock: '$1,500–$10,000',
+            semi: null,
+            custom: '$5,000–$25,000+'
+        };
+        function clampInt(value, min, max, fallback) {
+            var n = parseInt(value, 10);
+            if (isNaN(n)) { return fallback; }
+            if (n < min) { return min; }
+            if (n > max) { return max; }
+            return n;
+        }
+        function computeEstimate(p) {
+            var units = clampInt(p.units, 1, 100000, 100);
+            var skus = clampInt(p.skus, 1, 50, 1);
+            var totalUnits = units * skus;
+            var rows = [];
+            var devLow = null, devHigh = null, devArith, devOpen = false;
+            if (p.path === 'stock') {
+                devLow = 0; devHigh = 0;
+                devArith = 'No charge \u2014 development is custom only';
+            } else if (p.path === 'custom') {
+                devLow = BANDS.devCustom[0] * skus;
+                devHigh = BANDS.devCustom[1] * skus;
+                devOpen = true;
+                devArith = '$2,000\u2013$15,000+ per formula \u00d7 ' + skus;
+            } else {
+                devArith = 'Not published for semi-custom work';
+            }
+            rows.push({ key: 'dev', arith: devArith, low: devLow, high: devHigh, open: devOpen });
+            rows.push({ key: 'fill', arith: '$1.50\u2013$12.00 per unit \u00d7 ' + totalUnits + ' units', low: BANDS.fill[0] * totalUnits, high: BANDS.fill[1] * totalUnits, open: false });
+            rows.push({ key: 'pack', arith: '$0.50\u2013$5.00 per unit \u00d7 ' + totalUnits + ' units', low: BANDS.packaging[0] * totalUnits, high: BANDS.packaging[1] * totalUnits, open: false });
+            rows.push({ key: 'label', arith: '$0.10\u2013$1.00 per label \u00d7 ' + totalUnits + ' units', low: BANDS.labels[0] * totalUnits, high: BANDS.labels[1] * totalUnits, open: false });
+            rows.push({ key: 'test', arith: '$500\u2013$3,000 per formula \u00d7 ' + skus, low: BANDS.testing[0] * skus, high: BANDS.testing[1] * skus, open: false });
+            var rounds = (p.path === 'custom') ? 2 : 1;
+            var roundWord = (rounds === 1) ? 'round' : 'rounds';
+            rows.push({ key: 'sample', arith: '$50\u2013$500 per round \u00d7 ' + rounds + ' ' + roundWord, low: BANDS.samples[0] * rounds, high: BANDS.samples[1] * rounds, open: false });
+            rows.push({ key: 'freight', arith: '$100\u2013$1,000+ per shipment \u00d7 1 shipment', low: BANDS.freight[0], high: BANDS.freight[1], open: true });
+            rows.push({ key: 'brand', arith: '$300\u2013$2,500 one-off', low: BANDS.brand[0], high: BANDS.brand[1], open: false });
+            var totalLow = 0, totalHigh = 0, openEnded = false;
+            rows.forEach(function (r) {
+                if (r.low !== null) { totalLow += r.low; }
+                if (r.high !== null) { totalHigh += r.high; }
+                if (r.open) { openEnded = true; }
+            });
+            var bandText;
+            if (FIRST_RUN_BANDS[p.path]) {
+                bandText = 'Published first-run band for this path: ' + FIRST_RUN_BANDS[p.path] + '.';
+            } else {
+                bandText = 'Published first-run band for this path: not published for semi-custom work.';
+            }
+            var excludesDev = (p.path === 'semi');
+            return { rows: rows, totalLow: totalLow, totalHigh: totalHigh, openEnded: openEnded, bandText: bandText, excludesDev: excludesDev, units: units, skus: skus, totalUnits: totalUnits, rounds: rounds };
+        }
+        function fmt(n) {
+            return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function render() {
+            var p = {
+                path: document.getElementById('moq-path').value,
+                units: document.getElementById('moq-units').value,
+                skus: document.getElementById('moq-skus').value
+            };
+            var result = computeEstimate(p);
+            var ids = { dev: 'dev', fill: 'fill', pack: 'pack', label: 'label', test: 'test', sample: 'sample', freight: 'freight', brand: 'brand' };
+            result.rows.forEach(function (r) {
+                var prefix = 'moq-' + ids[r.key] + '-';
+                document.getElementById(prefix + 'arith').textContent = r.arith;
+                document.getElementById(prefix + 'low').textContent = (r.low === null) ? 'Not published' : fmt(r.low);
+                document.getElementById(prefix + 'high').textContent = (r.high === null) ? 'Not published' : fmt(r.high) + (r.open ? '+' : '');
+            });
+            document.getElementById('moq-total-arith').textContent = 'Sum of the rows above' + (result.excludesDev ? ', excluding development' : '');
+            document.getElementById('moq-total-low').textContent = fmt(result.totalLow);
+            document.getElementById('moq-total-high').textContent = fmt(result.totalHigh) + (result.openEnded ? '+' : '');
+            var note = 'Estimate based on general industry patterns \u2014 not a quote.';
+            if (result.excludesDev) {
+                note += ' This total excludes development, which is not published for semi-custom work.';
+            } else {
+                note += ' The high end carries a plus sign where a published band is open-ended.';
+            }
+            document.getElementById('moq-note').textContent = note;
+            document.getElementById('moq-band-note').textContent = result.bandText;
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            ['moq-path', 'moq-units', 'moq-skus'].forEach(function (id) {
+                var el = document.getElementById(id);
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+            render();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computeEstimate: computeEstimate, BANDS: BANDS };
+        }
+    })();
+    </script>
+</body>
+</html>
