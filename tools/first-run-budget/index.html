@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First-Run Budget Builder | LabelOrigin</title>
+    <meta name="description" content="Build your first-run budget from units and launch path — development, fill, packaging, labels, testing, samples, freight, and setup. Estimates, not quotes.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="First-Run Budget Builder | LabelOrigin">
+    <meta property="og:description" content="Build your first-run budget from units and launch path — development, fill, packaging, labels, testing, samples, freight, and setup. Estimates, not quotes.">
+    <meta property="og:url" content="https://labelorigin.com/tools/first-run-budget/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="First-Run Budget Builder | LabelOrigin">
+    <meta name="twitter:description" content="Build your first-run budget from units and launch path — development, fill, packaging, labels, testing, samples, freight, and setup. Estimates, not quotes.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/first-run-budget/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/first-run-budget/#webpage",
+        "url": "https://labelorigin.com/tools/first-run-budget/",
+        "name": "First-Run Budget Builder | LabelOrigin",
+        "description": "Build your first-run budget from units and launch path — development, fill, packaging, labels, testing, samples, freight, and setup. Estimates, not quotes.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is the cheapest way to start a skincare line?", "acceptedAnswer": {"@type": "Answer", "text": "Starting with stock (private-label) formulas is usually the cheapest route, because the formula already exists and you are paying mainly for product, packaging, and labels. Custom formulation costs more because development, sampling, and testing are added on top."}},
+            {"@type": "Question", "name": "Can I start a skincare line with $1,000?", "acceptedAnswer": {"@type": "Answer", "text": "It is possible only in narrow cases — for example, one stock product, a small run, and simple packaging — and only if the manufacturer's minimums allow it. Most founders planning two or three products should expect a first-launch budget in the low thousands at minimum, before marketing."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .calc-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .calc-field .field-help { font-size: 0.95em; margin-top: 6px; }
+        .calc-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>Build your <em>first-run budget</em></h1>
+                <p>
+                    Pick your launch path and your units. The builder prices each cost bucket from the general industry ranges published in our cost guide, then checks your total against the published first-run bands — so you can see whether your plan sits inside the usual range or outside it.
+                </p>
+                <p class="guide-meta">Estimates only, based on general industry patterns — not a quote. Every manufacturer prices differently. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your launch</h2>
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="budget-path">Launch path</label>
+                        <select id="budget-path">
+                            <option value="stock" selected>Stock formula (private label)</option>
+                            <option value="custom">Custom formulation</option>
+                        </select>
+                        <p class="field-help">Stock formulas already exist; custom formulas are developed to your specification.</p>
+                    </div>
+                    <div class="calc-field">
+                        <label for="budget-units">Units per product (SKU)</label>
+                        <input id="budget-units" type="number" min="1" max="100000" step="1" value="250">
+                        <p class="field-help">The number that matters most: nearly every cost is priced per run or per unit.</p>
+                    </div>
+                    <div class="calc-field">
+                        <label for="budget-skus">Number of products (SKUs)</label>
+                        <input id="budget-skus" type="number" min="1" max="50" step="1" value="3">
+                        <p class="field-help">Minimums are usually set per product, not per brand.</p>
+                    </div>
+                    <div class="calc-field">
+                        <label for="budget-rounds">Sample rounds</label>
+                        <input id="budget-rounds" type="number" min="0" max="3" step="1" value="1">
+                        <p class="field-help">Budget for two rounds on any custom formula: the first round almost never ships unchanged.</p>
+                    </div>
+                    <div class="calc-field">
+                        <label for="budget-brand">Include brand setup?</label>
+                        <select id="budget-brand">
+                            <option value="yes" selected>Yes, include brand setup</option>
+                            <option value="no">No, production costs only</option>
+                        </select>
+                        <p class="field-help">Brand setup covers photo, barcodes, and filings — a one-off cost, not per unit.</p>
+                    </div>
+                </div>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This builder needs JavaScript to run the math. The published cost bands it uses are in our <a href="../../guides/skincare-line-cost/">skincare line cost guide</a> — formula development $2,000–$15,000+ per formula (custom only), product fill $1.50–$12.00 per unit, packaging $0.50–$5.00 per unit, labels $0.10–$1.00 each, testing $500–$3,000 per formula, samples $50–$500 per round, freight $100–$1,000+ per shipment, and brand setup $300–$2,500. Published first-run bands: $1,500–$10,000 for a stock-formula launch and $5,000–$25,000+ for a custom-formulation launch. To talk through your launch with real numbers, start with the <a href="../../renaud/">Renaud Naturals funnel</a>.</p>
+                    </div>
+                </noscript>
+
+                <h2>Your first-run budget</h2>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Cost bucket</th><th>Low</th><th>High</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Formula / development</td><td id="budget-dev-low">—</td><td id="budget-dev-high">—</td></tr>
+                            <tr><td>Product fill</td><td id="budget-fill-low">—</td><td id="budget-fill-high">—</td></tr>
+                            <tr><td>Packaging</td><td id="budget-pack-low">—</td><td id="budget-pack-high">—</td></tr>
+                            <tr><td>Labels &amp; printing</td><td id="budget-label-low">—</td><td id="budget-label-high">—</td></tr>
+                            <tr><td>Testing package</td><td id="budget-test-low">—</td><td id="budget-test-high">—</td></tr>
+                            <tr><td>Samples</td><td id="budget-sample-low">—</td><td id="budget-sample-high">—</td></tr>
+                            <tr><td>Freight &amp; shipping</td><td id="budget-freight-low">—</td><td id="budget-freight-high">—</td></tr>
+                            <tr><td>Brand setup (photo, barcodes, filings)</td><td id="budget-brand-low">—</td><td id="budget-brand-high">—</td></tr>
+                            <tr class="calc-total"><td>Estimated first-run total</td><td id="budget-total-low">—</td><td id="budget-total-high">—</td></tr>
+                            <tr><td>Cost per unit (all units)</td><td id="budget-unit-low">—</td><td id="budget-unit-high">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="budget-band" class="guide-meta">Estimate based on general industry patterns — not a quote.</p>
+
+                <h2>How to read it</h2>
+                <p>The published first-run bands in our <a href="../../guides/skincare-line-cost/">cost guide</a> are roughly $1,500–$10,000 for a stock-formula launch and $5,000–$25,000+ for a custom-formulation launch. The band check above compares your estimate against the band for your path. If your range sits inside the band, your plan looks like a typical first launch. If it straddles the band, one end of your plan is outside the usual range — usually because your units are small (fixed costs dominate) or your path is custom (development adds thousands before production starts).</p>
+                <p>The range is wide on purpose. Product fill alone runs from $1.50 to $12.00 per unit across product types, and packaging from $0.50 to $5.00 per unit — so the same launch can legitimately cost several times more or less depending on what you make and how you pack it. The low end assumes the cheapest published figures on every bucket at once; the high end assumes the most expensive. Most real quotes land somewhere inside, not at either edge.</p>
+                <p>Three things move the total most. First, units per product: nearly every cost is priced per run or per unit, and minimums decide your floor. Second, the path: custom formulation adds development fees of $2,000 to $15,000+ per formula before a single unit is filled, and two sample rounds instead of one. Third, the number of products: development and testing are priced per formula, so each extra SKU adds a full round of both.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote.</strong> Every figure above is a general industry pattern, not a price from any manufacturer. Use the budget to judge real quotes, then get itemized quotes on the same basis — same products, units, and packaging — before committing to a launch size.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>What is the cheapest way to start a skincare line?</summary>
+                        <p>Starting with stock (private-label) formulas is usually the cheapest route, because the formula already exists and you are paying mainly for product, packaging, and labels. Custom formulation costs more because development, sampling, and testing are added on top.</p>
+                    </details>
+                    <details>
+                        <summary>Can I start a skincare line with $1,000?</summary>
+                        <p>It is possible only in narrow cases — for example, one stock product, a small run, and simple packaging — and only if the manufacturer's minimums allow it. Most founders planning two or three products should expect a first-launch budget in the low thousands at minimum, before marketing.</p>
+                    </details>
+                </div>
+
+                <p>Related tools: the <a href="../launch-cost-calculator/">launch cost calculator</a>, the <a href="../moq-planner/">MOQ planner</a>, the <a href="../launch-timeline/">launch timeline planner</a>, and the <a href="../brief-scorer/">brief scorer</a>.</p>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn the budget into a real quote</h3>
+                        <p>Send your products, units, and path through the funnel — the conversation starts from real numbers, not ideas. Estimates above are general industry patterns, not a quote.</p>
+                    </div>
+                    <div>
+                        <a href="../../renaud/" class="btn btn-primary btn-block">Start with the Renaud funnel &rarr;</a>
+                        <a href="../../guides/skincare-line-cost/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Read the full cost guide &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* All bands are the general industry ranges published in the live cost
+           guide (/guides/skincare-line-cost/). Nothing here is a price from
+           any manufacturer. Open-ended highs are shown with a "+" suffix. */
+        var BANDS = {
+            devCustom: [2000, 15000],
+            fill: [1.50, 12.00],
+            packaging: [0.50, 5.00],
+            labels: [0.10, 1.00],
+            testing: [500, 3000],
+            samples: [50, 500],
+            freight: [100, 1000],
+            brand: [300, 2500]
+        };
+        var PUBLISHED = {
+            stock: [1500, 10000],
+            custom: [5000, 25000]
+        };
+        function clampInt(value, min, max, fallback) {
+            var n = parseInt(value, 10);
+            if (isNaN(n)) { return fallback; }
+            if (n < min) { return min; }
+            if (n > max) { return max; }
+            return n;
+        }
+        function computeBudget(p) {
+            var units = clampInt(p.units, 1, 100000, 250);
+            var skus = clampInt(p.skus, 1, 50, 3);
+            var rounds = clampInt(p.rounds, 0, 3, 1);
+            var totalUnits = units * skus;
+            var rows = [];
+            var openEnded = false;
+            var devLow, devHigh, devOpen = false;
+            if (p.path === 'stock') { devLow = 0; devHigh = 0; }
+            else { devLow = BANDS.devCustom[0] * skus; devHigh = BANDS.devCustom[1] * skus; devOpen = true; }
+            if (devOpen) { openEnded = true; }
+            rows.push({ key: 'dev', low: devLow, high: devHigh, open: devOpen });
+            rows.push({ key: 'fill', low: BANDS.fill[0] * totalUnits, high: BANDS.fill[1] * totalUnits, open: false });
+            rows.push({ key: 'pack', low: BANDS.packaging[0] * totalUnits, high: BANDS.packaging[1] * totalUnits, open: false });
+            rows.push({ key: 'label', low: BANDS.labels[0] * totalUnits, high: BANDS.labels[1] * totalUnits, open: false });
+            var testLow = (p.path === 'custom') ? BANDS.testing[0] * skus : 0;
+            rows.push({ key: 'test', low: testLow, high: BANDS.testing[1] * skus, open: false });
+            rows.push({ key: 'sample', low: BANDS.samples[0] * rounds, high: BANDS.samples[1] * rounds, open: false });
+            rows.push({ key: 'freight', low: BANDS.freight[0], high: BANDS.freight[1], open: true });
+            openEnded = true;
+            var brandLow = 0, brandHigh = 0;
+            if (p.brand === 'yes') { brandLow = BANDS.brand[0]; brandHigh = BANDS.brand[1]; }
+            rows.push({ key: 'brand', low: brandLow, high: brandHigh, open: false });
+            var totalLow = 0, totalHigh = 0;
+            rows.forEach(function (r) { totalLow += r.low; totalHigh += r.high; });
+            var band = PUBLISHED[p.path] || PUBLISHED.stock;
+            var bandNote;
+            if (totalLow > band[1]) { bandNote = 'above the published band'; }
+            else if (totalHigh < band[0]) { bandNote = 'below the published band'; }
+            else if (totalLow >= band[0] && totalHigh <= band[1]) { bandNote = 'inside the published band'; }
+            else { bandNote = 'straddling the published band'; }
+            return {
+                rows: rows, totalLow: totalLow, totalHigh: totalHigh, openEnded: openEnded,
+                unitLow: totalLow / totalUnits, unitHigh: totalHigh / totalUnits,
+                bandLow: band[0], bandHigh: band[1], bandNote: bandNote, path: p.path
+            };
+        }
+        function fmt(n) {
+            return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function fmtUnit(n) {
+            return '$' + n.toFixed(2);
+        }
+        function render() {
+            var p = {
+                path: document.getElementById('budget-path').value,
+                units: document.getElementById('budget-units').value,
+                skus: document.getElementById('budget-skus').value,
+                rounds: document.getElementById('budget-rounds').value,
+                brand: document.getElementById('budget-brand').value
+            };
+            var result = computeBudget(p);
+            var ids = { dev: 'dev', fill: 'fill', pack: 'pack', label: 'label', test: 'test', sample: 'sample', freight: 'freight', brand: 'brand' };
+            result.rows.forEach(function (r) {
+                var prefix = 'budget-' + ids[r.key] + '-';
+                document.getElementById(prefix + 'low').textContent = fmt(r.low);
+                document.getElementById(prefix + 'high').textContent = fmt(r.high) + (r.open ? '+' : '');
+            });
+            document.getElementById('budget-total-low').textContent = fmt(result.totalLow);
+            document.getElementById('budget-total-high').textContent = fmt(result.totalHigh) + (result.openEnded ? '+' : '');
+            document.getElementById('budget-unit-low').textContent = fmtUnit(result.unitLow);
+            document.getElementById('budget-unit-high').textContent = fmtUnit(result.unitHigh) + (result.openEnded ? '+' : '');
+            document.getElementById('budget-band').textContent = 'Your estimate of ' + fmt(result.totalLow) + '–' + fmt(result.totalHigh) + (result.openEnded ? '+' : '') + ' is ' + result.bandNote + ' for a ' + (result.path === 'custom' ? 'custom-formulation' : 'stock-formula') + ' launch (published band $' + result.bandLow.toLocaleString('en-US') + '–$' + result.bandHigh.toLocaleString('en-US') + (result.path === 'custom' ? '+' : '') + '). Estimates based on general industry patterns — not a quote.';
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            ['budget-path', 'budget-units', 'budget-skus', 'budget-rounds', 'budget-brand'].forEach(function (id) {
+                var el = document.getElementById(id);
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+            render();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computeBudget: computeBudget, BANDS: BANDS, PUBLISHED: PUBLISHED };
+        }
+    })();
+    </script>
+</body>
+</html>

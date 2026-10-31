@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Root Marketplace Directory -->
+  
   <url>
     <loc>https://labelorigin.com/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -14,7 +14,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Renaud Naturals Master Laboratory Hub -->
+  
   <url>
     <loc>https://labelorigin.com/renaud/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -22,7 +22,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- SASS-EE Organic Sunless Tanning (by Renaud Naturals Inc.) -->
+  
   <url>
     <loc>https://labelorigin.com/sass-ee/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -30,7 +30,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Renaud Naturals 10 Formulation Disciplines (Topical Silo) -->
+  
   <url>
     <loc>https://labelorigin.com/renaud/facial-care/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -92,7 +92,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Category Desks -->
+  
   <url>
     <loc>https://labelorigin.com/supplements/</loc>
     <lastmod>2026-10-30</lastmod>
@@ -106,7 +106,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Guides -->
+  
   <url>
     <loc>https://labelorigin.com/guides/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -144,7 +144,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Segment landing pages -->
+  
   <url>
     <loc>https://labelorigin.com/spas/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -194,7 +194,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Tools -->
+  
   <url>
     <loc>https://labelorigin.com/tools/launch-cost-calculator/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -202,7 +202,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal -->
+  
   <url>
     <loc>https://labelorigin.com/privacy/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -223,7 +223,7 @@
   </url>
 
 
-  <!-- Cost-guide cluster: 20 micro-articles (2026-10-28) -->
+  
   <url>
     <loc>https://labelorigin.com/guides/skincare-line-cost-bands-explained/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -362,8 +362,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Meta Muse Invite -->
-  <url>
+  
+  <url><loc>https://labelorigin.com/tools/mocra-checklist/</loc><lastmod>2026-10-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://labelorigin.com/tools/first-run-budget/</loc><lastmod>2026-10-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url>
     <loc>https://labelorigin.com/muse/</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
