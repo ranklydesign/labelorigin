@@ -624,7 +624,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     display: block;
     margin-bottom: 14px;
 }
-.step-card h4 {
+.step-card h3, .step-card h4 {
     font-size: 1.02rem;
     font-weight: 600;
     color: var(--ivory-white);
@@ -648,7 +648,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     border: 1px solid var(--line-subtle);
     background: var(--tint-1);
 }
-.service h4 {
+.service h3, .service h4 {
     font-family: var(--font-serif);
     font-size: 1.45rem;
     font-weight: 500;
@@ -784,7 +784,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     display: block;
     letter-spacing: 0.1em;
 }
-.protocol-item h4 {
+.protocol-item h3, .protocol-item h4 {
     font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 600;
@@ -910,7 +910,7 @@ footer {
     gap: 32px;
     margin-bottom: 40px;
 }
-.footer-brand h4 {
+.footer-brand h3, .footer-brand h4 {
     font-family: var(--font-display);
     font-size: 1.1rem;
     letter-spacing: 0.16em;
@@ -1193,3 +1193,17 @@ body.lo-consent-visible { padding-bottom: 118px; }
     outline: 2px solid var(--line-focus);
     outline-offset: 2px;
 }
+
+/* P2 heading-level fixes (Oct 31, 2026): headings promoted one level to fix
+   outline skips keep the size they rendered at before promotion. These
+   containers had no scoped heading rules, so the rules below match the UA
+   default sizes (h4 = 1em, h5 = 0.83em). The global reset already zeroes
+   heading margins, so font-size is the only property that changes. */
+.launch-card h2,
+.science-box h2,
+.renaud-footer-brand h3,
+.liaison-details h3 { font-size: 1em; }
+.pillar-box h4,
+.make-category h4,
+.roadmap-step h4,
+.qa-pillar-card h4 { font-size: 0.83em; }
