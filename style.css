@@ -1154,3 +1154,42 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .lo-guide .guide-toc strong { display: block; margin-bottom: 8px; }
 .lo-guide .guide-toc ul { margin: 0; }
 .lo-guide .guide-toc li { margin-bottom: 4px; }
+
+/* ==========================================================================
+   SKIP-LINK CSS — Phase 4 (d) / Phase-0 fix
+   INSERTION POINT: append this whole block to the END of the repo-root
+   `style.css` (ranklydesign/labelorigin, branch main). Nothing else changes.
+   One insertion covers all 15 fixed pages: every one of them loads the
+   root style.css (home: ./style.css; renaud/sass-ee/supplements/apparel:
+   ../style.css; 10 category pages: ../../style.css — all verified).
+   The `.skip-link` anchor itself is the first element inside <body> on
+   each of the 15 pages and points at <main id="main-content">.
+   Colours use the theme tokens on purpose: --ivory-white / --bg-canvas
+   invert together in every theme variant (light, dark, renaud brand
+   skin), so the focused link stays high-contrast on all 15 pages.
+   No other CSS file needs this rule (renaud/renaud.css is loaded after
+   style.css on funnel pages, but it defines no conflicting .skip-link).
+   ========================================================================== */
+
+/* Skip link: hidden off-screen until keyboard focus, then visible. */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1000;
+    background: var(--ivory-white);
+    color: var(--bg-canvas);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 16px;
+    text-decoration: underline;
+    border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+    left: 8px;
+    top: 8px;
+    outline: 2px solid var(--line-focus);
+    outline-offset: 2px;
+}
