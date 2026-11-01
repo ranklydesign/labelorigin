@@ -1369,13 +1369,14 @@ body.lo-consent-visible { padding-bottom: 118px; }
 }
 @media (min-width: 860px) {
     .lp-grid {
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: minmax(280px, 340px) 1fr;
         gap: 40px;
         align-items: start;
     }
     .lp-preview-wrap {
         position: sticky;
         top: 24px;
+        max-width: 340px;
     }
 }
 .lp-field {
@@ -1474,7 +1475,7 @@ body.lo-consent-visible { padding-bottom: 118px; }
     box-shadow: var(--card-shadow);
 }
 .lp-preview svg {
-    width: 210px;
+    width: 260px;
     max-width: 70vw;
     height: auto;
 }
@@ -1500,9 +1501,4 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .lp-summary-text {
     font-weight: 600;
     color: var(--text-primary);
-}
-@media (max-width: 859px) {
-    .lp-preview-wrap {
-        order: -1;
-    }
 }
