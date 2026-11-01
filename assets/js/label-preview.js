@@ -93,15 +93,16 @@
         var prod = PRODUCTS[productKey] || PRODUCTS.serum;
         var box = labelBox(productKey);
         var name = (brand || '').trim() || 'Your Spa';
-        var brandSize = name.length > 18 ? 10 : (name.length > 12 ? 12 : 14);
+        var brandSize = name.length > 18 ? 11 : (name.length > 12 ? 14 : 16);
         var svg = '' +
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" role="img" aria-label="Mockup of a ' + esc(prod.label) + ' labelled ' + esc(name) + '">' +
+            '<g transform="translate(100 159) scale(1.24) translate(-100 -159)">' +
             bottleShapes(productKey, p.accent) +
             '<rect x="' + box[0] + '" y="' + box[1] + '" width="' + box[2] + '" height="' + box[3] + '" fill="' + p.bg + '" stroke="' + p.rule + '" stroke-width="1"/>' +
             '<text x="100" y="' + box[4] + '" text-anchor="middle" font-family="Georgia, serif" font-size="' + brandSize + '" fill="' + p.ink + '" textLength="' + (box[2] - 8) + '" lengthAdjust="spacingAndGlyphs">' + esc(name) + '</text>' +
             '<line x1="' + (100 - (box[2] / 2 - 12)) + '" y1="' + (box[4] + 10) + '" x2="' + (100 + (box[2] / 2 - 12)) + '" y2="' + (box[4] + 10) + '" stroke="' + p.rule + '" stroke-width="1"/>' +
-            '<text x="100" y="' + box[5] + '" text-anchor="middle" font-family="Georgia, serif" font-size="7.5" letter-spacing="1.5" fill="' + p.ink + '" textLength="' + (box[2] - 8) + '" lengthAdjust="spacingAndGlyphs">' + esc(prod.bottle.toUpperCase()) + '</text>' +
-            '</svg>';
+            '<text x="100" y="' + box[5] + '" text-anchor="middle" font-family="Georgia, serif" font-size="8.5" letter-spacing="1.5" fill="' + p.ink + '" textLength="' + (box[2] - 8) + '" lengthAdjust="spacingAndGlyphs">' + esc(prod.bottle.toUpperCase()) + '</text>' +
+            '</g></svg>';
         return svg;
     }
 

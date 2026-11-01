@@ -120,10 +120,6 @@
                 <h2>See your brand <em>on the bottle</em></h2>
                 <p class="lp-intro">Type your spa or salon name, pick a product and a label style, and see your brand on the bottle — instantly, in your browser. Nothing you type leaves this page until you ask for samples.</p>
                 <div class="lp-grid">
-                    <div class="lp-preview-wrap">
-                        <div class="lp-preview" role="img" aria-label="Label mockup preview"></div>
-                        <p class="lp-preview-caption">Live preview — updates as you type.</p>
-                    </div>
                     <div class="lp-controls">
                         <label class="lp-field" for="lp-brand">Your spa or salon name
                             <input type="text" id="lp-brand" class="lp-brand-input" placeholder="e.g. Glow Med Spa" maxlength="40" autocomplete="organization">
@@ -153,6 +149,10 @@
                             <a href="#sample-request" class="btn btn-primary lp-cta" data-ga-event="preview_cta">Request samples for this line &rarr;</a>
                         </div>
                         <p class="lp-note">Illustrative mockup, final packaging and label design confirmed with the manufacturer.</p>
+                    </div>
+                    <div class="lp-preview-wrap">
+                        <div class="lp-preview" role="img" aria-label="Label mockup preview"></div>
+                        <p class="lp-preview-caption">Live preview — updates as you type.</p>
                     </div>
                 </div>
             </div>
@@ -355,6 +355,27 @@
         if (isManufacturer) {
             var mBadge = document.getElementById('sr-manufacturer-badge');
             if (mBadge) mBadge.style.display = 'block';
+        }
+
+        // TRACK C (Nov 1) — launch-path quiz score: /tools/launch-path-quiz/
+        // links here as /wholesale/?quiz=<score line>. The line is validated
+        // against the exact format the quiz builds; anything else is ignored.
+        // Fail-open: param absent or invalid = today's behavior, unchanged.
+        // The line is prefilled visibly into the needs field (like the label
+        // preview line), so the visitor sees it and can edit or remove it.
+        var quizLine = null;
+        try {
+            var quizParam = new URLSearchParams(window.location.search).get('quiz');
+            if (quizParam && /^Launch-path quiz — score (9|1[0-9]|20)\/20 \((Ready to move|Almost ready|Early stage)\) — (stock|semi-custom|custom) formula\.$/.test(quizParam)) {
+                quizLine = quizParam;
+            }
+        } catch (e) { quizLine = null; }
+        if (quizLine) {
+            var quizNeeds = document.getElementById('sr-needs');
+            if (quizNeeds) {
+                if (!quizNeeds.value) { quizNeeds.value = quizLine; }
+                else if (quizNeeds.value.indexOf('Launch-path quiz') !== 0) { quizNeeds.value = quizLine + '\n' + quizNeeds.value; }
+            }
         }
 
         var firedConversions = {};
