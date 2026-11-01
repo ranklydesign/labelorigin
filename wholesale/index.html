@@ -114,6 +114,50 @@
                 <p class="guide-meta">Updated 1 November 2026 &bull; General information for med spa owners. Minimums and timing are confirmed in writing for your shortlist — nothing on this page is a quote.</p>
             </section>
 
+        <section class="lp-section" id="label-preview" aria-label="See your brand on the bottle">
+            <div class="container">
+                <span class="editorial-eyebrow">Label preview</span>
+                <h2>See your brand <em>on the bottle</em></h2>
+                <p class="lp-intro">Type your spa or salon name, pick a product and a label style, and see your brand on the bottle — instantly, in your browser. Nothing you type leaves this page until you ask for samples.</p>
+                <div class="lp-grid">
+                    <div class="lp-controls">
+                        <label class="lp-field" for="lp-brand">Your spa or salon name
+                            <input type="text" id="lp-brand" class="lp-brand-input" placeholder="e.g. Glow Med Spa" maxlength="40" autocomplete="organization">
+                        </label>
+                        <fieldset class="lp-fieldset">
+                            <legend>Product</legend>
+                            <div class="lp-chips">
+                                <label class="lp-chip is-selected"><input type="radio" name="lp-product" value="serum" checked> Serum dropper</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="cream"> Cream jar</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="cleanser"> Cleanser pump</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="lotion"> Body lotion tube</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="spraytan"> Spray-tan bottle (SASS-EE)</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="lp-fieldset">
+                            <legend>Label style</legend>
+                            <div class="lp-chips">
+                                <label class="lp-chip is-selected"><input type="radio" name="lp-style" value="cream-gold" checked> <span class="lp-swatch-dot" style="background:#f7f1e3"></span> Cream / gold</label>
+                                <label class="lp-chip"><input type="radio" name="lp-style" value="matte-black"> <span class="lp-swatch-dot" style="background:#1d2027"></span> Matte black</label>
+                                <label class="lp-chip"><input type="radio" name="lp-style" value="white-sage"> <span class="lp-swatch-dot" style="background:#ffffff"></span> White / sage</label>
+                                <label class="lp-chip"><input type="radio" name="lp-style" value="blush"> <span class="lp-swatch-dot" style="background:#f6e8e4"></span> Blush</label>
+                            </div>
+                        </fieldset>
+                        <p class="lp-summary">Your line: <span class="lp-summary-text">Facial Serum &middot; Cream / gold</span> &mdash; carried into your sample request.</p>
+                        <div class="lp-actions">
+                            <button type="button" class="btn btn-secondary lp-download">Download my mockup</button>
+                            <a href="#sample-request" class="btn btn-primary lp-cta" data-ga-event="preview_cta">Request samples for this line &rarr;</a>
+                        </div>
+                        <p class="lp-note">Illustrative mockup, final packaging and label design confirmed with the manufacturer.</p>
+                    </div>
+                    <div class="lp-preview-wrap">
+                        <div class="lp-preview" role="img" aria-label="Label mockup preview"></div>
+                        <p class="lp-preview-caption">Live preview — updates as you type.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
             <article class="lo-guide">
                 <nav class="guide-toc" aria-label="On this page">
                     <strong>On this page</strong>
@@ -281,6 +325,7 @@
 
     <script src="../assets/js/contact.js"></script>
     <script src="../assets/js/hubspot.js"></script>
+    <script src="../assets/js/label-preview.js"></script>
     <script>
     /*
      * Sample kit request form — LabelOrigin.
