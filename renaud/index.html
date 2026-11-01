@@ -394,7 +394,7 @@
                         <li>Standard production and labeling turnaround is 2 to 3 weeks upon artwork approval.</li>
                     </ul>
                 </div>
-                <p style="color: var(--text-secondary); font-size: 0.88rem; font-weight: 300; line-height: 1.6; margin: 0;">If your order volume is under 12 units, your inquiry goes to the waitlist instead of the sales inbox, and you will be notified when micro-batch pooled runs open.</p>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; font-weight: 300; line-height: 1.6; margin: 0;">If your order volume is under 12 units, you're not the right fit yet. We'll suggest other options or revisit when the timing's better.</p>
             </section>
             <!-- Multi-Step Interactive Form Card (THE CORE CONVERSION GATE) -->
             <div class="form-card" id="pre-qualify">
@@ -631,7 +631,7 @@
                     </form>
                 </div>
 
-                <!-- STEP 3B: Small-Batch Waitlist -->
+                <!-- STEP 3B: Small-Batch Inquiry -->
                 <div id="step-waitlist" class="step">
                     <div class="step-header">
                         <span class="step-indicator">Inquiry Routing</span>
@@ -642,7 +642,7 @@
                         Renaud Naturals specializes in wholesale formulation production starting at <strong>12+ units per SKU</strong> and custom lab R&amp;D at <strong>250+ units</strong>.
                     </p>
                     <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.88rem; line-height: 1.6; font-weight: 300;">
-                        If you are looking for single-unit consumer retail products, you can visit our direct retail shop at <a href="https://renaudnaturals.com/" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">RenaudNaturals.com</a>. Or enter your email below to receive priority notifications when micro-batch pooled runs open.
+                        If you are looking for single-unit consumer retail products, you can visit our direct retail shop at <a href="https://renaudnaturals.com/" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">RenaudNaturals.com</a>. Or enter your email below and Robert will review your inquiry.
                     </p>
 
                     <form id="waitlist-lead-form">
@@ -655,7 +655,7 @@
                             <input type="text" id="w-concept" placeholder="e.g. Clean facial cleansers, body oils">
                         </div>
                         <button type="submit" class="submit-btn">
-                            <span>Join Micro-Batch Notification List &rarr;</span>
+                            <span>Send My Inquiry &rarr;</span>
                         </button>
                     </form>
                 </div>
@@ -695,7 +695,7 @@
                     </div>
                 </div>
 
-                <!-- SUCCESS STATE: Small-Batch Waitlist Confirmation -->
+                <!-- SUCCESS STATE: Small-Batch Inquiry Confirmation -->
                 <div id="step-success-waitlist" class="step">
                     <div class="success-card">
                         <div class="success-icon-wrap">&check;</div>
@@ -1031,6 +1031,7 @@
         webhookUrl: '' // Connect Formspree, Make, Zapier, or Google Sheets webhooks
     };
 </script>
+<script src="../assets/js/hubspot.js"></script>
 <script src="../assets/js/funnel.js"></script>
 
 <script src="../assets/js/contact.js"></script>

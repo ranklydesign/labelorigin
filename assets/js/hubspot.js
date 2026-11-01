@@ -30,6 +30,7 @@
     var PORTAL_ID = '247855692';
     var NEWSLETTER_FORM_ID = '90f597fb-0644-4e26-9cfb-6d02dcba52aa';
     var LEAD_FORM_ID = 'c8a97138-af1f-48bc-9d57-ebaf02026cd7';
+    var UNDERMINIMUM_FORM_ID = '75d37a69-7e6a-45ab-8333-67a846f37d5b'; // LabelOrigin Under-minimum Lead (email required only)
     // HubSpot-hosted state-rules checklist PDF (Files API, public file,
     // verified 200 + application/pdf). Linked from the newsletter thank-you.
     var CHECKLIST_PDF_URL = 'https://247855692.fs1.hubspotusercontent-na2.net/hubfs/247855692/labelorigin/state-rules-checklist.pdf';
@@ -135,6 +136,31 @@
                 };
                 fetch('https://api.hsforms.com/submissions/v3/integration/submit/' +
                     PORTAL_ID + '/' + LEAD_FORM_ID, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).catch(function () { /* fail-open: the lead flow never depends on HubSpot */ });
+            } catch (err) {
+                /* fail-open: the lead flow never depends on HubSpot */
+            }
+        },
+        submitNotYetFit: function (fields) {
+            // Under-minimum funnel leads (no name/company collected): posts to the
+            // dedicated under-minimum form, email required only. Same fail-open
+            // pattern as submitLead — never awaited, every failure swallowed.
+            try {
+                var payload = {
+                    fields: [
+                        { objectTypeId: '0-1', name: 'email', value: fields.email || '' },
+                        { objectTypeId: '0-1', name: 'lead_message', value: fields.lead_message || '' }
+                    ],
+                    context: {
+                        pageUri: fields.pageUri || window.location.href,
+                        pageName: fields.pageName || document.title
+                    }
+                };
+                fetch('https://api.hsforms.com/submissions/v3/integration/submit/' +
+                    PORTAL_ID + '/' + UNDERMINIMUM_FORM_ID, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)

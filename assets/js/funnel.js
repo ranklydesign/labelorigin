@@ -1,6 +1,6 @@
 /**
  * LabelOrigin High-Converting Funnel Engine
- * Handles multi-step progression, logic gating (high-volume vs low-volume waitlist),
+ * Handles multi-step progression, logic gating (high-volume vs low-volume),
  * back-step navigation, lead ID generation, webhook dispatch, and local persistence.
  *
  * Integrated with real email routing via FormSubmit (ranklydesign@gmail.com)
@@ -263,24 +263,39 @@
         const submitBtn = form.querySelector('button[type="submit"]');
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Enrolling in Small-Batch Queue...';
+        submitBtn.innerHTML = 'Sending Your Inquiry...';
 
         const leadId = generateLeadId('SB');
         state.leadData.leadId = leadId;
         state.leadData.submittedAt = new Date().toISOString();
-        state.leadData.leadCategory = 'small_batch_waitlist';
+        state.leadData.leadCategory = 'not_yet_fit';
         state.leadData.email = (document.getElementById('w-email') || {}).value || '';
         state.leadData.brandConcept = (document.getElementById('w-concept') || {}).value || '';
 
         saveLead(config.waitlistKey || 'labelorigin_small_batch_waitlist', state.leadData);
 
+        // 1b. Dual submit to HubSpot (dedicated under-minimum form) — fail-open:
+        // sent in parallel, never awaited; the FormSubmit flow below never depends
+        // on it. This branch collects email only (no name/company), so it posts to
+        // the under-minimum form (email required only), tagged 'not-yet-fit / revisit'.
+        if (window.LabelOriginHubSpot && typeof window.LabelOriginHubSpot.submitNotYetFit === 'function') {
+            try {
+                window.LabelOriginHubSpot.submitNotYetFit({
+                    email: state.leadData.email || '',
+                    lead_message: 'Not-yet-fit / revisit — ' + state.leadData.leadId + ' — ' + (state.leadData.businessType || '') + ' / ' + (state.leadData.volumeLabel || '').split('\n')[0].trim() + '. Concept: ' + (state.leadData.brandConcept || 'none')
+                });
+            } catch (err) {
+                // Fail-open: the lead flow never depends on HubSpot.
+            }
+        }
+
         const emailPayload = {
-            _subject: `[LabelOrigin Waitlist] ${config.partnerName} Small-Batch Lead: ${state.leadData.email}`,
+            _subject: `[LabelOrigin Lead] ${config.partnerName} Small-Batch Lead: ${state.leadData.email}`,
             _template: 'table',
             _captcha: 'false',
             "Partner Facility": config.partnerName,
             "Lead ID": state.leadData.leadId,
-            "Inquiry Type": "Small-Batch Incubator Waitlist",
+            "Inquiry Type": "Small-Batch — not-yet-fit / revisit",
             "Contact Email": state.leadData.email,
             "Brand Concept": state.leadData.brandConcept || 'None specified',
             "Selected Volume": state.leadData.volumeLabel || 'Under MOQ',
