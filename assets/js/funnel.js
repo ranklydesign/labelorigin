@@ -219,7 +219,9 @@
                     email: state.leadData.email || '',
                     company: state.leadData.companyName || '',
                     website: '',
-                    lead_message: 'SASS-EE funnel lead ' + state.leadData.leadId + ' — ' + (state.leadData.businessType || '') + ' / ' + (state.leadData.volumeLabel || '') + ' / ' + (state.leadData.interestArea || '') + '. Phone: ' + (state.leadData.phone || 'not given') + '. Notes: ' + (state.leadData.notes || 'none')
+                    // Volume label is the button's full text (label + helper sub-line + arrow);
+                    // the message takes the first line only — the plain label.
+                    lead_message: 'SASS-EE funnel lead ' + state.leadData.leadId + ' — ' + (state.leadData.businessType || '') + ' / ' + (state.leadData.volumeLabel || '').split('\n')[0].trim() + ' / ' + (state.leadData.interestArea || '') + '. Phone: ' + (state.leadData.phone || 'not given') + '. Notes: ' + (state.leadData.notes || 'none')
                 });
             } catch (err) {
                 // Fail-open: the lead flow never depends on HubSpot.
