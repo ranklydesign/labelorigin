@@ -209,7 +209,7 @@
         // 1. Save locally to browser
         saveLead(config.storageKey || 'labelorigin_leads', state.leadData);
 
-        // 2. Dispatch to FormSubmit (email to ranklydesign@gmail.com, cc facility if available)
+        // 2. Dispatch to FormSubmit (email to ranklydesign@gmail.com only — no CC)
         const emailPayload = {
             _subject: `[LabelOrigin Lead] ${config.partnerName} Formulation Inquiry: ${state.leadData.companyName || state.leadData.contactName}`,
             _template: 'table',
@@ -380,13 +380,13 @@
 
         if (idDisplay) idDisplay.textContent = state.leadData.leadId;
         if (summaryDisplay) {
-            const facilityInfo = config.facilityAddress ? `${config.partnerName} &bull; ${config.facilityAddress}` : `${config.partnerName} (Direct Lab)`;
+            const facilityInfo = `${config.partnerName} — LabelOrigin wholesale desk (Robert)`;
             summaryDisplay.innerHTML = `
-                <div class="summary-line"><span>Facility Routed:</span> <strong>${facilityInfo}</strong></div>
+                <div class="summary-line"><span>Routed to:</span> <strong>${facilityInfo}</strong></div>
                 <div class="summary-line"><span>Business Entity:</span> <strong>${escapeHtml(state.leadData.companyName)} (${escapeHtml(state.leadData.businessType)})</strong></div>
                 <div class="summary-line"><span>Target Program:</span> <strong>${escapeHtml(state.leadData.interestArea)}</strong></div>
                 <div class="summary-line"><span>Order Volume:</span> <strong>${escapeHtml(state.leadData.volumeLabel)}</strong></div>
-                <div class="summary-line"><span>Primary Contact:</span> <strong>${escapeHtml(state.leadData.contactName)} &bull; ${escapeHtml(state.leadData.phone)}</strong></div>
+                <div class="summary-line"><span>Primary Contact:</span> <strong>${escapeHtml(state.leadData.contactName)}${state.leadData.phone ? ' &bull; ' + escapeHtml(state.leadData.phone) : ''}</strong></div>
                 <div class="summary-line"><span>Email:</span> <strong>${escapeHtml(state.leadData.email)}</strong></div>
             `;
         }
