@@ -112,4 +112,17 @@
         document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.title = 'Click to copy email'; });
         document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.title = isPhone() ? 'Call or copy number' : 'Click to copy number'; });
     });
+
+    // Wholesale CTA clicks — GA4 event, consent-gated, no personal data.
+    // Fires on any link carrying data-ga-event="wholesale_cta_click".
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[data-ga-event="wholesale_cta_click"]');
+        if (!a) return;
+        if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+        if (typeof window.gtag !== 'function') return;
+        var utm = (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {};
+        window.gtag('event', 'wholesale_cta_click', Object.assign({
+            page_path: window.location.pathname
+        }, utm));
+    });
 })();
