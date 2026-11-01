@@ -1216,7 +1216,7 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .roadmap-step h4,
 .qa-pillar-card h4 { font-size: 0.83em; }
 
-/* Newsletter signup (HubSpot embed, consent-gated -- see assets/js/hubspot.js). */
+/* Newsletter signup (native form -- posts to the HubSpot submissions endpoint, no embed, no cookies; see assets/js/hubspot.js). */
 .newsletter-signup {
     border-top: 1px solid var(--line-subtle);
     padding-top: 28px;
@@ -1239,4 +1239,33 @@ body.lo-consent-visible { padding-bottom: 118px; }
     font-size: 0.82rem;
     color: var(--text-muted);
     margin-top: 12px;
+}
+.newsletter-form .newsletter-consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+}
+.newsletter-form .newsletter-consent input[type="checkbox"] {
+    width: auto;
+    flex: none;
+    margin-top: 3px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    accent-color: var(--accent-champagne);
+}
+.newsletter-form .newsletter-privacy {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+.newsletter-form .optional {
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+.newsletter-form button {
+    align-self: flex-start;
 }

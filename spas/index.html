@@ -256,8 +256,22 @@
             </div>
             <div class="newsletter-signup">
                 <h4>Get the state-rules checklist</h4>
-                <p>Sign up for the LabelOrigin newsletter and download the printable checklist — the licensing and sales-tax rules for selling skincare in your spa, for all 50 states and the District of Columbia. 3-page PDF, updated 1 November 2026 — 51 rows, one for every state plus DC.</p>
-                <div id="hs-newsletter-footer" data-hubspot-newsletter></div>
+                <p>Sign up for the LabelOrigin newsletter and download the printable checklist — the licensing and sales-tax rules for selling skincare in your spa, for all 50 states and the District of Columbia. 3-page PDF, updated 1 November 2026 — 51 rows, one for every state plus DC. Monthly, unsubscribe anytime.</p>
+                                <form class="mini-form newsletter-form" data-newsletter-native>
+                    <label>Email address
+                        <input type="email" name="email" required autocomplete="email" placeholder="you@yourspa.com">
+                    </label>
+                    <label>First name <span class="optional">(optional)</span>
+                        <input type="text" name="firstname" autocomplete="given-name" placeholder="First name">
+                    </label>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" name="marketing_consent">
+                        <span>I agree to receive marketing emails from LabelOrigin</span>
+                    </label>
+                    <p class="newsletter-privacy">By submitting this form, you agree to our <a href="/privacy/">Privacy Policy</a>.</p>
+                    <button class="btn btn-primary" type="submit">Get the checklist</button>
+                    <p class="newsletter-note" data-newsletter-status role="status" hidden></p>
+                </form>
             </div>
 
             <div class="footer-bottom">
