@@ -244,6 +244,7 @@
                 </div>
                 <div>
                     <form class="mini-form" id="sample-request-form">
+                        <p id="sr-manufacturer-badge" class="notification success" role="status" style="display: none; margin-top: 0; margin-bottom: 12px;"><strong>Manufacturer inquiry.</strong> This arrives tagged as a manufacturer inquiry, so it never mixes with buyer requests.</p>
                         <!-- Anti-spam honeypot -->
                         <input type="text" id="sr-website-hp" class="sr-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <input type="text" id="sr-name" name="name" aria-label="Your name" placeholder="Your name" autocomplete="name" required>
@@ -342,6 +343,20 @@
         var TARGET_EMAIL = 'ranklydesign@gmail.com';
         var FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + TARGET_EMAIL;
         var STORAGE_KEY = 'labelorigin_sample_request';
+
+        // TRACK A (Nov 1) — manufacturer pre-set path: /wholesale/?inquiry=manufacturer
+        // shows a "Manufacturer inquiry" badge and tags the lead in both
+        // destinations (FormSubmit subject + HubSpot lead_message). Fail-open:
+        // param absent = today's behavior, unchanged. A separate label-preview
+        // batch also wires prefill into this form — re-base after it lands.
+        var inquiryParam = null;
+        try { inquiryParam = new URLSearchParams(window.location.search).get('inquiry'); } catch (e) { inquiryParam = null; }
+        var isManufacturer = inquiryParam === 'manufacturer';
+        if (isManufacturer) {
+            var mBadge = document.getElementById('sr-manufacturer-badge');
+            if (mBadge) mBadge.style.display = 'block';
+        }
+
         var firedConversions = {};
 
         var form = document.getElementById('sample-request-form');
@@ -384,12 +399,12 @@
                     email: email,
                     company: company,
                     website: website,
-                    lead_message: needs
+                    lead_message: (isManufacturer ? 'Manufacturer inquiry — ' : '') + needs
                 });
             }
 
             var emailPayload = {
-                _subject: '[LabelOrigin] Sample kit request: ' + email,
+                _subject: (isManufacturer ? '[LabelOrigin] Manufacturer inquiry: ' : '[LabelOrigin] Sample kit request: ') + email,
                 _template: 'table',
                 _captcha: 'false',
                 _replyto: email,
@@ -403,6 +418,8 @@
                 'Source page': 'https://labelorigin.com/wholesale/',
                 'Submission Timestamp': submittedAt
             };
+
+            if (isManufacturer) { emailPayload['Inquiry Type'] = 'Manufacturer inquiry'; }
 
             dispatchLead(emailPayload).then(function (delivered) {
                 document.getElementById('sr-ref').textContent = leadId;
