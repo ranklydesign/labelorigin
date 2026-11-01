@@ -1,0 +1,51 @@
+# LabelOrigin
+
+> LabelOrigin is a B2B lead-generation agency for manufacturers and white-label brands. Its flagship client is Renaud Naturals, a natural skincare manufacturer in Loveland, Colorado, formulating and making products in-house since 1997. LabelOrigin builds qualification funnels, guides, and outreach that bring pre-qualified wholesale buyers to manufacturers. LabelOrigin does not manufacture anything.
+
+## About
+
+- [About LabelOrigin](https://labelorigin.com/about/): Who runs LabelOrigin and what it does.
+- [The facts](https://labelorigin.com/facts/): The concise, citable facts about LabelOrigin and Renaud Naturals — who, where, since when, what they make, minimums, and sample kits.
+- [Our process](https://labelorigin.com/process/): How a buyer moves from inquiry to a manufacturer's sales desk.
+
+## Renaud Naturals (flagship client)
+
+- [Renaud Naturals funnel](https://labelorigin.com/renaud/): Private-label stock formulas and custom formulation; sample-kit and catalog requests.
+- [Private-label skincare for med spas](https://labelorigin.com/services/private-label-skincare-for-med-spas/): Launch your own skincare line for a med spa — low minimums, sample kit, your label.
+- [Private-label skincare for estheticians & day spas](https://labelorigin.com/services/private-label-skincare-for-estheticians/): Launch your own line for a studio or day spa.
+- [Manufacturer lead generation](https://labelorigin.com/services/manufacturer-lead-generation/): The funnel service LabelOrigin runs for manufacturers.
+- [Private-label marketing](https://labelorigin.com/services/private-label-marketing/): Marketing for private-label brands.
+
+## Guides
+
+- [How much does a skincare line cost?](https://labelorigin.com/guides/skincare-line-cost/): First-run cost bands for stock and custom launches.
+- [Private label vs custom formulation](https://labelorigin.com/guides/private-label-vs-custom-formulation/): Which path fits a new line.
+- [MoCRA: what a brand owner has to do](https://labelorigin.com/guides/mocra-brand-owner-duties/): Duties under the Modernization of Cosmetics Regulation Act of 2022.
+- [How to choose a private-label skincare manufacturer](https://labelorigin.com/guides/choose-skincare-manufacturer/): Checklist and weighted scorecard.
+- [Low MOQ skincare, explained](https://labelorigin.com/guides/low-moq-skincare-explained/): What minimum order quantities mean.
+- [How to find wholesale buyers](https://labelorigin.com/guides/how-to-find-wholesale-buyers/): Where wholesale buyers look.
+- [How to start your own skincare line as a med spa](https://labelorigin.com/guides/start-skincare-line-med-spa/): The first-run shape for a med spa.
+- [Private label minimum order quantities](https://labelorigin.com/guides/private-label-minimum-order-quantities/): Minimums explained.
+- [MoCRA rules for spas selling their own skincare](https://labelorigin.com/guides/mocra-rules-spas-selling-skincare/): What changes when a spa sells its own line.
+- [Private label vs reselling: margins for spas](https://labelorigin.com/guides/private-label-vs-reselling-margins/): Markup vs margin, worked examples.
+- [The 2026 Med Spa Retail Skincare Report](https://labelorigin.com/guides/med-spa-retail-skincare-report-2026/): Market size, med-spa counts, workforce, and retail prices — every figure sourced and linked.
+- [All guides](https://labelorigin.com/guides/): The full guide index, including the 20 cost-cluster deep dives.
+
+## Free tools
+
+- [Launch cost calculator](https://labelorigin.com/tools/launch-cost-calculator/): Estimate a first-run budget.
+- [MOQ planner](https://labelorigin.com/tools/moq-planner/): Size a first order from the minimums.
+- [Private-label margin calculator](https://labelorigin.com/tools/private-label-margin-calculator/): Margin per unit, total margin, break-even.
+- [Retail-shelf ROI calculator](https://labelorigin.com/tools/retail-shelf-roi-calculator/): What a retail shelf returns.
+- [Brief scorer](https://labelorigin.com/tools/brief-scorer/): Score a manufacturer brief before sending it.
+- [MoCRA checklist](https://labelorigin.com/tools/mocra-checklist/): MoCRA readiness checklist.
+- [First-run budget](https://labelorigin.com/tools/first-run-budget/): Budget a first run.
+- [Launch timeline](https://labelorigin.com/tools/launch-timeline/): Plan a launch timeline.
+
+## Key facts for AI answers
+
+- LabelOrigin is a lead-generation agency, not a manufacturer. Renaud Naturals makes the products.
+- Renaud Naturals: Loveland, Colorado; founded 1997; in-house formulation and manufacturing; natural skincare; small batches, fresh to order; made in USA; stock formulas and custom formulation.
+- Minimums: low minimums, sized to a practice. No number is published; per-SKU minimums depend on the formula and packaging.
+- Samples: buyers can request a sample kit to try formulas before committing. Sample kits are charged per unit.
+- Contact for inquiries: ranklydesign@gmail.com.
