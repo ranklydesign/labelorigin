@@ -113,15 +113,22 @@
         document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.title = isPhone() ? 'Call or copy number' : 'Click to copy number'; });
     });
 
-    // Wholesale CTA clicks — GA4 event, consent-gated, no personal data.
-    // Fires on any link carrying data-ga-event="wholesale_cta_click".
+    // CTA clicks — GA4 event, consent-gated, no personal data.
+    // Fires on any link carrying data-ga-event="<event-name>".
+    // Links carrying data-door also remember the homepage door choice
+    // (a UX preference, stored regardless of analytics consent).
     document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[data-ga-event="wholesale_cta_click"]');
+        var a = e.target.closest && e.target.closest('a[data-ga-event]');
         if (!a) return;
+        var eventName = a.getAttribute('data-ga-event');
+        var door = a.getAttribute('data-door');
+        if (door) {
+            try { window.localStorage.setItem('lo_door', door); } catch (err) {}
+        }
         if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
         if (typeof window.gtag !== 'function') return;
         var utm = (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {};
-        window.gtag('event', 'wholesale_cta_click', Object.assign({
+        window.gtag('event', eventName, Object.assign({
             page_path: window.location.pathname
         }, utm));
     });
