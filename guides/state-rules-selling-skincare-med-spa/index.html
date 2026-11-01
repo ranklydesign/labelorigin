@@ -143,6 +143,8 @@
                         <li><a href="#sales-tax">Sales tax: the permit names change, the rule does not</a></li>
                         <li><a href="#not-yet-verified">States and territories not yet verified</a></li>
                         <li><a href="#method">Methodology and sources</a></li>
+                        <li><a href="#corrections">Report a correction</a></li>
+                        <li><a href="#embed">Embed this table on your site</a></li>
                         <li><a href="#faq">Frequently asked questions</a></li>
                     </ul>
                 </nav>
@@ -259,6 +261,139 @@
                 <p><strong>What we did not do:</strong> we did not rely on secondary guides, law-firm explainers, or aggregator pages for any row. Several states were left out because only third-party sources surfaced in the session. We did not guess a fee, a license name, or a board name for any state. Medical services in a med spa are governed separately by the state medical board, and are stated as such in the methodology rather than claimed per state, except for Illinois, where the regulator's memo states the split in writing.</p>
                 <p><strong>Gaps we could not close:</strong> no verified state publishes a separate retail-sales license for skincare sold inside a licensed salon, so the table cannot tell you what one costs or how to apply for one — because, on the official pages we read, it does not exist. No primary-source count of licensed salons by state exists in public data, so this page does not rank states by salon count. The <a href="../med-spa-retail-skincare-report-2026/">2026 med spa retail report</a> covers market size and workforce by state from the sources that do exist.</p>
                 <p>The full record — every verification round, the source types, and the entry we could not verify — is on the <a href="../../methodology/">methodology page</a>.</p>
+                <h2 id="corrections">Report a correction</h2>
+                <p>
+                    Rules change, and board pages move. If a row on this page is out of date — a board renamed, a permit renamed, a link that now points at the wrong page — tell us and we will check it against the official source. One sentence is enough: the state, and what is wrong. A source link helps us verify faster but is not required.
+                </p>
+                <p>
+                    What happens after you send it: Robert checks the report against the official source. If the source confirms it, the table is updated and the verified date changes — and the change is listed in the log below. If you left an email, he replies once it is checked. This form is for corrections to the table only, not for sales inquiries: if you want to talk about a private-label line, use the <a href="../../wholesale/">wholesale page</a>.
+                </p>
+                <form class="mini-form" id="correction-form">
+                    <!-- Anti-spam honeypot -->
+                    <input type="text" id="cr-website-hp" class="sr-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <label for="cr-state">State
+                        <select id="cr-state" name="state" required>
+                            <option value="" selected>Choose a state</option>
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona</option>
+                            <option>Arkansas</option>
+                            <option>California</option>
+                            <option>Colorado</option>
+                            <option>Connecticut</option>
+                            <option>Delaware</option>
+                            <option>District of Columbia</option>
+                            <option>Florida</option>
+                            <option>Georgia</option>
+                            <option>Hawaii</option>
+                            <option>Idaho</option>
+                            <option>Illinois</option>
+                            <option>Indiana</option>
+                            <option>Iowa</option>
+                            <option>Kansas</option>
+                            <option>Kentucky</option>
+                            <option>Louisiana</option>
+                            <option>Maine</option>
+                            <option>Maryland</option>
+                            <option>Massachusetts</option>
+                            <option>Michigan</option>
+                            <option>Minnesota</option>
+                            <option>Mississippi</option>
+                            <option>Missouri</option>
+                            <option>Montana</option>
+                            <option>Nebraska</option>
+                            <option>Nevada</option>
+                            <option>New Hampshire</option>
+                            <option>New Jersey</option>
+                            <option>New Mexico</option>
+                            <option>New York</option>
+                            <option>North Carolina</option>
+                            <option>North Dakota</option>
+                            <option>Ohio</option>
+                            <option>Oklahoma</option>
+                            <option>Oregon</option>
+                            <option>Pennsylvania</option>
+                            <option>Puerto Rico</option>
+                            <option>Rhode Island</option>
+                            <option>South Carolina</option>
+                            <option>South Dakota</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Utah</option>
+                            <option>Vermont</option>
+                            <option>Virginia</option>
+                            <option>Washington</option>
+                            <option>West Virginia</option>
+                            <option>Wisconsin</option>
+                            <option>Wyoming</option>
+                            <option value="Multiple states">More than one state</option>
+                        </select>
+                    </label>
+                    <label for="cr-what">What needs correcting?
+                        <textarea id="cr-what" name="correction" rows="4" required placeholder="Quote the row and the correct rule — for example: 'Texas: the board link now goes to a general page, not the establishment-license page.'"></textarea>
+                    </label>
+                    <label for="cr-source">Source URL (optional)
+                        <input type="url" id="cr-source" name="source_url" placeholder="https://… official board or revenue page showing the correct rule">
+                    </label>
+                    <label for="cr-email">Your email (optional — only if you want a reply)
+                        <input type="email" id="cr-email" name="email" autocomplete="email" placeholder="you@yourspa.com">
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-block" id="cr-submit">Send correction report &rarr;</button>
+                </form>
+                <div id="cr-success" class="notification" role="status">
+                    <strong>Correction received — thank you.</strong><br>
+                    Reference <strong id="cr-ref">CR-2026-0000</strong>. Robert checks each report against the official source and updates the table when the source confirms it. If you left an email, he will reply once it is checked.
+                </div>
+                <div id="cr-failure" class="notification error" role="alert" style="display: none;">
+                    <strong>We could not send your report.</strong><br>
+                    Please email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a> directly and mention reference <strong id="cr-ref-fail">CR-2026-0000</strong>, and we will look into it.
+                </div>
+                <h3>Corrections applied so far</h3>
+                <p>
+                    Every verified correction is listed here, with the date, the state, what changed, and the source it was checked against — so you can see the table is maintained, not just published.
+                </p>
+                <ul>
+                    <li>No corrections applied yet. This log starts with the first verified correction.</li>
+                </ul>
+
+                <h2 id="embed">Embed this table on your site</h2>
+                <p>
+                    If you run a law firm, spa association, school, supplier site — or a salon site that answers the same question for your clients — and your readers ask which license covers retail skincare and which sales-tax permit, you can embed the row for your state instead of rewriting it. Pick a state and the box below builds the snippet from the verified table above: the licensing body, the retail-license answer, the sales-tax permit, and the official source links, with the verified date. Paste the code into your page as-is. It is plain HTML with inline styles, so it needs no JavaScript on your site and no account with us.
+                </p>
+                <p>
+                    One state per embed keeps the snippet short enough to paste anywhere; for the full table, use the link below. LabelOrigin is a B2B agency, not a regulator — every row links to the official board or revenue page so you can check it yourself.
+                </p>
+                <p>
+                    The embed links back to this guide. That is the whole deal: your readers get the verified row, and the table has one home that we keep current. We recheck every row monthly and update the verified date when a rule changes — if your state's row changes, come back here and copy the snippet again. The snippet carries the verified date, so a stale copy is visible.
+                </p>
+                <p>
+                    LabelOrigin, a Rankly Design brand, connects med spas and salons with vetted US manufacturers like Renaud Naturals (Loveland, CO). Robert is your contact from first question to samples.
+                </p>
+                <div class="guide-callout">
+                    <p><strong>Attribution is part of the snippet.</strong> Every embed carries a "Source: LabelOrigin" link to this guide. Please keep it — it is how readers find the full 51-row table and check the official sources themselves.</p>
+                </div>
+                <div class="mini-form">
+                    <label for="embed-state">Choose a state to embed</label>
+                    <select id="embed-state">
+                        <option value="" selected>Choose a state…</option>
+                    </select>
+                    <label for="embed-code">Embed code — paste this into your page</label>
+                    <textarea id="embed-code" rows="9" readonly placeholder="Choose a state above — the embed code appears here."></textarea>
+                    <button type="button" class="btn btn-secondary" id="embed-copy">Copy embed code</button>
+                </div>
+                <div id="embed-preview">
+                    <p>Choose a state above to preview the embed.</p>
+                </div>
+                <h3>Link to this table</h3>
+                <p>
+                    Prefer a plain link? The whole table lives at <a href="https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/">labelorigin.com/guides/state-rules-selling-skincare-med-spa/</a>. To cite it: "LabelOrigin, State Rules for Selling Skincare in Your Med Spa — 51 rows verified 1 November 2026, https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/".
+                </p>
+                <div class="mini-form">
+                    <label for="embed-link-code">Link code — paste this into your page</label>
+                    <textarea id="embed-link-code" rows="3" readonly><a href="https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/">State rules for selling skincare in your med spa — LabelOrigin</a></textarea>
+                    <button type="button" class="btn btn-secondary" id="embed-link-copy">Copy link code</button>
+                </div>
+
             </article>
 
             <div class="section-header" id="faq">
@@ -392,5 +527,6 @@
 
     <script src="../../assets/js/contact.js"></script>
     <script src="../../assets/js/hubspot.js"></script>
+    <script src="../../assets/js/state-rules.js"></script>
 </body>
 </html>
