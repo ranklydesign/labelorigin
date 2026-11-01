@@ -263,6 +263,10 @@
      * FormSubmit to ranklydesign@gmail.com, localStorage copy, and a
      * delivered-only conversion guard (fires only when FormSubmit confirms
      * delivery, once per lead ID, no personal data).
+     * _replyto + email field: the notification's Reply-To is the lead, so Robert
+     * replies in one click. NOTE: FormSubmit _autoresponse does NOT fire for AJAX
+     * forms with reCAPTCHA disabled (verified Nov 1) — do not add it; the email
+     * auto-reply runs via HubSpot (see funnel-audit-2026-11-01.md).
      */
     (function () {
         var TARGET_EMAIL = 'ranklydesign@gmail.com';
@@ -307,6 +311,8 @@
                 _subject: '[LabelOrigin] Sample kit request: ' + email,
                 _template: 'table',
                 _captcha: 'false',
+                _replyto: email,
+                'email': email,
                 'Lead ID': leadId,
                 'Name': name,
                 'Business Email': email,

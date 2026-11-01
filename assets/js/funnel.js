@@ -31,8 +31,6 @@
         partnerPrefix: 'RN',
         partnerSlug: 'renaud',
         facilityAddress: '101 East 5th Street, Loveland, CO 80537',
-        facilityPhone: '970-667-1433',
-        facilityEmail: 'Arch@RenaudNaturals.com',
         webhookUrl: '',
         storageKey: 'labelorigin_renaud_leads',
         waitlistKey: 'labelorigin_small_batch_waitlist'
@@ -230,11 +228,6 @@
             "Submission Timestamp": state.leadData.submittedAt
         };
 
-        // Qualified leads only: copy the agency owner, who forwards them to the client.
-        if (config.ccEmail) {
-            emailPayload._cc = config.ccEmail;
-        }
-
         const delivered = await dispatchLead(emailPayload, state.leadData);
 
         // Conversion: delivered submits only. The success step below is
@@ -370,18 +363,14 @@
     }
 
     // The lead is always kept in this browser; if the email could not be delivered, say so and give a direct route.
+    // Routing rule (Nov 1): the fallback points to ranklydesign@gmail.com ONLY — never Arch's email/phone, never Robert's phone.
     function showDeliveryNotice(stepId) {
         const step = document.getElementById(stepId);
         if (!step || step.querySelector('.delivery-warning')) return;
-        const phone = config.facilityPhone || '';
-        const email = config.facilityEmail || '';
         const notice = document.createElement('div');
         notice.className = 'notification success delivery-warning';
         notice.setAttribute('role', 'alert');
-        notice.innerHTML = `<strong>We could not confirm email delivery.</strong> Please contact us directly and mention reference <strong>${escapeHtml(state.leadData.leadId)}</strong>: ` +
-            (email ? `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>` : '') +
-            (email && phone ? ' or ' : '') +
-            (phone ? `<a href="tel:${escapeHtml(phone.replace(/\D/g, ''))}" data-phone-display="${escapeHtml(phone)}">${escapeHtml(phone)}</a>` : '') + '.';
+        notice.innerHTML = `<strong>We could not confirm email delivery.</strong> Please email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a> and mention reference <strong>${escapeHtml(state.leadData.leadId)}</strong>.`;
         step.insertBefore(notice, step.firstChild);
     }
 
