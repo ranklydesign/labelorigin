@@ -209,6 +209,23 @@
         // 1. Save locally to browser
         saveLead(config.storageKey || 'labelorigin_leads', state.leadData);
 
+        // 1b. Dual submit to HubSpot Lead Capture — SASS-EE funnel only, fail-open:
+        // sent in parallel, never awaited; the FormSubmit flow below never depends
+        // on it. Phone may be blank (optional since the Phase 1 push) — sent as ''.
+        if (config.partnerSlug === 'sassee' && window.LabelOriginHubSpot && typeof window.LabelOriginHubSpot.submitLead === 'function') {
+            try {
+                window.LabelOriginHubSpot.submitLead({
+                    firstname: state.leadData.contactName || '',
+                    email: state.leadData.email || '',
+                    company: state.leadData.companyName || '',
+                    website: '',
+                    lead_message: 'SASS-EE funnel lead ' + state.leadData.leadId + ' — ' + (state.leadData.businessType || '') + ' / ' + (state.leadData.volumeLabel || '') + ' / ' + (state.leadData.interestArea || '') + '. Phone: ' + (state.leadData.phone || 'not given') + '. Notes: ' + (state.leadData.notes || 'none')
+                });
+            } catch (err) {
+                // Fail-open: the lead flow never depends on HubSpot.
+            }
+        }
+
         // 2. Dispatch to FormSubmit (email to ranklydesign@gmail.com only — no CC)
         const emailPayload = {
             _subject: `[LabelOrigin Lead] ${config.partnerName} Formulation Inquiry: ${state.leadData.companyName || state.leadData.contactName}`,
