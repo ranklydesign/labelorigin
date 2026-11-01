@@ -1675,3 +1675,28 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .lp-line-row svg .lp-logo-img {
     pointer-events: none;
 }
+
+/* Manufacturer directory — /directory/ */
+.dir-badge { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-light); color: var(--text-secondary); background: var(--bg-surface); }
+.dir-badge-verified { border-color: var(--hero-em); color: var(--hero-em); background: var(--accent-amber-glow); }
+.dir-badge-featured { border-color: var(--text-primary); color: var(--ivory-white); background: var(--text-primary); }
+.dir-card { border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); padding: 20px 22px; margin-bottom: 16px; }
+.dir-card h3 { margin: 0 0 6px; font-family: var(--font-serif); font-size: 1.35rem; }
+.dir-meta { color: var(--text-secondary); font-size: 0.92rem; margin: 0 0 10px; }
+.dir-card p { margin: 0 0 12px; }
+.dir-card-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.dir-tiers { display: grid; gap: 16px; margin: 0 0 24px; }
+@media (min-width: 860px) { .dir-tiers { grid-template-columns: repeat(3, 1fr); } }
+.dir-tier { border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); padding: 20px; }
+.dir-tier h3 { margin: 0 0 4px; font-family: var(--font-serif); font-size: 1.25rem; }
+.dir-tier-price { font-weight: 700; color: var(--text-primary); margin: 0 0 10px; }
+.dir-facts { margin: 0 0 20px; }
+.dir-facts dt { font-weight: 700; color: var(--text-primary); margin-top: 10px; }
+.dir-facts dd { margin: 2px 0 0; color: var(--text-secondary); }
+.dir-check { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border: 1px solid var(--line-light); border-radius: 999px; background: var(--bg-surface); font-size: 0.92rem; color: var(--text-secondary); cursor: pointer; margin: 0 8px 8px 0; }
+.dir-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.dir-check:focus-within { outline: 2px solid var(--line-focus); outline-offset: 2px; }
+.dir-check.is-selected { border-color: var(--accent-platinum); color: var(--text-primary); background: var(--accent-amber-glow); font-weight: 600; }
+.dir-badge-preview { border: 1px solid var(--line-subtle); border-radius: 16px; background: var(--bg-surface); padding: 28px 20px; text-align: center; margin: 16px 0; }
+.dir-empty { color: var(--text-muted); font-style: italic; }
+.dir-error { font-weight: 600; color: var(--text-primary); }
