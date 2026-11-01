@@ -893,6 +893,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     border: 1px solid var(--line-accent);
     color: var(--ivory-white);
 }
+.notification.error {
+    display: block;
+    background: rgba(160, 61, 45, 0.07);
+    border: 1px solid rgba(160, 61, 45, 0.35);
+    color: var(--ivory-white);
+}
+/* Honeypot fields (anti-spam inputs): off-screen, never visible. */
+.sr-hp, .dc-hp { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 
 /* Footer */
 footer {
