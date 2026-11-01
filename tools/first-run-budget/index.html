@@ -305,6 +305,18 @@
         function fmtUnit(n) {
             return '$' + n.toFixed(2);
         }
+        /* GA4 calculator_use: fires once per page load, only on the first
+           result render caused by user input, and only after consent.
+           No inputs or personal data are sent - calculator_name + UTM only. */
+        var calcFired = false;
+        var calcUsed = false;
+        function fireCalculatorUse() {
+            if (calcFired || !calcUsed) return;
+            if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+            if (typeof window.gtag !== 'function') return;
+            calcFired = true;
+            window.gtag('event', 'calculator_use', Object.assign({ calculator_name: 'first_run_budget' }, (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {}));
+        }
         function render() {
             var p = {
                 path: document.getElementById('budget-path').value,
@@ -325,12 +337,13 @@
             document.getElementById('budget-unit-low').textContent = fmtUnit(result.unitLow);
             document.getElementById('budget-unit-high').textContent = fmtUnit(result.unitHigh) + (result.openEnded ? '+' : '');
             document.getElementById('budget-band').textContent = 'Your estimate of ' + fmt(result.totalLow) + '–' + fmt(result.totalHigh) + (result.openEnded ? '+' : '') + ' is ' + result.bandNote + ' for a ' + (result.path === 'custom' ? 'custom-formulation' : 'stock-formula') + ' launch (published band $' + result.bandLow.toLocaleString('en-US') + '–$' + result.bandHigh.toLocaleString('en-US') + (result.path === 'custom' ? '+' : '') + '). Estimates based on general industry patterns — not a quote.';
+            if (calcUsed) fireCalculatorUse();
         }
         if (typeof document !== 'undefined' && document.getElementById) {
             ['budget-path', 'budget-units', 'budget-skus', 'budget-rounds', 'budget-brand'].forEach(function (id) {
                 var el = document.getElementById(id);
-                el.addEventListener('input', render);
-                el.addEventListener('change', render);
+                el.addEventListener('input', function () { calcUsed = true; render(); });
+                el.addEventListener('change', function () { calcUsed = true; render(); });
             });
             render();
         }

@@ -283,6 +283,18 @@
         function fmtMonths(n) {
             return n.toFixed(1) + (n === 1 ? ' month' : ' months');
         }
+        /* GA4 calculator_use: fires once per page load, only on the first
+           result render caused by user input, and only after consent.
+           No inputs or personal data are sent - calculator_name + UTM only. */
+        var calcFired = false;
+        var calcUsed = false;
+        function fireCalculatorUse() {
+            if (calcFired || !calcUsed) return;
+            if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+            if (typeof window.gtag !== 'function') return;
+            calcFired = true;
+            window.gtag('event', 'calculator_use', Object.assign({ calculator_name: 'roi' }, (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {}));
+        }
         function render() {
             var p = {
                 orderValue: document.getElementById('roi-order-value').value,
@@ -324,12 +336,13 @@
                 note += ' This order takes over a year to sell through at this pace \u2014 check expiry risk before ordering this much.';
             }
             document.getElementById('roi-note').textContent = note;
+            if (calcUsed) fireCalculatorUse();
         }
         if (typeof document !== 'undefined' && document.getElementById) {
             ['roi-order-value', 'roi-retail', 'roi-units', 'roi-sell-through', 'roi-lead-weeks'].forEach(function (id) {
                 var el = document.getElementById(id);
-                el.addEventListener('input', render);
-                el.addEventListener('change', render);
+                el.addEventListener('input', function () { calcUsed = true; render(); });
+                el.addEventListener('change', function () { calcUsed = true; render(); });
             });
             render();
         }

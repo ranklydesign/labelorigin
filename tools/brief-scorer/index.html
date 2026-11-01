@@ -322,6 +322,18 @@
             if (score >= 1) { return 'Early draft \u2014 most fields are missing. Work through the missing fields below before asking for a quote.'; }
             return 'No fields were found. Paste the full text of your brief, not just a product idea, and score it again.';
         }
+        /* GA4 calculator_use: fires once per page load, only on the first
+           result render caused by user input, and only after consent.
+           No inputs or personal data are sent - calculator_name + UTM only. */
+        var calcFired = false;
+        var calcUsed = false;
+        function fireCalculatorUse() {
+            if (calcFired || !calcUsed) return;
+            if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+            if (typeof window.gtag !== 'function') return;
+            calcFired = true;
+            window.gtag('event', 'calculator_use', Object.assign({ calculator_name: 'brief_score' }, (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {}));
+        }
         function render(result) {
             var container = document.getElementById('brief-result');
             container.textContent = '';
@@ -361,6 +373,7 @@
                 list.appendChild(item);
             });
             container.appendChild(list);
+            fireCalculatorUse();
         }
         if (typeof document !== 'undefined' && document.getElementById) {
             document.getElementById('brief-score-btn').addEventListener('click', function () {
@@ -374,6 +387,7 @@
                     container.appendChild(prompt);
                     return;
                 }
+                calcUsed = true;
                 render(scoreBrief(text));
             });
             document.getElementById('brief-clear-btn').addEventListener('click', function () {

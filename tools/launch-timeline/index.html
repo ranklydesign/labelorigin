@@ -309,6 +309,18 @@
             inputs.forEach(function (input) { state[input.getAttribute('data-milestone')] = input.value; });
             return state;
         }
+        /* GA4 calculator_use: fires once per page load, only on the first
+           result render caused by user input, and only after consent.
+           No inputs or personal data are sent - calculator_name + UTM only. */
+        var calcFired = false;
+        var calcUsed = false;
+        function fireCalculatorUse() {
+            if (calcFired || !calcUsed) return;
+            if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+            if (typeof window.gtag !== 'function') return;
+            calcFired = true;
+            window.gtag('event', 'calculator_use', Object.assign({ calculator_name: 'launch_timeline' }, (typeof window.LabelOriginUTM === 'function') ? window.LabelOriginUTM() : {}));
+        }
         function updateDates() {
             var path = document.getElementById('plan-path').value;
             var startValue = document.getElementById('plan-start').value;
@@ -322,6 +334,7 @@
             document.getElementById('plan-note').textContent = plan.startSet
                 ? 'Dates above use only the durations you entered, in calendar days from the previous step. A step with no duration entered has no date.'
                 : 'Choose a start date and enter a duration for a step to see its planned date. Durations you enter are yours, not LabelOrigin figures.';
+            if (calcUsed) fireCalculatorUse();
         }
         function buildRows() {
             var path = document.getElementById('plan-path').value;
@@ -361,8 +374,8 @@
                     input.setAttribute('data-milestone', m.id);
                     input.setAttribute('aria-label', 'Days from previous step to ' + m.name + ' (your duration)');
                     if (state[m.id] !== undefined) { input.value = state[m.id]; }
-                    input.addEventListener('input', updateDates);
-                    input.addEventListener('change', updateDates);
+                    input.addEventListener('input', function () { calcUsed = true; updateDates(); });
+                    input.addEventListener('change', function () { calcUsed = true; updateDates(); });
                     durTd.appendChild(label);
                     durTd.appendChild(input);
                 }
@@ -375,9 +388,9 @@
             updateDates();
         }
         if (typeof document !== 'undefined' && document.getElementById) {
-            document.getElementById('plan-path').addEventListener('change', buildRows);
-            document.getElementById('plan-start').addEventListener('input', updateDates);
-            document.getElementById('plan-start').addEventListener('change', updateDates);
+            document.getElementById('plan-path').addEventListener('change', function () { calcUsed = true; buildRows(); });
+            document.getElementById('plan-start').addEventListener('input', function () { calcUsed = true; updateDates(); });
+            document.getElementById('plan-start').addEventListener('change', function () { calcUsed = true; updateDates(); });
             buildRows();
         }
         if (typeof module !== 'undefined' && module.exports) {
