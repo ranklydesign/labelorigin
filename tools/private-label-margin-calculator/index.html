@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Label Margin Calculator | LabelOrigin</title>
+    <meta name="description" content="Work out margin per unit, margin %, and break-even units for a private-label skincare order. Your numbers only — not a quote.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Private Label Margin Calculator | LabelOrigin">
+    <meta property="og:description" content="Work out margin per unit, margin %, and break-even units for a private-label skincare order. Your numbers only — not a quote.">
+    <meta property="og:url" content="https://labelorigin.com/tools/private-label-margin-calculator/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Private Label Margin Calculator | LabelOrigin">
+    <meta name="twitter:description" content="Work out margin per unit, margin %, and break-even units for a private-label skincare order. Your numbers only — not a quote.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/private-label-margin-calculator/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/private-label-margin-calculator/#webpage",
+        "url": "https://labelorigin.com/tools/private-label-margin-calculator/",
+        "name": "Private Label Margin Calculator | LabelOrigin",
+        "description": "Work out margin per unit, margin %, and break-even units for a private-label skincare order. Your numbers only — not a quote.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What counts as unit cost?", "acceptedAnswer": {"@type": "Answer", "text": "What you pay the manufacturer for one finished, labeled unit. If your quote bundles fill, packaging, and labels into one per-unit figure, use that all-in figure. Keep it on the same basis as the retail price: both are per unit, so a per-unit cost against a per-set retail price will mislead you."}},
+            {"@type": "Question", "name": "Where do per-order fees go?", "acceptedAnswer": {"@type": "Answer", "text": "Freight, label setup, testing, or sample rounds charged once per order go in the per-order fees field. They do not change margin per unit, but they decide how many units you must sell before the order pays for itself — that is what the break-even figure answers."}},
+            {"@type": "Question", "name": "What margin % should a spa aim for?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single published target, and this calculator does not set one. Compare the result against what you earn reselling someone else's line and against your treatment-room margins, and judge it against your own costs — rent, staff time, and the shelf space the line occupies. The calculator shows your number so the comparison is honest."}},
+            {"@type": "Question", "name": "Is this a quote from a manufacturer?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every figure comes from the numbers you enter. Nothing here is a price from any manufacturer. Use the result to judge real quotes: get every quote itemized on the same basis — same products, units, and packaging — or the totals will mislead you."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .calc-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .calc-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>What does each unit <em>earn</em> you?</h1>
+                <p>
+                    Enter what you pay per unit, what you sell it for, how many units are in the order, and any fees charged once per order. The calculator shows margin per unit, margin %, the total margin on the order, and how many units you must sell to cover the per-order fees.
+                </p>
+                <p class="guide-meta">Your numbers only — not a quote. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your order</h2>
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="margin-unit-cost">Unit cost — what you pay per unit ($)</label>
+                        <input id="margin-unit-cost" type="number" min="0" max="100000" step="0.01" value="8.00">
+                    </div>
+                    <div class="calc-field">
+                        <label for="margin-retail">Retail price — what you sell it for ($)</label>
+                        <input id="margin-retail" type="number" min="0" max="100000" step="0.01" value="24.00">
+                    </div>
+                    <div class="calc-field">
+                        <label for="margin-units">Units per order</label>
+                        <input id="margin-units" type="number" min="1" max="100000" step="1" value="250">
+                    </div>
+                    <div class="calc-field">
+                        <label for="margin-fees">Per-order fees &amp; shipping ($)</label>
+                        <input id="margin-fees" type="number" min="0" max="1000000" step="0.01" value="150.00">
+                    </div>
+                </div>
+                <p class="guide-meta">The starting values are only an example. Change them to your own quote. Per-order fees means anything charged once per order — freight, label setup, testing, or sample rounds — not per unit.</p>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This calculator needs JavaScript to run the math. The formulas are simple: margin per unit is retail price minus unit cost; margin % is margin per unit divided by retail price; total margin on the order is margin per unit times units, minus per-order fees; break-even units is per-order fees divided by margin per unit, rounded up. To talk through your launch with real numbers, start with the <a href="../../renaud/">Renaud Naturals funnel</a>.</p>
+                    </div>
+                </noscript>
+
+                <h2>Your margin</h2>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Figure</th><th>Arithmetic</th><th>Result</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Margin per unit</td><td id="margin-per-unit-arith">—</td><td id="margin-per-unit">—</td></tr>
+                            <tr><td>Margin %</td><td id="margin-pct-arith">—</td><td id="margin-pct">—</td></tr>
+                            <tr><td>Order revenue</td><td id="margin-revenue-arith">—</td><td id="margin-revenue">—</td></tr>
+                            <tr><td>Order cost</td><td id="margin-cost-arith">—</td><td id="margin-cost">—</td></tr>
+                            <tr><td>Total margin on the order</td><td id="margin-total-arith">—</td><td id="margin-total">—</td></tr>
+                            <tr class="calc-total"><td>Break-even units</td><td id="margin-breakeven-arith">—</td><td id="margin-breakeven">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="margin-note" class="guide-meta">Your numbers only — not a quote.</p>
+
+                <h2>How to read it</h2>
+                <p>Margin per unit is the money each sale keeps after paying for the product itself. Margin % is that figure as a share of the retail price, which is the number to compare across products and against the line you resell today. Total margin on the order is margin per unit multiplied by units, minus the fees charged once per order. Break-even units is how many units must sell before those once-per-order fees are covered; every unit after that is margin.</p>
+                <p>Two things change the answer most. First, the gap between unit cost and retail price: a $2 change in either moves margin per unit by the same $2, and margin % moves with it. Second, the per-order fees: on a small order they can eat the whole margin, which is why the same per-unit numbers look very different at 50 units and at 250 units. If break-even is higher than the units in the order, the order never pays for itself at these numbers — raise the retail price, negotiate the fees, or order more units.</p>
+                <p>If margin per unit is zero or negative, the retail price is at or below what you pay, and there is no break-even to show. That is not a rounding problem; it means the price or the cost has to change before the line can earn anything. Start with a <a href="../../services/private-label-skincare-for-med-spas/">sample kit</a> to test the products on your own skin before you commit to an order size, and read the <a href="../../guides/reading-manufacturer-quote/">guide to reading a manufacturer quote</a> so the unit cost you enter is the all-in figure, not just the fill price.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote.</strong> Every figure above comes from the numbers you enter, not from any manufacturer. Use the result to judge real quotes, then get itemized quotes on the same basis before committing to an order size.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>What counts as unit cost?</summary>
+                        <p>What you pay the manufacturer for one finished, labeled unit. If your quote bundles fill, packaging, and labels into one per-unit figure, use that all-in figure. Keep it on the same basis as the retail price: both are per unit, so a per-unit cost against a per-set retail price will mislead you.</p>
+                    </details>
+                    <details>
+                        <summary>Where do per-order fees go?</summary>
+                        <p>Freight, label setup, testing, or sample rounds charged once per order go in the per-order fees field. They do not change margin per unit, but they decide how many units you must sell before the order pays for itself — that is what the break-even figure answers.</p>
+                    </details>
+                    <details>
+                        <summary>What margin % should a spa aim for?</summary>
+                        <p>There is no single published target, and this calculator does not set one. Compare the result against what you earn reselling someone else's line and against your treatment-room margins, and judge it against your own costs — rent, staff time, and the shelf space the line occupies. The calculator shows your number so the comparison is honest.</p>
+                    </details>
+                    <details>
+                        <summary>Is this a quote from a manufacturer?</summary>
+                        <p>No. Every figure comes from the numbers you enter. Nothing here is a price from any manufacturer. Use the result to judge real quotes: get every quote itemized on the same basis — same products, units, and packaging — or the totals will mislead you.</p>
+                    </details>
+                </div>
+
+                <p>Related tools: the <a href="../launch-cost-calculator/">launch cost calculator</a>, the <a href="../moq-planner/">MOQ planner</a>, and the <a href="../retail-shelf-roi-calculator/">retail-shelf ROI calculator</a>. Related reading: <a href="../../guides/skincare-line-cost/">skincare line cost guide</a>, <a href="../../guides/low-moq-skincare-explained/">low-MOQ explainer</a>, and <a href="../../guides/private-label-vs-custom-formulation/">private label vs custom formulation</a>, and the <a href="../../guides/med-spa-retail-skincare-report-2026/">2026 med spa retail skincare report</a>.</p>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn the margin into a real quote</h3>
+                        <p>Send your products, units, and packaging through the funnel — the conversation starts from real numbers, not ideas. Your numbers above are your inputs, not a quote.</p>
+                    </div>
+                    <div>
+                        <a href="../../renaud/" class="btn btn-primary btn-block">Start with the Renaud funnel &rarr;</a>
+                        <a href="../../services/private-label-skincare-for-med-spas/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Private label for med spas &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* Every figure comes from the user's own inputs. Nothing here is a
+           price from any manufacturer. Money is shown to cents per unit and
+           rounded to whole dollars on order totals. */
+        function clampNum(value, min, max, fallback) {
+            var n = parseFloat(value);
+            if (isNaN(n)) { return fallback; }
+            if (n < min) { return min; }
+            if (n > max) { return max; }
+            return n;
+        }
+        function computeMargin(p) {
+            var unitCost = clampNum(p.unitCost, 0, 100000, 8);
+            var retail = clampNum(p.retail, 0, 100000, 24);
+            var units = Math.floor(clampNum(p.units, 1, 100000, 250));
+            var fees = clampNum(p.fees, 0, 1000000, 150);
+            var marginPerUnit = retail - unitCost;
+            var marginPct = (retail > 0) ? (marginPerUnit / retail) * 100 : null;
+            var orderRevenue = retail * units;
+            var orderCost = unitCost * units + fees;
+            var totalMargin = marginPerUnit * units - fees;
+            var breakEven = null;
+            if (marginPerUnit > 0 && fees > 0) { breakEven = Math.ceil(fees / marginPerUnit); }
+            else if (marginPerUnit > 0 && fees === 0) { breakEven = 0; }
+            return {
+                unitCost: unitCost, retail: retail, units: units, fees: fees,
+                marginPerUnit: marginPerUnit, marginPct: marginPct,
+                orderRevenue: orderRevenue, orderCost: orderCost,
+                totalMargin: totalMargin, breakEven: breakEven
+            };
+        }
+        function fmtMoney(n, cents) {
+            var v = cents ? n.toFixed(2) : Math.round(n).toString();
+            return '$' + v.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function fmtPct(n) {
+            return n.toFixed(1) + '%';
+        }
+        function render() {
+            var p = {
+                unitCost: document.getElementById('margin-unit-cost').value,
+                retail: document.getElementById('margin-retail').value,
+                units: document.getElementById('margin-units').value,
+                fees: document.getElementById('margin-fees').value
+            };
+            var r = computeMargin(p);
+            document.getElementById('margin-per-unit-arith').textContent = fmtMoney(r.retail, true) + ' \u2212 ' + fmtMoney(r.unitCost, true);
+            document.getElementById('margin-per-unit').textContent = fmtMoney(r.marginPerUnit, true);
+            document.getElementById('margin-pct-arith').textContent = (r.marginPct === null) ? 'Needs a retail price above $0' : fmtMoney(r.marginPerUnit, true) + ' \u00f7 ' + fmtMoney(r.retail, true) + ' \u00d7 100';
+            document.getElementById('margin-pct').textContent = (r.marginPct === null) ? '\u2014' : fmtPct(r.marginPct);
+            document.getElementById('margin-revenue-arith').textContent = fmtMoney(r.retail, true) + ' \u00d7 ' + r.units + ' units';
+            document.getElementById('margin-revenue').textContent = fmtMoney(r.orderRevenue, false);
+            document.getElementById('margin-cost-arith').textContent = fmtMoney(r.unitCost, true) + ' \u00d7 ' + r.units + ' units + ' + fmtMoney(r.fees, false) + ' fees';
+            document.getElementById('margin-cost').textContent = fmtMoney(r.orderCost, false);
+            document.getElementById('margin-total-arith').textContent = fmtMoney(r.marginPerUnit, true) + ' \u00d7 ' + r.units + ' units \u2212 ' + fmtMoney(r.fees, false) + ' fees';
+            document.getElementById('margin-total').textContent = fmtMoney(r.totalMargin, false);
+            var beArith, beText;
+            if (r.breakEven === null) {
+                beArith = 'No break-even \u2014 margin per unit is zero or negative';
+                beText = '\u2014';
+            } else if (r.breakEven === 0) {
+                beArith = 'No fees to recover';
+                beText = '0 units';
+            } else {
+                beArith = fmtMoney(r.fees, false) + ' \u00f7 ' + fmtMoney(r.marginPerUnit, true) + ', rounded up';
+                beText = r.breakEven + ' units';
+            }
+            document.getElementById('margin-breakeven-arith').textContent = beArith;
+            document.getElementById('margin-breakeven').textContent = beText;
+            var note = 'Your numbers only \u2014 not a quote.';
+            if (r.marginPerUnit <= 0) {
+                note += ' At these numbers the order loses money on every unit \u2014 retail price is at or below unit cost.';
+            } else if (r.breakEven !== null && r.breakEven > r.units) {
+                note += ' Break-even (' + r.breakEven + ' units) is above this order size (' + r.units + ' units) \u2014 the order never pays for itself at these numbers.';
+            } else if (r.breakEven !== null && r.breakEven > 0) {
+                note += ' Sell ' + r.breakEven + ' units and the per-order fees are covered; every unit after that is margin.';
+            }
+            document.getElementById('margin-note').textContent = note;
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            ['margin-unit-cost', 'margin-retail', 'margin-units', 'margin-fees'].forEach(function (id) {
+                var el = document.getElementById(id);
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+            render();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computeMargin: computeMargin };
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Shelf ROI Calculator | LabelOrigin</title>
+    <meta name="description" content="Work out monthly retail revenue, sell-through time, and ROI on a skincare opening order for your spa shelf. Your numbers only — not a quote.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Retail Shelf ROI Calculator | LabelOrigin">
+    <meta property="og:description" content="Work out monthly retail revenue, sell-through time, and ROI on a skincare opening order for your spa shelf. Your numbers only — not a quote.">
+    <meta property="og:url" content="https://labelorigin.com/tools/retail-shelf-roi-calculator/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Retail Shelf ROI Calculator | LabelOrigin">
+    <meta name="twitter:description" content="Work out monthly retail revenue, sell-through time, and ROI on a skincare opening order for your spa shelf. Your numbers only — not a quote.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/tools/retail-shelf-roi-calculator/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://labelorigin.com/tools/retail-shelf-roi-calculator/#webpage",
+        "url": "https://labelorigin.com/tools/retail-shelf-roi-calculator/",
+        "name": "Retail Shelf ROI Calculator | LabelOrigin",
+        "description": "Work out monthly retail revenue, sell-through time, and ROI on a skincare opening order for your spa shelf. Your numbers only — not a quote.",
+        "isPartOf": {"@id": "https://labelorigin.com/#website"},
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What does ROI mean here?", "acceptedAnswer": {"@type": "Answer", "text": "Gross profit on the opening order divided by what you paid for it. Total retail value of the order minus the opening order value is the gross profit; divide that by the opening order value for the ROI. It ignores your time, shelf space, and repeat orders — it answers whether the opening order itself pays."}},
+            {"@type": "Question", "name": "How do I estimate sell-through?", "acceptedAnswer": {"@type": "Answer", "text": "Start from your treatment volume: how many clients a month buy the product you recommend after a facial or treatment. Use a conservative first guess and update it after the first month of real sales. A guess that is too high makes the shelf look better than it is; a month of real numbers corrects it."}},
+            {"@type": "Question", "name": "Why does the reorder point matter?", "acceptedAnswer": {"@type": "Answer", "text": "Because a reorder takes time to arrive. If you sell 25 units a month and a reorder takes 4 weeks, ordering when 25 units are left means the new stock lands as the old runs out. Order later and the shelf sits empty; order earlier and cash sits on the shelf."}},
+            {"@type": "Question", "name": "Is this a quote or a sales forecast?", "acceptedAnswer": {"@type": "Answer", "text": "Neither. It is arithmetic on the numbers you enter. Nothing here is a price, a sales promise, or a forecast from any manufacturer. Use the result to judge whether an opening order size makes sense, then confirm real costs and lead times with the manufacturer."}}
+        ]
+    }
+    </script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/consent.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+        .calc-field label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+        .calc-total td { font-weight: 700; color: var(--text-primary); background: var(--bg-surface); }
+        @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Flagship client live: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Taking on select manufacturing &amp; white-label clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="../../#services">Services</a>
+                <a href="../../#process">Process</a>
+                <a href="../../#work">Work</a>
+                <a href="../../#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="hero">
+                <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
+                <h1>What does your <em>retail shelf</em> return?</h1>
+                <p>
+                    Enter what the opening order costs, the average retail price, how many units are on the shelf, how many units you sell a month, and how long a reorder takes to arrive. The calculator shows monthly retail revenue, how long the order lasts, the ROI on the opening order, and the stock level that should trigger a reorder.
+                </p>
+                <p class="guide-meta">Your numbers only — not a quote or a forecast. Nothing you enter leaves your browser.</p>
+            </section>
+
+            <article class="lo-guide">
+                <h2>Your shelf</h2>
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label for="roi-order-value">Opening order value — what you paid ($)</label>
+                        <input id="roi-order-value" type="number" min="0" max="10000000" step="0.01" value="2000.00">
+                    </div>
+                    <div class="calc-field">
+                        <label for="roi-retail">Average retail price per unit ($)</label>
+                        <input id="roi-retail" type="number" min="0" max="100000" step="0.01" value="24.00">
+                    </div>
+                    <div class="calc-field">
+                        <label for="roi-units">Units on the shelf</label>
+                        <input id="roi-units" type="number" min="1" max="100000" step="1" value="100">
+                    </div>
+                    <div class="calc-field">
+                        <label for="roi-sell-through">Sell-through — units sold per month</label>
+                        <input id="roi-sell-through" type="number" min="0" max="100000" step="1" value="25">
+                    </div>
+                    <div class="calc-field">
+                        <label for="roi-lead-weeks">Reorder lead time (weeks)</label>
+                        <input id="roi-lead-weeks" type="number" min="0" max="52" step="1" value="4">
+                    </div>
+                </div>
+                <p class="guide-meta">The starting values are only an example. Change them to your own plan. A month is treated as 4 weeks, so a 4-week lead time is one month of sales.</p>
+
+                <noscript>
+                    <div class="guide-callout">
+                        <p>This calculator needs JavaScript to run the math. The formulas are simple: monthly retail revenue is units sold per month times retail price; months to sell through is units on the shelf divided by units sold per month; total retail value is units times retail price; gross profit is total retail value minus the opening order value; ROI is gross profit divided by the opening order value; the reorder point is units sold per month times the lead time in months, where a month is treated as 4 weeks. To talk through your launch with real numbers, start with the <a href="../../renaud/">Renaud Naturals funnel</a>.</p>
+                    </div>
+                </noscript>
+
+                <h2>Your shelf return</h2>
+                <div class="table-wrap">
+                    <table aria-live="polite">
+                        <thead>
+                            <tr><th>Figure</th><th>Arithmetic</th><th>Result</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Monthly retail revenue</td><td id="roi-monthly-revenue-arith">—</td><td id="roi-monthly-revenue">—</td></tr>
+                            <tr><td>Total retail value of the order</td><td id="roi-total-value-arith">—</td><td id="roi-total-value">—</td></tr>
+                            <tr><td>Gross profit on the order</td><td id="roi-gross-arith">—</td><td id="roi-gross">—</td></tr>
+                            <tr><td>ROI on the opening order</td><td id="roi-pct-arith">—</td><td id="roi-pct">—</td></tr>
+                            <tr><td>Months to sell through</td><td id="roi-months-arith">—</td><td id="roi-months">—</td></tr>
+                            <tr><td>Reorder point</td><td id="roi-reorder-point-arith">—</td><td id="roi-reorder-point">—</td></tr>
+                            <tr class="calc-total"><td>Reorder in</td><td id="roi-reorder-in-arith">—</td><td id="roi-reorder-in">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="roi-note" class="guide-meta">Your numbers only — not a quote or a forecast.</p>
+
+                <h2>How to read it</h2>
+                <p>Monthly retail revenue is the steady-state money the shelf brings in once the line is selling: units sold per month times the retail price. Months to sell through is how long the opening order lasts at that pace. ROI compares the gross profit on the whole order against what you paid for it — 20% means the order returns its cost plus a fifth on top, before your time and shelf space. The reorder point is the stock level that should trigger a reorder: monthly sell-through times the lead time in months, so the new stock lands as the old runs out.</p>
+                <p>Two things change the answer most. First, sell-through: it decides both the monthly revenue and how long the order lasts, and it is the number you know least well before launch — guess low, then update it after the first month of real sales. Second, the gap between the opening order value and the total retail value: if the retail value of the units barely covers what you paid, the ROI is near zero no matter how fast they sell, and the fix is the price or the cost, not the pace. Start with a <a href="../../services/private-label-skincare-for-estheticians/">sample kit</a> to test the products on your own skin before you commit to an order size, and read the <a href="../../guides/reorder-minimums-second-run/">guide to reorder minimums</a> before you plan the second run.</p>
+                <p>Watch the expiry risk on slow sellers: an order that takes more than a year to sell through ties up cash and risks unsold stock passing its shelf life. Read the <a href="../../guides/unsold-inventory-expiry-risk/">unsold-inventory guide</a> if your months-to-sell-through number looks long.</p>
+                <div class="guide-callout">
+                    <p><strong>Not a quote or a forecast.</strong> Every figure above comes from the numbers you enter. Nothing here is a price, a sales promise, or a forecast from any manufacturer. Use the result to judge whether an opening order size makes sense, then confirm real costs and lead times with the manufacturer.</p>
+                </div>
+
+                <h2>Frequently asked questions</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>What does ROI mean here?</summary>
+                        <p>Gross profit on the opening order divided by what you paid for it. Total retail value of the order minus the opening order value is the gross profit; divide that by the opening order value for the ROI. It ignores your time, shelf space, and repeat orders — it answers whether the opening order itself pays.</p>
+                    </details>
+                    <details>
+                        <summary>How do I estimate sell-through?</summary>
+                        <p>Start from your treatment volume: how many clients a month buy the product you recommend after a facial or treatment. Use a conservative first guess and update it after the first month of real sales. A guess that is too high makes the shelf look better than it is; a month of real numbers corrects it.</p>
+                    </details>
+                    <details>
+                        <summary>Why does the reorder point matter?</summary>
+                        <p>Because a reorder takes time to arrive. If you sell 25 units a month and a reorder takes 4 weeks, ordering when 25 units are left means the new stock lands as the old runs out. Order later and the shelf sits empty; order earlier and cash sits on the shelf.</p>
+                    </details>
+                    <details>
+                        <summary>Is this a quote or a sales forecast?</summary>
+                        <p>Neither. It is arithmetic on the numbers you enter. Nothing here is a price, a sales promise, or a forecast from any manufacturer. Use the result to judge whether an opening order size makes sense, then confirm real costs and lead times with the manufacturer.</p>
+                    </details>
+                </div>
+
+                <p>Related tools: the <a href="../private-label-margin-calculator/">private-label margin calculator</a>, the <a href="../launch-cost-calculator/">launch cost calculator</a>, and the <a href="../moq-planner/">MOQ planner</a>. Related reading: <a href="../../guides/reorder-minimums-second-run/">reorder minimums</a>, <a href="../../guides/unsold-inventory-expiry-risk/">unsold inventory and expiry risk</a>, and <a href="../../guides/payment-terms-cash-flow-gap/">payment terms and the cash-flow gap</a>, and the <a href="../../guides/med-spa-retail-skincare-report-2026/">2026 med spa retail skincare report</a>.</p>
+
+                <div class="cta-band">
+                    <div>
+                        <h3>Turn the shelf plan into a real order</h3>
+                        <p>Send your products, units, and sell-through through the funnel — the conversation starts from real numbers, not ideas. Your numbers above are your inputs, not a quote or a forecast.</p>
+                    </div>
+                    <div>
+                        <a href="../../renaud/" class="btn btn-primary btn-block">Start with the Renaud funnel &rarr;</a>
+                        <a href="../../services/private-label-skincare-for-estheticians/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Private label for estheticians &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">A B2B lead-generation agency for manufacturers and white-label brands.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../../#services">Services</a>
+                    <a href="../../#process">Process</a>
+                    <a href="../../#work">Work</a>
+                    <a href="../../guides/">Guides</a>
+                    <a href="../../renaud/">Renaud Naturals funnel</a>
+                    <a href="../../sass-ee/">SASS-EE funnel</a>
+                    <a href="../../#contact">Contact</a>
+                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="../../terms/">Terms</a>
+                    <a href="#" id="lo-consent-choices">Cookie / tracking choices</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operated by <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Inquiries: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* Every figure comes from the user's own inputs. Nothing here is a
+           price, a sales promise, or a forecast from any manufacturer.
+           A month is treated as 4 weeks for the lead-time conversion. */
+        function clampNum(value, min, max, fallback) {
+            var n = parseFloat(value);
+            if (isNaN(n)) { return fallback; }
+            if (n < min) { return min; }
+            if (n > max) { return max; }
+            return n;
+        }
+        function computeROI(p) {
+            var orderValue = clampNum(p.orderValue, 0, 10000000, 2000);
+            var retail = clampNum(p.retail, 0, 100000, 24);
+            var units = Math.floor(clampNum(p.units, 1, 100000, 100));
+            var sellThrough = clampNum(p.sellThrough, 0, 100000, 25);
+            var leadWeeks = clampNum(p.leadWeeks, 0, 52, 4);
+            var monthlyRevenue = sellThrough * retail;
+            var totalRetailValue = units * retail;
+            var grossProfit = totalRetailValue - orderValue;
+            var roiPct = (orderValue > 0) ? (grossProfit / orderValue) * 100 : null;
+            var monthsToSell = (sellThrough > 0) ? units / sellThrough : null;
+            var leadMonths = leadWeeks / 4;
+            var reorderPoint = Math.ceil(sellThrough * leadMonths);
+            var monthsUntilReorder = null;
+            if (sellThrough > 0 && reorderPoint < units) {
+                monthsUntilReorder = (units - reorderPoint) / sellThrough;
+            } else if (sellThrough > 0 && reorderPoint >= units) {
+                monthsUntilReorder = 0;
+            }
+            return {
+                orderValue: orderValue, retail: retail, units: units,
+                sellThrough: sellThrough, leadWeeks: leadWeeks, leadMonths: leadMonths,
+                monthlyRevenue: monthlyRevenue, totalRetailValue: totalRetailValue,
+                grossProfit: grossProfit, roiPct: roiPct,
+                monthsToSell: monthsToSell, reorderPoint: reorderPoint,
+                monthsUntilReorder: monthsUntilReorder
+            };
+        }
+        function fmtMoney(n, cents) {
+            var v = cents ? n.toFixed(2) : Math.round(n).toString();
+            return '$' + v.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function fmtPct(n) {
+            return n.toFixed(1) + '%';
+        }
+        function fmtMonths(n) {
+            return n.toFixed(1) + (n === 1 ? ' month' : ' months');
+        }
+        function render() {
+            var p = {
+                orderValue: document.getElementById('roi-order-value').value,
+                retail: document.getElementById('roi-retail').value,
+                units: document.getElementById('roi-units').value,
+                sellThrough: document.getElementById('roi-sell-through').value,
+                leadWeeks: document.getElementById('roi-lead-weeks').value
+            };
+            var r = computeROI(p);
+            document.getElementById('roi-monthly-revenue-arith').textContent = r.sellThrough + ' units/mo \u00d7 ' + fmtMoney(r.retail, true);
+            document.getElementById('roi-monthly-revenue').textContent = fmtMoney(r.monthlyRevenue, false);
+            document.getElementById('roi-total-value-arith').textContent = r.units + ' units \u00d7 ' + fmtMoney(r.retail, true);
+            document.getElementById('roi-total-value').textContent = fmtMoney(r.totalRetailValue, false);
+            document.getElementById('roi-gross-arith').textContent = fmtMoney(r.totalRetailValue, false) + ' \u2212 ' + fmtMoney(r.orderValue, false);
+            document.getElementById('roi-gross').textContent = fmtMoney(r.grossProfit, false);
+            document.getElementById('roi-pct-arith').textContent = (r.roiPct === null) ? 'Needs an opening order value above $0' : fmtMoney(r.grossProfit, false) + ' \u00f7 ' + fmtMoney(r.orderValue, false) + ' \u00d7 100';
+            document.getElementById('roi-pct').textContent = (r.roiPct === null) ? '\u2014' : fmtPct(r.roiPct);
+            document.getElementById('roi-months-arith').textContent = (r.monthsToSell === null) ? 'Needs sell-through above 0' : r.units + ' units \u00f7 ' + r.sellThrough + ' units/mo';
+            document.getElementById('roi-months').textContent = (r.monthsToSell === null) ? '\u2014' : fmtMonths(r.monthsToSell);
+            document.getElementById('roi-reorder-point-arith').textContent = r.sellThrough + ' units/mo \u00d7 ' + r.leadMonths.toFixed(1) + ' months lead time, rounded up';
+            document.getElementById('roi-reorder-point').textContent = r.reorderPoint + ' units';
+            var inArith, inText;
+            if (r.monthsUntilReorder === null) {
+                inArith = 'Needs sell-through above 0';
+                inText = '\u2014';
+            } else if (r.monthsUntilReorder === 0) {
+                inArith = 'Reorder point is at or above current stock';
+                inText = 'Reorder now';
+            } else {
+                inArith = '(' + r.units + ' \u2212 ' + r.reorderPoint + ' units) \u00f7 ' + r.sellThrough + ' units/mo';
+                inText = fmtMonths(r.monthsUntilReorder);
+            }
+            document.getElementById('roi-reorder-in-arith').textContent = inArith;
+            document.getElementById('roi-reorder-in').textContent = inText;
+            var note = 'Your numbers only \u2014 not a quote or a forecast.';
+            if (r.roiPct !== null && r.roiPct < 0) {
+                note += ' At these numbers the order loses money \u2014 the retail value of the units is below what you paid for them.';
+            } else if (r.monthsToSell !== null && r.monthsToSell > 12) {
+                note += ' This order takes over a year to sell through at this pace \u2014 check expiry risk before ordering this much.';
+            }
+            document.getElementById('roi-note').textContent = note;
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            ['roi-order-value', 'roi-retail', 'roi-units', 'roi-sell-through', 'roi-lead-weeks'].forEach(function (id) {
+                var el = document.getElementById(id);
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+            render();
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { computeROI: computeROI };
+        }
+    })();
+    </script>
+</body>
+</html>
