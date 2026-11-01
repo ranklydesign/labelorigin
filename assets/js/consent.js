@@ -113,6 +113,7 @@
             document.body.classList.remove('lo-consent-visible');
             bar.remove();
             loadTags();
+            window.dispatchEvent(new CustomEvent('labelorigin-consent-accepted'));
         });
         bar.querySelector('[data-lo-consent="decline"]').addEventListener('click', function () {
             storageSet(CONSENT_KEY, 'declined');

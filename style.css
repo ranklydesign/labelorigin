@@ -1215,3 +1215,28 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .make-category h4,
 .roadmap-step h4,
 .qa-pillar-card h4 { font-size: 0.83em; }
+
+/* Newsletter signup (HubSpot embed, consent-gated -- see assets/js/hubspot.js). */
+.newsletter-signup {
+    border-top: 1px solid var(--line-subtle);
+    padding-top: 28px;
+    margin-bottom: 40px;
+}
+.newsletter-signup h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ivory-white);
+    margin-bottom: 8px;
+}
+.newsletter-signup p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 640px;
+}
+.newsletter-signup .newsletter-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+}
