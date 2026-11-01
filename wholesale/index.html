@@ -118,20 +118,48 @@
             <div class="container">
                 <span class="editorial-eyebrow">Label preview</span>
                 <h2>See your brand <em>on the bottle</em></h2>
-                <p class="lp-intro">Type your spa or salon name, pick a product and a label style, and see your brand on the bottle — instantly, in your browser. Nothing you type leaves this page until you ask for samples.</p>
+                <p class="lp-intro">Type your spa or salon name, pick a product and a label style — or upload your logo — and see your brand on the bottle, instantly, in your browser. Nothing you type or upload leaves this page until you ask for samples.</p>
                 <div class="lp-grid">
+                    <div class="lp-preview-wrap">
+                        <div class="lp-preview" role="img" aria-label="Label mockup preview"></div>
+                        <p class="lp-preview-caption">Live preview — updates as you type.</p>
+                        <button type="button" class="btn btn-secondary lp-line-toggle" aria-expanded="false">See your line — Facial Cleanser, Facial Serum &amp; Moisturizer</button>
+                    </div>
                     <div class="lp-controls">
                         <label class="lp-field" for="lp-brand">Your spa or salon name
                             <input type="text" id="lp-brand" class="lp-brand-input" placeholder="e.g. Glow Med Spa" maxlength="40" autocomplete="organization">
                         </label>
                         <fieldset class="lp-fieldset">
+                            <legend>Category</legend>
+                            <div class="lp-tabs" role="tablist" aria-label="Product category">
+                                <label class="lp-tab is-selected"><input type="radio" name="lp-category" value="facial" checked> Facial</label>
+                                <label class="lp-tab"><input type="radio" name="lp-category" value="body"> Body</label>
+                                <label class="lp-tab"><input type="radio" name="lp-category" value="tanning"> Tanning (SASS-EE)</label>
+                            </div>
+                            <p class="lp-cat-note" data-cat="facial">Facial care from Renaud Naturals — cleansers, serums, creams and more.</p>
+                            <p class="lp-cat-note" data-cat="body" hidden>Body care from Renaud Naturals — lotions, washes, scrubs and more.</p>
+                            <p class="lp-cat-note" data-cat="tanning" hidden>Sunless tanning from SASS-EE — Renaud Naturals&rsquo; tanning brand.</p>
+                        </fieldset>
+                        <fieldset class="lp-fieldset">
                             <legend>Product</legend>
-                            <div class="lp-chips">
-                                <label class="lp-chip is-selected"><input type="radio" name="lp-product" value="serum" checked> Serum dropper</label>
-                                <label class="lp-chip"><input type="radio" name="lp-product" value="cream"> Cream jar</label>
-                                <label class="lp-chip"><input type="radio" name="lp-product" value="cleanser"> Cleanser pump</label>
-                                <label class="lp-chip"><input type="radio" name="lp-product" value="lotion"> Body lotion tube</label>
-                                <label class="lp-chip"><input type="radio" name="lp-product" value="spraytan"> Spray-tan bottle (SASS-EE)</label>
+                            <div class="lp-chips lp-cat-group" data-cat="facial">
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="eyecream"> Eye cream</label>
+                                <label class="lp-chip is-selected"><input type="radio" name="lp-product" value="cleanser" checked> Facial cleanser</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="exfoliant"> Exfoliant / masque</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="moisturizer"> Moisturizer</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="serum"> Serum</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="tonique"> Tonique (toner)</label>
+                            </div>
+                            <div class="lp-chips lp-cat-group" data-cat="body" hidden>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="bodylotion"> Body lotion</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="bodywash"> Body wash</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="bodyscrub"> Body scrub</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="bodysouffle"> Body soufflé (whipped cream)</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="handcream"> Hand cream</label>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="barsoap"> Bar soap</label>
+                            </div>
+                            <div class="lp-chips lp-cat-group" data-cat="tanning" hidden>
+                                <label class="lp-chip"><input type="radio" name="lp-product" value="spraytan"> Spray-tan solution (SASS-EE)</label>
                             </div>
                         </fieldset>
                         <fieldset class="lp-fieldset">
@@ -143,18 +171,34 @@
                                 <label class="lp-chip"><input type="radio" name="lp-style" value="blush"> <span class="lp-swatch-dot" style="background:#f6e8e4"></span> Blush</label>
                             </div>
                         </fieldset>
-                        <p class="lp-summary">Your line: <span class="lp-summary-text">Facial Serum &middot; Cream / gold</span> &mdash; carried into your sample request.</p>
+                        <fieldset class="lp-fieldset lp-logo-field">
+                            <legend>Your logo <span class="lp-optional">(optional)</span></legend>
+                            <label class="lp-upload-btn" for="lp-logo">Upload your logo</label>
+                            <input type="file" id="lp-logo" class="lp-logo-input" accept="image/png,image/jpeg,image/svg+xml">
+                            <p class="lp-note">Your logo stays on your device; you&rsquo;ll share final artwork with Robert later.</p>
+                            <p class="lp-logo-status" aria-live="polite">PNG, JPG or SVG, up to 2 MB.</p>
+                            <div class="lp-logo-controls" hidden>
+                                <label class="lp-field lp-slider-field" for="lp-logo-size">Logo size
+                                    <input type="range" id="lp-logo-size" class="lp-logo-size" min="40" max="160" value="100" step="5">
+                                </label>
+                                <div class="lp-chips">
+                                    <label class="lp-chip is-selected"><input type="radio" name="lp-logo-mode" value="logo-name" checked> Logo + name</label>
+                                    <label class="lp-chip"><input type="radio" name="lp-logo-mode" value="logo-only"> Logo only</label>
+                                </div>
+                                <p class="lp-logo-hint">Drag your logo to move it — inside the badge, or across the label in Logo only mode.</p>
+                                <button type="button" class="lp-logo-remove">Remove logo</button>
+                            </div>
+                        </fieldset>
+                        <p class="lp-summary">Your line: <span class="lp-summary-text">Facial &mdash; Facial Cleanser &middot; Cream / gold</span>. These choices are added to your sample request.</p>
                         <div class="lp-actions">
                             <button type="button" class="btn btn-secondary lp-download">Download my mockup</button>
                             <a href="#sample-request" class="btn btn-primary lp-cta" data-ga-event="preview_cta">Request samples for this line &rarr;</a>
                         </div>
                         <p class="lp-note">Illustrative mockup, final packaging and label design confirmed with the manufacturer.</p>
                     </div>
-                    <div class="lp-preview-wrap">
-                        <div class="lp-preview" role="img" aria-label="Label mockup preview"></div>
-                        <p class="lp-preview-caption">Live preview — updates as you type.</p>
-                    </div>
                 </div>
+                <div class="lp-line-row" hidden></div>
+                <p class="lp-line-note" hidden>Tanning preview shows one product for now — ask Robert about the full SASS-EE range when you request samples.</p>
             </div>
         </section>
 
