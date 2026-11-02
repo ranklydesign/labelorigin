@@ -223,6 +223,18 @@
         });
     }
 
+    /* HOTFIX Nov 1: hide the language toggle everywhere until the per-page
+     * rebuild lands. The shipped toggle renders as unstyled JS buttons on
+     * unpaired pages and is invisible on the dark header. String tables
+     * (t(), quiz, forms) keep working; only the control is hidden. */
+    function hideToggle() {
+        try {
+            document.querySelectorAll('.lo-lang-toggle').forEach(function (el) {
+                el.style.display = 'none';
+            });
+        } catch (e) { /* ignore */ }
+    }
+
     /* --- public API --- */
     window.LabelOriginI18n = {
         lang: currentLang,
@@ -259,11 +271,13 @@
     }
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
+            hideToggle();
             if (cached) applyToDom();
             setToggleState(currentLang());
             initToggle();
         });
     } else {
+        hideToggle();
         if (cached) applyToDom();
         setToggleState(currentLang());
         initToggle();
