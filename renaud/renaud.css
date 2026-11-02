@@ -929,7 +929,8 @@
     .reviews-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-    .renaud-nav-links { display: none; }
+    .renaud-nav-link { padding: 12px 0; }
+    .renaud-nav-phone { min-height: 44px; }
     .funnel-container { padding: 36px 0 50px; }
     .form-card { padding: 28px 20px; }
     .metrics-row { grid-template-columns: 1fr; }
@@ -1197,7 +1198,8 @@
 
 /* Mobile / tablet layout for the Renaud funnel and category pages */
 @media (max-width: 900px) {
-    .renaud-nav-links { display: none; }
+    .renaud-nav-links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+    .renaud-nav-link { padding: 12px 0; }
 }
 @media (max-width: 640px) {
     .renaud-header { padding: 10px 0; }
@@ -1226,5 +1228,6 @@
     .faq-accordion summary { padding: 16px 40px 16px 0; }
     .renaud-footer-top { flex-direction: column; gap: 24px; }
     .renaud-footer-nav { flex-wrap: wrap; gap: 14px 18px; }
+    .renaud-footer-nav a { padding: 12px 0; }
     .renaud-footer-bottom p { font-size: 0.72rem; }
 }

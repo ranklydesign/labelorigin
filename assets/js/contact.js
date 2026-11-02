@@ -133,3 +133,112 @@
         }, utm));
     });
 })();
+
+/* ==========================================================================
+   MOBILE-FIRST PASS (Nov 1 2026): mobile menu + sticky bottom CTA bar.
+   - Menu: the primary nav is display:none below 900px with no replacement.
+     This injects a 44px toggle into .brand-header and opens .nav-links as a
+     dropdown. No-JS / no-header pages keep the old behavior (footer nav
+     still works everywhere).
+   - Sticky bar: mobile only (CSS hides it above 640px). Label + destination
+     follow the two-door choice in localStorage (lo_door): 'manufacturer' ->
+     "Get buyers" -> /for-manufacturers/; anything else (incl. no choice) ->
+     "Find my product line" -> /wholesale/. Hidden while a form field is
+     focused, and while the consent banner is visible (CSS). The link carries
+     data-ga-event="sticky_cta_click", fired by the consent-gated listener
+     already in this file. Nothing here sends data anywhere.
+   ========================================================================== */
+(function () {
+    function storageGet(key) {
+        try { return window.localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function isFormField(el) {
+        return !!el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
+    }
+
+    function initMobileMenu() {
+        var header = document.querySelector('.brand-header');
+        if (!header) return;
+        var nav = header.querySelector('.nav-links');
+        if (!nav) return;
+        if (header.querySelector('.nav-toggle')) return;
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'nav-toggle';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.innerHTML = '<span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>';
+        if (nav.id) toggle.setAttribute('aria-controls', nav.id);
+        else { nav.id = 'lo-mobile-nav'; toggle.setAttribute('aria-controls', 'lo-mobile-nav'); }
+        var actions = header.querySelector('.header-actions');
+        if (actions) actions.appendChild(toggle);
+        else header.appendChild(toggle);
+
+        function setOpen(open) {
+            header.classList.toggle('nav-open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+        toggle.addEventListener('click', function () {
+            setOpen(!header.classList.contains('nav-open'));
+        });
+        nav.addEventListener('click', function (e) {
+            if (e.target.closest && e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setOpen(false);
+        });
+        document.addEventListener('click', function (e) {
+            if (!header.classList.contains('nav-open')) return;
+            if (header.contains(e.target)) return;
+            setOpen(false);
+        });
+        if (window.matchMedia) {
+            var mq = window.matchMedia('(min-width: 901px)');
+            var onChange = function (m) { if (m.matches) setOpen(false); };
+            if (mq.addEventListener) mq.addEventListener('change', onChange);
+            else if (mq.addListener) mq.addListener(onChange);
+        }
+    }
+
+    function initStickyCta() {
+        if (document.getElementById('lo-sticky-cta')) return;
+        var door = storageGet('lo_door');
+        var isManufacturer = door === 'manufacturer';
+        var bar = document.createElement('div');
+        bar.className = 'lo-sticky-cta';
+        bar.id = 'lo-sticky-cta';
+        var link = document.createElement('a');
+        link.href = isManufacturer ? '/for-manufacturers/' : '/wholesale/';
+        link.setAttribute('data-ga-event', 'sticky_cta_click');
+        link.textContent = isManufacturer ? 'Get buyers' : 'Find my product line';
+        var arrow = document.createElement('span');
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = ' \u2192';
+        link.appendChild(arrow);
+        bar.appendChild(link);
+        document.body.appendChild(bar);
+        document.body.classList.add('has-sticky-cta');
+
+        function hide() { bar.classList.add('is-hidden'); }
+        function show() { bar.classList.remove('is-hidden'); }
+        document.addEventListener('focusin', function (e) {
+            if (isFormField(e.target)) hide();
+        });
+        document.addEventListener('focusout', function () {
+            setTimeout(function () {
+                if (!isFormField(document.activeElement)) show();
+            }, 50);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initMobileMenu();
+            initStickyCta();
+        });
+    } else {
+        initMobileMenu();
+        initStickyCta();
+    }
+})();

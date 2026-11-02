@@ -68,6 +68,7 @@
   .warn{background:#fef3c7;border-left:4px solid #d97706;border-radius:8px;padding:14px 18px;margin:18px 0}
   .note{background:#f3f4f6;border-radius:8px;padding:14px 18px;margin:18px 0;font-size:.95rem}
   table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:.98rem}
+  .table-wrap{overflow-x:auto}
   th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb}
   th{background:#f9fafb}
   .faq details{border-bottom:1px solid #e5e7eb;padding:14px 0}
@@ -113,12 +114,14 @@
     <section>
       <h2>What is Muse?</h2>
       <p>Muse is Meta's personal AI agent — a chat app that can browse the web, do research, build things, and handle multi-step tasks for you. It runs on Meta's Muse models, and there's a free plan with a weekly token allowance.</p>
+      <div class="table-wrap">
       <table>
         <tr><th>Plan</th><th>Price</th><th>Tokens per week</th></tr>
         <tr><td>Free</td><td>$0</td><td>100 million</td></tr>
         <tr><td>Power</td><td>$20 / month</td><td>500 million</td></tr>
         <tr><td>Maximum</td><td>$100 / month</td><td>3 billion</td></tr>
       </table>
+      </div>
       <p>One billion bonus tokens is roughly <strong>ten weeks of the free plan's allowance</strong> — on top of the 100 million you get every week anyway. The bonus shows up as a separate additional-tokens balance in Settings.</p>
       <p class="note">Figures are Meta's published plan numbers as of October 2026. Muse launched in the US and Canada; availability elsewhere may vary.</p>
     </section>

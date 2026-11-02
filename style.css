@@ -1700,3 +1700,93 @@ body.lo-consent-visible { padding-bottom: 118px; }
 .dir-badge-preview { border: 1px solid var(--line-subtle); border-radius: 16px; background: var(--bg-surface); padding: 28px 20px; text-align: center; margin: 16px 0; }
 .dir-empty { color: var(--text-muted); font-style: italic; }
 .dir-error { font-weight: 600; color: var(--text-primary); }
+   MOBILE-FIRST PASS (Nov 1 2026) — staged; main turn verifies live at
+   375px / 390px before pushing. Base = live head 687d1653 (includes Label
+   Preview V2). Everything below is mobile-only (max-width 640px / 900px)
+   except the .table-wrap rule, which only scrolls tables that overflow
+   (no desktop change). Desktop layout, copy, and URLs are untouched.
+   ========================================================================== */
+
+/* Tables: any table inside a .table-wrap scrolls within it. (Was scoped to
+   .lo-guide only; the /muse/ table had no wrapper at all — it is wrapped
+   in muse/index.html in this same staging.) */
+.table-wrap { overflow-x: auto; }
+
+/* --- Mobile menu (<=900px): the primary nav was display:none below 900px
+   with no replacement. The toggle button is injected by assets/js/contact.js
+   (mobile IIFE); without JS, or on pages with no .brand-header, the old
+   behaviour stands and the footer nav still works. --- */
+.brand-header { position: relative; }
+.nav-toggle { display: none; }
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: inline-flex; align-items: center; justify-content: center;
+        flex-direction: column; gap: 5px;
+        width: 44px; height: 44px; flex: none;
+        background: transparent; border: 1px solid var(--line-light);
+        border-radius: var(--radius-md); cursor: pointer;
+    }
+    .nav-toggle-bar { display: block; width: 20px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+    .brand-header.nav-open .nav-links {
+        display: flex; position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+        flex-direction: column; gap: 0; margin-left: 0;
+        background: var(--bg-surface); border: 1px solid var(--line-light);
+        border-radius: var(--radius-md); padding: 8px 0;
+        box-shadow: var(--shadow-ambient); z-index: 210;
+    }
+    .brand-header.nav-open .nav-links a { display: block; padding: 12px 20px; font-size: 0.95rem; }
+}
+
+/* --- Mobile polish additions (<=640px) --- */
+@media (max-width: 640px) {
+    /* Header: the sticky bar carries the CTA on mobile, so the header button
+       steps aside and leaves room for the menu toggle. */
+    .header-actions .btn-primary { display: none; }
+    .brand-header { gap: 12px; }
+
+    /* Tap targets: pill/chip controls were ~36px; make them 44px. */
+    .lp-chip, .lp-tab, .dir-check { min-height: 44px; }
+    .lp-upload-btn { min-height: 44px; }
+    .lp-logo-remove { min-height: 44px; padding: 11px 6px; }
+    .lp-logo-size { height: 44px; }
+    .quiz-option { min-height: 44px; }
+
+    /* Tap targets: text links in footer, guide TOC, directory cards,
+       quiz plan, and the Renaud footer nav were ~22px tall. */
+    .footer-nav a { padding: 10px 0; }
+    .footer-bottom a { display: inline-block; padding: 10px 0; }
+    .guide-toc a { display: block; padding: 10px 0; }
+    .dir-card-links a { padding: 10px 0; }
+    .quiz-plan a { padding: 10px 0; }
+    .quiz-plan li { margin-bottom: 14px; }
+    .renaud-footer-nav a { padding: 10px 0; }
+
+    /* Sticky bottom CTA bar: leave room for it, and keep the theme toggle
+       clear of it. (Consent banner visible = bar hidden, banner padding wins.) */
+    body.has-sticky-cta { padding-bottom: 96px; }
+    body.lo-consent-visible.has-sticky-cta { padding-bottom: 190px; }
+    body.has-sticky-cta .theme-toggle { bottom: 68px; }
+}
+
+/* --- Sticky bottom CTA bar (mobile only; hidden on desktop, while a form
+   field is focused, and while the consent banner is visible). --- */
+.lo-sticky-cta {
+    display: none;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--line-light);
+    box-shadow: var(--shadow-ambient);
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom, 0px));
+}
+.lo-sticky-cta a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 10px 16px;
+    background: var(--text-primary); color: var(--bg-canvas);
+    border-radius: var(--radius-md);
+    font-weight: 600; font-size: 0.95rem; text-decoration: none;
+}
+.lo-sticky-cta.is-hidden { display: none !important; }
+body.lo-consent-visible .lo-sticky-cta { display: none !important; }
+@media (max-width: 640px) {
+    .lo-sticky-cta { display: block; }
+}
