@@ -1791,14 +1791,28 @@ body.lo-consent-visible .lo-sticky-cta { display: none !important; }
     .lo-sticky-cta { display: block; }
 }
 
-/* --- Language toggle (EN | ES) — Spanish Phase 1, Nov 2026 --- */
-.lo-lang-toggle { display: inline-flex; align-items: center; gap: 6px; }
-.lo-lang-btn { appearance: none; background: transparent; border: 0; padding: 6px 4px;
+/* --- Language toggle (EN | ES) — pill, links only, Nov 2026 --- */
+/* Theme-aware: the header is dark in the dark theme and light in the light
+   theme, so every color below is a var() that flips with the theme. The
+   active language is a filled pill in the green brand color (--signal:
+   #178a57 light / #5ee0a0 dark) with the canvas color as its text, which
+   reads on both fills. */
+.lo-lang-toggle { display: inline-flex; align-items: center; gap: 2px; padding: 2px; border: 1px solid var(--line-light, rgba(20, 22, 26, .16)); border-radius: 999px; }
+.lo-lang-btn { appearance: none; background: transparent; border: 0; padding: 6px 10px;
     font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .04em;
     color: var(--text-muted, #6b655c); text-decoration: none; cursor: pointer;
-    min-height: 44px; min-width: 32px; }
-.lo-lang-btn:hover { color: var(--text-primary, #1c1a17); }
-.lo-lang-btn.is-active { color: var(--text-primary, #1c1a17);
-    text-decoration: underline; text-underline-offset: 4px; }
-.lo-lang-sep { color: var(--line-light, rgba(20, 22, 26, .16)); }
+    min-height: 44px; min-width: 32px; display: inline-flex; align-items: center;
+    justify-content: center; border-radius: 999px; }
+a.lo-lang-btn:hover { color: var(--text-primary, #1c1a17); }
+.lo-lang-btn.is-active { background: var(--signal, #178a57); color: var(--bg-canvas, #faf8f4); font-weight: 700; cursor: default; }
+.lo-lang-sep { color: var(--text-dim, #666874); }
 .lo-i18n-note { font-size: 13px; color: var(--text-muted, #6b655c); }
+/* Goldfish review (Nov 2026): on the dark header the inactive language
+   (--text-muted #7b7d89) and the faint pill border were too dim to read
+   while skimming — the toggle looked like a single green pill, not a
+   choice. Brighten the inactive language, the separator, and the border
+   under the dark theme only (light theme contrast is fine as-is). */
+:root[data-theme="dark"] .lo-lang-btn { color: #c9cbd4; }
+:root[data-theme="dark"] a.lo-lang-btn:hover { color: #ffffff; }
+:root[data-theme="dark"] .lo-lang-toggle { border-color: rgba(242, 242, 244, .35); }
+:root[data-theme="dark"] .lo-lang-sep { color: #9a9ca8; }

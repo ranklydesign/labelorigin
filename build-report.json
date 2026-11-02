@@ -20,31 +20,19 @@
     "es/guides/start-skincare-line-med-spa/index.html (translated, lang=es)",
     "guides/skincare-line-cost/index.html (toggle header-actions + hreflang)",
     "es/guides/skincare-line-cost/index.html (translated, lang=es)",
-    "96 other pages (shared strings + toggle)",
     "i18n/es.json",
     "assets/js/i18n.js",
-    "assets/js/label-preview.js (i18n lookups)",
-    "assets/js/funnel.js (i18n lookups)",
-    "assets/js/state-rules.js (i18n lookups)",
-    "assets/js/consent.js (i18n lookups)",
-    "assets/js/hubspot.js (i18n lookups)",
-    "assets/js/main.js (i18n lookups)",
-    "assets/js/contact.js (i18n lookups)",
-    "assets/js/directory.js (i18n lookups)",
     "inline scripts node --check OK (quiz/wholesale/contact)",
-    "style.css (+toggle block)",
-    "sitemap.xml (+10 /es/ URLs)"
+    "style.css (toggle block replaced with pill CSS)",
+    "sitemap.xml (+0 /es/ URLs)"
   ],
-  "warnings": [
-    "apparel/index.html: no header — staged with i18n.js + shared strings, no visible toggle",
-    "supplements/index.html: no header — staged with i18n.js + shared strings, no visible toggle"
-  ],
-  "ground_truth": "/tmp/gt-0e6b58a4",
+  "warnings": [],
+  "ground_truth": "/tmp/gt-85c453cb",
   "validation": {
     "missing_translations": 0,
-    "data_i18n_keys_used": 1085,
+    "data_i18n_keys_used": 1078,
     "data_i18n_keys_unknown": 0,
     "es_pages_meta_ok": true,
-    "validator": "PASS 116 files"
+    "validator": "PASS 20 files"
   }
 }
