@@ -74,7 +74,7 @@
             qualifiedForm.addEventListener('submit', handleQualifiedSubmit);
         }
 
-        const waitlistForm = document.getElementById('waitlist-lead-form');
+        const waitlistForm = document.getElementById('under-minimum-lead-form') || document.getElementById('waitlist-lead-form');
         if (waitlistForm) {
             waitlistForm.addEventListener('submit', handleWaitlistSubmit);
         }
