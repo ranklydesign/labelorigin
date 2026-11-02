@@ -13,9 +13,12 @@
  *    carries legalConsentOptions with consentToProcess + the privacy text
  *    and the exact marketing-checkbox label text. There is NO auto-reply
  *    on the newsletter form (the free plan's one follow-up email goes on
- *    Lead Capture), so on success the form is replaced with a thank-you
- *    that links the hosted checklist PDF directly (CHECKLIST_PDF_URL
- *    below -- the verified HubSpot-hosted URL).
+ *    Lead Capture), so on success the PDF opens in a new tab immediately
+ *    (inside the submit gesture, so no popup block) and the form is replaced
+ *    with a thank-you carrying a big download button for the hosted checklist
+ *    PDF (CHECKLIST_PDF_URL below -- the verified HubSpot-hosted URL).
+ *    Copy says the checklist downloads instantly -- nobody waits for an
+ *    email the free plan cannot send.
  *
  * 2. LEAD CAPTURE (dual submit). A fire-and-forget POST of the same four
  *    fields to HubSpot's public submissions endpoint, sent in parallel
@@ -34,8 +37,9 @@
     // HubSpot-hosted state-rules checklist PDF (Files API, public file,
     // verified 200 + application/pdf). Linked from the newsletter thank-you.
     var CHECKLIST_PDF_URL = 'https://247855692.fs1.hubspotusercontent-na2.net/hubfs/247855692/labelorigin/state-rules-checklist.pdf';
-    var THANK_YOU = 'Thanks \u2014 <a href="' + CHECKLIST_PDF_URL + '">' +
-        'download the state-rules checklist (PDF)</a>.';
+    var THANK_YOU = '<p><strong>Thanks \u2014 your checklist downloads instantly.</strong></p>' +
+        '<p><a class="btn btn-primary" href="' + CHECKLIST_PDF_URL + '" target="_blank" rel="noopener">Download your checklist (PDF)</a></p>' +
+        '<p>No email to wait for \u2014 if the download didn\u2019t start, tap the button.</p>';
 
     /* --- Newsletter signup (native form) --- */
     // Privacy text shown on the form (plain-text form of the privacy line;
@@ -95,6 +99,19 @@
             }
         };
         if (button) button.disabled = true;
+        /* The checklist downloads instantly: open the hosted PDF in a new
+           tab right here, inside the submit gesture (a later async callback
+           would be popup-blocked), and the thank-you below carries the same
+           link as a big button if the tab did not open. Cross-origin, so
+           the `download` attribute cannot force a save — the PDF opens in
+           the viewer, where the reader can save it. */
+        var dl = document.createElement('a');
+        dl.href = CHECKLIST_PDF_URL;
+        dl.target = '_blank';
+        dl.rel = 'noopener';
+        document.body.appendChild(dl);
+        dl.click();
+        document.body.removeChild(dl);
         fetch(SUBMIT_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -102,7 +119,7 @@
         }).then(function (res) {
             if (!res.ok) throw new Error('submit failed: ' + res.status);
             form.innerHTML =
-                '<p class="notification success" role="status">' + THANK_YOU + '</p>';
+                '<div class="notification success" role="status">' + THANK_YOU + '</div>';
         }).catch(function () {
             if (button) button.disabled = false;
             setStatus(form, 'Something went wrong \u2014 please try again. Your details are still filled in.');
