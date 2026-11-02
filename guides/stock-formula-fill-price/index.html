@@ -57,7 +57,7 @@
     }
     </script>
     <script src="../../assets/js/theme.js"></script>
-    <script src="../../assets/js/consent.js"></script>
+    <script src="../../assets/js/consent.js"></script><script src="../../assets/js/i18n.js"></script>
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -66,28 +66,28 @@
         <div class="container">
             <div class="ticker-group">
                 <span class="pulse-dot"></span>
-                <span>Flagship client live: Renaud Naturals</span>
+                <span data-i18n="shared.s001">Flagship client live: Renaud Naturals</span>
             </div>
             <div class="ticker-group">
-                <span>Taking on select manufacturing &amp; white-label clients</span>
+                <span data-i18n="shared.s002">Taking on select manufacturing &amp; white-label clients</span>
             </div>
         </div>
     </div>
 
     <div class="container">
         <header class="brand-header">
-            <a href="../../" class="brand-logo" aria-label="LabelOrigin home">
-                <div class="logo-icon">LO</div>
-                <span class="brand-logo-text">LabelOrigin</span>
+            <a href="../../" class="brand-logo" aria-label="LabelOrigin home" data-i18n-aria="shared.s003">
+                <div class="logo-icon" data-i18n="shared.s004">LO</div>
+                <span class="brand-logo-text" data-i18n="shared.s005">LabelOrigin</span>
             </a>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="../../#services">Services</a>
-                <a href="../../#process">Process</a>
-                <a href="../../#work">Work</a>
-                <a href="../../contact/">Contact</a>
+            <nav class="nav-links" aria-label="Primary" data-i18n-aria="shared.s006">
+                <a href="../../#services" data-i18n="shared.s007">Services</a>
+                <a href="../../#process" data-i18n="shared.s008">Process</a>
+                <a href="../../#work" data-i18n="shared.s009">Work</a>
+                <a href="../../contact/" data-i18n="shared.s010">Contact</a>
             </nav>
-            <div class="header-actions">
-                <a href="../../#contact" class="btn btn-primary btn-sm">Get a Funnel Audit</a>
+            <div class="header-actions"><div class="lo-lang-toggle" role="group" aria-label="Language / Idioma"><button type="button" class="lo-lang-btn is-active" data-lo-lang="en" aria-pressed="true">EN</button><span class="lo-lang-sep" aria-hidden="true">|</span><button type="button" class="lo-lang-btn" data-lo-lang="es" aria-pressed="false">ES</button></div>
+                <a href="../../#contact" class="btn btn-primary btn-sm" data-i18n="shared.s011">Get a Funnel Audit</a>
             </div>
         </header>
 
@@ -257,18 +257,18 @@
                 <h4>Get the state-rules checklist</h4>
                 <p>Sign up for the LabelOrigin newsletter and your printable checklist downloads instantly — the licensing and sales-tax rules for selling skincare in your spa, for all 50 states and the District of Columbia. 3-page PDF, updated 1 November 2026 — 51 rows, one for every state plus DC. Monthly, unsubscribe anytime.</p>
                                 <form class="mini-form newsletter-form" data-newsletter-native>
-                    <label>Email address
-                        <input type="email" name="email" required autocomplete="email" placeholder="you@yourspa.com">
+                    <label><span data-i18n="shared.s012">Email address</span>
+                        <input type="email" name="email" required autocomplete="email" placeholder="you@yourspa.com" data-i18n-ph="shared.s013">
                     </label>
-                    <label>First name <span class="optional">(optional)</span>
-                        <input type="text" name="firstname" autocomplete="given-name" placeholder="First name">
+                    <label><span data-i18n="shared.s014">First name</span> <span class="optional" data-i18n="shared.s015">(optional)</span>
+                        <input type="text" name="firstname" autocomplete="given-name" placeholder="First name" data-i18n-ph="shared.s016">
                     </label>
                     <label class="newsletter-consent">
                         <input type="checkbox" name="marketing_consent">
-                        <span>I agree to receive marketing emails from LabelOrigin</span>
+                        <span data-i18n="shared.s017">I agree to receive marketing emails from LabelOrigin</span>
                     </label>
-                    <p class="newsletter-privacy">By submitting this form, you agree to our <a href="/privacy/">Privacy Policy</a>.</p>
-                    <button class="btn btn-primary" type="submit">Get the checklist</button>
+                    <p class="newsletter-privacy" data-i18n="shared.s018">By submitting this form, you agree to our <a href="/privacy/">Privacy Policy</a>.</p>
+                    <button class="btn btn-primary" type="submit" data-i18n="shared.s019">Get the checklist</button>
                     <p class="newsletter-note" data-newsletter-status role="status" hidden></p>
                 </form>
             </div>

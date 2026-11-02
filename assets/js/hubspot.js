@@ -30,6 +30,23 @@
  *    not consent-gated -- same treatment as FormSubmit.
  */
 (function () {
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function hT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function hEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
     var PORTAL_ID = '247855692';
     var NEWSLETTER_FORM_ID = '90f597fb-0644-4e26-9cfb-6d02dcba52aa';
     var LEAD_FORM_ID = 'c8a97138-af1f-48bc-9d57-ebaf02026cd7';
@@ -37,15 +54,20 @@
     // HubSpot-hosted state-rules checklist PDF (Files API, public file,
     // verified 200 + application/pdf). Linked from the newsletter thank-you.
     var CHECKLIST_PDF_URL = 'https://247855692.fs1.hubspotusercontent-na2.net/hubfs/247855692/labelorigin/state-rules-checklist.pdf';
-    var THANK_YOU = '<p><strong>Thanks \u2014 your checklist downloads instantly.</strong></p>' +
-        '<p><a class="btn btn-primary" href="' + CHECKLIST_PDF_URL + '" target="_blank" rel="noopener">Download your checklist (PDF)</a></p>' +
-        '<p>No email to wait for \u2014 if the download didn\u2019t start, tap the button.</p>';
+    function thankYouHtml() {
+        return hT('hubspot.thankYou', '<p><strong>Thanks \u2014 your checklist downloads instantly.</strong></p>' +
+            '<p><a class="btn btn-primary" href="{url}" target="_blank" rel="noopener">Download your checklist (PDF)</a></p>' +
+            '<p>No email to wait for \u2014 if the download didn\u2019t start, tap the button.</p>')
+            .split('{url}').join(CHECKLIST_PDF_URL);
+    }
 
     /* --- Newsletter signup (native form) --- */
     // Privacy text shown on the form (plain-text form of the privacy line;
     // the visible line links "Privacy Policy" to /privacy/). Recorded with
     // every submission as the consent-to-process text.
     var PRIVACY_TEXT = 'By submitting this form, you agree to our Privacy Policy.';
+    // PRIVACY_TEXT is the English fallback; the live value at submit time
+    // comes from hT() below, so a Spanish submission records Spanish text.
     var MARKETING_SUBSCRIPTION_ID = 4030947730; // Marketing Information
     var MARKETING_LABEL_FALLBACK = 'I agree to receive marketing emails from LabelOrigin';
     var SUBMIT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/' +
@@ -64,12 +86,12 @@
         var consent = form.querySelector('input[name="marketing_consent"]');
         var button = form.querySelector('button[type="submit"]');
         if (!email || !email.value || email.value.indexOf('@') === -1) {
-            setStatus(form, 'Please enter a valid email address.');
+            setStatus(form, hT('hubspot.invalidEmail', 'Please enter a valid email address.'));
             if (email) email.focus();
             return;
         }
         // Record the exact label text shown next to the checkbox.
-        var consentLabel = MARKETING_LABEL_FALLBACK;
+        var consentLabel = hT('hubspot.marketingLabelFallback', MARKETING_LABEL_FALLBACK);
         if (consent && consent.closest) {
             var label = consent.closest('label');
             if (label) {
@@ -89,7 +111,7 @@
             legalConsentOptions: {
                 consent: {
                     consentToProcess: true,
-                    text: PRIVACY_TEXT,
+                    text: hT('hubspot.privacyText', PRIVACY_TEXT),
                     communications: [{
                         value: !!(consent && consent.checked),
                         subscriptionTypeId: MARKETING_SUBSCRIPTION_ID,
@@ -119,10 +141,10 @@
         }).then(function (res) {
             if (!res.ok) throw new Error('submit failed: ' + res.status);
             form.innerHTML =
-                '<div class="notification success" role="status">' + THANK_YOU + '</div>';
+                '<div class="notification success" role="status">' + thankYouHtml() + '</div>';
         }).catch(function () {
             if (button) button.disabled = false;
-            setStatus(form, 'Something went wrong \u2014 please try again. Your details are still filled in.');
+            setStatus(form, hT('hubspot.submitError', 'Something went wrong \u2014 please try again. Your details are still filled in.'));
         });
     }
 
@@ -144,7 +166,7 @@
                         { objectTypeId: '0-1', name: 'email', value: fields.email || '' },
                         { objectTypeId: '0-1', name: 'company', value: fields.company || '' },
                         { objectTypeId: '0-1', name: 'website', value: fields.website || '' },
-                        { objectTypeId: '0-1', name: 'lead_message', value: fields.lead_message || '' }
+                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') }
                     ],
                     context: {
                         pageUri: fields.pageUri || window.location.href,
@@ -169,7 +191,7 @@
                 var payload = {
                     fields: [
                         { objectTypeId: '0-1', name: 'email', value: fields.email || '' },
-                        { objectTypeId: '0-1', name: 'lead_message', value: fields.lead_message || '' }
+                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') }
                     ],
                     context: {
                         pageUri: fields.pageUri || window.location.href,

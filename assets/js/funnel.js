@@ -180,13 +180,30 @@
         return `${prefix || 'LO'}-${year}-${randomHex}`;
     }
 
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function fT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function fEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
     async function handleQualifiedSubmit(e) {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Routing to Facility Desk...';
+        submitBtn.innerHTML = fT('funnel.routing', 'Routing to Facility Desk...');
 
         const leadId = generateLeadId(config.partnerPrefix || 'RN');
         state.leadData.leadId = leadId;
@@ -243,10 +260,11 @@
             "Business Type": state.leadData.businessType,
             "Order Volume Tier": state.leadData.volumeLabel,
             "Target Formulation Focus": state.leadData.interestArea,
-            "Formulation Requirements": state.leadData.notes || 'None specified',
+            "Formulation Requirements": state.leadData.notes || fT('funnel.noneSpecified', 'None specified'),
             "Submission Timestamp": state.leadData.submittedAt
         };
 
+        if (fEs()) emailPayload['Language'] = 'es';
         const delivered = await dispatchLead(emailPayload, state.leadData);
 
         // Conversion: delivered submits only. The success step below is
@@ -265,7 +283,7 @@
         const submitBtn = form.querySelector('button[type="submit"]');
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending Your Inquiry...';
+        submitBtn.innerHTML = fT('funnel.sending', 'Sending Your Inquiry...');
 
         const leadId = generateLeadId('SB');
         state.leadData.leadId = leadId;
@@ -299,11 +317,12 @@
             "Lead ID": state.leadData.leadId,
             "Inquiry Type": "Small-Batch — not-yet-fit / revisit",
             "Contact Email": state.leadData.email,
-            "Brand Concept": state.leadData.brandConcept || 'None specified',
-            "Selected Volume": state.leadData.volumeLabel || 'Under MOQ',
+            "Brand Concept": state.leadData.brandConcept || fT('funnel.noneSpecified', 'None specified'),
+            "Selected Volume": state.leadData.volumeLabel || fT('funnel.underMoq', 'Under MOQ'),
             "Submission Timestamp": state.leadData.submittedAt
         };
 
+        if (fEs()) emailPayload['Language'] = 'es';
         const delivered = await dispatchLead(emailPayload, state.leadData);
 
         // Conversion: delivered submits only (see qualified handler above).
@@ -404,7 +423,7 @@
         const notice = document.createElement('div');
         notice.className = 'notification success delivery-warning';
         notice.setAttribute('role', 'alert');
-        notice.innerHTML = `<strong>We could not confirm email delivery.</strong> Please email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a> and mention reference <strong>${escapeHtml(state.leadData.leadId)}</strong>.`;
+        notice.innerHTML = fT('funnel.deliveryNotice', '<strong>We could not confirm email delivery.</strong> Please email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a> and mention reference <strong>{id}</strong>.').split('{id}').join(escapeHtml(state.leadData.leadId));
         step.insertBefore(notice, step.firstChild);
     }
 
@@ -414,14 +433,14 @@
 
         if (idDisplay) idDisplay.textContent = state.leadData.leadId;
         if (summaryDisplay) {
-            const facilityInfo = `${config.partnerName} — LabelOrigin wholesale desk (Robert)`;
+            const facilityInfo = fT('funnel.facilityInfo', '{partner} — LabelOrigin wholesale desk (Robert)').split('{partner}').join(config.partnerName);
             summaryDisplay.innerHTML = `
-                <div class="summary-line"><span>Routed to:</span> <strong>${facilityInfo}</strong></div>
-                <div class="summary-line"><span>Business Entity:</span> <strong>${escapeHtml(state.leadData.companyName)} (${escapeHtml(state.leadData.businessType)})</strong></div>
-                <div class="summary-line"><span>Target Program:</span> <strong>${escapeHtml(state.leadData.interestArea)}</strong></div>
-                <div class="summary-line"><span>Order Volume:</span> <strong>${escapeHtml(state.leadData.volumeLabel)}</strong></div>
-                <div class="summary-line"><span>Primary Contact:</span> <strong>${escapeHtml(state.leadData.contactName)}${state.leadData.phone ? ' &bull; ' + escapeHtml(state.leadData.phone) : ''}</strong></div>
-                <div class="summary-line"><span>Email:</span> <strong>${escapeHtml(state.leadData.email)}</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryRouted', 'Routed to:')}</span> <strong>${facilityInfo}</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryBusiness', 'Business Entity:')}</span> <strong>${escapeHtml(state.leadData.companyName)} (${escapeHtml(state.leadData.businessType)})</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryProgram', 'Target Program:')}</span> <strong>${escapeHtml(state.leadData.interestArea)}</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryVolume', 'Order Volume:')}</span> <strong>${escapeHtml(state.leadData.volumeLabel)}</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryContact', 'Primary Contact:')}</span> <strong>${escapeHtml(state.leadData.contactName)}${state.leadData.phone ? ' &bull; ' + escapeHtml(state.leadData.phone) : ''}</strong></div>
+                <div class="summary-line"><span>${fT('funnel.summaryEmail', 'Email:')}</span> <strong>${escapeHtml(state.leadData.email)}</strong></div>
             `;
         }
     }

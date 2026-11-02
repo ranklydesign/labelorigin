@@ -5,6 +5,23 @@
  * On phones, a tel: link first offers "Call" or "Copy number".
  */
 (function () {
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function kT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function kEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
     function isPhone() {
         var ua = navigator.userAgent || '';
         if (/Android|iPhone|iPad|iPod|Mobile/i.test(ua)) return true;
@@ -53,7 +70,8 @@
 
     function copyAndToast(value, label) {
         copyText(value).then(function (ok) {
-            toast(ok ? label + ' copied: ' + value : 'Copy failed. ' + label + ': ' + value);
+            toast(ok ? kT('contact.copied', '{label} copied: {value}').split('{label}').join(label).split('{value}').join(value)
+                     : kT('contact.copyFailed', 'Copy failed. {label}: {value}').split('{label}').join(label).split('{value}').join(value));
         });
     }
 
@@ -69,16 +87,16 @@
         sheet.className = 'contact-sheet';
         sheet.innerHTML =
             '<div class="contact-sheet-backdrop"></div>' +
-            '<div class="contact-sheet-panel" role="dialog" aria-label="Phone number options">' +
+            '<div class="contact-sheet-panel" role="dialog" aria-label="' + kT('contact.phoneOptions', 'Phone number options') + '">' +
             '<p class="contact-sheet-title"></p>' +
-            '<a class="btn btn-primary btn-block" href="tel:' + tel + '">Call</a>' +
-            '<button type="button" class="btn btn-secondary btn-block" data-act="copy">Copy number</button>' +
-            '<button type="button" class="contact-sheet-cancel" data-act="cancel">Cancel</button>' +
+            '<a class="btn btn-primary btn-block" href="tel:' + tel + '">' + kT('contact.call', 'Call') + '</a>' +
+            '<button type="button" class="btn btn-secondary btn-block" data-act="copy">' + kT('contact.copyNumber', 'Copy number') + '</button>' +
+            '<button type="button" class="contact-sheet-cancel" data-act="cancel">' + kT('contact.cancel', 'Cancel') + '</button>' +
             '</div>';
         sheet.querySelector('.contact-sheet-title').textContent = display;
         sheet.addEventListener('click', function (e) {
             var act = e.target.getAttribute && e.target.getAttribute('data-act');
-            if (act === 'copy') { copyAndToast(display, 'Number'); closeSheet(); }
+            if (act === 'copy') { copyAndToast(display, kT('contact.numberLabel', 'Number')); closeSheet(); }
             else if (act === 'cancel' || e.target.classList.contains('contact-sheet-backdrop')) { closeSheet(); }
             else if (e.target.tagName === 'A') { setTimeout(closeSheet, 300); }
         });
@@ -93,7 +111,7 @@
         if (href.indexOf('mailto:') === 0) {
             e.preventDefault();
             var email = decodeURIComponent(href.slice(7).split('?')[0]);
-            copyAndToast(email, 'Email');
+            copyAndToast(email, kT('contact.emailLabel', 'Email'));
             return;
         }
 
@@ -101,7 +119,7 @@
         var tel = href.slice(4);
         var display = (a.getAttribute('data-phone-display') || tel.replace(/^\+?1?(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3'));
         if (isPhone()) openPhoneSheet(display, tel);
-        else copyAndToast(display, 'Number');
+        else copyAndToast(display, kT('contact.numberLabel', 'Number'));
     });
 
     document.addEventListener('keydown', function (e) {
@@ -109,8 +127,8 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.title = 'Click to copy email'; });
-        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.title = isPhone() ? 'Call or copy number' : 'Click to copy number'; });
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.title = kT('contact.clickCopyEmail', 'Click to copy email'); });
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.title = isPhone() ? kT('contact.callOrCopy', 'Call or copy number') : kT('contact.clickCopyNumber', 'Click to copy number'); });
     });
 
     // CTA clicks — GA4 event, consent-gated, no personal data.
@@ -166,7 +184,7 @@
         toggle.type = 'button';
         toggle.className = 'nav-toggle';
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.setAttribute('aria-label', kT('mobile.menuOpen', 'Open menu'));
         toggle.innerHTML = '<span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>';
         if (nav.id) toggle.setAttribute('aria-controls', nav.id);
         else { nav.id = 'lo-mobile-nav'; toggle.setAttribute('aria-controls', 'lo-mobile-nav'); }
@@ -177,7 +195,7 @@
         function setOpen(open) {
             header.classList.toggle('nav-open', open);
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            toggle.setAttribute('aria-label', open ? kT('mobile.menuClose', 'Close menu') : kT('mobile.menuOpen', 'Open menu'));
         }
         toggle.addEventListener('click', function () {
             setOpen(!header.classList.contains('nav-open'));
@@ -211,7 +229,7 @@
         var link = document.createElement('a');
         link.href = isManufacturer ? '/for-manufacturers/' : '/wholesale/';
         link.setAttribute('data-ga-event', 'sticky_cta_click');
-        link.textContent = isManufacturer ? 'Get buyers' : 'Find my product line';
+        link.textContent = isManufacturer ? kT('mobile.stickyManufacturer', 'Get buyers') : kT('shared.s011', 'Find my product line');
         var arrow = document.createElement('span');
         arrow.setAttribute('aria-hidden', 'true');
         arrow.textContent = ' \u2192';

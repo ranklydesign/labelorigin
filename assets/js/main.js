@@ -11,6 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initInquiryForm();
 });
 
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function mT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function mEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
 function initInquiryForm() {
     const form = document.getElementById('agency-inquiry-form');
     if (!form) return;
@@ -37,7 +54,7 @@ function initInquiryForm() {
         const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending...';
+            submitBtn.innerHTML = mT('forms.sending', 'Sending...');
         }
 
         saveLeadLocally('labelorigin_agency_inquiries', inquiry);
@@ -55,8 +72,8 @@ function initInquiryForm() {
         if (notification) {
             notification.className = 'notification success';
             notification.innerHTML = delivered
-                ? `<strong>Thanks, ${escapeHtml(inquiry.company || 'we got it')}.</strong> We'll reply to <em>${escapeHtml(inquiry.email)}</em> shortly.`
-                : `<strong>We couldn't send that automatically.</strong> Please email us at <a href="mailto:${TARGET_EMAIL}">${TARGET_EMAIL}</a> and we'll reply right away.`;
+                ? mT('forms.homeSuccess', '<strong>Thanks, {company}.</strong> We\'ll reply to <em>{email}</em> shortly.').split('{company}').join(escapeHtml(inquiry.company || mT('forms.weGotIt', 'we got it'))).split('{email}').join(escapeHtml(inquiry.email))
+                : mT('forms.homeFailure', '<strong>We couldn\'t send that automatically.</strong> Please email us at <a href="mailto:{email}">{email}</a> and we\'ll reply right away.').split('{email}').join(escapeHtml(TARGET_EMAIL));
         }
 
         form.reset();
@@ -78,6 +95,7 @@ async function dispatchLead(emailPayload, rawLead) {
         ...emailPayload
     };
 
+    if (mEs()) payload['Language'] = 'es';
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (isLocalhost) {
         try {

@@ -36,7 +36,7 @@
         }
         function done() {
             var orig = btn.textContent;
-            btn.textContent = 'Copied \u2713';
+            btn.textContent = sT('stateRules.copied', 'Copied \u2713');
             setTimeout(function () { btn.textContent = orig; }, 2000);
         }
         function fallback() {
@@ -103,11 +103,11 @@
             }).join(' &middot; ');
             var lines = [];
             lines.push('<div style="border:1px solid #d8d2c4;border-radius:12px;padding:16px 18px;font-family:Georgia,\'Times New Roman\',serif;color:#222;max-width:640px;background:#fff;">');
-            lines.push('<p style="margin:0 0 6px;font-size:15px;font-weight:bold;">' + esc(state) + ' &mdash; selling skincare in your spa</p>');
-            lines.push('<p style="margin:0 0 6px;font-size:14px;line-height:1.5;"><strong>Licensing body:</strong> ' + esc(row.body) + '</p>');
-            lines.push('<p style="margin:0 0 6px;font-size:14px;line-height:1.5;"><strong>Separate retail license?</strong> ' + esc(row.retail) + '</p>');
-            lines.push('<p style="margin:0 0 8px;font-size:14px;line-height:1.5;"><strong>Sales-tax permit?</strong> ' + esc(row.tax) + '</p>');
-            lines.push('<p style="margin:0;font-size:13px;line-height:1.5;">Sources: ' + srcLinks + ' | Last verified 1 November 2026 | <a href="https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/">Source: LabelOrigin &mdash; State Rules for Selling Skincare</a></p>');
+            lines.push('<p style="margin:0 0 6px;font-size:15px;font-weight:bold;">' + esc(state) + sT('stateRules.embedTitleSuffix', ' &mdash; selling skincare in your spa') + '</p>');
+            lines.push('<p style="margin:0 0 6px;font-size:14px;line-height:1.5;"><strong>' + sT('stateRules.embedLicensing', 'Licensing body:') + '</strong> ' + esc(row.body) + '</p>');
+            lines.push('<p style="margin:0 0 6px;font-size:14px;line-height:1.5;"><strong>' + sT('stateRules.embedRetail', 'Separate retail license?') + '</strong> ' + esc(row.retail) + '</p>');
+            lines.push('<p style="margin:0 0 8px;font-size:14px;line-height:1.5;"><strong>' + sT('stateRules.embedTax', 'Sales-tax permit?') + '</strong> ' + esc(row.tax) + '</p>');
+            lines.push('<p style="margin:0;font-size:13px;line-height:1.5;">' + sT('stateRules.embedSources', 'Sources: ') + srcLinks + ' | ' + sT('stateRules.embedVerified', 'Last verified 1 November 2026') + ' | <a href="https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/">' + sT('stateRules.embedSourceLabel', 'Source: LabelOrigin &mdash; State Rules for Selling Skincare') + '</a></p>');
             lines.push('</div>');
             return lines.join('\n');
         }
@@ -115,21 +115,38 @@
         select.addEventListener('change', function () {
             var snippet = buildSnippet(select.value);
             codeBox.value = snippet;
-            preview.innerHTML = snippet || '<p>Choose a state above to preview the embed.</p>';
+            preview.innerHTML = snippet || '<p>' + sT('stateRules.previewEmpty', 'Choose a state above to preview the embed.') + '</p>';
         });
 
         if (copyBtn) {
             copyBtn.addEventListener('click', function () {
-                copyText(codeBox.value, copyBtn, 'Choose a state first');
+                copyText(codeBox.value, copyBtn, sT('stateRules.chooseStateFirst', 'Choose a state first'));
             });
         }
         if (linkCopyBtn && linkCodeBox) {
             linkCopyBtn.addEventListener('click', function () {
-                copyText(linkCodeBox.value, linkCopyBtn, 'Nothing to copy');
+                copyText(linkCodeBox.value, linkCopyBtn, sT('stateRules.nothingToCopy', 'Nothing to copy'));
             });
         }
     })();
 
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function sT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function sEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
     /* ---------- correction report form ---------- */
 
     (function correctionForm() {
@@ -144,7 +161,7 @@
             e.preventDefault();
             var submitBtn = document.getElementById('cr-submit');
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending\u2026';
+            submitBtn.textContent = sT('stateRules.sending', 'Sending\u2026');
 
             var honeypot = document.getElementById('cr-website-hp');
             if (honeypot && honeypot.value) {
@@ -175,11 +192,12 @@
                 'Report ID': leadId,
                 'State': state,
                 'What needs correcting': what,
-                'Source URL': sourceUrl || 'Not provided',
-                'Reporter email': email || 'Not provided',
+                'Source URL': sourceUrl || sT('stateRules.notProvided', 'Not provided'),
+                'Reporter email': email || sT('stateRules.notProvided', 'Not provided'),
                 'Source page': 'https://labelorigin.com/guides/state-rules-selling-skincare-med-spa/',
                 'Submission Timestamp': submittedAt
             };
+            if (sEs()) emailPayload['Language'] = 'es';
             // Reply-To is the reporter only when they left an email.
             if (email) {
                 emailPayload._replyto = email;

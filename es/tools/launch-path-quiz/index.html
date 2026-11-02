@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué ruta le conviene? | LabelOrigin</title>
+    <meta name="description" content="Siete preguntas sobre presupuesto, plazo y personalización de su fórmula señalan su ruta de lanzamiento, con puntuación de 0 a 20 y un plan breve.">
+    <meta name="theme-color" content="#faf8f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Which Launch Path Fits You? | LabelOrigin">
+    <meta property="og:description" content="Seven questions about budget, timeline, and how custom your formula must be point to a launch path — plus a fit score out of 20 and a short plan.">
+    <meta property="og:url" content="https://labelorigin.com/tools/launch-path-quiz/">
+    <meta property="og:site_name" content="LabelOrigin">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Which Launch Path Fits You? | LabelOrigin">
+    <meta name="twitter:description" content="Seven questions about budget, timeline, and how custom your formula must be point to a launch path — plus a fit score out of 20 and a short plan.">
+    <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
+    <link rel="canonical" href="https://labelorigin.com/es/tools/launch-path-quiz/"><link rel="alternate" hreflang="en" href="https://labelorigin.com/tools/launch-path-quiz/"><link rel="alternate" hreflang="es" href="https://labelorigin.com/es/tools/launch-path-quiz/"><link rel="alternate" hreflang="x-default" href="https://labelorigin.com/tools/launch-path-quiz/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://labelorigin.com/tools/launch-path-quiz/#webpage",
+  "url": "https://labelorigin.com/tools/launch-path-quiz/",
+  "name": "¿Qué ruta le conviene? | LabelOrigin",
+  "description": "Siete preguntas sobre presupuesto, plazo y personalización de su fórmula señalan su ruta de lanzamiento, con puntuación de 0 a 20 y un plan breve.",
+  "isPartOf": {
+    "@id": "https://labelorigin.com/#website"
+  },
+  "inLanguage": "en"
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El resultado del quiz es una cotización?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El resultado es un punto de partida basado en los patrones generales del sector publicados en nuestra guía de costos. Cada fabricante fija precios distintos, así que pida cotizaciones detalladas sobre la misma base — mismos productos, mismas unidades, mismo empaque — antes de comprometerse con un tamaño de lanzamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre estándar, semi-personalizada y personalizada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una fórmula estándar ya existe y usted añade su marca. La semi-personalizada parte de una fórmula existente y la ajusta. La formulación personalizada crea una fórmula según sus especificaciones, con desarrollo, muestras y pruebas añadidos antes de la producción."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo empezar con una ruta y pasar a otra después?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Nada en el quiz lo compromete. Empezar con una fórmula estándar no le impide desarrollar una fórmula personalizada después, y una fórmula personalizada no le impide añadir un producto estándar para completar una gama."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué significa la puntuación de compatibilidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La puntuación de compatibilidad son los puntos de la ruta ganadora sobre 20 — qué tan decisivamente sus respuestas apuntan a una ruta de lanzamiento. Una puntuación de 14 o más significa un encaje claro, de 11 a 13 significa una inclinación clara con una o dos preguntas abiertas, y de 9 o 10 significa que sus respuestas están repartidas entre las rutas. Es un punto de partida, no un veredicto: repita el quiz cuando su presupuesto y su plazo estén definidos, o envíe la consulta y deje que Robert le ayude a precisarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debo enviar a un fabricante después de hacer el quiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Envíe el tipo y formato de producto, el número de unidades por producto, sus preferencias de empaque, su precio minorista objetivo y su plazo. Un fabricante no puede cotizar con precisión a partir de una idea solamente — las unidades y el empaque determinan la mayor parte del precio."
+      }
+    }
+  ]
+}</script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/consent.js"></script><script src="../../../assets/js/i18n.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .quiz-question { border: 0; padding: 0; margin: 0 0 28px; }
+        .quiz-question legend { font-weight: 700; color: var(--text-primary); margin-bottom: 10px; padding: 0; }
+        .quiz-option { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line-light); border-radius: var(--radius-md); background: var(--bg-surface); margin-bottom: 8px; cursor: pointer; }
+        .quiz-option input { margin-top: 3px; }
+        .quiz-error { font-weight: 600; color: var(--text-primary); }
+        .quiz-result-panel[hidden] { display: none; }
+        .quiz-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 24px; }
+        .quiz-score { font-size: 1.15rem; color: var(--text-primary); margin: 0 0 8px; }
+        .quiz-score strong { font-size: 1.6rem; }
+        .quiz-plan { margin: 0 0 8px; padding-left: 20px; }
+        .quiz-plan li { margin-bottom: 8px; line-height: 1.6; color: var(--text-primary); }
+        .quiz-note { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 12px; }
+    </style>
+</head>
+<body>
+    <div class="system-ticker">
+        <div class="container">
+            <div class="ticker-group">
+                <span class="pulse-dot"></span>
+                <span>Cliente insignia activo: Renaud Naturals</span>
+            </div>
+            <div class="ticker-group">
+                <span>Aceptamos clientes selectos de manufactura y marca blanca</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <a href="/es/" class="brand-logo" aria-label="Inicio de LabelOrigin">
+                <div class="logo-icon">LO</div>
+                <span class="brand-logo-text">LabelOrigin</span>
+            </a>
+            <nav class="nav-links" aria-label="Principal">
+                <a href="/es/#services">Servicios</a>
+                <a href="/es/#process">Proceso</a>
+                <a href="/es/#work">Trabajo</a>
+                <a href="/es/#contact">Contacto</a>
+            </nav>
+            <div class="header-actions"><div class="lo-lang-toggle" role="group" aria-label="Language / Idioma"><a class="lo-lang-btn" data-lo-lang="en" href="../../../tools/launch-path-quiz/">EN</a><span class="lo-lang-sep" aria-hidden="true">|</span><button type="button" class="lo-lang-btn is-active" data-lo-lang="es" aria-pressed="true">ES</button></div>
+                <a href="/es/#contact" class="btn btn-primary btn-sm">Solicite una auditoría de embudo</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="editorial-eyebrow">Herramientas &bull; <a href="/guides/">Todas las guías</a></span>
+                <h1>¿Qué ruta de lanzamiento <em>le conviene?</em></h1>
+                <p>Siete preguntas rápidas sobre su presupuesto, su plazo y qué tan personalizada debe ser su fórmula. Sus respuestas señalan una de tres rutas de lanzamiento — fórmula estándar, semi-personalizada o personalizada — además de una puntuación de compatibilidad de 0 a 20 y un plan breve con qué hacer después. Estándar significa una fórmula existente con su etiqueta; semi-personalizada la ajusta; personalizada se crea para usted desde cero.</p>
+                <p>LabelOrigin, una marca de Rankly Design, conecta med spas y salones con fabricantes estadounidenses verificados como Renaud Naturals (Loveland, CO). Robert es su contacto desde la primera pregunta hasta las muestras.</p>
+                <p class="guide-meta">Información educativa general, no una cotización. Los rangos de costo son los patrones generales del sector publicados en nuestra guía de costos. Nada de lo que usted escriba sale de su navegador hasta que decida enviar su puntuación con una consulta.</p>
+            </section>
+
+            <article class="lo-guide">
+                <noscript>
+                    <div class="guide-callout">
+                        <p>Este quiz necesita JavaScript para calificar sus respuestas. Las tres rutas entre las que elige son: fórmula estándar — una fórmula existente con su marca, con primeras tiradas de producción comúnmente de aproximadamente $1,500 a $10,000 como patrón general y mínimos de apenas decenas de unidades por producto; semi-personalizada — una fórmula existente ajustada a sus especificaciones, sin un rango de costo publicado aparte, entre los rangos estándar y personalizado, y mínimos comúnmente de cientos o miles de unidades por producto; y formulación personalizada — creada según sus especificaciones, con primeras tiradas de producción comúnmente de $5,000 a $25,000+, más tarifas de desarrollo de $2,000 a $15,000+ por fórmula. Lea los rangos completos en nuestra <a href="/es/guides/skincare-line-cost/">guía de costos de líneas de cuidado de la piel</a>, o inicie una conversación de calificación a través del <a href="/renaud/">embudo de Renaud Naturals</a>.</p>
+                    </div>
+                </noscript>
+
+                <h2>Responda las siete preguntas</h2>
+                <p>Elija la respuesta más cercana a su situación. No hay respuestas incorrectas — el quiz solo relaciona su situación con la ruta que suele encajarle. Toma unos dos minutos.</p>
+
+                <form id="quiz-form" novalidate>
+                    <fieldset class="quiz-question">
+                        <legend>1. ¿Qué presupuesto tiene para la primera producción, antes del marketing?</legend>
+                        <label class="quiz-option"><input type="radio" name="q1" value="a"> <span>Menos de $5,000</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="b"> <span>$5,000 a $10,000</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="c"> <span>$10,000 a $25,000</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="d"> <span>Más de $25,000</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>2. ¿Qué tan pronto quiere el producto en mano?</legend>
+                        <label class="quiz-option"><input type="radio" name="q2" value="a"> <span>Lo antes posible</span></label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="b"> <span>Dentro de unos meses</span></label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="c"> <span>Sin prisa — hacerlo bien es lo más importante</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>3. ¿Qué tan personalizada debe ser la fórmula?</legend>
+                        <label class="quiz-option"><input type="radio" name="q3" value="a"> <span>Una fórmula existente con mi marca está bien</span></label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="b"> <span>Partir de una fórmula existente y ajustarla</span></label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="c"> <span>Creada según mis especificaciones desde cero</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>4. ¿Cuántas unidades de cada producto espera vender en los primeros meses?</legend>
+                        <label class="quiz-option"><input type="radio" name="q4" value="a"> <span>Decenas por producto</span></label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="b"> <span>Cientos por producto</span></label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="c"> <span>Miles por producto</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>5. ¿Qué tan ambicioso es el empaque?</legend>
+                        <label class="quiz-option"><input type="radio" name="q5" value="a"> <span>Empaque estándar de catálogo</span></label>
+                        <label class="quiz-option"><input type="radio" name="q5" value="b"> <span>Un envase estándar con etiquetas distintivas o una caja exterior</span></label>
+                        <label class="quiz-option"><input type="radio" name="q5" value="c"> <span>Un envase moldeado a medida o un empaque distintivo</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>6. ¿Ha lanzado antes una marca de productos?</legend>
+                        <label class="quiz-option"><input type="radio" name="q6" value="a"> <span>No, este es mi primer lanzamiento</span></label>
+                        <label class="quiz-option"><input type="radio" name="q6" value="b"> <span>Sí, ya lancé antes</span></label>
+                        <label class="quiz-option"><input type="radio" name="q6" value="c"> <span>Sí, y ya vendí en volumen antes</span></label>
+                    </fieldset>
+
+                    <fieldset class="quiz-question">
+                        <legend>7. ¿Cuántos productos quiere lanzar primero?</legend>
+                        <label class="quiz-option"><input type="radio" name="q7" value="a"> <span>Uno</span></label>
+                        <label class="quiz-option"><input type="radio" name="q7" value="b"> <span>Dos o tres</span></label>
+                        <label class="quiz-option"><input type="radio" name="q7" value="c"> <span>Cuatro o más</span></label>
+                    </fieldset>
+
+                    <p id="quiz-error" class="quiz-error" role="alert" hidden></p>
+                    <div class="quiz-actions">
+                        <button type="submit" class="btn btn-primary">Ver mi resultado</button>
+                    </div>
+                </form>
+
+                <div id="quiz-result" class="quiz-result-panel" hidden>
+                    <h2 id="quiz-result-heading" tabindex="-1">Su ruta de lanzamiento</h2>
+                    <p class="quiz-score"><span>Su puntuación de compatibilidad:</span> <strong><span id="quiz-fit-score"></span> <span>/ 20</span></strong> <span>—</span> <span id="quiz-band"></span></p>
+                    <p id="quiz-band-why"></p>
+                    <p id="quiz-drive"></p>
+                    <p id="quiz-scores"></p>
+
+                    <section id="result-stock" hidden>
+                        <h3>Fórmula estándar — empiece con una fórmula existente</h3>
+                        <p>Una fórmula estándar ya existe. Usted elige entre fórmulas que un fabricante ya hace y pone su marca en ellas, así que no hay trabajo de desarrollo antes de la producción. Por eso suele ser la forma más rápida y de menor costo para lanzar, en patrones generales del sector.</p>
+                        <div class="guide-callout">
+                            <p><strong>Rango general de costo (estimación, no una cotización):</strong> una primera producción de fórmula estándar comúnmente está entre aproximadamente $1,500 y $10,000, según las unidades y el empaque. Los mínimos pueden ser tan bajos como decenas de unidades por producto. Estos son los patrones generales publicados en nuestra guía de costos — cada fabricante fija precios distintos.</p>
+                        </div>
+                        <p>La desventaja es el control: la fórmula no está hecha según sus especificaciones, y la misma fórmula base puede estar disponible para otras marcas. Si una fórmula distintiva es toda la idea, compare esta ruta con la semi-personalizada y la personalizada en nuestra <a href="/guides/private-label-vs-custom-formulation/">guía de marca propia vs. formulación personalizada</a>.</p>
+                    </section>
+
+                    <section id="result-semi" hidden>
+                        <h3>Semi-personalizada — ajuste una fórmula existente</h3>
+                        <p>La semi-personalizada parte de una fórmula existente y la cambia — por ejemplo, ajustando el aroma, la textura o un pequeño número de detalles — en lugar de crear una fórmula desde cero. Usted tiene más control sobre el producto terminado que con una fórmula estándar, sin el trabajo completo de desarrollo de una fórmula personalizada.</p>
+                        <div class="guide-callout">
+                            <p><strong>Rango general de costo (estimación, no una cotización):</strong> no hay un rango semi-personalizado publicado aparte en nuestra guía de costos. Como patrón general, la semi-personalizada se ubica entre los dos rangos publicados de primera producción — aproximadamente $1,500 a $10,000 para lanzamientos de fórmula estándar y $5,000 a $25,000+ para lanzamientos de formulación personalizada. Los mínimos comúnmente empiezan en cientos o miles de unidades por producto. Tome cualquier cifra como punto de partida para cotizaciones reales, no como un precio de ningún fabricante.</p>
+                        </div>
+                        <p>Las pruebas y las muestras siguen siendo necesarias: un paquete básico de pruebas para una fórmula comúnmente cuesta de $500 a $3,000 como patrón general del sector, y usted debería presupuestar rondas de muestras antes de aprobar la producción. Pida la lista de pruebas por escrito y pregunte qué está incluido en la cotización y qué se cobra aparte.</p>
+                    </section>
+
+                    <section id="result-custom" hidden>
+                        <h3>Formulación personalizada — creada según sus especificaciones</h3>
+                        <p>La formulación personalizada significa fórmulas desarrolladas según sus especificaciones: el tiempo de un químico, lotes de prueba y rondas de revisión antes de llenar una sola unidad. Usted obtiene el mayor control sobre el producto terminado — y el mayor costo y tiempo antes de la producción.</p>
+                        <div class="guide-callout">
+                            <p><strong>Rango general de costo (estimación, no una cotización):</strong> una primera producción de formulación personalizada comúnmente empieza alrededor de $5,000 a $25,000+, y las tarifas de desarrollo comúnmente van de $2,000 a $15,000+ por fórmula, cobradas aparte de la producción. Los mínimos comúnmente empiezan en cientos o miles de unidades por producto. Estos son los patrones generales publicados en nuestra guía de costos.</p>
+                        </div>
+                        <p>Presupueste al menos dos rondas de muestras: la primera ronda casi nunca se envía sin cambios. Un paquete básico de pruebas para una fórmula comúnmente cuesta de $500 a $3,000 como patrón general del sector. Pida la lista de pruebas y cualquier tarifa de desarrollo por escrito, y pregunte si la tarifa se acredita al primer pedido.</p>
+                    </section>
+
+                    <section id="quiz-plan" aria-label="Su plan">
+                        <h3>Su plan</h3>
+                        <ol id="quiz-plan-steps" class="quiz-plan"></ol>
+                    </section>
+
+                    <div class="quiz-actions">
+                        <a id="quiz-send-result" href="/es/wholesale/" class="btn btn-primary" data-ga-event="quiz_cta">Envíe mi puntuación con mi consulta →</a>
+                        <a href="/es/guides/skincare-line-cost/" class="btn btn-secondary">Lea la guía completa de costos →</a>
+                        <a href="/renaud/" class="btn btn-secondary">Empiece con el embudo de Renaud →</a>
+                        <button type="button" id="quiz-retake" class="btn btn-secondary">Empezar de nuevo</button>
+                    </div>
+                    <p class="quiz-note">Robert responde, generalmente dentro de un día hábil, con los mínimos y plazos actuales por escrito.</p>
+                    <p id="quiz-send-line" class="quiz-note"></p>
+                    <div class="guide-callout">
+                        <p><strong>No es una cotización.</strong> Cada cifra arriba es un patrón general del sector de nuestra guía de costos, no un precio de ningún fabricante. Use el resultado para evaluar cotizaciones reales, luego pida cotizaciones detalladas sobre la misma base antes de comprometerse con un tamaño de lanzamiento.</p>
+                    </div>
+                </div>
+
+                <h2>Cómo califica el quiz sus respuestas</h2>
+                <p>Cada respuesta suma puntos a una o más rutas: presupuestos bajos, plazos cortos, producciones pequeñas y empaque estándar apuntan a la estándar; ajustar una fórmula existente apunta a la semi-personalizada; crear según especificaciones, producciones más grandes y empaque distintivo apuntan a la personalizada. La ruta con más puntos gana. Cuando dos rutas empatan, el quiz se inclina a la ruta más simple — siempre puede pasar a una ruta más personalizada después. Sus respuestas quedan en su navegador: nada se envía a ningún lugar a menos que usted decida enviar su puntuación con una consulta, y nada se guarda. La puntuación de compatibilidad son los puntos de la ruta ganadora sobre 20 — 14 o más significa que sus respuestas apuntan claramente a una ruta, 11 a 13 significa una inclinación clara con preguntas abiertas, y 9 o 10 significa que sus respuestas están repartidas entre las rutas.</p>
+
+                <h2>Preguntas frecuentes</h2>
+                <div class="lo-faq">
+                    <details>
+                        <summary>¿El resultado del quiz es una cotización?</summary>
+                        <p>No. El resultado es un punto de partida basado en los patrones generales del sector publicados en nuestra guía de costos. Cada fabricante fija precios distintos, así que pida cotizaciones detalladas sobre la misma base — mismos productos, mismas unidades, mismo empaque — antes de comprometerse con un tamaño de lanzamiento.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cuál es la diferencia entre estándar, semi-personalizada y personalizada?</summary>
+                        <p>Una fórmula estándar ya existe y usted añade su marca. La semi-personalizada parte de una fórmula existente y la ajusta. La formulación personalizada crea una fórmula según sus especificaciones, con desarrollo, muestras y pruebas añadidos antes de la producción.</p>
+                    </details>
+                    <details>
+                        <summary>¿Puedo empezar con una ruta y pasar a otra después?</summary>
+                        <p>Sí. Nada en el quiz lo compromete. Empezar con una fórmula estándar no le impide desarrollar una fórmula personalizada después, y una fórmula personalizada no le impide añadir un producto estándar para completar una gama.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué significa la puntuación de compatibilidad?</summary>
+                        <p>La puntuación de compatibilidad son los puntos de la ruta ganadora sobre 20 — qué tan decisivamente sus respuestas apuntan a una ruta de lanzamiento. Una puntuación de 14 o más significa un encaje claro, de 11 a 13 significa una inclinación clara con una o dos preguntas abiertas, y de 9 o 10 significa que sus respuestas están repartidas entre las rutas. Es un punto de partida, no un veredicto: repita el quiz cuando su presupuesto y su plazo estén definidos, o envíe la consulta y deje que Robert le ayude a precisarlo.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué debo enviar a un fabricante después de hacer el quiz?</summary>
+                        <p>Envíe el tipo y formato de producto, el número de unidades por producto, sus preferencias de empaque, su precio minorista objetivo y su plazo. Un fabricante no puede cotizar con precisión a partir de una idea solamente — las unidades y el empaque determinan la mayor parte del precio.</p>
+                    </details>
+                </div>
+
+                <div class="cta-band">
+                    <div>
+                        <span class="editorial-eyebrow">Siguiente paso</span>
+                        <h3>Convierta su resultado en una cotización real</h3>
+                        <p>Lea los rangos completos de costo en la guía de costos, luego inicie una conversación de calificación — el embudo pide los datos de su negocio y su volumen, para que el fabricante vea primero números reales.</p>
+                    </div>
+                    <div>
+                        <a href="/renaud/" class="btn btn-primary btn-block">Empiece con el embudo de Renaud →</a>
+                        <a href="/es/guides/skincare-line-cost/" class="btn btn-secondary btn-block" style="margin-top: 10px;">Lea la guía completa de costos →</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>LabelOrigin</h4>
+                    <p style="max-width: 440px;">Una agencia B2B de generación de clientes potenciales para fabricantes y marcas blancas.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Pie de página">
+                    <a href="/es/#services">Servicios</a>
+                    <a href="/es/#process">Proceso</a>
+                    <a href="/es/#work">Trabajo</a>
+                    <a href="/guides/">Guías</a>
+                    <a href="/renaud/">Embudo de Renaud Naturals</a>
+                    <a href="/es/sass-ee/">Embudo SASS-EE</a>
+                    <a href="/es/#contact">Contacto</a>
+                    <a href="/privacy/">Política de privacidad</a>
+                    <a href="/terms/">Términos</a>
+                    <a href="#" id="lo-consent-choices">Opciones de cookies / seguimiento</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LabelOrigin. Operado por <a href="https://www.ranklydesign.com" target="_blank" rel="noopener">www.ranklydesign.com</a>.</span>
+                <span>Consultas: <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/contact.js"></script>
+    <script>
+    (function () {
+        /* Scoring is deliberately simple and transparent. Each answer adds
+           points to one or more paths, following only the general patterns
+           in the live cost guide (/guides/skincare-line-cost/): stock
+           formulas already exist (no development, lowest first-run band
+           $1,500-$10,000, minimums as low as tens per SKU); semi-custom
+           adjusts an existing base (no separate published band; minimums
+           commonly hundreds/thousands per SKU); custom is built to
+           specification (development $2,000-$15,000+ per formula, first
+           runs $5,000-$25,000+, minimums commonly hundreds/thousands,
+           two sample rounds). Ties resolve to the simpler path:
+           stock, then semi-custom, then custom. Nothing leaves the
+           browser; no storage, no submission, no analytics. */
+        var POINTS = {
+            q1: { a: { stock: 3, semi: 1, custom: 0 }, b: { stock: 2, semi: 2, custom: 0 }, c: { stock: 0, semi: 2, custom: 2 }, d: { stock: 0, semi: 1, custom: 3 } },
+            q2: { a: { stock: 3, semi: 1, custom: 0 }, b: { stock: 1, semi: 2, custom: 1 }, c: { stock: 0, semi: 1, custom: 3 } },
+            q3: { a: { stock: 3, semi: 0, custom: 0 }, b: { stock: 0, semi: 3, custom: 0 }, c: { stock: 0, semi: 0, custom: 3 } },
+            q4: { a: { stock: 3, semi: 1, custom: 0 }, b: { stock: 1, semi: 2, custom: 1 }, c: { stock: 0, semi: 1, custom: 3 } },
+            q5: { a: { stock: 3, semi: 1, custom: 0 }, b: { stock: 1, semi: 2, custom: 0 }, c: { stock: 0, semi: 1, custom: 3 } },
+            q6: { a: { stock: 2, semi: 1, custom: 0 }, b: { stock: 1, semi: 2, custom: 1 }, c: { stock: 0, semi: 1, custom: 2 } },
+            q7: { a: { stock: 1, semi: 1, custom: 2 }, b: { stock: 1, semi: 2, custom: 1 }, c: { stock: 3, semi: 1, custom: 0 } }
+        };
+        var ORDER = ['stock', 'semi', 'custom'];
+        var MAX_SCORES = {};
+        ORDER.forEach(function (path) {
+            MAX_SCORES[path] = Object.keys(POINTS).reduce(function (sum, q) {
+                return sum + Math.max.apply(null, Object.keys(POINTS[q]).map(function (c) { return POINTS[q][c][path]; }));
+            }, 0);
+        });
+        var DRIVE_LABELS = { q1: 'budget', q2: 'timeline', q3: 'formula', q4: 'units', q5: 'packaging', q6: 'experience', q7: 'range size' };
+        function scoreQuiz(answers) {
+            var scores = { stock: 0, semi: 0, custom: 0 };
+            ORDER.forEach(function (path) {
+                Object.keys(POINTS).forEach(function (q) {
+                    var choice = answers[q];
+                    if (choice && POINTS[q][choice]) { scores[path] += POINTS[q][choice][path]; }
+                });
+            });
+            var result = 'stock';
+            if (scores.semi > scores[result]) { result = 'semi'; }
+            if (scores.custom > scores[result]) { result = 'custom'; }
+            return { scores: scores, result: result };
+        }
+        function checkedValue(name) {
+            var el = document.querySelector('input[name="' + name + '"]:checked');
+            return el ? el.value : null;
+        }
+        /* Fit score: the winning path's points out of 20 (max per path is 20).
+           Bands were set from the real distribution, checked over all 2,916
+           answer combinations: the winning score runs 9-20, most answers land
+           10-12, and only about 1 in 8 combinations reaches 14 or more — so
+           "Ready to move" stays meaningful instead of flattering everyone.
+           14+ ready: decisive fit. 11-13 almost: clear lean, open questions.
+           9-10 early: answers spread across the paths. */
+        /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+           every lookup falls back to the shipped English. */
+        function qT(key, fallback) {
+            try {
+                if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                        window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                    var v = window.LabelOriginI18n.t(key);
+                    if (v) return v;
+                }
+            } catch (e) { /* ignore */ }
+            return fallback;
+        }
+        function qBands() {
+            return {
+                ready: { min: 14, name: qT('quiz.bands.ready.name', 'Ready to move'), why: qT('quiz.bands.ready.why', 'Your answers point clearly to one path — the next step is real numbers, not more research.') },
+                almost: { min: 11, name: qT('quiz.bands.almost.name', 'Almost ready'), why: qT('quiz.bands.almost.why', 'Your answers lean clearly one way, with one or two pulling in another direction — the plan below settles them.') },
+                early: { min: 0, name: qT('quiz.bands.early.name', 'Early stage'), why: qT('quiz.bands.early.why', 'Your answers are spread across the paths, which is normal this early — the plan below narrows the two decisions that matter most.') }
+            };
+        }
+        function qPlans() {
+            return {
+                ready: [
+                    qT('quiz.plans.ready.0', 'Run the money first — check your target retail price in the <a href="../../../tools/retail-margin-calculator/">retail-margin calculator</a>.').split('__HREF0__').join('../../../tools/retail-margin-calculator/'),
+                    qT('quiz.plans.ready.1', 'Write your <a href="../../../tools/buyer-brief/">buyer brief</a> — the five facts a manufacturer needs to quote.').split('__HREF0__').join('../../../tools/buyer-brief/'),
+                    qT('quiz.plans.ready.2', 'Send the inquiry with your score — use the button below; your score and path travel with it.')
+                ],
+                almost: [
+                    qT('quiz.plans.almost.0', 'Read the <a href="../../../guides/skincare-line-cost/">cost guide</a> for your path — the bands and minimums for the route your answers point to.').split('__HREF0__').join('../../../guides/skincare-line-cost/'),
+                    qT('quiz.plans.almost.1', 'Check your target retail price in the <a href="../../../tools/retail-margin-calculator/">retail-margin calculator</a>.').split('__HREF0__').join('../../../tools/retail-margin-calculator/'),
+                    qT('quiz.plans.almost.2', 'Send the inquiry with your score — use the button below; Robert replies with current minimums and timing in writing.')
+                ],
+                early: [
+                    qT('quiz.plans.early.0', 'Read the <a href="../../../guides/skincare-line-cost/">cost guide</a> — the three paths side by side, with the bands and minimums for each.').split('__HREF0__').join('../../../guides/skincare-line-cost/'),
+                    qT('quiz.plans.early.1', 'Make the idea concrete — <a href="../../../label-preview/">see your brand on the bottle</a> with the label-preview tool.').split('__HREF0__').join('../../../label-preview/'),
+                    qT('quiz.plans.early.2', 'Retake the quiz once budget and timeline are settled — or send the inquiry now and let Robert help you narrow it (button below).')
+                ]
+            };
+        }
+        function localizeQuiz() {
+            var b = qBands();
+            BANDS.ready.name = b.ready.name; BANDS.ready.why = b.ready.why;
+            BANDS.almost.name = b.almost.name; BANDS.almost.why = b.almost.why;
+            BANDS.early.name = b.early.name; BANDS.early.why = b.early.why;
+            PATH_LABELS.stock = qT('quiz.pathLabels.stock', 'stock formula');
+            PATH_LABELS.semi = qT('quiz.pathLabels.semi', 'semi-custom formula');
+            PATH_LABELS.custom = qT('quiz.pathLabels.custom', 'custom formula');
+            var p = qPlans();
+            PLANS.ready = p.ready; PLANS.almost = p.almost; PLANS.early = p.early;
+        }
+        var BANDS = qBands();
+        var PATH_LABELS = { stock: qT('quiz.pathLabels.stock', 'stock formula'), semi: qT('quiz.pathLabels.semi', 'semi-custom formula'), custom: qT('quiz.pathLabels.custom', 'custom formula') };
+        var PLANS = qPlans();
+        localizeQuiz();
+        function driveLine(answers, path) {
+            var contrib = Object.keys(POINTS).map(function (q) {
+                var choice = answers[q];
+                var input = document.querySelector('input[name="' + q + '"]:checked');
+                var label = input && input.closest('label') ? input.closest('label').textContent.trim() : '';
+                return { q: q, points: choice ? POINTS[q][choice][path] : 0, label: label };
+            }).filter(function (c) { return c.points > 0; });
+            contrib.sort(function (a, b) { return b.points - a.points; });
+            var top = contrib.slice(0, 2);
+            if (!top.length) return '';
+            var bits = top.map(function (c) { return qT('quiz.driveYour', 'your ') + qT('quiz.driveLabels.' + c.q, DRIVE_LABELS[c.q]) + ' (' + c.label + ')'; });
+            return qT('quiz.drivePrefix', 'What drove your score: ') + bits.join(qT('quiz.driveJoin', ' and ')) + (top.length > 1 ? qT('quiz.driveDoubleSuffix', ' pointed most strongly to ') : qT('quiz.driveSingleSuffix', ' pointed most strongly to ')) + (qT('quiz.pathLabels.' + path, PATH_LABELS[path] || path)) + '.';
+        }
+        function fitBand(score) {
+            if (score >= 14) return { key: 'ready', name: BANDS.ready.name, why: BANDS.ready.why };
+            if (score >= 11) return { key: 'almost', name: BANDS.almost.name, why: BANDS.almost.why };
+            return { key: 'early', name: BANDS.early.name, why: BANDS.early.why };
+        }
+        function quizLine(score, bandName, path) {
+            return qT('quiz.quizLineTemplate', 'Launch-path quiz — score {score}/20 ({band}) — {path}.').split('{score}').join(String(score)).split('{band}').join(bandName).split('{path}').join(qT('quiz.pathLabels.' + path, PATH_LABELS[path] || path));
+        }
+        function renderPlan(bandKey) {
+            var steps = PLANS[bandKey] || PLANS.early;
+            document.getElementById('quiz-plan-steps').innerHTML =
+                steps.map(function (step) { return '<li>' + step + '</li>'; }).join('');
+        }
+        if (typeof document !== 'undefined' && document.getElementById) {
+            var form = document.getElementById('quiz-form');
+            var errorEl = document.getElementById('quiz-error');
+            var resultEl = document.getElementById('quiz-result');
+            var panels = {
+                stock: document.getElementById('result-stock'),
+                semi: document.getElementById('result-semi'),
+                custom: document.getElementById('result-custom')
+            };
+            var lastOutcome = null, lastAnswers = null;
+            function rerenderResult() {
+                if (!lastOutcome || !lastAnswers || resultEl.hidden) return;
+                var fitScore = lastOutcome.scores[lastOutcome.result];
+                var band = fitBand(fitScore);
+                document.getElementById('quiz-fit-score').textContent = String(fitScore);
+                document.getElementById('quiz-band').textContent = band.name;
+                document.getElementById('quiz-band-why').textContent = band.why;
+                document.getElementById('quiz-scores').textContent =
+                    qT('quiz.scoresTemplate', 'Your answers scored: stock {stock}/{maxStock} · semi-custom {semi}/{maxSemi} · custom {custom}/{maxCustom}.')
+                        .split('{stock}').join(String(lastOutcome.scores.stock)).split('{maxStock}').join(String(MAX_SCORES.stock))
+                        .split('{semi}').join(String(lastOutcome.scores.semi)).split('{maxSemi}').join(String(MAX_SCORES.semi))
+                        .split('{custom}').join(String(lastOutcome.scores.custom)).split('{maxCustom}').join(String(MAX_SCORES.custom));
+                document.getElementById('quiz-drive').textContent = driveLine(lastAnswers, lastOutcome.result);
+                document.getElementById('quiz-send-line').textContent =
+                    qT('quiz.sendLinePrefix', 'What travels with your inquiry: ') + '\u201c' + quizLine(fitScore, band.name, lastOutcome.result) + '\u201d';
+                renderPlan(band.key);
+                document.getElementById('quiz-send-result').setAttribute('href',
+                    '../../../wholesale/?quiz=' + encodeURIComponent(quizLine(fitScore, band.name, lastOutcome.result)));
+            }
+            document.addEventListener('lo-langchange', function () { localizeQuiz(); rerenderResult(); });
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && window.LabelOriginI18n.ready) {
+                window.LabelOriginI18n.ready.then(function () { localizeQuiz(); rerenderResult(); });
+            }
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var answers = {};
+                var missing = [];
+                Object.keys(POINTS).forEach(function (q, index) {
+                    var value = checkedValue(q);
+                    if (value) { answers[q] = value; }
+                    else { missing.push(index + 1); }
+                });
+                if (missing.length) {
+                    errorEl.textContent = (missing.length > 1 ? qT('quiz.errorPlural', 'Please answer questions {list} before seeing your result.') : qT('quiz.errorSingle', 'Please answer question {list} before seeing your result.')).split('{list}').join(missing.join(', '));
+                    errorEl.hidden = false;
+                    resultEl.hidden = true;
+                    return;
+                }
+                errorEl.hidden = true;
+                var outcome = scoreQuiz(answers);
+                lastOutcome = outcome; lastAnswers = answers;
+                var fitScore = outcome.scores[outcome.result];
+                var band = fitBand(fitScore);
+                document.getElementById('quiz-fit-score').textContent = String(fitScore);
+                document.getElementById('quiz-band').textContent = band.name;
+                document.getElementById('quiz-band-why').textContent = band.why;
+                document.getElementById('quiz-scores').textContent =
+                    qT('quiz.scoresTemplate', 'Your answers scored: stock {stock}/{maxStock} · semi-custom {semi}/{maxSemi} · custom {custom}/{maxCustom}.')
+                        .split('{stock}').join(String(outcome.scores.stock)).split('{maxStock}').join(String(MAX_SCORES.stock))
+                        .split('{semi}').join(String(outcome.scores.semi)).split('{maxSemi}').join(String(MAX_SCORES.semi))
+                        .split('{custom}').join(String(outcome.scores.custom)).split('{maxCustom}').join(String(MAX_SCORES.custom));
+                document.getElementById('quiz-drive').textContent = driveLine(answers, outcome.result);
+                document.getElementById('quiz-send-line').textContent =
+                    qT('quiz.sendLinePrefix', 'What travels with your inquiry: ') + '\u201c' + quizLine(fitScore, band.name, outcome.result) + '\u201d';
+                renderPlan(band.key);
+                document.getElementById('quiz-send-result').setAttribute('href',
+                    '../../../wholesale/?quiz=' + encodeURIComponent(quizLine(fitScore, band.name, outcome.result)));
+                Object.keys(panels).forEach(function (key) { panels[key].hidden = (key !== outcome.result); });
+                resultEl.hidden = false;
+                document.getElementById('quiz-result-heading').focus();
+                resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            document.getElementById('quiz-retake').addEventListener('click', function () {
+                form.reset();
+                resultEl.hidden = true;
+                errorEl.hidden = true;
+                document.getElementById('quiz-send-result').setAttribute('href', '../../../wholesale/');
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+        if (typeof module !== 'undefined' && module.exports) {
+            module.exports = { scoreQuiz: scoreQuiz, POINTS: POINTS };
+        }
+    })();
+    </script>
+</body>
+</html>

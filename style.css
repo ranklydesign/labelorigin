@@ -1790,3 +1790,15 @@ body.lo-consent-visible .lo-sticky-cta { display: none !important; }
 @media (max-width: 640px) {
     .lo-sticky-cta { display: block; }
 }
+
+/* --- Language toggle (EN | ES) — Spanish Phase 1, Nov 2026 --- */
+.lo-lang-toggle { display: inline-flex; align-items: center; gap: 6px; }
+.lo-lang-btn { appearance: none; background: transparent; border: 0; padding: 6px 4px;
+    font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .04em;
+    color: var(--text-muted, #6b655c); text-decoration: none; cursor: pointer;
+    min-height: 44px; min-width: 32px; }
+.lo-lang-btn:hover { color: var(--text-primary, #1c1a17); }
+.lo-lang-btn.is-active { color: var(--text-primary, #1c1a17);
+    text-decoration: underline; text-underline-offset: 4px; }
+.lo-lang-sep { color: var(--line-light, rgba(20, 22, 26, .16)); }
+.lo-i18n-note { font-size: 13px; color: var(--text-muted, #6b655c); }

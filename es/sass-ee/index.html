@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS-EE Bronceado orgánico sin sol</title>
+    <meta name="description" content="Bronceado orgánico sin sol de Renaud Naturals, Loveland, Colorado, desde 1997. Fórmulas de aerógrafo y bronceado sin sol con DHA y botánicos.">
+
+    <!-- Open Graph & Canonical -->
+    <meta property="og:title" content="SASS-EE • Laboratorio de formulación de bronceado orgánico sin sol con aerógrafo">
+    <meta property="og:description" content="Organic sunless tanning by Renaud Naturals, Loveland, Colorado since 1997. Airbrush and sunless formulas with DHA and botanicals.">
+    <meta property="og:url" content="https://labelorigin.com/sass-ee/">
+    <meta property="og:image" content="https://labelorigin.com/renaud/renaud-logo.png">
+    <meta property="og:image:width" content="104">
+    <meta property="og:image:height" content="104">
+    <meta property="og:image:alt" content="SASS-EE by Renaud Naturals">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LabelOrigin &bull; SASS-EE Sourcing Desk">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SASS-EE • Laboratorio de formulación de bronceado orgánico sin sol con aerógrafo">
+    <meta name="twitter:description" content="Organic sunless tanning by Renaud Naturals, Loveland, Colorado since 1997. Airbrush and sunless formulas with DHA and botanicals.">
+    <meta name="twitter:image" content="https://labelorigin.com/renaud/renaud-logo.png">
+    <link rel="canonical" href="https://labelorigin.com/es/sass-ee/"><link rel="alternate" hreflang="en" href="https://labelorigin.com/sass-ee/"><link rel="alternate" hreflang="es" href="https://labelorigin.com/es/sass-ee/"><link rel="alternate" hreflang="x-default" href="https://labelorigin.com/sass-ee/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="icon" type="image/png" href="/renaud/renaud-logo.png">
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/consent.js"></script><script src="../../assets/js/i18n.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/renaud/renaud.css">
+
+    <!-- SASS-EE Custom Theme Overrides (Warm Sun-Kissed Bronze & Obsidian) -->
+    <style>
+        :root {
+            --sassee-bronze: #d4a373;
+            --sassee-gold: #e6c594;
+            --sassee-dark-gold: #b38752;
+            --sassee-glow: rgba(212, 163, 115, 0.12);
+        }
+        .sassee-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--sassee-gold);
+            border-bottom: 1px solid var(--sassee-bronze);
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+        }
+        .temp-status-notice {
+            background: rgba(212, 163, 115, 0.08);
+            border: 1px solid var(--sassee-bronze);
+            padding: 16px 22px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .temp-status-notice p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        .temp-status-notice strong {
+            color: var(--ivory-white);
+        }
+        .temp-domain-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--sassee-bronze);
+            color: var(--sassee-gold);
+            padding: 4px 10px;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb-bar a:hover {
+            color: var(--ivory-white);
+        }
+        .breadcrumb-bar span.active {
+            color: var(--sassee-gold);
+        }
+
+        /* Science Callout */
+        .science-box {
+            background: var(--tint-1);
+            border: 1px solid var(--line-focus);
+            border-left: 3px solid var(--sassee-bronze);
+            padding: 28px 32px;
+            margin: 40px 0 55px;
+            border-radius: var(--radius-sm);
+        }
+        .science-box h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--ivory-white);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .science-box p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Subtopics Cards */
+        .subtopics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .subtopic-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 36px 32px;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+        }
+        .subtopic-card:hover {
+            border-color: var(--sassee-bronze);
+            background: var(--bg-surface);
+        }
+        .subtopic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .subtopic-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--sassee-gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .subtopic-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+        }
+        .subtopic-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 300;
+            color: var(--ivory-white);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .mechanism-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .subtopic-specs-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 16px;
+            background: var(--tint-1);
+            border: 1px solid var(--line-subtle);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        @media (max-width: 900px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .subtopic-specs-grid { grid-template-columns: 1fr; }
+        }
+        .spec-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .spec-val {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: var(--ivory-white);
+        }
+        .spec-val-sm {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .actives-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .active-pill {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: var(--tint-2);
+            border: 1px solid var(--sassee-bronze);
+            color: var(--sassee-gold);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Technical Specifications Table */
+        .specs-table-wrap {
+            margin: 40px 0 60px;
+            overflow-x: auto;
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+        }
+        .technical-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.86rem;
+        }
+        .technical-table th {
+            background: var(--bg-surface);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--sassee-gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .technical-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line-subtle);
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .technical-table tr:last-child td {
+            border-bottom: none;
+        }
+        .technical-table tr:hover td {
+            background: var(--tint-1);
+            color: var(--ivory-white);
+        }
+        .moq-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ivory-white);
+            background: var(--tint-2);
+            padding: 3px 8px;
+            border: 1px solid var(--sassee-bronze);
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        /* QA Pillars */
+        .qa-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 60px;
+        }
+        @media (max-width: 800px) {
+            .qa-pillars-grid { grid-template-columns: 1fr; }
+        }
+        .qa-pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            padding: 26px 22px;
+            border-radius: var(--radius-sm);
+        }
+        .qa-pillar-card h5 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ivory-white);
+            margin: 8px 0 10px;
+            font-weight: 400;
+        }
+        .qa-pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 300;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://labelorigin.com/sass-ee/#brand",
+      "name": "SASS-EE • All-Natural & Organic Sunless Tanning",
+      "alternateName": "Sass-ee Tan",
+      "url": "https://labelorigin.com/sass-ee/",
+      "logo": "https://labelorigin.com/renaud/renaud-logo.png",
+      "image": "https://labelorigin.com/renaud/renaud-logo.png",
+      "description": "All-natural and organic airbrush and sunless tanning brand founded in 1997 by Renaud Naturals Inc. in Loveland, Colorado. Formulated with DHA and clean botanical actives.",
+      "telephone": "+1-970-667-1433",
+      "foundingDate": "1997",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Renaud Naturals Inc.",
+        "url": "https://labelorigin.com/renaud/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "101 East 5th Street",
+        "addressLocality": "Loveland",
+        "addressRegion": "CO",
+        "postalCode": "80537",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://sass-ee.com/",
+        "https://renaudnaturals.com/",
+        "https://www.facebook.com/Renaud.Naturals",
+        "https://x.com/RenaudNaturals"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SASS-EE Professional Sunless Tanning Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Professional Airbrush Spray Tan Solutions (8% and 10% DHA confirmed)",
+              "description": "Clean airbrush and HVLP spray tan solutions. Confirmed DHA strengths 8% and 10% — ask for current specs on higher strengths and color guides."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rapid Express Bronzers",
+              "description": "Fast-rinse sunless tanning solutions for clients wanting customizable shade depths — rinse window and shade mapping: ask for current specs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Daily Gradual Tan Extenders & Hydrating Lotions",
+              "description": "Moisturizing post-tan extenders micro-dosed with DHA — confirmed strengths 2%, 3% and 5%; ask for current specs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Backbar Gallons & Bulk Salon Supply",
+              "description": "Quarts and 1-gallon jugs for high-volume salons and mobile artists — ask for current specs on half-gallons and 5-gallon pails."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://labelorigin.com/sass-ee/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la historia y el origen de manufactura de SASS-EE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SASS-EE es una marca de bronceado con aerógrafo y sin sol, totalmente natural y orgánica, fundada en 1997 por Renaud Naturals Inc. Todas las fórmulas se investigan, se formulan y se fabrican internamente en Loveland, Colorado, EE. UU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde pido SASS-EE al mayoreo o al por menor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los pedidos de consumidores se atienden en sass-ee.com. Esta página de LabelOrigin sirve como mesa de abastecimiento mayorista, centro de solicitud de listas de productos de salón y portal de consultas de laboratorio de marca propia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la cantidad mínima de pedido mayorista (MOQ) para los productos SASS-EE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pregunte por los MOQ actuales — los mínimos mayoristas varían según la línea de productos. Los galones a granel para uso comercial están disponibles desde 1 galón; pregunte por los mínimos actuales de formulación personalizada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo ayuda SASS-EE a evitar el tono naranja de los bronceadores sin sol convencionales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las fórmulas de SASS-EE usan DHA con activos botánicos diseñados para un desvanecimiento de aspecto natural — pregunte por las especificaciones actuales de ingredientes y la guía de color."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Los artistas y salones de bronceado con aerógrafo pueden pedir kits de muestras de evaluación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Pregunte por las opciones y precios actuales del kit de muestras — las botellas de evaluación de muestras permiten a los técnicos profesionales de aerógrafo evaluar la atomización de la niebla, la intensidad del color de la guía bronceadora y cómo se seca en la piel en sus propias pistolas HVLP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Con qué equipo es compatible la solución de aerógrafo SASS-EE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestras soluciones están formuladas como líquidos fluidos y pulverizables para sistemas de turbina HVLP. Pida al laboratorio que confirme la compatibilidad con su pistola o cabina específica."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Directorio LabelOrigin",
+          "item": "https://labelorigin.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Laboratorio Renaud Naturals",
+          "item": "https://labelorigin.com/renaud/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SASS-EE Bronceado orgánico sin sol",
+          "item": "https://labelorigin.com/sass-ee/"
+        }
+      ]
+    }
+  ]
+}</script>
+    <style>
+        /* Darker bronze for text on the light theme */
+        :root:not([data-theme="dark"]) { --sassee-gold: #8a5a24; --sassee-dark-gold: #7a4e1d; --sassee-bronze: #b9773a; }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+<div class="renaud-page-wrap">
+    
+    <!-- Top Navigation Header -->
+    <header class="renaud-header">
+        <div class="container">
+            <a href="/es/sass-ee/" class="renaud-brand">
+                <img src="/renaud/renaud-logo.png" width="104" height="104" alt="SASS-EE de Renaud Naturals" class="renaud-logo-img">
+                <div class="renaud-brand-text">
+                    <span class="renaud-brand-title">SASS-EE</span>
+                    <span class="renaud-brand-sub">Bronceado orgánico sin sol • Desde 1997</span>
+                </div>
+            </a>
+
+            <nav class="renaud-nav-links">
+                <a href="#dha-science" class="renaud-nav-link">Química del DHA</a>
+                <a href="#solutions" class="renaud-nav-link">Soluciones y cuidado</a>
+                <a href="#lead-flow" class="renaud-nav-link">Kits de muestras</a>
+                <a href="#specs" class="renaud-nav-link">Especificaciones técnicas</a>
+                <a href="#faq" class="renaud-nav-link">Preguntas frecuentes</a>
+                <a href="/renaud/" class="renaud-nav-link" style="color: var(--sassee-gold);">← Laboratorio central de Renaud Naturals</a>
+            </nav>
+
+            <div class="lo-lang-toggle" role="group" aria-label="Language / Idioma"><a class="lo-lang-btn" data-lo-lang="en" href="../../sass-ee/">EN</a><span class="lo-lang-sep" aria-hidden="true">|</span><button type="button" class="lo-lang-btn is-active" data-lo-lang="es" aria-pressed="true">ES</button></div><div class="header-social-group">
+                <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals en Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="Renaud Naturals en X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="funnel-container">
+        <main id="main-content">
+            
+            <!-- Breadcrumbs -->
+            <div class="breadcrumb-bar">
+                <a href="/es/">LabelOrigin</a>
+                <span>•</span>
+                <a href="/renaud/">Renaud Naturals</a>
+                <span>•</span>
+                <span class="active">SASS-EE Bronceado orgánico sin sol</span>
+            </div>
+
+            <!-- Temporary Platform Notice Banner -->
+            <div class="temp-status-notice">
+                <div>
+                    <strong style="display: block; margin-bottom: 3px;">Mesa de abastecimiento mayorista de SASS-EE</strong>
+                    <p>Las compras de consumidores están en <a href="https://sass-ee.com/" target="_blank" rel="noopener" style="color: var(--sassee-gold); text-decoration: underline;">sass-ee.com</a>. Los pedidos mayoristas de salones, las listas de productos y los kits de muestras los atiende directamente el fabricante <strong>Renaud Naturals Inc.</strong> en Loveland, Colorado. LabelOrigin, una marca de Rankly Design, conecta med spas y salones con fabricantes estadounidenses verificados como Renaud Naturals (Loveland, CO). Robert es su contacto desde la primera pregunta hasta las muestras.</p>
+                </div>
+                <span class="temp-domain-pill">Mesa de abastecimiento mayorista de LabelOrigin</span>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="funnel-hero">
+                <span class="sassee-badge">Bronceado orgánico y natural sin sol • Fundado en 1997 • Loveland, Colorado</span>
+                <h1>Laboratorio de formulación de bronceado orgánico sin sol con aerógrafo SASS-EE</h1>
+                <p class="subtitle">Soluciones puras de bronceado botánico con aerógrafo, bronceadores exprés rápidos y productos minoristas para prolongar el bronceado. Formuladas en Loveland, Colorado, con DHA y cero petroquímicos — pregunte por las especificaciones actuales de ingredientes.</p>
+
+                <!-- Tabular Metrics Row -->
+                <div class="metrics-row">
+                    <div class="metric-cell">
+                        <span class="metric-val">Pregunte por los MOQ actuales</span>
+                        <span class="metric-label">MOQ mayorista inicial</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">Pregunte por los mínimos actuales</span>
+                        <span class="metric-label">I+D de formulación personalizada</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">Pregunte por los precios actuales</span>
+                        <span class="metric-label">Kits de muestras de evaluación</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">8% – 10%</span>
+                        <span class="metric-label">Concentraciones de DHA (confirmadas)</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="metric-val">1 oz – 1 gal</span>
+                        <span class="metric-label">De venta minorista a uso profesional en salón</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science Overview Callout -->
+            <section class="science-box" id="dha-science">
+                <span class="editorial-eyebrow">Bioquímica del bronceado sin sol • La reacción de Maillard</span>
+                <h2>Entrecruzamiento de DHA con queratina y diseño anti-naranja</h2>
+                <p>El bronceado sin sol no es un tinte ni una mancha de pigmento; es una reacción natural llamada <strong>reacción de Maillard</strong>. La dihidroxiacetona (DHA, un ingrediente derivado del azúcar) reacciona con los grupos amino libres de la proteína queratina dentro de las células muertas del estrato córneo, sintetizando pigmentos marrones naturales llamados melanoidinas. Las fórmulas del mercado masivo se vuelven cobrizas o naranjas porque el DHA puro reacciona demasiado rápido y de forma desigual. SASS-EE combina el DHA con activos botánicos diseñados para un desvanecimiento dorado y uniforme. Pregunte por las especificaciones actuales de ingredientes y la guía de color para su pedido.</p>
+            </section>
+
+            <!-- What happens after you submit — trust summary (restates the confirmation step; no new claims) -->
+            <section class="submit-expectations" aria-label="Qué sucede después de enviar" style="margin: 0 0 40px;">
+                <span class="editorial-eyebrow">Qué sucede después de enviar</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: var(--ivory-white); margin: 8px 0 10px;">Cuatro pasos cortos, luego una respuesta de LabelOrigin</h3>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300; line-height: 1.6; max-width: 720px; margin: 0 0 16px;">Responda cuatro preguntas — su negocio o consultorio de bronceado sin sol, su volumen de pedido, el enfoque del producto de bronceado y sus datos de contacto. Las consultas calificadas van a Robert en LabelOrigin.</p>
+                <div style="border-left: 2px solid var(--sassee-bronze); padding-left: 18px; margin-bottom: 16px;">
+                    <strong style="color: var(--ivory-white); font-size: 0.88rem; display: block; margin-bottom: 6px; font-family: var(--font-mono); text-transform: uppercase;">Qué recibe:</strong>
+                    <ul style="color: var(--text-secondary); font-size: 0.88rem; padding-left: 18px; line-height: 1.7; font-weight: 300; margin: 0;">
+                        <li>Robert en LabelOrigin revisará su envío dentro de 1 día hábil.</li>
+                        <li>Los precios y los detalles del catálogo de la línea mayorista de SASS-EE se enviarán a su correo.</li>
+                        <li>Se emitirán enlaces directos para pedir botellas de evaluación de muestras (pregunte por los precios actuales de muestras).</li>
+                        <li>Pregunte por los plazos actuales de entrega al mayoreo cuando se confirme su pedido.</li>
+                    </ul>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; font-weight: 300; line-height: 1.6; margin: 0;">Si el volumen de su pedido está por debajo del mínimo mayorista actual, Robert revisará su consulta y le sugerirá opciones para su proyecto. Para botellas individuales de consumidor, visite <a href="https://sass-ee.com" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">sass-ee.com</a>.</p>
+            </section>
+            <!-- Interactive Formulation Lead Funnel -->
+            <div class="form-card" id="lead-flow">
+                
+                <div class="funnel-progress-wrapper">
+                    <div class="funnel-progress-track">
+                        <div id="funnel-progress-fill" class="funnel-progress-fill"></div>
+                    </div>
+                    <div class="progress-meta">
+                        <span>Etapa de especificación</span>
+                        <span><span>Fase</span> <span id="step-current-number" class="step-counter">1</span> <span>de 4</span></span>
+                    </div>
+                </div>
+
+                <!-- STEP 1: Practice Type -->
+                <div id="step-1" class="step active">
+                    <span class="step-indicator">Fase 01 • Clasificación de entidad</span>
+                    <h2>¿Qué describe mejor su negocio o consultorio de bronceado sin sol?</h2>
+                    
+                    <button class="option-btn" data-select-type="Spray Tanning Salon / Mobile Artist">
+                        <span>Salón dedicado al bronceado con aerógrafo o artista móvil de aerógrafo</span>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Day Spa / Medical Spa / Esthetician">
+                        <span>Spa diurno, med spa o consultorio de estética con licencia</span>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Clean Beauty Retailer / Boutique">
+                        <span>Minorista de belleza limpia, botica o boutique de resort</span>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-type="Brand Founder">
+                        <span>Fundador de marca que lanza una línea de bronceado sin sol de marca propia</span>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+
+                <!-- STEP 2: Production Scale -->
+                <div id="step-2" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Fase 02 • Escala de volumen de pedido</span>
+                        <button class="funnel-back-btn">← Anterior</button>
+                    </div>
+                    <h2>¿Cuál es el tamaño estimado de su primer pedido?</h2>
+                    
+                    <button class="option-btn" data-select-volume="low">
+                        <div>
+                            <strong>Menos de 12 unidades (pruebas previas al lanzamiento / viales individuales)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Pruebas individuales de consumidor o exploración previa al lanzamiento</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>12 – 48 unidades (mayoreo inicial / fórmula estándar llave en mano)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-gold); margin-top: 3px;">Rango mayorista inicial — Robert confirma los mínimos actuales en su respuesta</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>50 – 249 unidades (volumen de salón / estudio en crecimiento)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Estantes minoristas de estudios establecidos y estaciones de bronceado en salón</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>250 – 1,000+ unidades (I+D de formulación personalizada)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-bronze); margin-top: 3px;">Califica para I+D de formulación exclusiva con un químico, % de DHA personalizado y aromas de marca</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-volume="qualified">
+                        <div>
+                            <strong>Galones a granel y uso comercial en salón (cuartos y jarras de 1 galón)</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Recargas a granel para estaciones de aerógrafo HVLP y jarras para artistas móviles</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+
+                <!-- STEP 3: Discipline Confirmation -->
+                <div id="step-3-interest" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Fase 03 • Enfoque de producto de bronceado</span>
+                        <button class="funnel-back-btn">← Anterior</button>
+                    </div>
+                    <h2>Seleccione su enfoque principal de manufactura sin sol:</h2>
+                    
+                    <button class="option-btn" data-select-interest="Professional Airbrush Spray Tan Solutions (8%-10% DHA confirmed)">
+                        <div>
+                            <strong>Soluciones profesionales de aerógrafo (HVLP y turbina)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-gold); margin-top: 3px;">DHA al 8% y al 10% (confirmado) — pregunte por las especificaciones actuales sobre concentraciones mayores y guías de color</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Rapid Express Bronzers">
+                        <div>
+                            <strong>Soluciones exprés de enjuague rápido</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Bronceador de acción rápida — pregunte por las especificaciones actuales sobre ventanas de enjuague y intensidades de tono</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Daily Gradual Tan Extenders &amp; Body Washes">
+                        <div>
+                            <strong>Prolongadores graduales del bronceado y cuidado previo/posterior</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">Lociones con microdosis de DHA, exfoliantes corporales y cremas barrera — pregunte por las especificaciones actuales de ingredientes</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="option-btn" data-select-interest="Full Custom Private Label Tanning Brand R&amp;D">
+                        <div>
+                            <strong>Formulación completa de marca propia personalizada (pregunte por los MOQ actuales)</strong>
+                            <div style="font-size: 0.78rem; color: var(--sassee-bronze); margin-top: 3px;">Mezclas exclusivas de activos botánicos, aromas personalizados, empaque personalizado</div>
+                        </div>
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+
+                <!-- STEP 4: Qualified Submission Form -->
+                <div id="step-qualified" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Fase 04 • Dirección de especificación</span>
+                        <button class="funnel-back-btn">← Anterior</button>
+                    </div>
+                    <h2>¿Dónde debemos enviar sus hojas de línea y kits de muestras mayoristas de SASS-EE?</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 24px; font-weight: 300;">Su consulta califica para la mesa de abastecimiento mayorista. Ingrese sus datos abajo para recibir listas de productos, detalles de precios y enlaces de evaluación de muestras.</p>
+
+                    <form id="qualified-lead-form">
+                        <div style="display: none;">
+                            <input type="text" id="q-website-hp" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="q-name">Nombre completo de contacto *</label>
+                                <input type="text" id="q-name" required placeholder="Sarah Jenkins">
+                            </div>
+                            <div class="input-group">
+                                <label for="q-company">Nombre legal del salón / empresa *</label>
+                                <input type="text" id="q-company" required placeholder="Glow &amp; Bronze Airbrush Studio">
+                            </div>
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="q-email">Correo de trabajo del negocio *</label>
+                                <input type="email" id="q-email" required placeholder="sarah@glowandbronze.com">
+                                <span class="hint">Los detalles de precios mayoristas y los enlaces de pedido de kits de muestras se entregarán aquí</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="q-phone">Número de teléfono directo (opcional)</label>
+                                <input type="tel" id="q-phone" placeholder="(970) 555-0199">
+                                <span class="hint">Para verificación de envío en pedidos de evaluación de muestras</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="q-notes">Requisitos específicos de bronceado o enfoque de producto objetivo (opcional)</label>
+                            <input type="text" id="q-notes" placeholder="p. ej., soluciones de aerógrafo al 10%, productos minoristas de cuidado posterior, kit móvil">
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar mi consulta mayorista →</span>
+                        </button>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 14px; line-height: 1.5;">Los clientes potenciales se envían solo a LabelOrigin (Robert); Robert decide qué se comparte con el fabricante, si es que se comparte algo. Vea nuestra <a href="/privacy/" style="color: var(--ivory-white); text-decoration: underline;">Política de privacidad</a>.</p>
+                    </form>
+                </div>
+
+                <!-- Small-Batch Inquiry Fallback -->
+                <div id="step-waitlist" class="step">
+                    <div class="step-header">
+                        <span class="step-indicator">Derivación de la consulta</span>
+                        <button class="funnel-back-btn">← Anterior</button>
+                    </div>
+                    <h2>Microlotes y botellas individuales</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 14px; font-size: 0.92rem; line-height: 1.6; font-weight: 300;">SASS-EE se especializa en la producción mayorista de formulaciones — pregunte por los MOQ actuales para fórmulas estándar e I+D de laboratorio personalizado.</p>
+                    <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.88rem; line-height: 1.6; font-weight: 300;">Si busca botellas individuales de consumidor, visite <a href="https://sass-ee.com" target="_blank" rel="noopener" style="color: var(--ivory-white); text-decoration: underline;">sass-ee.com</a>, o ingrese su correo abajo y Robert revisará su consulta.</p>
+
+                    <form id="waitlist-lead-form">
+                        <div class="input-group">
+                            <label for="w-email">Correo electrónico *</label>
+                            <input type="email" id="w-email" required placeholder="artist@spraytan.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="w-concept">Concepto de marca o estudio (opcional)</label>
+                            <input type="text" id="w-concept" placeholder="p. ej., negocio móvil de bronceado con aerógrafo en fase de lanzamiento">
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar mi consulta →</span>
+                        </button>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 14px; line-height: 1.5;">Los clientes potenciales se envían solo a LabelOrigin (Robert); Robert decide qué se comparte con el fabricante, si es que se comparte algo. Vea nuestra <a href="/privacy/" style="color: var(--ivory-white); text-decoration: underline;">Política de privacidad</a>.</p>
+                    </form>
+                </div>
+
+                <!-- SUCCESS STATE: Qualified Lead Confirmation -->
+                <div id="step-success-qualified" class="step">
+                    <div class="success-card">
+                        <div class="success-icon-wrap">✓</div>
+                        <span class="editorial-eyebrow">Transmisión verificada • Mesa de abastecimiento mayorista de LabelOrigin</span>
+                        <h2 style="margin: 12px 0 6px;">Especificación de bronceado enviada</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 580px; margin: 0 auto 24px; line-height: 1.6; font-weight: 300;">Su consulta ha sido registrada con LabelOrigin. Robert revisará sus parámetros de bronceado sin sol.</p>
+
+                        <div>
+                            <span class="lead-id-badge"><span>REF. DE ARCHIVO DE ESPECIFICACIÓN:</span> <span id="success-lead-id">SE-2026-7841</span></span>
+                        </div>
+
+                        <div id="success-summary" class="lead-summary-box"></div>
+
+                        <div style="border-left: 2px solid var(--sassee-bronze); padding-left: 18px; text-align: left; margin-bottom: 28px;">
+                            <strong style="color: var(--ivory-white); font-size: 0.88rem; display: block; margin-bottom: 6px; font-family: var(--font-mono); text-transform: uppercase;">Plazo de producción y próximos pasos:</strong>
+                            <ul style="color: var(--text-secondary); font-size: 0.84rem; padding-left: 18px; line-height: 1.6; font-weight: 300;">
+                                <li>Robert en LabelOrigin revisará su envío dentro de 1 día hábil.</li>
+                                <li>Los precios y los detalles del catálogo de la línea mayorista de SASS-EE se enviarán a su correo.</li>
+                                <li>Se emitirán enlaces directos para pedir botellas de evaluación de muestras (pregunte por los precios actuales de muestras).</li>
+                                <li>Pregunte por los plazos actuales de entrega al mayoreo cuando se confirme su pedido.</li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                            <a href="/es/wholesale/" class="btn btn-primary btn-sm" data-ga-event="wholesale_cta_click">Inicie una consulta mayorista</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUCCESS STATE: Small-Batch Confirmation -->
+                <div id="step-success-waitlist" class="step">
+                    <div class="success-card">
+                        <div class="success-icon-wrap">✓</div>
+                        <span class="editorial-eyebrow">Consulta registrada</span>
+                        <h2 style="margin: 12px 0 6px;">Gracias por su interés</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 520px; margin: 0 auto 20px; font-weight: 300;">
+                            <span>Confirmación enviada a</span> <strong id="waitlist-success-email" style="color: var(--ivory-white);">su correo</strong><span>. Le avisaremos sobre la compra minorista directa en sass-ee.com.</span>
+                        </p>
+                        <a href="/renaud/" class="btn btn-secondary btn-sm">Explore el laboratorio completo de formulación de Renaud Naturals →</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- In-Depth Subtopics Chapter Breakdown -->
+            <section id="solutions" style="margin-top: 60px;">
+                <div style="margin-bottom: 24px;">
+                    <span class="editorial-eyebrow">Arquitectura de productos SASS-EE • Capítulos en profundidad</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Formulaciones técnicas de bronceado</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.94rem; max-width: 720px; font-weight: 300; line-height: 1.6;">Resúmenes de productos y guía de formulación para propietarios de salones, artistas móviles de aerógrafo y fundadores de marcas de marca propia — pregunte por las especificaciones actuales de cualquier producto no incluido aquí.</p>
+                </div>
+                
+                <div class="subtopics-container">
+                    
+                    <!-- Chapter 01: Professional Spray Solutions -->
+                    <article class="subtopic-card" id="subtopic-1">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CAPÍTULO 01 • AERÓGRAFO Y HVLP</span>
+                            <span class="subtopic-num">AERÓGRAFO PROFESIONAL</span>
+                        </div>
+                        <h3 class="subtopic-title">Soluciones profesionales de bronceado con aerógrafo y HVLP</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">Formuladas específicamente para la atomización de gotas finas a través de pistolas de turbina HVLP. Disponibles en niveles graduados de DHA: <strong>8% DHA</strong> (piel clara / brillo sutil con efecto sol) y <strong>10% DHA</strong> (dorado medio universal) — pregunte por las especificaciones actuales sobre concentraciones mayores. Secado rápido con acabado no pegajoso.</p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Ingredientes activos clave:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">DHA (8% / 10%, confirmados)</span>
+                                        <span class="active-pill">Pregunte por las especificaciones actuales</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Rango de pH objetivo:</span>
+                                    <strong class="spec-val">Pregunte por las especificaciones actuales</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Reología y viscosidad:</span>
+                                    <strong class="spec-val">Flujo de atomizador fino como el agua</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Formatos de empaque:</span>
+                                    <span class="spec-val-sm">Envases de 32 oz (un cuarto de galón) y jarras de 1 galón — pregunte por las especificaciones actuales sobre medios galones y cubetas de 5 galones</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 02: Rapid 1-Hour Express -->
+                    <article class="subtopic-card" id="subtopic-2">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CAPÍTULO 02 • EXPRÉS RÁPIDO</span>
+                            <span class="subtopic-num">EXPRÉS RÁPIDO</span>
+                        </div>
+                        <h3 class="subtopic-title">Soluciones bronceadoras exprés rápidas</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">Los clientes modernos de salón exigen entrega rápida sin dormir con el bronceador puesto. SASS-EE Express está formulado como un bronceador de desarrollo más rápido. Las ventanas de enjuague y el tono que produce cada uno varían según la fórmula — pregunte por las especificaciones actuales — mientras el pigmento de melanoidina sigue desarrollándose internamente durante las siguientes 24 horas.</p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Ingredientes activos clave:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">DHA</span>
+                                        <span class="active-pill">Pregunte por las especificaciones actuales</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Rango de pH objetivo:</span>
+                                    <strong class="spec-val">Pregunte por las especificaciones actuales</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Ventana de enjuague:</span>
+                                    <strong class="spec-val">Enjuague tibio: pregunte por las especificaciones actuales</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Formatos de empaque:</span>
+                                    <span class="spec-val-sm">Cuartos de 32 oz y jarras de 1 galón para uso comercial en salón</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- Chapter 04: Gradual Glow & Aftercare -->
+                    <article class="subtopic-card" id="subtopic-3">
+                        <div class="subtopic-header">
+                            <span class="subtopic-tag">CAPÍTULO 03 • PROLONGADORES DE BRONCEADO</span>
+                            <span class="subtopic-num">CUIDADO PREVIO Y POSTERIOR</span>
+                        </div>
+                        <h3 class="subtopic-title">Prolongadores graduales diarios del bronceado, pulidores corporales y cremas barrera</h3>
+                        <div class="subtopic-body">
+                            <p class="mechanism-text">Un bronceado sin sol exitoso depende del pretratamiento y el cuidado posterior: <br><br> &bull; <strong>Pulidor exfoliante previo al bronceado:</strong> Los exfoliantes de azúcar convencionales contienen aceites que dejan una película hidrofóbica que bloquea la reacción del DHA. Los exfoliantes previos al bronceado de SASS-EE (Coconut Whipped, Coffee, Slough Off Gel — 8 oz) eliminan los queratinocitos muertos para preparar la piel — pregunte por las especificaciones actuales de ingredientes. <br> &bull; <strong>Prolongador gradual diario del bronceado:</strong> Una loción corporal profundamente hidratante con microdosis de DHA — las concentraciones confirmadas del prolongador son 2%, 3% y 5% (After-Glo, Monoi); pregunte por las especificaciones actuales — diseñada para prolongar la vida de un bronceado con aerógrafo. <br> &bull; <strong>Bálsamo barrera Cover Up:</strong> Pregunte por las especificaciones actuales de la fórmula — se aplica en uñas, palmas, codos y talones para evitar acumulaciones oscuras no naturales.</p>
+                            <div class="subtopic-specs-grid">
+                                <div class="spec-cell">
+                                    <span class="spec-label">Ingredientes activos clave:</span>
+                                    <div class="actives-pills">
+                                        <span class="active-pill">DHA (prolongadores confirmados de 2% / 3% / 5%)</span>
+                                        <span class="active-pill">Pregunte por las especificaciones actuales</span>
+                                    </div>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Rango de pH objetivo:</span>
+                                    <strong class="spec-val">Pregunte por las especificaciones actuales</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Formatos de producto:</span>
+                                    <strong class="spec-val">Lociones, exfoliantes, cremas</strong>
+                                </div>
+                                <div class="spec-cell">
+                                    <span class="spec-label">Formatos de empaque:</span>
+                                    <span class="spec-val-sm">Tamaños confirmados de 8 oz y 16 oz — pregunte por las especificaciones actuales sobre tipos de envase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Technical Specifications Matrix Table -->
+            <section id="specs" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Catálogo confirmado — pregunte por las especificaciones actuales</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Matriz de productos SASS-EE</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; font-weight: 300;">Formulaciones y tamaños de SASS-EE del catálogo confirmado. Los subtonos base, los tiempos de desarrollo y los MOQ no listados aquí deben consultarse en las especificaciones actuales — esta tabla no es una matriz de laboratorio verificada.</p>
+                </div>
+
+                <div class="specs-table-wrap">
+                    <table class="technical-table">
+                        <thead>
+                            <tr>
+                                <th>SKU de formulación</th>
+                                <th>Concentración de DHA</th>
+                                <th>Subtono base</th>
+                                <th>Tiempo de enjuague / desarrollo</th>
+                                <th>Empaque estándar</th>
+                                <th>MOQ mayorista</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SASS-EE 8% Light Mist</strong></td>
+                                <td><code>8% DHA</code></td>
+                                <td>Pregunte por las especificaciones actuales</td>
+                                <td>Pregunte por las especificaciones actuales</td>
+                                <td>Jarra de 32 oz / 1 gal</td>
+                                <td><span class="moq-pill">Pregunte por los MOQ actuales</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE 10% Medium Universal</strong></td>
+                                <td><code>10% DHA</code></td>
+                                <td>Pregunte por las especificaciones actuales</td>
+                                <td>Pregunte por las especificaciones actuales</td>
+                                <td>Jarra de 32 oz / 1 gal</td>
+                                <td><span class="moq-pill">Pregunte por los MOQ actuales</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SASS-EE Gradual Tan Extender</strong></td>
+                                <td><code>2% / 3% / 5% DHA</code></td>
+                                <td>Pregunte por las especificaciones actuales</td>
+                                <td>Uso diario</td>
+                                <td>8 oz</td>
+                                <td><span class="moq-pill">Pregunte por los MOQ actuales</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quality Assurance, Testing & MoCRA Compliance -->
+            <section id="compliance" style="margin-top: 50px;">
+                <div style="margin-bottom: 16px;">
+                    <span class="editorial-eyebrow">Cumplimiento normativo • Garantía de calidad</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--ivory-white); margin-top: 8px;">Estándares de ingredientes limpios y apoyo de cumplimiento</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 700px; font-weight: 300;">SASS-EE se fabrica internamente por Renaud Naturals en Loveland, Colorado.</p>
+                </div>
+
+                <div class="qa-pillars-grid">
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">ORIGEN DEL DHA</span>
+                        <h4>Dihidroxiacetona (DHA)</h4>
+                        <p>El DHA es el ingrediente activo detrás del bronceado. Pregunte al laboratorio por los detalles actuales de origen de ingredientes y la documentación para su pedido.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">CERO QUÍMICOS AGRESIVOS</span>
+                        <h4>Limpio y libre de crueldad</h4>
+                        <p>Libre de aceites minerales, lanolina, parabenos, PABA, petroquímicos, SLS y formaldehído, conforme al estándar de ingredientes limpios de Renaud Naturals. No testado en animales.</p>
+                    </div>
+
+                    <div class="qa-pillar-card">
+                        <span class="subtopic-tag">CUMPLIMIENTO NORMATIVO</span>
+                        <h4>Guía de la FDA MoCRA</h4>
+                        <p>Los dueños de marcas son legalmente responsables de su propio etiquetado. El equipo de Loveland guía a los clientes de marca propia en el cumplimiento de las obligaciones de la FDA MoCRA y los listados de productos cosméticos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="funnel-faq" id="faq" style="margin-top: 50px;">
+                <span class="editorial-eyebrow">Motor de búsqueda y conocimiento por IA</span>
+                <h3 class="faq-title">Preguntas frecuentes de especificaciones de bronceado sin sol SASS-EE</h3>
+                <div class="faq-accordion">
+                    <details>
+                        <summary>¿Cuál es la historia y el origen de manufactura de SASS-EE?</summary>
+                        <p>SASS-EE es una marca de bronceado con aerógrafo y sin sol, totalmente natural y orgánica, fundada en 1997 por Renaud Naturals Inc. Todas las fórmulas se investigan, se formulan y se fabrican internamente en Loveland, Colorado, EE. UU.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Dónde pido SASS-EE al mayoreo o al por menor?</summary>
+                        <p>Los pedidos de consumidores se atienden en <strong>sass-ee.com</strong>. Esta página de LabelOrigin sirve como mesa de abastecimiento mayorista, centro de solicitud de listas de productos de salón y portal de consultas de laboratorio de marca propia.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Cuál es la cantidad mínima de pedido mayorista (MOQ) para los productos SASS-EE?</summary>
+                        <p>Pregunte por los MOQ actuales — los mínimos mayoristas varían según la línea de productos. Los galones a granel para uso comercial están disponibles desde <strong>1 galón</strong>; pregunte por los mínimos actuales de formulación personalizada.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Cómo ayuda SASS-EE a evitar el tono naranja de los bronceadores sin sol convencionales?</summary>
+                        <p>Las fórmulas de SASS-EE usan DHA con activos botánicos diseñados para un desvanecimiento de aspecto natural — pregunte por las especificaciones actuales de ingredientes y la guía de color.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Los artistas y salones de bronceado con aerógrafo pueden pedir kits de muestras de evaluación?</summary>
+                        <p>Sí. Pregunte por las opciones y precios actuales del kit de muestras — las botellas de evaluación de muestras permiten a los técnicos profesionales de aerógrafo evaluar la atomización de la niebla, la intensidad del color de la guía bronceadora y cómo se seca en la piel en sus propias pistolas HVLP.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Con qué equipo es compatible la solución de aerógrafo SASS-EE?</summary>
+                        <p>Nuestras soluciones están formuladas como líquidos fluidos y pulverizables para sistemas de turbina HVLP. Pida al laboratorio que confirme la compatibilidad con su pistola o cabina específica.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Verified Facility Contact & Liaison Card -->
+            <div class="liaison-card" style="margin-top: 40px;">
+                <div class="liaison-details">
+                    <h4>SASS-EE de Renaud Naturals Inc.</h4>
+                    <p>101 East 5th Street, Loveland, CO 80537 • Laboratorio interno e instalación de llenado</p>
+                    <p style="margin-top: 4px; font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">Instalación de manufactura • Desde 1997 • Abastecimiento comercial directo</p>
+                </div>
+                <div class="liaison-contacts">
+                    <a href="https://www.facebook.com/Renaud.Naturals" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://x.com/RenaudNaturals" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="/es/wholesale/" class="btn btn-primary btn-sm" data-ga-event="wholesale_cta_click">Inicie una consulta mayorista</a>
+                </div>
+            </div>
+
+        </main>
+        </div>
+    </div>
+
+    <!-- Official Renaud Naturals & SASS-EE Footer -->
+    <footer class="renaud-footer">
+        <div class="container">
+            <div class="renaud-footer-top">
+                <div class="renaud-footer-brand-wrap">
+                    <img src="/renaud/renaud-logo.png" width="104" height="104" alt="SASS-EE de Renaud Naturals" class="renaud-logo-img" style="width: 44px; height: 44px;">
+                    <div class="renaud-footer-brand">
+                        <h4>SASS-EE • Renaud Naturals Inc.</h4>
+                        <p style="font-weight: 300;">Bronceado con aerógrafo y sin sol totalmente natural y orgánico • Laboratorio interno en Loveland, CO</p>
+                        <p style="margin-top: 4px; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">101 East 5th Street, Loveland, Colorado 80537 • (970) 667-1433</p>
+                    </div>
+                </div>
+
+                <nav class="renaud-footer-nav">
+                    <a href="/renaud/">← Laboratorio maestro de Renaud Naturals</a>
+                    <a href="/es/">Directorio LabelOrigin</a>
+                    <a href="https://sass-ee.com/" target="_blank" rel="noopener">Sass-ee.com</a>
+                    <a href="https://renaudnaturals.com/" target="_blank" rel="noopener">RenaudNaturals.com</a>
+                    <a href="/es/wholesale/">Consulta mayorista</a>
+                    <a href="#" id="lo-consent-choices">Opciones de cookies / seguimiento</a>
+                </nav>
+            </div>
+
+            <div class="renaud-footer-bottom">
+                <p>© 2026 SASS-EE • Renaud Naturals Inc. • Todos los derechos reservados • Bronceado con aerógrafo y sin sol totalmente natural desde 1997 • Loveland, Colorado, EE. UU.</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Funnel Configuration & Engine Script -->
+<script>
+    window.FunnelConfig = {
+        partnerName: 'SASS-EE Sunless Tanning',
+        partnerPrefix: 'SE',
+        partnerSlug: 'sassee',
+        facilityAddress: '101 East 5th Street, Loveland, CO 80537',
+        storageKey: 'labelorigin_sassee_leads',
+        waitlistKey: 'labelorigin_small_batch_waitlist'
+    };
+</script>
+<script src="/assets/js/hubspot.js"></script>
+<script src="/assets/js/funnel.js"></script>
+<script src="/assets/js/contact.js"></script>
+
+</body>
+</html>

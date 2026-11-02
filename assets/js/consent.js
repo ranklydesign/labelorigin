@@ -45,7 +45,16 @@
     window.LabelOriginConsent = {
         accepted: function () { return storageGet(CONSENT_KEY) === 'accepted'; },
         declined: function () { return storageGet(CONSENT_KEY) === 'declined'; },
-        reset: function () { storageRemove(CONSENT_KEY); showBanner(); }
+        reset: function () { storageRemove(CONSENT_KEY); showBanner(); },
+        relocalize: function () {
+            // Called by i18n.js on language change: rebuild the banner
+            // in the new language (only while it is still showing).
+            var bar = document.getElementById('lo-consent-banner');
+            if (!bar) return;
+            bar.remove();
+            document.body.classList.remove('lo-consent-visible');
+            showBanner();
+        }
     };
 
     /* --- Tag loading: only ever called after Accept, and only for configured IDs --- */
@@ -93,19 +102,36 @@
         }
     }
 
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function cT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function cEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
+    function bannerHtml() {
+        return '<p>' + cT('consent.bannerText', 'We use analytics and advertising tags to measure visits and lead enquiries. Accept to allow them, or decline &mdash; the forms work either way. See our <a href="/privacy/">Privacy Policy</a>.') + '</p>' +
+            '<button type="button" data-lo-consent="accept">' + cT('consent.accept', 'Accept') + '</button>' +
+            '<button type="button" data-lo-consent="decline">' + cT('consent.decline', 'Decline') + '</button>';
+    }
     /* --- Banner --- */
     function showBanner() {
         if (document.getElementById('lo-consent-banner')) return;
         var bar = document.createElement('div');
         bar.id = 'lo-consent-banner';
         bar.setAttribute('role', 'region');
-        bar.setAttribute('aria-label', 'Tracking consent');
-        bar.innerHTML =
-            '<p>We use analytics and advertising tags to measure visits and lead ' +
-            'enquiries. Accept to allow them, or decline &mdash; the forms work ' +
-            'either way. See our <a href="/privacy/">Privacy Policy</a>.</p>' +
-            '<button type="button" data-lo-consent="accept">Accept</button>' +
-            '<button type="button" data-lo-consent="decline">Decline</button>';
+        bar.setAttribute('aria-label', cT('consent.ariaLabel', 'Tracking consent'));
+        bar.innerHTML = bannerHtml();
         document.body.appendChild(bar);
         document.body.classList.add('lo-consent-visible');
         bar.querySelector('[data-lo-consent="accept"]').addEventListener('click', function () {

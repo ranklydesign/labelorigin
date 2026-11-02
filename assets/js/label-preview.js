@@ -27,6 +27,36 @@
 (function () {
     'use strict';
 
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function lpT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function lpEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
+    function applyLpStrings() {
+        if (!lpEs()) return;
+        Object.keys(CATEGORIES).forEach(function (id) {
+            CATEGORIES[id].label = lpT('labelPreview.categories.' + id, CATEGORIES[id].label);
+        });
+        Object.keys(PRODUCTS).forEach(function (id) {
+            PRODUCTS[id].label = lpT('labelPreview.products.' + id + '.label', PRODUCTS[id].label);
+            PRODUCTS[id].bottle = lpT('labelPreview.products.' + id + '.bottle', PRODUCTS[id].bottle);
+        });
+        Object.keys(PALETTES).forEach(function (id) {
+            PALETTES[id].label = lpT('labelPreview.palettes.' + id, PALETTES[id].label);
+        });
+    }
     var CATEGORIES = {
         facial:  { label: 'Facial',  products: ['eyecream', 'cleanser', 'exfoliant', 'moisturizer', 'serum', 'tonique'] },
         body:    { label: 'Body',    products: ['bodylotion', 'bodywash', 'bodyscrub', 'bodysouffle', 'handcream', 'barsoap'] },
@@ -300,7 +330,7 @@
     /* The label: badge, brand, rule, serif product name, botanical accent.
        uid suffixes the clip-path id so several SVGs can share a page. */
     function labelArt(state, prod, p, uid) {
-        var name = (state.brand || '').trim() || 'Your Spa';
+        var name = (state.brand || '').trim() || lpT('labelPreview.yourSpa', 'Your Spa');
         var out = '';
         if (prod.topView) {
             var badgeR = prod.box[4];
@@ -365,7 +395,7 @@
         var uid = productKey + '-' + (svgCounter++);
         var logoOnlyAria = !!(logo && logo.dataUrl && logo.mode === 'logo-only');
         var svg = '' +
-            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300" role="img" aria-label="Mockup of a ' + esc(prod.label) + (logoOnlyAria ? ' with your logo' : ' labelled ' + esc((brand || '').trim() || 'Your Spa')) + '">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300" role="img" aria-label="' + esc((logoOnlyAria ? lpT('labelPreview.ariaMockupLogoOnly', 'Mockup of a {product} with your logo') : lpT('labelPreview.ariaMockup', 'Mockup of a {product} with the label of {brand}')).split('{product}').join(prod.label).split('{brand}').join((brand || '').trim() || lpT('labelPreview.yourSpa', 'Your Spa'))) + '">' +
             defs(uid) +
             '<g transform="translate(100 159) scale(1.24) translate(-100 -159)">' +
             bottleShapes(productKey, uid) +
@@ -387,15 +417,23 @@
         var prod = PRODUCTS[state.product] || PRODUCTS.cleanser;
         var pal = PALETTES[state.palette] || PALETTES['cream-gold'];
         var cat = (CATEGORIES[prod.cat] || CATEGORIES.facial).label;
-        var line = 'Label preview — ' + cat + ' — ' + prod.bottle + ', ' + pal.label.toLowerCase() + ' label.';
+        var style = (pal.label || '').toLowerCase();
+        var line;
         if ((state.brand || '').trim()) {
-            line = 'Label preview — ' + state.brand.trim() + ': ' + cat + ' — ' + prod.bottle + ', ' + pal.label.toLowerCase() + ' label.';
+            line = lpT('labelPreview.previewLineTemplate', 'Label preview — {brand}: {category} — {product}, {style} label.')
+                .split('{brand}').join(state.brand.trim()).split('{category}').join(cat)
+                .split('{product}').join(prod.bottle).split('{style}').join(style);
+        } else {
+            line = lpT('labelPreview.previewLineNoBrand', 'Label preview — {category} — {product}, {style} label.')
+                .split('{category}').join(cat).split('{product}').join(prod.bottle).split('{style}').join(style);
         }
         if (state.logo) {
             var bits = [];
-            if (state.logo.mode === 'logo-only') bits.push('logo only');
+            if (state.logo.mode === 'logo-only') bits.push(lpT('labelPreview.logoOnly', 'logo only'));
             if (state.logo.size && state.logo.size !== 100) bits.push(state.logo.size + '%');
-            line += ' Logo uploaded: yes' + (bits.length ? ' (' + bits.join(', ') + ')' : '') + '.';
+            line += bits.length
+                ? lpT('labelPreview.logoUploadedWithBits', ' Logo uploaded: yes ({bits}).').split('{bits}').join(bits.join(', '))
+                : lpT('labelPreview.logoUploaded', ' Logo uploaded: yes.');
         }
         return line;
     }
@@ -460,16 +498,16 @@
                     var url = URL.createObjectURL(blob);
                     var img2 = new Image();
                     img2.onload = function () { URL.revokeObjectURL(url); rasterize(img2); };
-                    img2.onerror = function () { URL.revokeObjectURL(url); done(null, 'That SVG could not be read — please try a PNG or JPG.'); };
+                    img2.onerror = function () { URL.revokeObjectURL(url); done(null, lpT('labelPreview.status.unreadableSvg', 'That SVG could not be read — please try a PNG or JPG.')); };
                     img2.src = url;
                 } catch (e) {
-                    done(null, 'That SVG could not be read — please try a PNG or JPG.');
+                    done(null, lpT('labelPreview.status.unreadableSvg', 'That SVG could not be read — please try a PNG or JPG.'));
                 }
             } else {
                 done(null, 'That image could not be read — please try a PNG or JPG.');
             }
         };
-        img.onerror = function () { done(null, 'That file could not be read — please try a PNG, JPG or SVG.'); };
+        img.onerror = function () { done(null, lpT('labelPreview.status.unreadableFile', 'That file could not be read — please try a PNG, JPG or SVG.')); };
         img.src = dataUrl;
     }
 
@@ -525,7 +563,7 @@
             var trio = LINE_TRIO[state.category] || LINE_TRIO.facial;
             var names = trio.map(function (key) { return (PRODUCTS[key] || PRODUCTS.cleanser).bottle; });
             if (names.length === 1) return names[0];
-            return names[0] + ', ' + names[1] + ' & ' + names[2];
+            return names[0] + lpT('labelPreview.trioSep', ', ') + names[1] + lpT('labelPreview.trioJoin', ' & ') + names[2];
         }
 
         function syncLineToggle() {
@@ -534,8 +572,8 @@
             var single = trio.length === 1;
             lineToggle.setAttribute('aria-expanded', state.lineOpen ? 'true' : 'false');
             lineToggle.textContent = state.lineOpen
-                ? (single ? 'Hide your product' : 'Hide your line')
-                : (single ? 'See your product — ' + trioLabel() : 'See your line — ' + trioLabel());
+                ? (single ? lpT('labelPreview.hideProduct', 'Hide your product') : lpT('labelPreview.hideLine', 'Hide your line'))
+                : (single ? lpT('labelPreview.seeProduct', 'See your product — {trio}').split('{trio}').join(trioLabel()) : lpT('labelPreview.seeLine', 'See your line — {trio}').split('{trio}').join(trioLabel()));
         }
 
         function currentState() {
@@ -570,7 +608,7 @@
                 var prod = PRODUCTS[state.product] || PRODUCTS.cleanser;
                 var pal = PALETTES[state.palette] || PALETTES['cream-gold'];
                 var cat = (CATEGORIES[prod.cat] || CATEGORIES.facial).label;
-                summary.textContent = cat + ' — ' + prod.bottle + ' · ' + pal.label + ((state.logo && state.logo.dataUrl) ? ' · Logo added (file stays on your device)' : '');
+                summary.textContent = cat + ' — ' + prod.bottle + ' · ' + pal.label + ((state.logo && state.logo.dataUrl) ? lpT('labelPreview.summaryLogo', ' · Logo added (file stays on your device)') : '');
             }
             if (state.lineOpen) renderLineRow();
             if (cta) {
@@ -667,7 +705,7 @@
                 if (r0) {
                     var badgeCy0 = box[1] + 6 + box[4];
                     var bs0 = box[5];
-                    var nm0 = (state.brand || '').trim() || 'Your Spa';
+                    var nm0 = (state.brand || '').trim() || lpT('labelPreview.yourSpa', 'Your Spa');
                     if (nm0.length > 14) bs0 *= 0.85;
                     if (nm0.length > 20) bs0 *= 0.82;
                     var productY0 = badgeCy0 + box[4] + bs0 + 2 + 6 + box[6] + 4;
@@ -720,16 +758,16 @@
                 var file = logoInput.files && logoInput.files[0];
                 if (!file) return;
                 if (file.size > MAX_LOGO_BYTES) {
-                    setStatus('That file is over 2 MB — please use a smaller logo (PNG, JPG or SVG).');
+                    setStatus(lpT('labelPreview.status.over2mb', 'That file is over 2 MB — please use a smaller logo (PNG, JPG or SVG).'));
                     logoInput.value = '';
                     return;
                 }
                 if (!LOGO_TYPES[file.type]) {
-                    setStatus('Please choose a PNG, JPG or SVG file for your logo.');
+                    setStatus(lpT('labelPreview.status.wrongType', 'Please choose a PNG, JPG or SVG file for your logo.'));
                     logoInput.value = '';
                     return;
                 }
-                setStatus('Reading your logo…');
+                setStatus(lpT('labelPreview.status.reading', 'Reading your logo…'));
                 var reader = new FileReader();
                 reader.onload = function () {
                     normalizeLogo(reader.result, file.type, function (logo, err) {
@@ -739,13 +777,13 @@
                         if (logoSize) logoSize.value = '100';
                         var modeInput = section.querySelector('input[name="lp-logo-mode"][value="logo-name"]');
                         if (modeInput) modeInput.checked = true;
-                        setStatus('Logo added — drag it on the bottle to move it, or use the size slider below.');
+                        setStatus(lpT('labelPreview.status.added', 'Logo added — drag it on the bottle to move it, or use the size slider below.'));
                         firePreviewEvent('preview_logo_uploaded');
                         render();
                     });
                 };
                 reader.onerror = function () {
-                    setStatus('That file could not be read — please try again.');
+                    setStatus(lpT('labelPreview.status.readFailed', 'That file could not be read — please try again.'));
                     logoInput.value = '';
                 };
                 reader.readAsDataURL(file);
@@ -762,7 +800,7 @@
                 state.logo = null;
                 if (logoControls) logoControls.hidden = true;
                 if (logoInput) logoInput.value = '';
-                setStatus('Logo removed. PNG, JPG or SVG, up to 2 MB — your logo never leaves this browser.');
+                setStatus(lpT('labelPreview.status.removed', 'Logo removed. PNG, JPG or SVG, up to 2 MB — your logo never leaves this browser.'));
                 render();
             });
         }
@@ -906,12 +944,24 @@
                 /* No file in this section: hide the size/mode controls and
                    say so plainly, so "No file chosen" is not confusing. */
                 if (logoControls) logoControls.hidden = true;
-                setStatus('Logo uploaded on the preview page — you\u2019ll share the file with Robert later.');
+                setStatus(lpT('labelPreview.status.flagOnly', 'Logo uploaded on the preview page — you\u2019ll share the file with Robert later.'));
                 render();
             }
             if (form && (b || pr || st)) prefillForm();
         } else {
             render();
+        }
+        /* i18n: re-localise tables + re-render when the language
+           changes, or when es.json arrives after first render. */
+        document.addEventListener('lo-langchange', function () {
+            applyLpStrings();
+            render();
+        });
+        if (typeof window !== 'undefined' && window.LabelOriginI18n && window.LabelOriginI18n.ready) {
+            window.LabelOriginI18n.ready.then(function () {
+                applyLpStrings();
+                render();
+            });
         }
     }
 

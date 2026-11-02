@@ -13,6 +13,23 @@
  */
 (function () {
     'use strict';
+    /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
+       every lookup falls back to the shipped English. */
+    function dT(key, fallback) {
+        try {
+            if (typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' &&
+                    window.LabelOriginI18n.isEs() && typeof window.LabelOriginI18n.t === 'function') {
+                var v = window.LabelOriginI18n.t(key);
+                if (v) return v;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback;
+    }
+    function dEs() {
+        try {
+            return !!(window.LabelOriginI18n && typeof window.LabelOriginI18n.isEs === 'function' && window.LabelOriginI18n.isEs());
+        } catch (e) { return false; }
+    }
     var TARGET_EMAIL = 'ranklydesign@gmail.com';
     var FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + TARGET_EMAIL;
     var STORAGE_KEY = 'labelorigin_directory_listing';
@@ -28,7 +45,7 @@
         function done() {
             if (!btn) return;
             var original = btn.textContent;
-            btn.textContent = 'Copied';
+            btn.textContent = dT('directory.copied', 'Copied');
             setTimeout(function () { btn.textContent = original; }, 2000);
         }
         if (!text) {
@@ -50,7 +67,7 @@
     }
     if (copyBtn && codeBox) {
         copyBtn.addEventListener('click', function () {
-            copyText(codeBox.value, copyBtn, 'Nothing to copy');
+            copyText(codeBox.value, copyBtn, dT('directory.nothingToCopy', 'Nothing to copy'));
         });
     }
 
@@ -114,13 +131,13 @@
             categories.push(c.value);
         });
         if (!categories.length) {
-            errorEl.textContent = 'Pick at least one category before sending your request.';
+            errorEl.textContent = dT('directory.pickCategory', 'Pick at least one category before sending your request.');
             errorEl.hidden = false;
             return;
         }
         errorEl.hidden = true;
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending\u2026';
+        submitBtn.textContent = dT('directory.sending', 'Sending\u2026');
 
         var leadId = generateLeadId('DR');
         var submittedAt = new Date().toISOString();
@@ -153,14 +170,15 @@
             'email': email,
             'Lead ID': leadId,
             'Business name': business,
-            'Website': website || 'Not provided',
+            'Website': website || dT('directory.notProvided', 'Not provided'),
             'Contact email': email,
             'Categories': categories.join(', '),
-            'Message': message || 'Not provided',
+            'Message': message || dT('directory.notProvided', 'Not provided'),
             'Source page': 'https://labelorigin.com/directory/get-listed/',
             'Submission Timestamp': submittedAt
         };
 
+        if (dEs()) emailPayload['Language'] = 'es';
         dispatchLead(emailPayload).then(function (delivered) {
             document.getElementById('dir-ref').textContent = leadId;
             document.getElementById('dir-ref-fail').textContent = leadId;
