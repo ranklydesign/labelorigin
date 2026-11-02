@@ -12,9 +12,11 @@
     var GA4_ID = 'G-NHH53SXWQM';              // <-- supplied by Robert, Oct 2026
     var ADS_ID = 'AW-PLACEHOLDER';             // <-- Robert to supply
     var META_PIXEL_ID = 'PLACEHOLDER';         // <-- Robert to supply
+    var AHREFS_KEY = '0ortAxlx36MczNW+ZLWqiQ'; // <-- supplied by Robert, Nov 2026 (Ahrefs Web Analytics)
     var GA4_CONFIGURED = GA4_ID.indexOf('PLACEHOLDER') === -1;
     var ADS_CONFIGURED = ADS_ID.indexOf('PLACEHOLDER') === -1;
     var META_CONFIGURED = META_PIXEL_ID.indexOf('PLACEHOLDER') === -1;
+    var AHREFS_CONFIGURED = AHREFS_KEY.indexOf('PLACEHOLDER') === -1;
 
     function storageGet(key) {
         try { return window.localStorage.getItem(key); } catch (e) { return null; }
@@ -70,7 +72,7 @@
     function loadTags() {
         if (tagsLoaded) return;
         tagsLoaded = true;
-        if (!GA4_CONFIGURED && !META_CONFIGURED) return; // no real IDs configured yet: load nothing
+        if (!GA4_CONFIGURED && !META_CONFIGURED && !AHREFS_CONFIGURED) return; // no real IDs configured yet: load nothing
 
         if (GA4_CONFIGURED) {
             window.dataLayer = window.dataLayer || [];
@@ -86,6 +88,16 @@
                 window.gtag('config', GA4_ID); // sends one page-view
                 if (ADS_CONFIGURED) window.gtag('config', ADS_ID); // Ads config only; conversions fire on delivered submits
             });
+        }
+
+        if (AHREFS_CONFIGURED) {
+            // Ahrefs Web Analytics — same consent gate as GA4: loads only
+            // after Accept, never on decline. Snippet as supplied by Robert.
+            var ahrefs_analytics_script = document.createElement('script');
+            ahrefs_analytics_script.async = true;
+            ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+            ahrefs_analytics_script.setAttribute('data-key', AHREFS_KEY);
+            document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
         }
 
         if (META_CONFIGURED) {
