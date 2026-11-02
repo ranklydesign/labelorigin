@@ -51,7 +51,7 @@
         bodysouffle: { cat: 'body',    label: 'Body soufflé',        bottle: 'Body Soufflé',               box: [0, 0, 0, 0, 9, 11, 6.5], topView: true },
         handcream:   { cat: 'body',    label: 'Hand cream',          bottle: 'Hand Cream',                 box: [68, 178, 64, 50, 7, 9, 6] },
         barsoap:     { cat: 'body',    label: 'Bar soap',            bottle: 'Bar Soap',                   box: [62, 148, 76, 72, 10, 12, 7] },
-        spraytan:    { cat: 'tanning', label: 'Spray-tan solution',  bottle: 'Sunless Tanning Solution',   box: [70, 138, 60, 82, 10, 12, 7] }
+        spraytan:    { cat: 'tanning', label: 'Spray-tan solution',  bottle: 'Spray-tan solution',   box: [70, 138, 60, 82, 10, 12, 7] }
     };
     var PRODUCT_ORDER = ['eyecream', 'cleanser', 'exfoliant', 'moisturizer', 'serum', 'tonique',
                          'bodylotion', 'bodywash', 'bodyscrub', 'bodysouffle', 'handcream', 'barsoap',
@@ -71,7 +71,9 @@
     var LINE_TRIO = {
         facial:  ['cleanser', 'serum', 'moisturizer'],
         body:    ['bodylotion', 'bodywash', 'bodyscrub'],
-        tanning: ['spraytan', 'cleanser', 'serum']
+        /* Tanning has one product — the row shows that one bottle, and the
+           note under it (see render) says the full SASS-EE range is wider. */
+        tanning: ['spraytan']
     };
 
     var MAX_LOGO_BYTES = 2 * 1024 * 1024;
@@ -284,8 +286,14 @@
             w = d; h = d / logo.aspect;
             if (h > d * 1.15) { h = d * 1.15; w = h * logo.aspect; }
         }
-        /* Dragged position wins over the default centre. */
-        if (typeof logo.cx === 'number' && typeof logo.cy === 'number') { cx = logo.cx; cy = logo.cy; }
+        /* Dragged position wins over the default centre. Positions are
+           stored per mode, so switching between logo + name and logo only
+           restores each mode's own spot instead of resetting it. The plain
+           cx/cy pair is kept as a legacy fallback. */
+        var storedCx = (logo.mode === 'logo-only') ? logo.cxOnly : logo.cxName;
+        var storedCy = (logo.mode === 'logo-only') ? logo.cyOnly : logo.cyName;
+        if (typeof storedCx === 'number' && typeof storedCy === 'number') { cx = storedCx; cy = storedCy; }
+        else if (typeof logo.cx === 'number' && typeof logo.cy === 'number') { cx = logo.cx; cy = logo.cy; }
         return { x: cx - w / 2, y: cy - h / 2, w: w, h: h, cx: cx, cy: cy };
     }
 
@@ -355,8 +363,9 @@
         var prod = PRODUCTS[productKey] || PRODUCTS.cleanser;
         var state = { brand: brand, logo: logo || null };
         var uid = productKey + '-' + (svgCounter++);
+        var logoOnlyAria = !!(logo && logo.dataUrl && logo.mode === 'logo-only');
         var svg = '' +
-            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300" role="img" aria-label="Mockup of a ' + esc(prod.label) + ' labelled ' + esc((brand || '').trim() || 'Your Spa') + '">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 300" role="img" aria-label="Mockup of a ' + esc(prod.label) + (logoOnlyAria ? ' with your logo' : ' labelled ' + esc((brand || '').trim() || 'Your Spa')) + '">' +
             defs(uid) +
             '<g transform="translate(100 159) scale(1.24) translate(-100 -159)">' +
             bottleShapes(productKey, uid) +
@@ -382,7 +391,12 @@
         if ((state.brand || '').trim()) {
             line = 'Label preview — ' + state.brand.trim() + ': ' + cat + ' — ' + prod.bottle + ', ' + pal.label.toLowerCase() + ' label.';
         }
-        if (state.logo) line += ' Logo uploaded: yes.';
+        if (state.logo) {
+            var bits = [];
+            if (state.logo.mode === 'logo-only') bits.push('logo only');
+            if (state.logo.size && state.logo.size !== 100) bits.push(state.logo.size + '%');
+            line += ' Logo uploaded: yes' + (bits.length ? ' (' + bits.join(', ') + ')' : '') + '.';
+        }
         return line;
     }
 
@@ -504,18 +518,24 @@
             });
         }
 
-        /* "See your line" names the three products, so the visitor knows
-           exactly what the row will show before opening it. */
+        /* "See your line" names the products, so the visitor knows
+           exactly what the row will show before opening it. Tanning has
+           a single product, so the button says so. */
         function trioLabel() {
             var trio = LINE_TRIO[state.category] || LINE_TRIO.facial;
             var names = trio.map(function (key) { return (PRODUCTS[key] || PRODUCTS.cleanser).bottle; });
+            if (names.length === 1) return names[0];
             return names[0] + ', ' + names[1] + ' & ' + names[2];
         }
 
         function syncLineToggle() {
             if (!lineToggle) return;
+            var trio = LINE_TRIO[state.category] || LINE_TRIO.facial;
+            var single = trio.length === 1;
             lineToggle.setAttribute('aria-expanded', state.lineOpen ? 'true' : 'false');
-            lineToggle.textContent = state.lineOpen ? 'Hide your line' : 'See your line — ' + trioLabel();
+            lineToggle.textContent = state.lineOpen
+                ? (single ? 'Hide your product' : 'Hide your line')
+                : (single ? 'See your product — ' + trioLabel() : 'See your line — ' + trioLabel());
         }
 
         function currentState() {
@@ -561,7 +581,14 @@
                     if (state.brand) q.set('brand', state.brand);
                     q.set('product', state.product);
                     q.set('style', state.palette);
-                    if (state.logo) q.set('logo', '1');
+                    if (state.logo) {
+                        /* The file itself cannot travel in a URL — it never
+                           leaves the browser — but the mode and size do, so
+                           the sample request still describes the logo. */
+                        q.set('logo', '1');
+                        if (state.logo.mode) q.set('logomode', state.logo.mode);
+                        if (state.logo.size && state.logo.size !== 100) q.set('logosize', String(state.logo.size));
+                    }
                     var base = cta.getAttribute('data-lp-base') || '/wholesale/';
                     cta.setAttribute('href', base + '?' + q.toString());
                 }
@@ -612,7 +639,12 @@
             if (!e.target || !e.target.classList || !e.target.classList.contains('lp-logo-img')) return;
             var pt = svgPoint(e);
             if (!pt) return;
-            drag = { dx: pt.x - (state.logo.cx || 100), dy: pt.y - (state.logo.cy || 100) };
+            /* Anchor the drag on the logo's current rendered centre, so a
+               mode switch (which moves the default centre) never jumps it. */
+            var prod0 = PRODUCTS[state.product] || PRODUCTS.cleanser;
+            var cur0 = logoRect(state, prod0, 'drag');
+            var anchorX = cur0 ? cur0.cx : 100, anchorY = cur0 ? cur0.cy : 100;
+            drag = { dx: pt.x - anchorX, dy: pt.y - anchorY };
             try { previewEl.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
             e.preventDefault();
         });
@@ -629,6 +661,19 @@
             } else if (state.logo.mode === 'logo-only') {
                 cx = Math.max(box[0] + 8, Math.min(box[0] + box[2] - 8, cx));
                 cy = Math.max(box[1] + 8, Math.min(box[1] + box[3] - 8, cy));
+                /* Keep the logo off the product-name line at the foot of
+                   the label (same productY the label draws at). */
+                var r0 = logoRect(state, prod, 'drag');
+                if (r0) {
+                    var badgeCy0 = box[1] + 6 + box[4];
+                    var bs0 = box[5];
+                    var nm0 = (state.brand || '').trim() || 'Your Spa';
+                    if (nm0.length > 14) bs0 *= 0.85;
+                    if (nm0.length > 20) bs0 *= 0.82;
+                    var productY0 = badgeCy0 + box[4] + bs0 + 2 + 6 + box[6] + 4;
+                    cy = Math.min(cy, productY0 - 6 - r0.h / 2);
+                    cy = Math.max(cy, box[1] + 8 + r0.h / 2);
+                }
             } else {
                 /* Badge mode: the logo is clipped to the badge circle, so
                    drags stay near the badge centre — a nudge, not a move. */
@@ -636,6 +681,10 @@
                 cx = Math.max(100 - box[4] / 2, Math.min(100 + box[4] / 2, cx));
                 cy = Math.max(badgeCy - box[4] / 2, Math.min(badgeCy + box[4] / 2, cy));
             }
+            /* Store per mode (plus the legacy single pair), so each mode
+               keeps its own dragged spot across switches. */
+            if (state.logo.mode === 'logo-only') { state.logo.cxOnly = Math.round(cx); state.logo.cyOnly = Math.round(cy); }
+            else { state.logo.cxName = Math.round(cx); state.logo.cyName = Math.round(cy); }
             state.logo.cx = Math.round(cx);
             state.logo.cy = Math.round(cy);
             state = currentState();
@@ -733,6 +782,7 @@
         if (downloadBtn) {
             downloadBtn.addEventListener('click', function () {
                 markStarted();
+                state = currentState();
                 firePreviewEvent('preview_downloaded');
                 var svgText = buildSvg(state.brand, state.product, state.palette, state.logo)
                     .replace('<svg ', '<svg width="600" height="900" ');
@@ -747,17 +797,54 @@
                     ctx.fillRect(0, 0, 600, 900);
                     ctx.drawImage(img, 0, 0, 600, 900);
                     URL.revokeObjectURL(url);
-                    canvas.toBlob(function (png) {
-                        if (!png) return;
-                        var pngUrl = URL.createObjectURL(png);
-                        var a = document.createElement('a');
-                        a.href = pngUrl;
-                        a.download = 'my-label-mockup.png';
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        setTimeout(function () { URL.revokeObjectURL(pngUrl); }, 5000);
-                    }, 'image/png');
+                    /* The bottle (and its label) come from the SVG. The
+                       logo is drawn separately, from its own load: a nested
+                       <image> inside an SVG used as an image does not
+                       reliably reach the canvas, so the download used to
+                       ship with no logo at all. */
+                    function finish() {
+                        canvas.toBlob(function (png) {
+                            if (!png) return;
+                            var pngUrl = URL.createObjectURL(png);
+                            var a = document.createElement('a');
+                            a.href = pngUrl;
+                            a.download = 'my-label-mockup.png';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            setTimeout(function () { URL.revokeObjectURL(pngUrl); }, 5000);
+                        }, 'image/png');
+                    }
+                    if (!state.logo || !state.logo.dataUrl) { finish(); return; }
+                    var logoImg = new Image();
+                    logoImg.onload = function () {
+                        var prod = PRODUCTS[state.product] || PRODUCTS.cleanser;
+                        var r = logoRect(state, prod, 'download');
+                        if (r) {
+                            /* ViewBox units to canvas pixels: the SVG is
+                               200x300 drawn at 600x900, under a 1.24x scale
+                               about (100, 159). */
+                            var toX = function (x) { return (100 + 1.24 * (x - 100)) * 3; };
+                            var toY = function (y) { return (159 + 1.24 * (y - 159)) * 3; };
+                            var box = prod.box;
+                            ctx.save();
+                            if (state.logo.mode !== 'logo-only') {
+                                /* Badge mode clips to the badge circle:
+                                   (100, badgeCy) r=badgeR, or (100, 152)
+                                   for the top-view jar. */
+                                var badgeCy = prod.topView ? 152 : box[1] + 6 + box[4];
+                                var c = toX(100), cy2 = toY(badgeCy);
+                                ctx.beginPath();
+                                ctx.arc(c, cy2, box[4] * 1.24 * 3, 0, Math.PI * 2);
+                                ctx.clip();
+                            }
+                            ctx.drawImage(logoImg, toX(r.x), toY(r.y), r.w * 1.24 * 3, r.h * 1.24 * 3);
+                            ctx.restore();
+                        }
+                        finish();
+                    };
+                    logoImg.onerror = finish;
+                    logoImg.src = state.logo.dataUrl;
                 };
                 img.onerror = function () { URL.revokeObjectURL(url); };
                 img.src = url;
@@ -805,8 +892,21 @@
             render();
             if (lg === '1') {
                 /* Logo flag only — no file, no image: it marks the
-                   prefill line. The mockup itself shows the badge. */
-                state.logo = { dataUrl: null, aspect: 1, size: 100, mode: 'logo-name', cx: null, cy: null, flagOnly: true };
+                   prefill line. The mockup itself shows the badge. The mode
+                   and size travel in the URL too, so the line describes the
+                   logo; the size slider and mode radio are set to match so
+                   the prefill reads them back. */
+                var lm = q.get('logomode'), ls = parseInt(q.get('logosize') || '', 10);
+                var flagMode = (lm === 'logo-only') ? 'logo-only' : 'logo-name';
+                var flagSize = (ls > 0 && ls <= 160) ? ls : 100;
+                state.logo = { dataUrl: null, aspect: 1, size: flagSize, mode: flagMode, cx: null, cy: null, flagOnly: true };
+                if (logoSize) logoSize.value = String(flagSize);
+                var flagModeInput = section.querySelector('input[name="lp-logo-mode"][value="' + flagMode + '"]');
+                if (flagModeInput) flagModeInput.checked = true;
+                /* No file in this section: hide the size/mode controls and
+                   say so plainly, so "No file chosen" is not confusing. */
+                if (logoControls) logoControls.hidden = true;
+                setStatus('Logo uploaded on the preview page — you\u2019ll share the file with Robert later.');
                 render();
             }
             if (form && (b || pr || st)) prefillForm();
@@ -828,7 +928,7 @@
     /* Test hook only — inert in the browser (module is undefined there). */
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = {
-            buildSvg: buildSvg, buildLineSvgs: buildLineSvgs,
+            buildSvg: buildSvg, buildLineSvgs: buildLineSvgs, logoRect: logoRect,
             formatPreviewLine: formatPreviewLine,
             PRODUCTS: PRODUCTS, PALETTES: PALETTES, CATEGORIES: CATEGORIES,
             LINE_TRIO: LINE_TRIO, LEGACY_PRODUCT_MAP: LEGACY_PRODUCT_MAP
