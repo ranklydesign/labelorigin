@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retail Margin Calculator | LabelOrigin</title>
-    <meta name="description" content="Work out what your retail skincare line earns each month after staff commission — margin per unit, margin %, and payback. Your numbers only.">
+    <title>Retail Margin Calculator (Preset) | LabelOrigin</title>
+    <meta name="description" content="The retail preset of the private-label margin calculator: margin per unit, margin %, and monthly margin after staff commission. Your numbers only — not a quote.">
     <meta name="theme-color" content="#faf8f4">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Retail Margin Calculator | LabelOrigin">
-    <meta property="og:description" content="Work out what your retail skincare line earns each month after staff commission — margin per unit, margin %, and payback. Your numbers only.">
-    <meta property="og:url" content="https://labelorigin.com/tools/retail-margin-calculator/">
+    <meta property="og:title" content="Retail Margin Calculator (Preset) | LabelOrigin">
+    <meta property="og:description" content="The retail preset of the private-label margin calculator: margin per unit, margin %, and monthly margin after staff commission. Your numbers only — not a quote.">
+    <meta property="og:url" content="https://labelorigin.com/tools/private-label-margin-calculator/">
     <meta property="og:site_name" content="LabelOrigin">
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
     <meta property="og:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
@@ -17,10 +17,10 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="LabelOrigin — B2B lead-generation agency for manufacturers and white-label brands">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Retail Margin Calculator | LabelOrigin">
-    <meta name="twitter:description" content="Work out what your retail skincare line earns each month after staff commission — margin per unit, margin %, and payback. Your numbers only.">
+    <meta name="twitter:title" content="Retail Margin Calculator (Preset) | LabelOrigin">
+    <meta name="twitter:description" content="The retail preset of the private-label margin calculator: margin per unit, margin %, and monthly margin after staff commission. Your numbers only — not a quote.">
     <meta name="twitter:image" content="https://labelorigin.com/assets/images/labelorigin-share.png">
-    <link rel="canonical" href="https://labelorigin.com/tools/retail-margin-calculator/">
+    <link rel="canonical" href="https://labelorigin.com/tools/private-label-margin-calculator/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <script type="application/ld+json">
     {
@@ -28,8 +28,8 @@
         "@type": "WebPage",
         "@id": "https://labelorigin.com/tools/retail-margin-calculator/#webpage",
         "url": "https://labelorigin.com/tools/retail-margin-calculator/",
-        "name": "Retail Margin Calculator | LabelOrigin",
-        "description": "Work out what your retail skincare line earns each month after staff commission — margin per unit, margin %, and payback. Your numbers only.",
+        "name": "Retail Margin Calculator (Preset) | LabelOrigin",
+        "description": "The retail preset of the private-label margin calculator: margin per unit, margin %, and monthly margin after staff commission. Your numbers only — not a quote.",
         "isPartOf": {"@id": "https://labelorigin.com/#website"},
         "inLanguage": "en"
     }
@@ -103,11 +103,17 @@
         <main id="main-content">
             <section class="hero">
                 <span class="editorial-eyebrow">Tools &bull; <a href="../../guides/">All guides</a></span>
-                <h1>What does the shelf <em>earn</em> each month?</h1>
+                <h1>Retail margin calculator: what does the shelf <em>earn</em> each month?</h1>
                 <p>
                     Enter what you pay per unit, what you sell it for, how many units you sell in a month, and the total staff commission for the month. The calculator shows margin per unit, margin %, what the line earns each month after commission, and how many units it takes to cover the commission.
                 </p>
-                <p class="guide-meta">Your numbers only — not a quote. Nothing you enter leaves your browser.</p>
+                <p>
+                    This page is the same calculator as our <a href="../private-label-margin-calculator/">private-label margin calculator</a>, with retail starting values already filled in — units sold per month instead of units per order, staff commission instead of per-order fees. Pricing a single order instead of a month of sales? <a href="../private-label-margin-calculator/">Use the private-label margin calculator &rarr;</a>
+                </p>
+                <p>
+                    LabelOrigin, a Rankly Design brand, connects med spas and salons with US manufacturers like Renaud Naturals (Loveland, CO). Robert is your contact from first question to samples.
+                </p>
+                <p class="guide-meta">By Robert &mdash; LabelOrigin, a Rankly Design brand. Your numbers only — not a quote. Nothing you enter leaves your browser.</p>
             </section>
 
             <article class="lo-guide">
@@ -115,26 +121,26 @@
                 <div class="calc-grid">
                     <div class="calc-field">
                         <label for="retail-unit-cost">Unit cost — what you pay per unit ($)</label>
-                        <input id="retail-unit-cost" type="number" min="0" max="100000" step="0.01" placeholder="e.g. 8.00">
+                        <input id="retail-unit-cost" type="number" min="0" max="100000" step="0.01" value="8.00" placeholder="e.g. 8.00">
                     </div>
                     <div class="calc-field">
                         <label for="retail-retail">Retail price — what you sell it for ($)</label>
-                        <input id="retail-retail" type="number" min="0" max="100000" step="0.01" placeholder="e.g. 24.00">
+                        <input id="retail-retail" type="number" min="0" max="100000" step="0.01" value="24.00" placeholder="e.g. 24.00">
                     </div>
                     <div class="calc-field">
                         <label for="retail-units">Units sold per month</label>
-                        <input id="retail-units" type="number" min="1" max="100000" step="1" placeholder="e.g. 250">
+                        <input id="retail-units" type="number" min="1" max="100000" step="1" value="40" placeholder="e.g. 40">
                     </div>
                     <div class="calc-field">
                         <label for="retail-commission">Staff commission this month ($)</label>
-                        <input id="retail-commission" type="number" min="0" max="1000000" step="0.01" placeholder="e.g. 150.00">
+                        <input id="retail-commission" type="number" min="0" max="1000000" step="0.01" value="150.00" placeholder="e.g. 150.00">
                     </div>
                 </div>
-                <p class="guide-meta">The grey examples are only examples, not typical figures. Staff commission is the total paid to staff on retail sales for the month — if you pay per unit, multiply it by units sold and enter the total.</p>
+                <p class="guide-meta">The starting values are the worked example below, not typical figures. Change every one of them to your own. Staff commission is the total paid to staff on retail sales for the month — if you pay per unit, multiply it by units sold and enter the total.</p>
 
                 <noscript>
                     <div class="guide-callout">
-                        <p>This calculator needs JavaScript to run the math. The formulas are simple: margin per unit is retail price minus unit cost; margin % is margin per unit divided by retail price; monthly margin is margin per unit times units sold, minus staff commission for the month; payback is staff commission divided by margin per unit, rounded up. To talk through your line with real numbers, start with the <a href="../../wholesale/">wholesale page</a>.</p>
+                        <p>This calculator needs JavaScript to run the math. The formulas are simple: margin per unit is retail price minus unit cost; margin % is margin per unit divided by retail price; monthly margin is margin per unit times units sold, minus staff commission for the month; break-even is staff commission divided by margin per unit, rounded up. To talk through your line with real numbers, start with the <a href="../../wholesale/">wholesale page</a>.</p>
                     </div>
                 </noscript>
 
@@ -150,8 +156,8 @@
                             <tr><td>Monthly revenue</td><td id="retail-monthly-revenue-arith">—</td><td id="retail-monthly-revenue">—</td></tr>
                             <tr><td>Monthly product cost</td><td id="retail-monthly-cost-arith">—</td><td id="retail-monthly-cost">—</td></tr>
                             <tr><td>Staff commission</td><td id="retail-commission-arith">—</td><td id="retail-commission">—</td></tr>
-                            <tr class="calc-total"><td>Monthly margin</td><td id="retail-monthly-margin-arith">—</td><td id="retail-monthly-margin">—</td></tr>
-                            <tr><td>Payback — units to cover commission</td><td id="retail-payback-arith">—</td><td id="retail-payback">—</td></tr>
+                            <tr class="calc-total"><td>Monthly margin after commission</td><td id="retail-monthly-margin-arith">—</td><td id="retail-monthly-margin">—</td></tr>
+                            <tr><td>Break-even — units to cover commission</td><td id="retail-payback-arith">—</td><td id="retail-payback">—</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -169,26 +175,26 @@
                 </div>
 
                 <h2>Worked example</h2>
-                <p>These are example numbers from our own follow-up email template — not industry benchmarks, and not typical figures. Change every one of them to your own.</p>
+                <p>These are example numbers — not industry benchmarks, and not typical figures. Change every one of them to your own.</p>
                 <div class="table-wrap">
                     <table>
                         <thead>
                             <tr><th>Step</th><th>Arithmetic</th><th>Result</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Inputs</td><td>Unit cost $8.00, retail $24.00, 250 units a month, $150.00 staff commission</td><td>—</td></tr>
+                            <tr><td>Inputs</td><td>Unit cost $8.00, retail $24.00, 40 units a month, $150.00 staff commission</td><td>—</td></tr>
                             <tr><td>Margin per unit</td><td>$24.00 &minus; $8.00</td><td>$16.00</td></tr>
                             <tr><td>Margin %</td><td>$16.00 &divide; $24.00 &times; 100</td><td>66.7%</td></tr>
-                            <tr><td>Monthly margin</td><td>$16.00 &times; 250 &minus; $150</td><td>$3,850</td></tr>
-                            <tr><td>Payback</td><td>$150 &divide; $16.00, rounded up</td><td>10 units</td></tr>
+                            <tr><td>Monthly margin after commission</td><td>$16.00 &times; 40 &minus; $150</td><td>$490</td></tr>
+                            <tr><td>Break-even</td><td>$150 &divide; $16.00, rounded up</td><td>10 units</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <h2>How to read it</h2>
-                <p>Margin per unit is the money each sale keeps after paying for the product itself. Margin % is that figure as a share of the retail price, which is the number to compare across products and against the line you resell today. Monthly margin is margin per unit multiplied by units sold, minus the staff commission for the month — that is what the shelf actually earns you. Payback is how many units must sell before the month's commission is covered; every unit after that is margin.</p>
-                <p>Two things change the answer most. First, the gap between unit cost and retail price: a $2 change in either moves margin per unit by the same $2, and margin % moves with it. Second, the units sold: the same per-unit numbers look very different at 50 units a month and at 250, because commission is a fixed monthly amount spread across however many units sell. If payback is higher than the units you sell, the commission eats the whole month's margin — sell more units, raise the retail price, or renegotiate the commission before the line can earn anything.</p>
-                <p>If margin per unit is zero or negative, the retail price is at or below what you pay, and there is no payback to show. That is not a rounding problem; it means the price or the cost has to change before the line can earn anything. Start with a <a href="../../services/private-label-skincare-for-med-spas/">sample kit</a> to test the products on your own skin before you commit to a line, and read the <a href="../../guides/reading-manufacturer-quote/">guide to reading a manufacturer quote</a> so the unit cost you enter is the all-in figure, not just the fill price.</p>
+                <p>Margin per unit is the money each sale keeps after paying for the product itself. Margin % is that figure as a share of the retail price, which is the number to compare across products and against the line you resell today. Monthly margin is margin per unit multiplied by units sold, minus the staff commission for the month — that is what the shelf earns after product cost and commission, before rent, tax, and the other costs of the shelf. Break-even is how many units must sell before the month's commission is covered; every unit after that is margin.</p>
+                <p>Two things change the answer most. First, the gap between unit cost and retail price: a $2 change in either moves margin per unit by the same $2, and margin % moves with it. Second, the units sold: the same per-unit numbers look very different at 50 units a month and at 250, because commission is a fixed monthly amount spread across however many units sell. If break-even is higher than the units you sell, the commission eats the whole month's margin — sell more units, raise the retail price, or renegotiate the commission before the line can earn anything.</p>
+                <p>If margin per unit is zero or negative, the retail price is at or below what you pay, and there is no break-even to show. That is not a rounding problem; it means the price or the cost has to change before the line can earn anything. Start with a <a href="../../services/private-label-skincare-for-med-spas/">sample kit</a> to test the products on your own skin before you commit to a line, and read the <a href="../../guides/reading-manufacturer-quote/">guide to reading a manufacturer quote</a> so the unit cost you enter is the all-in figure, not just the fill price.</p>
                 <div class="guide-callout">
                     <p><strong>Not a quote.</strong> Every figure above comes from the numbers you enter, not from any manufacturer. Use the result to judge real quotes, then get itemized quotes on the same basis before committing to a line.</p>
                 </div>
@@ -359,7 +365,7 @@
             setText('retail-monthly-margin', fmtMoney(r.monthlyMargin, false));
             var pbArith, pbText;
             if (r.payback === null) {
-                pbArith = 'No payback \u2014 margin per unit is zero or negative';
+                pbArith = 'No break-even \u2014 margin per unit is zero or negative';
                 pbText = '\u2014';
             } else if (r.payback === 0) {
                 pbArith = 'No commission to cover';
@@ -374,7 +380,7 @@
             if (r.marginPerUnit <= 0) {
                 note += ' At these numbers the line loses money on every unit \u2014 retail price is at or below unit cost.';
             } else if (r.payback !== null && r.payback > r.units) {
-                note += ' Payback (' + r.payback + ' units) is above what you sell in a month (' + r.units + ' units) \u2014 the commission eats the whole month\u2019s margin at these numbers.';
+                note += ' Break-even (' + r.payback + ' units) is above what you sell in a month (' + r.units + ' units) \u2014 the commission eats the whole month\u2019s margin at these numbers.';
             } else if (r.payback !== null && r.payback > 0) {
                 note += ' Sell ' + r.payback + ' units and the month\u2019s commission is covered; every unit after that is margin.';
             }
