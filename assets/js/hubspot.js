@@ -102,7 +102,8 @@
         var payload = {
             fields: [
                 { objectTypeId: '0-1', name: 'email', value: email.value.trim() },
-                { objectTypeId: '0-1', name: 'firstname', value: firstname ? firstname.value.trim() : '' }
+                { objectTypeId: '0-1', name: 'firstname', value: firstname ? firstname.value.trim() : '' },
+                { objectTypeId: '0-1', name: 'hs_lead_status', value: 'NEW' },
             ],
             context: {
                 pageUri: window.location.href,
@@ -166,7 +167,8 @@
                         { objectTypeId: '0-1', name: 'email', value: fields.email || '' },
                         { objectTypeId: '0-1', name: 'company', value: fields.company || '' },
                         { objectTypeId: '0-1', name: 'website', value: fields.website || '' },
-                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') }
+                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') },
+                        { objectTypeId: '0-1', name: 'hs_lead_status', value: 'NEW' },
                     ],
                     context: {
                         pageUri: fields.pageUri || window.location.href,
@@ -191,7 +193,8 @@
                 var payload = {
                     fields: [
                         { objectTypeId: '0-1', name: 'email', value: fields.email || '' },
-                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') }
+                        { objectTypeId: '0-1', name: 'lead_message', value: (fields.lead_message || '') + ((typeof window !== 'undefined' && window.LabelOriginI18n && typeof window.LabelOriginI18n.langTag === 'function') ? window.LabelOriginI18n.langTag() : '') },
+                        { objectTypeId: '0-1', name: 'hs_lead_status', value: 'NEW' },
                     ],
                     context: {
                         pageUri: fields.pageUri || window.location.href,
