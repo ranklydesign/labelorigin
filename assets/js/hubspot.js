@@ -28,6 +28,22 @@
  *    The fetch uses default credentials, so no cookies are sent or
  *    stored; the dual submit is form delivery, not tracking, and is
  *    not consent-gated -- same treatment as FormSubmit.
+ *
+ * 3. LEAD-EVENT TRACKING (GA4 generate_lead, consent-gated). Added
+ *    Nov 7, 2026 for the lead-tracking build. When a HubSpot Forms API
+ *    POST from this file succeeds (HTTP 2xx -- i.e. HubSpot recorded
+ *    the submission), fireLeadEvent() sends ONE GA4 `generate_lead`
+ *    event with { form_name, page_path } -- and ONLY when the visitor
+ *    has accepted analytics consent (window.LabelOriginConsent) and
+ *    gtag actually exists (consent.js defines it only after Accept).
+ *    On decline / no choice, NO event is sent and nothing is queued:
+ *    HubSpot's own submission records stay the lead source of truth,
+ *    GA4 is page/source context only. Tracking is wrapped in try/catch
+ *    everywhere: it can never break, delay, or change a form flow.
+ *    window.LabelOriginLeadEvent(formName) is the public hook for
+ *    forms this file does not submit itself -- the quote/sample
+ *    request form (build (b)) calls it from its own success handler
+ *    once that form's ID is wired (see QUOTE_FORM_ID below).
  */
 (function () {
     /* i18n (ES): strings from /i18n/es.json via LabelOriginI18n;
@@ -51,9 +67,41 @@
     var NEWSLETTER_FORM_ID = '90f597fb-0644-4e26-9cfb-6d02dcba52aa';
     var LEAD_FORM_ID = 'c8a97138-af1f-48bc-9d57-ebaf02026cd7';
     var UNDERMINIMUM_FORM_ID = '75d37a69-7e6a-45ab-8333-67a846f37d5b'; // LabelOrigin Under-minimum Lead (email required only)
+    // Quote/sample request form (build (b), Nov 7 2026): its HubSpot form
+    // ID was not known when this file was staged. When the main agent
+    // wires that form at push time, set QUOTE_FORM_ID here AND call
+    // window.LabelOriginLeadEvent(QUOTE_FORM_NAME) from the quote form's
+    // own success handler (its submit does not run through this file).
+    var QUOTE_FORM_ID = ''; // <-- BUILD (b) HOOK: set at push time
+    var QUOTE_FORM_NAME = 'quote_request';
     // HubSpot-hosted state-rules checklist PDF (Files API, public file,
     // verified 200 + application/pdf). Linked from the newsletter thank-you.
     var CHECKLIST_PDF_URL = 'https://247855692.fs1.hubspotusercontent-na2.net/hubfs/247855692/labelorigin/state-rules-checklist.pdf';
+    /* --- Lead-event tracking (GA4 generate_lead, consent-gated) --- */
+    function fireLeadEvent(formName) {
+        try {
+            if (!window.LabelOriginConsent || !window.LabelOriginConsent.accepted()) return;
+            if (typeof window.gtag !== 'function') return;
+            window.gtag('event', 'generate_lead', {
+                form_name: formName,
+                page_path: window.location.pathname
+            });
+        } catch (e) { /* tracking never breaks a form */ }
+    }
+    // Public hook for forms this file does not submit (quote form, claim
+    // form): call AFTER that form's own submit succeeds. Same gate.
+    window.LabelOriginLeadEvent = fireLeadEvent;
+
+    // submitLead serves several pages; name the event from the page the
+    // lead actually came from (fields.pageUri wins, else this page).
+    function leadFormName(fields) {
+        if (fields && fields.formName) return fields.formName;
+        var uri = (fields && fields.pageUri) || window.location.href;
+        if (uri.indexOf('directory/get-listed') !== -1) return 'directory_get_listed';
+        if (uri.indexOf('sass-ee') !== -1) return 'sassee_funnel_lead';
+        return 'lead_capture';
+    }
+
     function thankYouHtml() {
         return hT('hubspot.thankYou', '<p><strong>Thanks \u2014 your checklist downloads instantly.</strong></p>' +
             '<p><a class="btn btn-primary" href="{url}" target="_blank" rel="noopener">Download your checklist (PDF)</a></p>' +
@@ -141,6 +189,7 @@
             body: JSON.stringify(payload)
         }).then(function (res) {
             if (!res.ok) throw new Error('submit failed: ' + res.status);
+            fireLeadEvent('newsletter_signup');
             form.innerHTML =
                 '<div class="notification success" role="status">' + thankYouHtml() + '</div>';
         }).catch(function () {
@@ -180,6 +229,9 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
+                }).then(function (res) {
+                    // Success only: HubSpot recorded the submission.
+                    if (res && res.ok) fireLeadEvent(leadFormName(fields));
                 }).catch(function () { /* fail-open: the lead flow never depends on HubSpot */ });
             } catch (err) {
                 /* fail-open: the lead flow never depends on HubSpot */
@@ -206,6 +258,8 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
+                }).then(function (res) {
+                    if (res && res.ok) fireLeadEvent('under_minimum_lead');
                 }).catch(function () { /* fail-open: the lead flow never depends on HubSpot */ });
             } catch (err) {
                 /* fail-open: the lead flow never depends on HubSpot */
