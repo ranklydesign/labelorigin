@@ -341,6 +341,7 @@
                 body: JSON.stringify(payload)
             }).then(function (res) {
                 if (!res.ok) throw new Error('submit failed: ' + res.status);
+                if (window.LabelOriginLeadEvent) window.LabelOriginLeadEvent('claim_profile');
                 document.getElementById('claim-email-echo').textContent = email;
                 form.style.display = 'none';
                 document.getElementById('claim-success').style.display = 'block';

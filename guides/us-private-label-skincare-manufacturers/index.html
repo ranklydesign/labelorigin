@@ -438,6 +438,73 @@
                     <p><strong>The minimum you can sell through beats the minimum that looks cheapest per unit.</strong> A 500-unit minimum at a low per-unit price is still 500 units to store, sell, and move before they expire. A 25-unit minimum at a higher per-unit price is a test you can afford to run.</p>
                 </div>
 
+            <div class="cta-band" id="quote-request">
+                <div>
+                    <span class="editorial-eyebrow">Samples &amp; a Quote</span>
+                    <h3>Starting your own skincare line?</h3>
+                    <p>LabelOrigin, a Rankly Design brand, connects med spas, salons and founders with US manufacturers like Renaud Naturals (Loveland, CO). Robert is your contact from first question to samples.</p>
+                    <p>Tell us what you&rsquo;re making &mdash; Robert replies by email, usually within a business day. LabelOrigin doesn&rsquo;t sell product &mdash; Renaud makes it, confirms details and pricing directly, and fulfills your order.</p>
+                    <p>Three short questions &mdash; what you want to make, the quantity you&rsquo;re considering, and your timeline &mdash; and we reply with sample options and next steps. Sample options and pricing are confirmed in the reply before you commit to anything. No obligation.</p>
+                </div>
+                <div>
+                    <form class="mini-form" id="quote-request-form">
+                        <!-- Anti-spam honeypot -->
+                        <input type="text" id="qsr-website-hp" class="sr-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label><span>What do you want to make?</span>
+                            <select id="qsr-product" name="quote_product" required>
+                                <option value="" selected>Choose one&hellip;</option>
+                                <option value="serums_face_oils">Serums &amp; face oils</option>
+                                <option value="moisturizers_creams">Moisturizers &amp; creams</option>
+                                <option value="cleansers_toners">Cleansers &amp; toners</option>
+                                <option value="body_care">Body lotions &amp; oils</option>
+                                <option value="bath_products">Bath &amp; shower</option>
+                                <option value="suncare">Suncare &amp; tanning</option>
+                                <option value="hair_care">Hair care</option>
+                                <option value="full_line">A full line / several products</option>
+                                <option value="other">Something else / not sure yet</option>
+                            </select>
+                        </label>
+                        <label><span>Quantity you&rsquo;re considering</span>
+                            <select id="qsr-quantity" name="quote_quantity" required>
+                                <option value="" selected>Choose one&hellip;</option>
+                                <option value="under_100">Under 100 units</option>
+                                <option value="100_500">100&ndash;500 units</option>
+                                <option value="500_1000">500&ndash;1,000 units</option>
+                                <option value="1000_2500">1,000&ndash;2,500 units</option>
+                                <option value="2500_plus">2,500+ units</option>
+                                <option value="not_sure">Not sure yet</option>
+                            </select>
+                        </label>
+                        <label><span>Your timeline</span>
+                            <select id="qsr-timeline" name="quote_timeline" required>
+                                <option value="" selected>Choose one&hellip;</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1_3_months">1&ndash;3 months</option>
+                                <option value="3_6_months">3&ndash;6 months</option>
+                                <option value="researching">Just researching</option>
+                            </select>
+                        </label>
+                        <label><span>Business name</span>
+                            <input type="text" id="qsr-company" name="company" required autocomplete="organization" placeholder="Business name">
+                        </label>
+                        <label><span>Business email</span>
+                            <input type="email" id="qsr-email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
+                        </label>
+                        <p class="newsletter-privacy">By submitting this form, you agree to our <a href="../../privacy/">Privacy Policy</a>.</p>
+                        <button class="btn btn-primary btn-block" type="submit" id="qsr-submit">Request samples &amp; a quote</button>
+                        <p class="newsletter-note" data-qsr-status role="status" hidden></p>
+                    </form>
+                    <div id="qsr-success" class="notification" role="status" style="display: none;">
+                        <strong>Request received &mdash; we will reply to <span id="qsr-email-echo">your email</span>, usually within a business day.</strong><br>
+                        Renaud confirms details and pricing directly. If you have not heard back, email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a>.
+                    </div>
+                    <div id="qsr-failure" class="notification error" role="alert" style="display: none;">
+                        <strong>We could not send your request.</strong><br>
+                        Please email <a href="mailto:ranklydesign@gmail.com">ranklydesign@gmail.com</a> directly.
+                    </div>
+                </div>
+            </div>
+
             </article>
 
             <div class="section-header" id="faq">
@@ -742,6 +809,104 @@
                 console.error('Failed to save to localStorage:', err);
             }
         }
+    })();
+    </script>
+<script>
+    /*
+     * Quote & Sample Request form \u2014 LabelOrigin.
+     * Native HubSpot post (no embed, no cookies, no hutk), mirroring the
+     * Claim form pattern: posts straight to the public Forms submissions
+     * endpoint for the "LabelOrigin Quote & Sample Request" form. The
+     * form's consent type is none, so the payload records processing
+     * consent only (privacy text). quote_source is sent explicitly with
+     * this page's placement value (listicle) \u2014 a hidden field's
+     * defaultValue does not persist through the Forms API.
+     */
+    (function () {
+        var PORTAL_ID = '247855692';
+        var QUOTE_FORM_ID = 'bc591951-6c52-4c35-8b38-9d38ee196c87';
+        var QUOTE_SOURCE = 'listicle';
+        var SUBMIT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/' +
+            PORTAL_ID + '/' + QUOTE_FORM_ID;
+        var PRIVACY_TEXT = 'By submitting this form, you agree to our Privacy Policy.';
+
+        var form = document.getElementById('quote-request-form');
+        if (!form) return;
+
+        function setStatus(message) {
+            var status = form.querySelector('[data-qsr-status]');
+            if (!status) return;
+            status.textContent = message;
+            status.hidden = false;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var submitBtn = document.getElementById('qsr-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending\u2026';
+
+            var honeypot = document.getElementById('qsr-website-hp');
+            if (honeypot && honeypot.value) {
+                return;
+            }
+
+            var product = document.getElementById('qsr-product').value || '';
+            var quantity = document.getElementById('qsr-quantity').value || '';
+            var timeline = document.getElementById('qsr-timeline').value || '';
+            var company = document.getElementById('qsr-company').value || '';
+            var email = document.getElementById('qsr-email').value || '';
+
+            function fail(message, focusId) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request samples & a quote';
+                setStatus(message);
+                if (focusId) document.getElementById(focusId).focus();
+            }
+
+            if (!product) { fail('Please choose what you want to make.', 'qsr-product'); return; }
+            if (!quantity) { fail('Please choose a quantity.', 'qsr-quantity'); return; }
+            if (!timeline) { fail('Please choose your timeline.', 'qsr-timeline'); return; }
+            if (!company.trim()) { fail('Please add your business name.', 'qsr-company'); return; }
+            if (email.indexOf('@') === -1) { fail('Please enter a valid business email address.', 'qsr-email'); return; }
+
+            var payload = {
+                fields: [
+                    { objectTypeId: '0-1', name: 'quote_product', value: product },
+                    { objectTypeId: '0-1', name: 'quote_quantity', value: quantity },
+                    { objectTypeId: '0-1', name: 'quote_timeline', value: timeline },
+                    { objectTypeId: '0-1', name: 'company', value: company.trim() },
+                    { objectTypeId: '0-1', name: 'email', value: email.trim() },
+                    { objectTypeId: '0-1', name: 'quote_source', value: QUOTE_SOURCE },
+                    { objectTypeId: '0-1', name: 'hs_lead_status', value: 'NEW' }
+                ],
+                context: {
+                    pageUri: window.location.href,
+                    pageName: document.title
+                },
+                legalConsentOptions: {
+                    consent: {
+                        consentToProcess: true,
+                        text: PRIVACY_TEXT
+                    }
+                }
+            };
+
+            fetch(SUBMIT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function (res) {
+                if (!res.ok) throw new Error('submit failed: ' + res.status);
+                if (window.LabelOriginLeadEvent) window.LabelOriginLeadEvent('quote_request');
+                document.getElementById('qsr-email-echo').textContent = email;
+                form.style.display = 'none';
+                document.getElementById('qsr-success').style.display = 'block';
+            }).catch(function () {
+                form.style.display = 'none';
+                document.getElementById('qsr-failure').style.display = 'block';
+            });
+        });
     })();
     </script>
 </body>

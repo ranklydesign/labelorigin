@@ -72,7 +72,7 @@
     // wires that form at push time, set QUOTE_FORM_ID here AND call
     // window.LabelOriginLeadEvent(QUOTE_FORM_NAME) from the quote form's
     // own success handler (its submit does not run through this file).
-    var QUOTE_FORM_ID = ''; // <-- BUILD (b) HOOK: set at push time
+    var QUOTE_FORM_ID = 'bc591951-6c52-4c35-8b38-9d38ee196c87'; // LabelOrigin Quote & Sample Request (build (b), wired Nov 7 2026)
     var QUOTE_FORM_NAME = 'quote_request';
     // HubSpot-hosted state-rules checklist PDF (Files API, public file,
     // verified 200 + application/pdf). Linked from the newsletter thank-you.
